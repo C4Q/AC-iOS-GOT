@@ -101,6 +101,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="wgu-i2-Dyf" secondAttribute="trailing" constant="10" id="EOF-c2-Nsc"/>
                                                 <constraint firstItem="moo-cN-bEU" firstAttribute="top" secondItem="HEX-t6-AuZ" secondAttribute="bottom" id="G27-aF-cUH"/>
                                                 <constraint firstItem="wgu-i2-Dyf" firstAttribute="leading" secondItem="HEX-t6-AuZ" secondAttribute="trailing" constant="10" id="Raq-4U-pxw"/>
+                                                <constraint firstAttribute="bottom" secondItem="wgu-i2-Dyf" secondAttribute="bottom" constant="10" id="T2e-Rr-Kfn"/>
                                                 <constraint firstItem="wgu-i2-Dyf" firstAttribute="leading" secondItem="moo-cN-bEU" secondAttribute="trailing" constant="10" id="Z1s-kn-lHa"/>
                                                 <constraint firstItem="wgu-i2-Dyf" firstAttribute="top" secondItem="PAs-zE-1lR" secondAttribute="topMargin" id="g3F-cL-r2b"/>
                                                 <constraint firstItem="HEX-t6-AuZ" firstAttribute="top" secondItem="PAs-zE-1lR" secondAttribute="topMargin" id="nqT-sJ-l5e"/>

@@ -12,12 +12,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var gotTableView: UITableView!
     
-    
-    
     var episodes = GOTEpisode.allEpisodes
+    var finalEpisodeSeasonNum = GOTEpisode.allEpisodes[GOTEpisode.allEpisodes.count-1].season
+    var thisDamSectionHeaderWontWork: [String] = []
+    
+    func loadTheDamEpisodeSectionNames(){
+        for episode in episodes{
+            if !thisDamSectionHeaderWontWork.contains(String(episode.season)){
+                thisDamSectionHeaderWontWork.append("Season \(episode.season)")
+            }
+        }
+    }
     
     func loadData() {
         self.episodes = GOTEpisode.allEpisodes
+        loadTheDamEpisodeSectionNames()
     }
     
     override func viewDidLoad() {
@@ -32,8 +41,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let rightcell = gotTableView.dequeueReusableCell(withIdentifier: "rightside", for: indexPath)
         
         let anEpisode = episodes[indexPath.row]
+//        let rowToSetUp = indexPath.row
+//        let currentSection = indexPath.section
         
-        if indexPath.row % 2 == 0 {
+        if anEpisode.season % 2 == 1 {
             if let episodeCell = leftcell as? GOTTableViewCell {
                 episodeCell.leftEpisodeTitleLabel.text = anEpisode.name
                 episodeCell.leftSeasonNumEpisodeNumLabel.text = "S: \(anEpisode.season), E: \(anEpisode.number)"
@@ -52,36 +63,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 7-1 //make a way to get this from sorting a set of the Int that was the seasons
+        return finalEpisodeSeasonNum
     }
-
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let selectedRow = indexPath.row
-//        let selectedSection = indexPath.section
-//        episodes[selectedSection][selectedRow]
-//        tableView.reloadData()
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return episodes.count
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "Season One"
-        case 1:
-            return "Season Two"
-        case 2:
-            return "Season Three"
-        case 3:
-            return "Season Four"
-        case 4:
-            return "Season Five"
-        case 5:
-            return "Season Six"
-        default:
-            return "Season Seven"
-        }
+        //STILL ISNT WORKING
+        return thisDamSectionHeaderWontWork[section]
+//        switch section {
+//        case 0:
+//            return "Season One"
+//        case 1:
+//            return "Season Two"
+//        case 2:
+//            return "Season Three"
+//        case 3:
+//            return "Season Four"
+//        case 4:
+//            return "Season Five"
+//        case 5:
+//            return "Season Six"
+//        case 6:
+//            return "Season Seven"
+//        default:
+//            return "Future Episodes"
+//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

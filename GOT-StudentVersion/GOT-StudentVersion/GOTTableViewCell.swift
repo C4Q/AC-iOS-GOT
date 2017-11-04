@@ -9,16 +9,6 @@
 import UIKit
 
 class GOTTableViewCell: UITableViewCell {
-/*
-     @IBOutlet weak var moviePosterImageView: UIImageView!
-     @IBOutlet weak var titleLabel: UILabel!
-     @IBOutlet weak var descriptionLabel: UILabel!
-     
-     //LOL
-     @IBOutlet weak var rMoviePosterImageView: UIImageView!
-     @IBOutlet weak var rDescriptionLabel: UILabel!
-     @IBOutlet weak var rTitleLabel: UILabel!
- */
     
     @IBOutlet weak var leftEpisodeImage: UIImageView!
     @IBOutlet weak var leftEpisodeTitleLabel: UILabel!
