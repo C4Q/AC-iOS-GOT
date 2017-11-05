@@ -31,6 +31,7 @@ class GOTDetailViewController: UIViewController {
         episodeNumberTitle.text = "Episode: \(gotEpisodeDetails.number)"
         episodeRuntimeTitle.text = "Runtime: \(gotEpisodeDetails.runtime)"
         episodeAirDateTitle.text = "Airdate: \(gotEpisodeDetails.airdate)"
+        episodeDescriptionTextView.text = gotEpisodeDetails.summary
     }
 
     override func didReceiveMemoryWarning() {

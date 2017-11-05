@@ -67,6 +67,7 @@
                                             <outlet property="episodeIndexedLabel" destination="mL9-nC-hhO" id="D1v-gJ-ydB"/>
                                             <outlet property="episodeMediumImage" destination="kJV-3k-QFL" id="h49-sm-c6x"/>
                                             <outlet property="episodeNameLabel" destination="XGt-bc-UFJ" id="R8g-bW-AQK"/>
+                                            <segue destination="lyx-NA-UuF" kind="show" id="0Np-A3-A5K"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rightAlignedEpisodeCells" rowHeight="94" id="2y3-Px-c3w" customClass="GOTRightAlignedTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -113,6 +114,7 @@
                                             <outlet property="episodeIndexLabel" destination="Q3o-0c-p7Z" id="d2a-Y9-cyv"/>
                                             <outlet property="episodeMediumImage" destination="Aib-1b-BYn" id="aZA-gg-cTN"/>
                                             <outlet property="episodeNameLabel" destination="C3N-JX-qsf" id="Kge-uM-UwL"/>
+                                            <segue destination="lyx-NA-UuF" kind="show" id="8Zg-QP-OSp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -130,7 +132,6 @@
                     <navigationItem key="navigationItem" id="Y8D-V4-3Aa"/>
                     <connections>
                         <outlet property="gotTableView" destination="sPm-ge-v6z" id="1hq-zm-mj9"/>
-                        <segue destination="lyx-NA-UuF" kind="show" identifier="EpisodeDetailsSegue" id="Bl5-wy-KOV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -152,7 +153,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYp-wS-jzP" userLabel="episodeTitle">
-                                <rect key="frame" x="166" y="255" width="42" height="20.5"/>
+                                <rect key="frame" x="166.5" y="255" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -219,7 +220,6 @@
                         <outlet property="episodeRuntimeTitle" destination="5zo-uN-qfA" id="hLf-t5-Wrg"/>
                         <outlet property="episodeSeasonTitle" destination="NH6-3W-7py" id="6D0-nK-ZGX"/>
                         <outlet property="epsisodeNameTitle" destination="oYp-wS-jzP" id="lqf-nd-V8K"/>
-                        <outlet property="textView" destination="666-Pd-oDm" id="6LA-lU-EtR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1NI-r4-bzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,7 +235,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="y9T-Er-mra"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vaU-r5-iIe"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOE-BD-5Db" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -247,4 +247,7 @@
         <image name="142370" width="1920" height="1080"/>
         <image name="142372" width="1920" height="1080"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0Np-A3-A5K"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -29,26 +29,30 @@ class GOTViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return gotEpisode.count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let episode = self.gotEpisode[indexPath.row]
         guard episode.season % 2 == 0 else {
             let episodeCell = tableView.dequeueReusableCell(withIdentifier: "leftAlignedEpisodeCells", for: indexPath)
-            if let episodeCell = episodeCell as? GOTLeftAlignedTableViewCell {
-                episodeCell.leftAlignedSet(to: episode)
-                return episodeCell
+            if let cell = episodeCell as? GOTLeftAlignedTableViewCell {
+                cell.leftAlignedSet(to: episode)
+                return cell
             }
-            return UITableViewCell()
+            return episodeCell
         }
         let episodeCell = tableView.dequeueReusableCell(withIdentifier: "rightAlignedEpisodeCells", for: indexPath)
         if let episodeCell = episodeCell as? GOTRightAlignedTableViewCell {
             episodeCell.rightAlignedSet(to: episode)
             return episodeCell
-            
+    
         }
-        return UITableViewCell()
+        return episodeCell
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+                return String(gotEpisode[section].season)
+            }
 
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? GOTDetailViewController {
             let selectedRow = gotTableView.indexPathForSelectedRow!.row
@@ -61,8 +65,66 @@ class GOTViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 }
 
 
+//            print("1")
 //
 //
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //        return String(gotEpisode[section].season)
 //    }
+
+//guard version
+//func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//    let episode = self.gotEpisode[indexPath.row]
+//    guard episode.season % 2 == 0 else {
+//        let episodeCell = tableView.dequeueReusableCell(withIdentifier: "leftAlignedEpisodeCells", for: indexPath)
+//        print("1")
+//        if let cell = episodeCell as? GOTLeftAlignedTableViewCell {
+//            print("2")
+//            cell.leftAlignedSet(to: episode)
+//            print("3")
+//            return cell
+//        }
+//        print("4")
+//        return episodeCell
+//    }
+//    let episodeCell = tableView.dequeueReusableCell(withIdentifier: "rightAlignedEpisodeCells", for: indexPath)
+//    if let episodeCell = episodeCell as? GOTRightAlignedTableViewCell {
+//        episodeCell.rightAlignedSet(to: episode)
+//        print("5")
+//        return episodeCell
+//
+//    }
+//    print("!")
+//    return episodeCell
+//}
+
+//  if let version
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//            let episode = self.gotEpisode[indexPath.row]
+//        let leftAligned = episode.season % 2 == 0
+//        if leftAligned {
+//            let episodeCell = tableView.dequeueReusableCell(withIdentifier: "leftAlignedEpisodeCells", for: indexPath)
+//            if let episodeCell = episodeCell as? GOTLeftAlignedTableViewCell {
+//                let rowToSetUp = indexPath.row
+//                let episodeToSetup = gotEpisode[rowToSetUp]
+//                episodeCell.episodeNameLabel.text = episodeToSetup.name
+//                episodeCell.episodeIndexedLabel.text = "S:\(episodeToSetup.season) E: \(episodeToSetup.number)"
+//                episodeCell.episodeMediumImage.image = UIImage(named: String(episodeToSetup.mediumImageID))
+//                print("1")
+//                return episodeCell
+//            }
+//        } else {
+//            let episodeCell = tableView.dequeueReusableCell(withIdentifier: "rightAlignedEpisodeCells", for: indexPath)
+//            if let episodeCell = episodeCell as? GOTRightAlignedTableViewCell {
+//                let rowToSetUp = indexPath.row
+//                let episodeToSetup = gotEpisode[rowToSetUp]
+//                episodeCell.episodeNameLabel.text = episodeToSetup.name
+//                episodeCell.episodeIndexLabel.text = "S:\(episodeToSetup.season) E: \(episodeToSetup.number)"
+//                episodeCell.episodeMediumImage.image = UIImage(named: String(episodeToSetup.mediumImageID))
+//                return episodeCell
+//            }
+//        }
+//        print("2")
+//        return UITableViewCell()
+//    }
+
