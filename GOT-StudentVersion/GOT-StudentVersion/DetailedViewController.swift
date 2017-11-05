@@ -19,7 +19,33 @@ class DetailedViewController: UIViewController {
     @IBOutlet weak var runtimeLabel: UILabel!
     @IBOutlet weak var airdateLabel: UILabel!
     @IBOutlet weak var episodeDescriptionTextview: UITextView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
+    func randomBackground() {
+        let randomInt = Int(arc4random_uniform(9))
+        switch randomInt {
+        case 1:
+            backgroundImage.image = #imageLiteral(resourceName: "gameofthrones-aryahound")
+        case 2:
+            backgroundImage.image = #imageLiteral(resourceName: "gameofthrones-bensenstark")
+        case 3:
+            backgroundImage.image = #imageLiteral(resourceName: "gameofthrones-boltonbanner")
+        case 4:
+            backgroundImage.image = #imageLiteral(resourceName: "gameofthrones-greyjoybanner")
+        case 5:
+            backgroundImage.image = #imageLiteral(resourceName: "gameofthrones-lannisterbanner")
+        case 6:
+            backgroundImage.image = #imageLiteral(resourceName: "gameofthrones-martellbanner")
+        case 7:
+            backgroundImage.image = #imageLiteral(resourceName: "gameofthrones-nightswatch")
+        case 8:
+            backgroundImage.image = #imageLiteral(resourceName: "gameofthrones-starkbanner")
+        case 9:
+            backgroundImage.image = #imageLiteral(resourceName: "gameofthrones-targaryenbanner")
+        default:
+            backgroundImage.image = #imageLiteral(resourceName: "gameofthrones-nedstark")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +60,7 @@ class DetailedViewController: UIViewController {
         runtimeLabel.text = "Runtime \(detailedEpisode.runtime)"
         airdateLabel.text = "Airdate \(detailedEpisode.airdate)"
         episodeDescriptionTextview.text = detailedEpisode.summary
+        randomBackground()
         
         // Do any additional setup after loading the view.
     }
