@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func loadTheDamEpisodeSectionNames(){
         for episode in episodes{
             if !thisDamSectionHeaderWontWork.contains(String(episode.season)){
-                thisDamSectionHeaderWontWork.append("Season \(episode.season)")
+                thisDamSectionHeaderWontWork.append(String(episode.season))
             }
         }
     }
@@ -40,9 +40,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let leftcell = gotTableView.dequeueReusableCell(withIdentifier: "leftside", for: indexPath)
         let rightcell = gotTableView.dequeueReusableCell(withIdentifier: "rightside", for: indexPath)
         
-        let anEpisode = episodes[indexPath.row]
-//        let rowToSetUp = indexPath.row
-//        let currentSection = indexPath.section
+        let theSeasons = episodes.filter {String($0.season) == thisDamSectionHeaderWontWork[indexPath.section]}
+        let anEpisode = theSeasons[indexPath.row]
         
         if anEpisode.season % 2 == 1 {
             if let episodeCell = leftcell as? GOTTableViewCell {
@@ -50,7 +49,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 episodeCell.leftSeasonNumEpisodeNumLabel.text = "S: \(anEpisode.season), E: \(anEpisode.number)"
                 episodeCell.leftEpisodeImage.image = UIImage(named: anEpisode.mediumImageID)
             }
-            
             return leftcell
         } else {
             if let episodeCell = rightcell as? GOTTableViewCell {
@@ -60,58 +58,56 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             return rightcell
         }
-        
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return finalEpisodeSeasonNum
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return episodes.count
+        let theSeasons = episodes.filter { String($0.season) == thisDamSectionHeaderWontWork[section] }
+        return theSeasons.count
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        //STILL ISNT WORKING
-        return thisDamSectionHeaderWontWork[section]
-//        switch section {
-//        case 0:
-//            return "Season One"
-//        case 1:
-//            return "Season Two"
-//        case 2:
-//            return "Season Three"
-//        case 3:
-//            return "Season Four"
-//        case 4:
-//            return "Season Five"
-//        case 5:
-//            return "Season Six"
-//        case 6:
-//            return "Season Seven"
-//        default:
-//            return "Future Episodes"
-//        }
+        
+        switch thisDamSectionHeaderWontWork[section] {
+        case "1":
+            return "Season One"
+        case "2":
+            return "Season Two"
+        case "3":
+            return "Season Three"
+        case "4":
+            return "Season Four"
+        case "5":
+            return "Season Five"
+        case "6":
+            return "Season Six"
+        case "7":
+            return "Season Seven"
+        default:
+            return "Future Episodes"
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination
-         //FOR MORE THAN ONE SEGUE use a switch that switches on the segue identifyer
-         switch segue.identifier! {
-         case "detailedViewSegue":
-         if let destination = segue.destination as? DetailedViewController {
-         let selectedRow = self.gotTableView.indexPathForSelectedRow!.row
-         let selectedEpisode = self.episodes[selectedRow]
-         destination.detailedEpisode = selectedEpisode
-         }
-         case "detailedViewSegue2":
+        //FOR MORE THAN ONE SEGUE use a switch that switches on the segue identifyer
+        switch segue.identifier! {
+        case "detailedViewSegue":
             if let destination = segue.destination as? DetailedViewController {
                 let selectedRow = self.gotTableView.indexPathForSelectedRow!.row
                 let selectedEpisode = self.episodes[selectedRow]
                 destination.detailedEpisode = selectedEpisode
             }
-         default:
-         print("You segued to some unknown place")
-         }
- 
+        case "detailedViewSegue2":
+            if let destination = segue.destination as? DetailedViewController {
+                let selectedRow = self.gotTableView.indexPathForSelectedRow!.row
+                let selectedEpisode = self.episodes[selectedRow]
+                destination.detailedEpisode = selectedEpisode
+            }
+        default:
+            print("You segued to some unknown place")
+        }
         // Pass the selected object to the new view controller.
     }
     
