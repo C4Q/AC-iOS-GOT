@@ -1,5 +1,5 @@
 //
-//  GOTEpisdoe.swift
+//  GOTEpisode.swift
 //  GOT-StudentVersion
 //
 //  Created by C4Q  on 11/2/17.
