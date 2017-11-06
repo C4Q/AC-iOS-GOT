@@ -14,19 +14,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var episodes = GOTEpisode.allEpisodes
     var finalEpisodeSeasonNum = GOTEpisode.allEpisodes[GOTEpisode.allEpisodes.count-1].season
-    var thisDamSectionHeaderWontWork: [String] = []
+    var sectionHeader: [String] = []
     
-    func loadTheDamEpisodeSectionNames(){
+    func loadEpisodeSectionNames(){
         for episode in episodes{
-            if !thisDamSectionHeaderWontWork.contains(String(episode.season)){
-                thisDamSectionHeaderWontWork.append(String(episode.season))
+            if !sectionHeader.contains(String(episode.season)){
+                sectionHeader.append(String(episode.season))
             }
         }
     }
     
     func loadData() {
         self.episodes = GOTEpisode.allEpisodes
-        loadTheDamEpisodeSectionNames()
+        loadEpisodeSectionNames()
     }
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let leftcell = gotTableView.dequeueReusableCell(withIdentifier: "leftside", for: indexPath)
         let rightcell = gotTableView.dequeueReusableCell(withIdentifier: "rightside", for: indexPath)
         
-        let theSeasons = episodes.filter {String($0.season) == thisDamSectionHeaderWontWork[indexPath.section]}
+        let theSeasons = episodes.filter {String($0.season) == sectionHeader[indexPath.section]}
         let anEpisode = theSeasons[indexPath.row]
         
         if anEpisode.season % 2 == 1 {
@@ -60,16 +60,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return thisDamSectionHeaderWontWork.count
+        return sectionHeader.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let theSeasons = episodes.filter { String($0.season) == thisDamSectionHeaderWontWork[section] }
+        let theSeasons = episodes.filter { String($0.season) == sectionHeader[section] }
         return theSeasons.count
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        switch thisDamSectionHeaderWontWork[section] {
+        switch sectionHeader[section] {
         case "1":
             return "Season One"
         case "2":
@@ -90,8 +90,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination
-        //FOR MORE THAN ONE SEGUE use a switch that switches on the segue identifyer
         switch segue.identifier! {
         case "detailedViewSegue":
             if let destination = segue.destination as? DetailedViewController {
@@ -108,8 +106,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         default:
             print("You segued to some unknown place")
         }
-        // Pass the selected object to the new view controller.
     }
-    
 }
 
