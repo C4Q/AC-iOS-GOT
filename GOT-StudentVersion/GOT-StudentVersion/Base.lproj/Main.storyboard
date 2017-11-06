@@ -94,7 +94,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aX6-gc-CkR">
-                                                    <rect key="frame" x="200" y="0.0" width="173" height="173.5"/>
+                                                    <rect key="frame" x="230" y="0.0" width="143" height="143"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" secondItem="aX6-gc-CkR" secondAttribute="width" id="Bsb-ZU-Gd8"/>
                                                     </constraints>
@@ -106,7 +106,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="S: E:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYj-lU-pCD">
-                                                    <rect key="frame" x="8" y="130.5" width="30.5" height="18"/>
+                                                    <rect key="frame" x="8" y="100" width="30.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -121,7 +121,7 @@
                                                 <constraint firstItem="eYj-lU-pCD" firstAttribute="leading" secondItem="tn2-R8-3DG" secondAttribute="leading" constant="8" id="VXZ-P7-MgC"/>
                                                 <constraint firstItem="aX6-gc-CkR" firstAttribute="centerY" secondItem="tn2-R8-3DG" secondAttribute="centerY" id="cjQ-fK-eBx"/>
                                                 <constraint firstItem="vYL-XX-SJR" firstAttribute="top" secondItem="tn2-R8-3DG" secondAttribute="top" constant="30" id="i9J-RY-Eek"/>
-                                                <constraint firstItem="aX6-gc-CkR" firstAttribute="leading" secondItem="tn2-R8-3DG" secondAttribute="leading" constant="200" id="iUj-jE-qXc"/>
+                                                <constraint firstItem="aX6-gc-CkR" firstAttribute="leading" secondItem="tn2-R8-3DG" secondAttribute="leading" constant="230" id="iUj-jE-qXc"/>
                                                 <constraint firstAttribute="bottom" secondItem="aX6-gc-CkR" secondAttribute="bottom" id="oHO-TQ-Blo"/>
                                                 <constraint firstItem="aX6-gc-CkR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eYj-lU-pCD" secondAttribute="trailing" constant="8" symbolic="YES" id="yEY-wr-XqR"/>
                                             </constraints>
