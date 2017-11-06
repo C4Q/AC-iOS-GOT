@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class SearchGOTViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var gotTableView: UITableView!
@@ -18,9 +17,6 @@ class SearchGOTViewController: UIViewController, UITableViewDataSource, UITableV
             return filteredEpisodes.count
         }
         return 0
-//        else {
-//            return GOTEpisode.allEpisodes.count
-//        }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -31,9 +27,7 @@ class SearchGOTViewController: UIViewController, UITableViewDataSource, UITableV
         if isFiltering() {
             anEpisode = filteredEpisodes[indexPath.row]
         }
-//        else {
-//            anEpisode = episodes[indexPath.row]
-//        }
+        
         if let episodeCell = titleSearchCell as? GOTTableViewCell {
             episodeCell.leftEpisodeTitleLabel.text = anEpisode.name
             episodeCell.leftSeasonNumEpisodeNumLabel.text = "S: \(anEpisode.season), E: \(anEpisode.number)"
@@ -54,43 +48,13 @@ class SearchGOTViewController: UIViewController, UITableViewDataSource, UITableV
                 print("You segued to some unknown place")
             }
         }
-//        else {
-//            switch segue.identifier! {
-//            case "searchViewSegue":
-//                if let destination = segue.destination as? DetailedViewController {
-//                    let selectedRow = self.gotTableView.indexPathForSelectedRow!.row
-//                    let selectedEpisode = self.GOTEpisode.allEpisodes[selectedRow]
-//                    destination.detailedEpisode = selectedEpisode
-//                }
-//            default:
-//                print("You segued to some unknown place")
-//            }
-        }
-//        switch segue.identifier! {
-//        case "searchViewSegue":
-//            if let destination = segue.destination as? DetailedViewController {
-//                let selectedRow = self.gotTableView.indexPathForSelectedRow!.row
-//                let selectedEpisode = self.filteredEpisodes[selectedRow]
-//                destination.detailedEpisode = selectedEpisode
-//            }
-//        default:
-//            print("You segued to some unknown place")
-//        }
-//    }
-    
-    var searchBrain = CustomSearch()
+    }
+
     var filteredEpisodes = [GOTEpisode]()
-//    var episodes = GOTEpisode.allEpisodes
     let searchController = UISearchController(searchResultsController: nil)
-    
-//    func loadData() {
-//        self.episodes = GOTEpisode.allEpisodes
-//    }
-//
-//    let searchController = UISearchController(searchResultsController: nil)
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        loadData()
         gotTableView.delegate = self
         gotTableView.dataSource = self
         searchController.searchResultsUpdater = self
@@ -110,19 +74,6 @@ class SearchGOTViewController: UIViewController, UITableViewDataSource, UITableV
     }
     func filterContentForSearchText(_ searchText: String, scope: String = "Name") {
         
-        
-//        filteredEpisodes = GOTEpisode.allEpisodes.filter({( episode : GOTEpisode) -> Bool in
-//
-////            let doesCategoryMatch = (scope == "Name") || (episode.summary == scope)
-//
-//            if searchBarIsEmpty() {
-//                return true
-//            } else {
-//                return episode.name.lowercased().contains(searchText.lowercased())
-//            }
-//
-//        })
-        
         var filtered: [GOTEpisode] = []
         
         switch scope {
@@ -135,8 +86,6 @@ class SearchGOTViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         filteredEpisodes = filtered
-        
-        
         gotTableView.reloadData()
     }
     func isFiltering() -> Bool {

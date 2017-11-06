@@ -89,18 +89,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("This is the section \(indexPath.section), This is the row: \(indexPath.row)")
+        print("This is season \(indexPath.section + 1)")
+    
+    }
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        var thisSeason = episodes.filter{$0.season == gotTableView.indexPathForSelectedRow!.section + 1}
+        
         switch segue.identifier! {
+            //fixed issue with detailed view only showing season one episodes when you click cells from other seasons
+            
         case "detailedViewSegue":
             if let destination = segue.destination as? DetailedViewController {
                 let selectedRow = self.gotTableView.indexPathForSelectedRow!.row
-                let selectedEpisode = self.episodes[selectedRow]
+                
+                let selectedEpisode = thisSeason[selectedRow]
+                print(selectedRow)
                 destination.detailedEpisode = selectedEpisode
             }
         case "detailedViewSegue2":
             if let destination = segue.destination as? DetailedViewController {
                 let selectedRow = self.gotTableView.indexPathForSelectedRow!.row
-                let selectedEpisode = self.episodes[selectedRow]
+                let selectedEpisode = thisSeason[selectedRow]
+                print(selectedRow)
                 destination.detailedEpisode = selectedEpisode
             }
         default:
