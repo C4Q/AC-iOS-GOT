@@ -10,9 +10,36 @@ import UIKit
 
 class DetailedEpisodeViewController: UIViewController {
 
+    var episode:GOTEpisode? = nil
+    
+    @IBOutlet weak var episodeName: UILabel!
+    
+    @IBOutlet weak var episodePoster: UIImageView!
+    
+    @IBOutlet weak var season: UILabel!
+    @IBOutlet weak var episodeId: UILabel!
+    
+    @IBOutlet weak var runTime: UILabel!
+    
+    @IBOutlet weak var airDate: UILabel!
+    
+    @IBOutlet weak var episodeDescription: UITextView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        guard let episode = episode else {
+            return
+        }
+        episodeName.text = episode.name
+        episodePoster.image = UIImage(named: episode.originalImageID)
+        season.text = "S: \(episode.season)"
+        runTime.text = "Runtime: \(episode.runtime)"
+        airDate.text = "Airdate: \(episode.airdate)"
+        episodeDescription.text = episode.summary
+        episodeId.text = "Episode: \(episode.id)"
+        
         // Do any additional setup after loading the view.
     }
 
