@@ -25,12 +25,27 @@ class GOTViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.gotEpisode = GOTEpisode.allEpisodes
     }
     
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 7
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gotEpisode.count
+        // account for per season
+        let season = section + 1
+        
+        let episodesThisSeason = gotEpisode.filter { $0.season == season }
+        
+        return episodesThisSeason.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let episode = self.gotEpisode[indexPath.row]
+        
+        let season = indexPath.section + 1
+        let episodesThisSeason = gotEpisode.filter { $0.season == season }
+
+        
+        let episode = episodesThisSeason[indexPath.row]
         guard episode.season % 2 == 0 else {
             let episodeCell = tableView.dequeueReusableCell(withIdentifier: "leftAlignedEpisodeCells", for: indexPath)
             if let cell = episodeCell as? GOTLeftAlignedTableViewCell {
@@ -49,8 +64,10 @@ class GOTViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-                return String(gotEpisode[section].season)
-            }
+        
+        let season = section + 1
+                return "Season \(season)"
+    }
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
