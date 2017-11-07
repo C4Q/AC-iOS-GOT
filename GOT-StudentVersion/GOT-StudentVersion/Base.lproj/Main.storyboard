@@ -128,7 +128,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N1l-a4-1KB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sVB-gJ-mNx"/>
+                    <navigationItem key="navigationItem" id="sVB-gJ-mNx">
+                        <barButtonItem key="backBarButtonItem" title="Episodes" id="VQ2-d1-Dfa"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="gotTableView" destination="pwp-DH-w4P" id="NZr-xy-APK"/>
                     </connections>
@@ -289,7 +291,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mwn-Sx-3qE"/>
                     </view>
-                    <navigationItem key="navigationItem" id="J83-OK-D9G"/>
+                    <navigationItem key="navigationItem" id="J83-OK-D9G">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="Q2c-Fk-na4"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I5g-HX-6nc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -415,6 +419,6 @@
         <image name="bran-stark" width="564" height="317"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dvi-O9-jAX"/>
+        <segue reference="RWe-KX-CH2"/>
     </inferredMetricsTieBreakers>
 </document>
