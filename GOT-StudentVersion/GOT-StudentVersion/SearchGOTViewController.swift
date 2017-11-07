@@ -84,7 +84,6 @@ class SearchGOTViewController: UIViewController, UITableViewDataSource, UITableV
         default:
             break
         }
-        
         filteredEpisodes = filtered
         gotTableView.reloadData()
     }
