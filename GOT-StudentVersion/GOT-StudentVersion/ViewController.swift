@@ -8,13 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate {
 
     
     @IBOutlet weak var gotTableView: UITableView!
     
+    @IBOutlet weak var episodeSearchBar: UISearchBar!
     var episodes: [[GOTEpisode]] = [[]]
-    
+    let allEps = GOTEpisode.allEpisodes
+    var searchTerm: String? {
+        didSet {
+            self.gotTableView.reloadData()
+        }
+    }
+    var filteredEpisodes: [GOTEpisode] {
+        guard let searchTerm = searchTerm, searchTerm != "" else {
+            return allEps
+        }
+        return allEps.filter({$0.name.lowercased().contains(searchTerm.lowercased())})
+    }
     func loadData() {
         episodes[0] = GOTEpisode.allEpisodes.filter({$0.season == 1})
         episodes.append(GOTEpisode.allEpisodes.filter({$0.season == 2}))
@@ -53,12 +65,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return episodes[section].count
+        
+        
+        return filteredEpisodes.filter{$0.season == section + 1}.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let episode = self.episodes[indexPath.section][indexPath.row]
+        let episode = filteredEpisodes.filter{$0.season == indexPath.section + 1}[indexPath.row]
+        
+        
         let left = indexPath.section % 2 == 0
         if left {
             guard let leftCell = gotTableView.dequeueReusableCell(withIdentifier: "GoT Pic Left", for: indexPath) as? GoTTableViewCell else {
@@ -93,11 +109,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchTerm = searchBar.text
+        searchBar.resignFirstResponder()
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchTerm = searchText
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
         gotTableView.delegate = self
-        gotTableView.dataSource = self 
+        gotTableView.dataSource = self
+        self.episodeSearchBar.delegate = self 
         // Do any additional setup after loading the view, typically from a nib.
     }
 
