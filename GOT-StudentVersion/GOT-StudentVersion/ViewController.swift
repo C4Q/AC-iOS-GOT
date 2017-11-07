@@ -46,9 +46,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as! DetailedViewController? {
+//            //destination. = self.
+//            print("trying to go from cell to details")
+//        }
+//    }
 
 
 }
