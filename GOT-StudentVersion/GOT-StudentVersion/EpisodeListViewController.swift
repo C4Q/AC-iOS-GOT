@@ -13,10 +13,7 @@ class EpisodeListViewController: UIViewController, UITableViewDataSource, UITabl
     
     let gotEpisodes = GOTEpisode.allEpisodes
     
-    let testing = GOTEpisode.allEpisodesBySeason
-    
-    let testing2 = [[GOTEpisode.init(airdate: "aaaaaaaaa", id: 0, name: "bbbbb", number: 1, season: 1, runtime: 1, summary: "dfsf", mediumImageID: "bbddb", originalImageID: "dfs")]]
-    
+    let episodeMatrix = GOTEpisode.allEpisodesBySeason
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -29,10 +26,10 @@ class EpisodeListViewController: UIViewController, UITableViewDataSource, UITabl
     
     var filteredEpisodes: [[GOTEpisode]] {
         guard let searchTerm = searchTerm, searchTerm != "" else {
-            return testing
+            return episodeMatrix
         }
         guard let scopeTitles = searchBar.scopeButtonTitles else {
-            return testing
+            return episodeMatrix
         }
         let selectedIndex = searchBar.selectedScopeButtonIndex
         let filteringCriteria = scopeTitles[selectedIndex]
@@ -40,21 +37,21 @@ class EpisodeListViewController: UIViewController, UITableViewDataSource, UITabl
         
         switch filteringCriteria {
         case "Title":
-            var newArray = testing
-            for i in 0..<newArray.count {
-                newArray[i] = newArray[i].filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
+            var filteredMatrix = episodeMatrix
+            for i in 0..<filteredMatrix.count {
+                filteredMatrix[i] = filteredMatrix[i].filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
             }
-            return newArray
+            return filteredMatrix
 
         case "Description":
-            var newArray = testing
-            for i in 0..<newArray.count {
-                newArray[i] = newArray[i].filter { $0.summary.lowercased().contains(searchTerm.lowercased()) }
+            var filteredMatrix = episodeMatrix
+            for i in 0..<filteredMatrix.count {
+                filteredMatrix[i] = filteredMatrix[i].filter { $0.summary.lowercased().contains(searchTerm.lowercased()) }
             }
-            return newArray
+            return filteredMatrix
             
         default:
-            return testing
+            return episodeMatrix
         }
 
     }
@@ -78,8 +75,9 @@ class EpisodeListViewController: UIViewController, UITableViewDataSource, UITabl
         self.resignFirstResponder()
     }
     
-    
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchBar.resignFirstResponder()
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return filteredEpisodes.count
@@ -143,7 +141,7 @@ class EpisodeListViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.reloadData()
     }
     
-    
+
     
     
 }
