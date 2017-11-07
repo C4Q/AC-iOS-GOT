@@ -8,22 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11AB91FABCE47004E1EAF /* AppDelegate.swift */; };
-		54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ABB1FABCE47004E1EAF /* ViewController.swift */; };
 		54B11ABF1FABCE47004E1EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11ABD1FABCE47004E1EAF /* Main.storyboard */; };
 		54B11AC11FABCE48004E1EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC01FABCE48004E1EAF /* Assets.xcassets */; };
 		54B11AC41FABCE48004E1EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */; };
-		54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */; };
+		54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */; };
+		E2F21BBD1FB00F6300CFFCC4 /* GOTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F21BBC1FB00F6300CFFCC4 /* GOTModel.swift */; };
+		E2FFB9841FACB03300726960 /* GOTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFB9831FACB03300726960 /* GOTViewController.swift */; };
+		E2FFB9861FACB04C00726960 /* GOTDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFB9851FACB04C00726960 /* GOTDetailedViewController.swift */; };
+		E2FFB9891FACE2A700726960 /* LeftGOTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFB9881FACE2A700726960 /* LeftGOTTableViewCell.swift */; };
+		E2FFB98B1FACE2B900726960 /* RightGOTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FFB98A1FACE2B900726960 /* RightGOTTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		54B11AB61FABCE47004E1EAF /* GOT-StudentVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GOT-StudentVersion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B11AB91FABCE47004E1EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		54B11ABB1FABCE47004E1EAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		54B11ABE1FABCE47004E1EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54B11AC01FABCE48004E1EAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54B11AC31FABCE48004E1EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54B11AC51FABCE48004E1EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
+		54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisode.swift; sourceTree = "<group>"; };
+		E2F21BBC1FB00F6300CFFCC4 /* GOTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTModel.swift; sourceTree = "<group>"; };
+		E2FFB9831FACB03300726960 /* GOTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTViewController.swift; sourceTree = "<group>"; };
+		E2FFB9851FACB04C00726960 /* GOTDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTDetailedViewController.swift; sourceTree = "<group>"; };
+		E2FFB9881FACE2A700726960 /* LeftGOTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftGOTTableViewCell.swift; sourceTree = "<group>"; };
+		E2FFB98A1FACE2B900726960 /* RightGOTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightGOTTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
-				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
-				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
+				E2FFB9871FACB05400726960 /* ViewControllers */,
+				E2FFB98C1FACE2C000726960 /* CustomCells */,
+				54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */,
+				E2F21BBC1FB00F6300CFFCC4 /* GOTModel.swift */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
@@ -73,6 +83,24 @@
 				54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E2FFB9871FACB05400726960 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E2FFB9831FACB03300726960 /* GOTViewController.swift */,
+				E2FFB9851FACB04C00726960 /* GOTDetailedViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E2FFB98C1FACE2C000726960 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				E2FFB9881FACE2A700726960 /* LeftGOTTableViewCell.swift */,
+				E2FFB98A1FACE2B900726960 /* RightGOTTableViewCell.swift */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,9 +175,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
-				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
+				E2F21BBD1FB00F6300CFFCC4 /* GOTModel.swift in Sources */,
+				54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */,
+				E2FFB9841FACB03300726960 /* GOTViewController.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
+				E2FFB98B1FACE2B900726960 /* RightGOTTableViewCell.swift in Sources */,
+				E2FFB9891FACE2A700726960 /* LeftGOTTableViewCell.swift in Sources */,
+				E2FFB9861FACB04C00726960 /* GOTDetailedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
