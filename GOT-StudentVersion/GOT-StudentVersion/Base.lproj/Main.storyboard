@@ -147,7 +147,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hKp-Wt-gqI" userLabel="backgroundImage">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hKp-Wt-gqI" userLabel="backgroundImage">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10389019691780822" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -307,8 +307,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bran-stark" translatesAutoresizingMaskIntoConstraints="NO" id="7Tr-C1-THK">
-                                <rect key="frame" x="16" y="64" width="288" height="416"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bran-stark" translatesAutoresizingMaskIntoConstraints="NO" id="7Tr-C1-THK">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rf2-fi-CSD">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -369,10 +369,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rf2-fi-CSD" firstAttribute="height" secondItem="7Tr-C1-THK" secondAttribute="height" id="7x3-ii-GcA"/>
-                            <constraint firstItem="7Tr-C1-THK" firstAttribute="leading" secondItem="679-hx-leh" secondAttribute="leadingMargin" id="972-NM-wxE"/>
+                            <constraint firstItem="7Tr-C1-THK" firstAttribute="leading" secondItem="679-hx-leh" secondAttribute="leading" id="972-NM-wxE"/>
                             <constraint firstItem="rf2-fi-CSD" firstAttribute="trailing" secondItem="MuJ-li-qBk" secondAttribute="trailing" id="CpM-sn-Bhe"/>
                             <constraint firstItem="7Tr-C1-THK" firstAttribute="top" secondItem="MuJ-li-qBk" secondAttribute="top" id="Jra-Gl-NUk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7Tr-C1-THK" secondAttribute="trailing" id="W6H-Lf-DMB"/>
+                            <constraint firstAttribute="trailing" secondItem="7Tr-C1-THK" secondAttribute="trailing" id="W6H-Lf-DMB"/>
                             <constraint firstItem="rf2-fi-CSD" firstAttribute="bottom" secondItem="MuJ-li-qBk" secondAttribute="bottom" id="dRJ-n9-ACr"/>
                             <constraint firstItem="rf2-fi-CSD" firstAttribute="leading" secondItem="MuJ-li-qBk" secondAttribute="leading" id="p9W-Cy-VIi"/>
                             <constraint firstAttribute="bottomMargin" secondItem="7Tr-C1-THK" secondAttribute="bottom" id="q3r-Hd-ssF"/>
@@ -419,6 +419,6 @@
         <image name="bran-stark" width="564" height="317"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RWe-KX-CH2"/>
+        <segue reference="dvi-O9-jAX"/>
     </inferredMetricsTieBreakers>
 </document>
