@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yM0-e6-qAG">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,8 +20,9 @@
             <objects>
                 <navigationController id="yM0-e6-qAG" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gk9-PB-k51">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.76078431372549016" green="0.72941176470588232" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
@@ -32,23 +33,33 @@
             </objects>
             <point key="canvasLocation" x="-889" y="87"/>
         </scene>
-        <!--View Controller-->
+        <!--GAME OF THRONES-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GOTViewController" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NmC-YZ-TzA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="100"/>
+                                <color key="tintColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.76078431369999999" green="0.72941176470000002" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Description</string>
+                                </scopeButtonTitles>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OQE-YY-WLZ">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Left GOT Cell" rowHeight="100" id="IlU-DY-P0s" userLabel="Left Cell" customClass="LeftGOTTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IlU-DY-P0s" id="ySF-Kv-4nZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="plD-H4-CWj">
@@ -59,13 +70,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eWZ-08-iJG">
-                                                    <rect key="frame" x="146" y="8" width="166" height="51.5"/>
+                                                    <rect key="frame" x="146" y="8" width="221" height="51.5"/>
                                                     <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Episode" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uu-ch-tk3">
-                                                    <rect key="frame" x="146" y="67.5" width="166" height="24"/>
+                                                    <rect key="frame" x="146" y="67.5" width="221" height="24"/>
                                                     <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -94,27 +105,27 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Right GOT Cell" rowHeight="100" id="9Dn-8L-JMp" userLabel="Right Cell" customClass="RightGOTTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="128" width="320" height="100"/>
+                                        <rect key="frame" x="0.0" y="128" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Dn-8L-JMp" id="tqC-pc-sXn">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lgH-Mo-74c">
-                                                    <rect key="frame" x="182" y="8" width="130" height="83.5"/>
+                                                    <rect key="frame" x="237" y="8" width="130" height="83.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" priority="999" constant="80" id="00V-6H-L9Z"/>
                                                         <constraint firstAttribute="width" priority="999" constant="130" id="jpZ-LQ-hbW"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hYv-AW-hPK">
-                                                    <rect key="frame" x="8" y="8" width="166" height="51.5"/>
+                                                    <rect key="frame" x="8" y="8" width="221" height="51.5"/>
                                                     <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Episode" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yg-qw-4F7">
-                                                    <rect key="frame" x="8" y="67.5" width="166" height="24"/>
+                                                    <rect key="frame" x="8" y="67.5" width="221" height="24"/>
                                                     <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -147,74 +158,80 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="OQE-YY-WLZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="B9d-DY-5Nq"/>
-                            <constraint firstItem="OQE-YY-WLZ" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="adf-cX-1BN"/>
-                            <constraint firstItem="OQE-YY-WLZ" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="eYC-a6-39O"/>
-                            <constraint firstItem="OQE-YY-WLZ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="nWS-1Y-SCf"/>
+                            <constraint firstItem="OQE-YY-WLZ" firstAttribute="top" secondItem="NmC-YZ-TzA" secondAttribute="bottom" id="Q8d-sB-8MK"/>
+                            <constraint firstItem="OQE-YY-WLZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZVG-H5-OTq"/>
+                            <constraint firstItem="NmC-YZ-TzA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hF4-IN-AhZ"/>
+                            <constraint firstItem="OQE-YY-WLZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hVR-og-P1W"/>
+                            <constraint firstItem="NmC-YZ-TzA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qy0-yj-wca"/>
+                            <constraint firstItem="NmC-YZ-TzA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rug-hz-iLn"/>
+                            <constraint firstItem="OQE-YY-WLZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ssZ-tH-A6M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bpv-wA-2Jn"/>
+                    <navigationItem key="navigationItem" title="GAME OF THRONES" id="bpv-wA-2Jn">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="KfC-23-xQl"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="searchBarGOT" destination="NmC-YZ-TzA" id="vml-6e-ZFJ"/>
                         <outlet property="tableViewGOT" destination="OQE-YY-WLZ" id="5xq-cF-iZA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31.884057971014496" y="86.413043478260875"/>
+            <point key="canvasLocation" x="31.875" y="86.25"/>
         </scene>
         <!--Detailed View Controller-->
         <scene sceneID="J7H-x3-WlC">
             <objects>
                 <viewController id="wh7-2I-Ve9" customClass="GOTDetailedViewController" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9fX-zh-a1F">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iVv-RH-hky">
-                                <rect key="frame" x="8" y="72" width="304" height="185"/>
+                                <rect key="frame" x="8" y="72" width="359" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="Y5J-Ss-Ed4"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Episode Summary Here..." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Rzf-Rk-Ti7">
-                                <rect key="frame" x="8" y="464.5" width="304" height="5.5"/>
+                                <rect key="frame" x="8" y="466" width="359" height="191"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="season" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1G-Vi-3hN">
-                                <rect key="frame" x="16" y="319.5" width="288" height="24"/>
+                                <rect key="frame" x="16" y="321" width="343" height="24"/>
                                 <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="episode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPk-rw-x0W">
-                                <rect key="frame" x="16" y="351.5" width="288" height="24"/>
+                                <rect key="frame" x="16" y="353" width="343" height="24"/>
                                 <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="runtime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbs-KX-pbY">
-                                <rect key="frame" x="16" y="383.5" width="288" height="24"/>
+                                <rect key="frame" x="16" y="385" width="343" height="24"/>
                                 <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="airdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbk-cg-KvM">
-                                <rect key="frame" x="16" y="415.5" width="288" height="24"/>
+                                <rect key="frame" x="16" y="417" width="343" height="24"/>
                                 <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PJ3-hs-lec">
-                                <rect key="frame" x="8" y="265" width="296" height="29.5"/>
-                                <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="21"/>
+                                <rect key="frame" x="8" y="265" width="351" height="31"/>
+                                <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.87897408008575439" green="0.85500437021255493" blue="0.84634602069854736" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iVv-RH-hky" firstAttribute="leading" secondItem="vvG-nw-iwO" secondAttribute="leading" constant="8" id="0wW-zi-Lxu"/>
                             <constraint firstItem="PJ3-hs-lec" firstAttribute="leading" secondItem="vvG-nw-iwO" secondAttribute="leading" constant="8" id="24R-Q5-OGJ"/>

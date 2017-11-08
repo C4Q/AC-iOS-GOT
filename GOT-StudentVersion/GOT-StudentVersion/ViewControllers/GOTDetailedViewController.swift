@@ -35,7 +35,7 @@ class GOTDetailedViewController: UIViewController {
         self.episodeImage.image = UIImage(named: episodeGOT.originalImageID)
         /*
         https://stackoverflow.com/questions/46475446/best-practices-to-add-background-image-in-all-viewcontrollers-swift-ios-11
-         used this as reference in order to add background pictures for each season respectively
+         used this as reference in order to add background picture for each season respectively
         */
         let seasonBG = UIImageView()
         seasonBG.image = UIImage(named: "season\(episodeGOT.season)")
@@ -47,7 +47,7 @@ class GOTDetailedViewController: UIViewController {
     
     /*
      https://stackoverflow.com/questions/28053140/uitextview-is-not-scrolled-to-top-when-loaded
-     used this link to fix the bug of the TextView text not being in place
+     used this link to fix the TextView text not being in place
     */
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
