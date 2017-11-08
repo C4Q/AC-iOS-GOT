@@ -10,6 +10,12 @@ import UIKit
 
 class RightGOTTableViewCell: UITableViewCell {
 
+    @IBOutlet var gotEpisodeImageView: UIImageView!
+    
+    @IBOutlet var gotEpisodeTitleLabel: UILabel!
+    
+    @IBOutlet var gotSeasonAndEpisodeNumberLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var gotTableView: UITableView!
+ 
+    let gotSeasonSections = ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6", "Season 7"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return gotSeasonSections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,18 +29,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = gotTableView.dequeueReusableCell(withIdentifier: "LeftGOTCell", for: indexPath) as! LeftGOTTableViewCell
+        let leftCell = gotTableView.dequeueReusableCell(withIdentifier: "LeftGOTCell", for: indexPath) as! LeftGOTTableViewCell
+        let rightCell = gotTableView.dequeueReusableCell(withIdentifier: "RightGOTCell", for: indexPath) as! RightGOTTableViewCell
         let gotEpisodeInfo = GOTEpisode.allEpisodes[indexPath.row]
         let gotSeasonNum = gotEpisodeInfo.season
         let gotEpisodeNum = gotEpisodeInfo.number
         let gotEpisodeTitle = gotEpisodeInfo.name
         let gotEpisodeImageID = gotEpisodeInfo.originalImageID
-        cell.episodeTitleLabel.text = gotEpisodeTitle
-        cell.seasonAndEpisodeNumberLabel.text = "S: \(gotSeasonNum) E: \(gotEpisodeNum)"
-        if let gotEpisodePic = UIImage(named: gotEpisodeImageID) {
-                    cell.gotEpisodeImageView.image = gotEpisodePic
+        if indexPath.row % 2 == 0 {
+            rightCell.gotEpisodeTitleLabel.text = gotEpisodeTitle
+            rightCell.gotSeasonAndEpisodeNumberLabel.text = "S: \(gotSeasonNum) E: \(gotEpisodeNum)"
+            if let gotEpisodeImage = UIImage(named: gotEpisodeImageID) {
+                 rightCell.gotEpisodeImageView.image = gotEpisodeImage
+            }
+            
+            
+
+            return rightCell
+        } else {
+            leftCell.episodeTitleLabel.text = gotEpisodeTitle
+            leftCell.seasonAndEpisodeNumberLabel.text = "S: \(gotSeasonNum) E: \(gotEpisodeNum)"
+            if let gotEpisodePic = UIImage(named: gotEpisodeImageID) {
+                leftCell.gotEpisodeImageView.image = gotEpisodePic
+            }
+            return leftCell
         }
-        return cell
     }
 
     /*

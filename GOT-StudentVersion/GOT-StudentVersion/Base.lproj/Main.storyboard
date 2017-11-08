@@ -20,9 +20,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZp-XF-ReB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZp-XF-ReB">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LeftGOTCell" rowHeight="112" id="Bzk-bc-3zx" customClass="LeftGOTTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -33,7 +32,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of Episode" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elw-UY-BUH">
-                                                    <rect key="frame" x="191" y="23" width="181" height="21"/>
+                                                    <rect key="frame" x="191" y="23" width="169" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -46,7 +45,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season&amp;Episode" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMU-U7-EoE">
-                                                    <rect key="frame" x="191" y="69" width="166" height="21"/>
+                                                    <rect key="frame" x="191" y="69" width="169" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -57,10 +56,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="AAC-kA-kcT" secondAttribute="bottom" constant="8" id="61A-J5-J3u"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="FMU-U7-EoE" secondAttribute="bottom" constant="11" id="DoW-rL-RgB"/>
                                                 <constraint firstItem="Elw-UY-BUH" firstAttribute="top" secondItem="JKv-CC-hC2" secondAttribute="top" constant="23" id="S3b-1c-LVB"/>
-                                                <constraint firstAttribute="trailing" secondItem="Elw-UY-BUH" secondAttribute="trailing" constant="3" id="XFF-vI-l5J"/>
+                                                <constraint firstAttribute="trailing" secondItem="Elw-UY-BUH" secondAttribute="trailing" constant="15" id="XFF-vI-l5J"/>
                                                 <constraint firstItem="Elw-UY-BUH" firstAttribute="leading" secondItem="AAC-kA-kcT" secondAttribute="trailing" constant="8" id="ebp-02-cV8"/>
                                                 <constraint firstItem="AAC-kA-kcT" firstAttribute="leading" secondItem="JKv-CC-hC2" secondAttribute="leading" constant="8" id="n6v-gZ-73M"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="FMU-U7-EoE" secondAttribute="trailing" constant="3" id="q2l-VK-FqI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FMU-U7-EoE" secondAttribute="trailing" id="q2l-VK-FqI"/>
                                                 <constraint firstItem="AAC-kA-kcT" firstAttribute="top" secondItem="JKv-CC-hC2" secondAttribute="top" constant="8" id="u9m-lM-ZRb"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -70,10 +69,61 @@
                                             <outlet property="seasonAndEpisodeNumberLabel" destination="FMU-U7-EoE" id="50p-OI-8gL"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RightGOTCell" rowHeight="112" id="VcW-LO-Tjx" customClass="RightGOTTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="140" width="375" height="112"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VcW-LO-Tjx" id="6VQ-89-Pao">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season&amp;Episode" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UU3-CO-pLL">
+                                                    <rect key="frame" x="8" y="65" width="176" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of Episode" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n37-UG-bgY">
+                                                    <rect key="frame" x="8" y="27" width="176" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tmh-Tc-eeS">
+                                                    <rect key="frame" x="192" y="8" width="175" height="95.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="95.5" id="JRJ-qW-hkk"/>
+                                                        <constraint firstAttribute="width" constant="175" id="rbN-rY-R3v"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tmh-Tc-eeS" firstAttribute="top" secondItem="6VQ-89-Pao" secondAttribute="top" constant="8" id="4dc-1Z-LWU"/>
+                                                <constraint firstItem="n37-UG-bgY" firstAttribute="top" secondItem="6VQ-89-Pao" secondAttribute="top" constant="27" id="7tI-91-lZI"/>
+                                                <constraint firstItem="UU3-CO-pLL" firstAttribute="leading" secondItem="6VQ-89-Pao" secondAttribute="leading" constant="8" id="9ml-Mf-cgQ"/>
+                                                <constraint firstItem="n37-UG-bgY" firstAttribute="leading" secondItem="6VQ-89-Pao" secondAttribute="leading" constant="8" id="MZ5-Cv-OKV"/>
+                                                <constraint firstAttribute="bottom" secondItem="tmh-Tc-eeS" secondAttribute="bottom" constant="8" id="fy4-Z8-JRq"/>
+                                                <constraint firstAttribute="trailing" secondItem="tmh-Tc-eeS" secondAttribute="trailing" constant="8" id="h6e-dH-u8r"/>
+                                                <constraint firstItem="tmh-Tc-eeS" firstAttribute="leading" secondItem="n37-UG-bgY" secondAttribute="trailing" constant="8" id="jcE-Aw-yNf"/>
+                                                <constraint firstItem="tmh-Tc-eeS" firstAttribute="leading" secondItem="UU3-CO-pLL" secondAttribute="trailing" constant="8" id="qki-RQ-72l"/>
+                                                <constraint firstAttribute="bottom" secondItem="UU3-CO-pLL" secondAttribute="bottom" constant="25.5" id="zWu-Wk-tQg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="gotEpisodeImageView" destination="tmh-Tc-eeS" id="aUa-XG-nvM"/>
+                                            <outlet property="gotEpisodeTitleLabel" destination="n37-UG-bgY" id="t4q-cu-1LW"/>
+                                            <outlet property="gotSeasonAndEpisodeNumberLabel" destination="UU3-CO-pLL" id="ksd-xy-iy7"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hZp-XF-ReB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PsM-fb-2vf"/>
+                            <constraint firstItem="hZp-XF-ReB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="THf-HL-0re"/>
+                            <constraint firstItem="hZp-XF-ReB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="r2g-Xl-Rvv"/>
+                            <constraint firstItem="hZp-XF-ReB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vvN-HB-7an"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
