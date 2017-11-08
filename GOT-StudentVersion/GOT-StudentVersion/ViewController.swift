@@ -58,7 +58,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case 6:
             return "Season 7"
         default:
-            return nil 
+            return nil
             
             
         }
@@ -104,7 +104,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let destinationEpisode = segue.destination as? GoTEpisodeViewController {
             let selectedSection = gotTableView.indexPathForSelectedRow!.section
             let selectedRow = gotTableView.indexPathForSelectedRow!.row
-            let selectedEpisode = self.episodes[selectedSection][selectedRow]
+            let selectedEpisode = filteredEpisodes.filter{$0.season == selectedSection + 1}[selectedRow]
             destinationEpisode.myEpisode = selectedEpisode
         }
     }
