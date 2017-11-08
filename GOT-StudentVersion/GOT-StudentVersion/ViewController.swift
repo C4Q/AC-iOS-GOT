@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchResultsUpdating {
 
     var episodeArray = [GOTEpisode]()
-    
     @IBOutlet weak var tableView: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -41,6 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        definesPresentationContext = true
         self.tableView.delegate = self
         self.tableView.dataSource = self
         loadData()
@@ -101,7 +101,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
         var currentSeason = filteredepisodeArr.filter{$0.season == tableView.indexPathForSelectedRow!.section + 1 }
+//        navigationController?.dismiss(animated: false, completion: nil)
         switch segue.identifier! {
         case "leftSegue":
             if let destination = segue.destination as? SummaryViewController {

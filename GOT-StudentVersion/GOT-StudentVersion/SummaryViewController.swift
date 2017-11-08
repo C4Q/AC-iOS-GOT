@@ -18,7 +18,7 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var summaryAirdate: UILabel!
     @IBOutlet weak var summaryTextfield: UITextView!
     
-    var episodeDetails: GOTEpisode? 
+    var episodeDetails: GOTEpisode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
