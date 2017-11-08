@@ -11,7 +11,7 @@
 		54B11ABF1FABCE47004E1EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11ABD1FABCE47004E1EAF /* Main.storyboard */; };
 		54B11AC11FABCE48004E1EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC01FABCE48004E1EAF /* Assets.xcassets */; };
 		54B11AC41FABCE48004E1EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */; };
-		54B11ACC1FABCED7004E1EAF /*  GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /*  GOTEpisode.swift */; };
+		54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */; };
 		814B047F1FAC201C009588B2 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B047E1FAC201C009588B2 /* EpisodeListViewController.swift */; };
 		814B04811FAC2124009588B2 /* LeftImageCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B04801FAC2124009588B2 /* LeftImageCustomTableViewCell.swift */; };
 		814B04831FAC213A009588B2 /* RightImageCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B04821FAC213A009588B2 /* RightImageCustomTableViewCell.swift */; };
@@ -25,7 +25,7 @@
 		54B11AC01FABCE48004E1EAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54B11AC31FABCE48004E1EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54B11AC51FABCE48004E1EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54B11ACB1FABCED7004E1EAF /*  GOTEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " GOTEpisode.swift"; sourceTree = "<group>"; };
+		54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisode.swift; sourceTree = "<group>"; };
 		814B047E1FAC201C009588B2 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
 		814B04801FAC2124009588B2 /* LeftImageCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftImageCustomTableViewCell.swift; sourceTree = "<group>"; };
 		814B04821FAC213A009588B2 /* RightImageCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightImageCustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
-				54B11ACB1FABCED7004E1EAF /*  GOTEpisode.swift */,
+				54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				814B047E1FAC201C009588B2 /* EpisodeListViewController.swift */,
 				814B04841FAD003F009588B2 /* EpisodeDetailViewController.swift */,
@@ -159,7 +159,7 @@
 				814B047F1FAC201C009588B2 /* EpisodeListViewController.swift in Sources */,
 				814B04851FAD003F009588B2 /* EpisodeDetailViewController.swift in Sources */,
 				814B04811FAC2124009588B2 /* LeftImageCustomTableViewCell.swift in Sources */,
-				54B11ACC1FABCED7004E1EAF /*  GOTEpisode.swift in Sources */,
+				54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */,
 				814B04831FAC213A009588B2 /* RightImageCustomTableViewCell.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
 			);
