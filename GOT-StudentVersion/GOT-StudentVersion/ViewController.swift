@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //list of all seasons - 1-7, no repeats
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return seasons.count
+        return gotSeasons[section].count
     }
 //        return allGOTEpisodes.count
 //        var numberOfRows: Int
@@ -52,9 +52,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let episode = allGOTEpisodes[indexPath.row]
+       
+        let section = indexPath.section
+        let season = gotSeasons[section]
+        
+        let row = indexPath.row
+        let episode = season[row]
+        
+        
+        
+//        let episode = allGOTEpisodes[indexPath.row]
         let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "leftCell", for: indexPath)
-        tableViewCell.imageView?.image = UIImage(named: episode.mediumImageID )
+        tableViewCell.imageView?.image = UIImage(named: episode.mediumImageID.description)
         tableViewCell.textLabel?.text = episode.name
         tableViewCell.detailTextLabel?.text = "S: \(episode.season), E: \(episode.number)"
         return tableViewCell
@@ -66,7 +75,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let seasonTitle = ""
+        
+        let seasonTitle = "Season " + (section + 1).description
+        
         return seasonTitle
     }
     @IBOutlet weak var tableViewGOT: UITableView!
@@ -90,22 +101,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         for season in seasonArr{
             gotSeasons.append(GOTEpisode.allEpisodes.filter{$0.season == season})     // this is  magic that will filter items if the season is the same as the season we are searching, spits out an array of these items and then you append this array into our array of arrays
         }
-//
-//
-//
-    //MARK: - SEGUE
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? EpisodeDescriptionViewController {
-//            let selectedRow = self.tableView.indexPathForSelectedRow!.row
-//            let selectedEpisode = self.allGOTEpisodes[selectedRow]
-//            destination.GOTDetail = selectedEpisode
-//
-//        }
-//
-//}
-
 }
+    
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       if let destination = segue.destination as? EpisodeDescriptionViewController {
+        var season = tableViewGOT.indexPathForSelectedRow?.section
+        var episode = tableViewGOT.indexPathForSelectedRow?.row
+        var selectedSeason = gotSeasons[season!]
+        var selectedEpisode = selectedSeason[episode!]
+        destination.GOTDetail = selectedEpisode
+        
+        
+        
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
 }
 
 

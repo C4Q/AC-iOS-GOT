@@ -19,6 +19,15 @@ class EpisodeDescriptionViewController: UIViewController {
     @IBOutlet weak var detailImage: UIImageView!
     var GOTDetail: GOTEpisode?
     
-
+    override func viewDidLoad() {
+        episodeDescriptionDetail.text = GOTDetail?.summary
+        episodeName.text = GOTDetail?.name
+        airDate.text = GOTDetail?.airdate
+        runTime.text = GOTDetail?.runtime.description
+        episodeNumber.text = GOTDetail?.number.description
+        seasonNumber.text = GOTDetail?.season.description
+        detailImage.image = UIImage(named: GOTDetail!.mediumImageID.description)
+        
+    }
     
 }
