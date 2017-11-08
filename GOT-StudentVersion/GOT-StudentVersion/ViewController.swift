@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var gotTableView: UITableView!
- 
-    @IBOutlet var gotEpisodeSearchBar: UISearchBar!
-    
-    var userSearchTerm: String? = nil
     
     static let gotSeasonSections = ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6", "Season 7"]
     
@@ -24,7 +20,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         gotTableView.delegate = self
         gotTableView.dataSource = self
-        gotEpisodeSearchBar.delegate = self
         
         for episode in GOTEpisode.allEpisodes {
                 let seasons = episode.season
@@ -87,10 +82,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         default:
             return nil
         }
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.userSearchTerm = searchBar.text
     }
     
     // MARK: - Navigation
