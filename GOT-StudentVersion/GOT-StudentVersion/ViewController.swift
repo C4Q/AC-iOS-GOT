@@ -94,12 +94,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if let indexPath = self.gotTableView.indexPathForSelectedRow {
                 var gotEpisode = gotEpisodesBySeason[indexPath.section][indexPath.row]
                 detailedVC.episodeTitle = gotEpisode.name
-  //              detailedVC.seasonNumber = String(gotEpisode.season)
-    //            detailedVC.episodeNumber = String(gotEpisode.number)
-   //             detailedVC.episodeRunTime = String(gotEpisode.runtime)
-  //              detailedVC.episodeAirDate = gotEpisode.airdate
- //               detailedVC.episodeSummary = gotEpisode.summary
-//                detailedVC.episodeImageID = gotEpisode.originalImageID
+                detailedVC.seasonNumber = String(gotEpisode.season)
+                detailedVC.episodeNumber = String(gotEpisode.number)
+                detailedVC.episodeRunTime = String(gotEpisode.runtime)
+                detailedVC.episodeAirDate = gotEpisode.airdate
+                detailedVC.episodeSummary = gotEpisode.summary
+                detailedVC.episodeImageID = gotEpisode.originalImageID
             }
         }
         // Get the new view controller using segue.destinationViewController.
@@ -107,3 +107,4 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
 }
+

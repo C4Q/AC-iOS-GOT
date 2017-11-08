@@ -48,14 +48,14 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         gotEpisodeTitleLabel.text = episodeTitle
-  //      gotSeasonNumberLabel.text = seasonNumber
+        gotSeasonNumberLabel.text = seasonNumber
         gotEpisodeNumberLabel.text = episodeNumber
-  //      gotEpisodeRuntimeLabel.text = episodeRunTime
- //       gotEpisodeAirDate.text = episodeAirDate
-//        gotEpisodeSummary.text = episodeSummary
-//        if let gotEpisodeImage = UIImage(named: episodeImageID) {
-//            gotEpisodeImageView.image = gotEpisodeImage
- //       }
+        gotEpisodeRuntimeLabel.text = episodeRunTime
+        gotEpisodeAirDate.text = episodeAirDate
+        gotEpisodeSummary.text = episodeSummary
+        if let gotEpisodeImage = UIImage(named: episodeImageID) {
+            gotEpisodeImageView.image = gotEpisodeImage
+        }
     }
     
     override func viewDidLoad() {
