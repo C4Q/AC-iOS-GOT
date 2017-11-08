@@ -15,36 +15,40 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //list of all seasons - 1-7, no repeats
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allGOTEpisodes.count
-        var numberOfRows: Int
-        switch section {
-        case 0:
-            //season 1
-            let theSeason1 = seasons.filter { $0.season == 1 }
-            numberOfRows = theSeason1.count
-        case 1:
-            let theSeason2 = seasons.filter { $0.season == 2 }
-            numberOfRows = theSeason2.count
-        case 2:
-            let theSeason3 = seasons.filter { $0.season == 3 }
-            numberOfRows = theSeason3.count
-        case 3:
-            let theSeason4 = seasons.filter { $0.season == 4 }
-            numberOfRows = theSeason4.count
-        case 4:
-            let theSeason5 = seasons.filter { $0.season ==  5 }
-            numberOfRows = theSeason5.count
-        case 5:
-            let theSeason6 = seasons.filter { $0.season ==  6 }
-            numberOfRows = theSeason6.count
-        case 6:
-            let theSeason7 = seasons.filter { $0.season == 7 }
-            numberOfRows = theSeason7.count
-        default:
-            numberOfRows = 0
-        }
-        return numberOfRows
+        return seasons.count
     }
+//        return allGOTEpisodes.count
+//        var numberOfRows: Int
+//        switch section {
+//        case 0:
+//            //season 1
+//            let theSeason1 = seasons.filter { $0.season == 1 }
+//            numberOfRows = theSeason1.count
+//        case 1:
+//            let theSeason2 = seasons.filter { $0.season == 2 }
+//            numberOfRows = theSeason2.count
+//        case 2:
+//            let theSeason3 = seasons.filter { $0.season == 3 }
+//            numberOfRows = theSeason3.count
+//        case 3:
+//            let theSeason4 = seasons.filter { $0.season == 4 }
+//            numberOfRows = theSeason4.count
+//        case 4:
+//            let theSeason5 = seasons.filter { $0.season ==  5 }
+//            numberOfRows = theSeason5.count
+//        case 5:
+//            let theSeason6 = seasons.filter { $0.season ==  6 }
+//            numberOfRows = theSeason6.count
+//        case 6:
+//            let theSeason7 = seasons.filter { $0.season == 7 }
+//            numberOfRows = theSeason7.count
+//        default:
+//            numberOfRows = 0
+//        }
+//        print(numberOfRows)
+//        return numberOfRows
+//
+//    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,12 +61,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        var numberOfSeasons: [Int] = [] //should contain seasons 1-7, .count = 7 b/c 7 seasons total
-        //for-loop used to populate numberOfSeason
-        for episode in seasons where !numberOfSeasons.contains(episode.season) {
-            numberOfSeasons.append(episode.season)
-        }
-        return numberOfSeasons.count
+       
+        return gotSeasons.count
         }
    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -70,28 +70,59 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return seasonTitle
     }
     @IBOutlet weak var tableViewGOT: UITableView!
-
+    var gotSeasons: [[GOTEpisode]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableViewGOT.delegate = self
         self.tableViewGOT.dataSource = self
         //for-loop populates seasons variable
-        for episode in allGOTEpisodes {
-            seasons.append((episode.season, episode.number))
+//        for episode in allGOTEpisodes {
+//            seasons.append((episode.season, episode.number))
+//        }
+        var seasons: Set<Int> = []
+        allGOTEpisodes.forEach{seasons.insert($0.season)}
+        var seasonArr = [Int]()
+        for season in seasons {
+            seasonArr.append(season)
         }
-    
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        seasonArr = seasonArr.sorted()
+        print(seasonArr)
+        for season in seasonArr{
+            gotSeasons.append(GOTEpisode.allEpisodes.filter{$0.season == season})     // this is  magic that will filter items if the season is the same as the season we are searching, spits out an array of these items and then you append this array into our array of arrays
+        }
+//
+//
+//
     //MARK: - SEGUE
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? EpisodeDescriptionViewController {
-            let selectedRow = self.tableView.indexPathForSelectedRow!.row
-            let selectedEpisode = self.allGOTEpisodes[selectedRow]
-            destination.GOTDetail = selectedEpisode
-    
-        }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as? EpisodeDescriptionViewController {
+//            let selectedRow = self.tableView.indexPathForSelectedRow!.row
+//            let selectedEpisode = self.allGOTEpisodes[selectedRow]
+//            destination.GOTDetail = selectedEpisode
+//
+//        }
+//
+//}
 
 }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+//ignore this
+//func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//            let section = section + 1
+//            return "Season: " + section.description
+// this is setting up the header of the sections. since sections start at 0, I created a variable section that just adds 1 to whatever section its looking at so it spits out the right number
+//        }
+//
