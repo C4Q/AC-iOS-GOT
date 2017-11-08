@@ -8,10 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     @IBOutlet var gotTableView: UITableView!
  
+    @IBOutlet var gotEpisodeSearchBar: UISearchBar!
+    
+    var userSearchTerm: String? = nil
+    
     static let gotSeasonSections = ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6", "Season 7"]
     
     var gotEpisodesBySeason: [[GOTEpisode]] = Array(repeating: [], count: ViewController.gotSeasonSections.count)
@@ -20,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         gotTableView.delegate = self
         gotTableView.dataSource = self
+        gotEpisodeSearchBar.delegate = self
         
         for episode in GOTEpisode.allEpisodes {
                 let seasons = episode.season
@@ -83,16 +88,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return nil
         }
     }
-
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.userSearchTerm = searchBar.text
+    }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RightGOTCellSegue" || segue.identifier == "LeftGOTCellSegue" {
-            var detailedVC = segue.destination as! DetailViewController
+            let detailedVC = segue.destination as! DetailViewController
             if let indexPath = self.gotTableView.indexPathForSelectedRow {
-                var gotEpisode = gotEpisodesBySeason[indexPath.section][indexPath.row]
+                let gotEpisode = gotEpisodesBySeason[indexPath.section][indexPath.row]
                 detailedVC.episodeTitle = gotEpisode.name
                 detailedVC.seasonNumber = String(gotEpisode.season)
                 detailedVC.episodeNumber = String(gotEpisode.number)

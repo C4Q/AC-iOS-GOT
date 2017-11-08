@@ -138,6 +138,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QUJ-ZE-fAB"/>
                     <connections>
+                        <outlet property="gotEpisodeSearchBar" destination="afG-js-BjQ" id="NYj-FK-M1N"/>
                         <outlet property="gotTableView" destination="hZp-XF-ReB" id="lbr-1F-Bdc"/>
                     </connections>
                 </viewController>
