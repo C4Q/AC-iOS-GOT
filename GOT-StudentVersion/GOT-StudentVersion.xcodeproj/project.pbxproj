@@ -15,6 +15,7 @@
 		744E983C1FAE99AD0089EF6C /* LeftGOTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E983B1FAE99AD0089EF6C /* LeftGOTTableViewCell.swift */; };
 		744E983E1FAE99BE0089EF6C /* RightGOTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E983D1FAE99BE0089EF6C /* RightGOTTableViewCell.swift */; };
 		744E98401FAE9A7B0089EF6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E983F1FAE9A7B0089EF6C /* ViewController.swift */; };
+		746F764B1FB2C1C40091FC65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746F764A1FB2C1C40091FC65 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		744E983B1FAE99AD0089EF6C /* LeftGOTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftGOTTableViewCell.swift; sourceTree = "<group>"; };
 		744E983D1FAE99BE0089EF6C /* RightGOTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightGOTTableViewCell.swift; sourceTree = "<group>"; };
 		744E983F1FAE9A7B0089EF6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		746F764A1FB2C1C40091FC65 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
 				744E983F1FAE9A7B0089EF6C /* ViewController.swift */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
+				746F764A1FB2C1C40091FC65 /* DetailViewController.swift */,
 				744E983B1FAE99AD0089EF6C /* LeftGOTTableViewCell.swift */,
 				744E983D1FAE99BE0089EF6C /* RightGOTTableViewCell.swift */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
@@ -156,6 +159,7 @@
 				744E98401FAE9A7B0089EF6C /* ViewController.swift in Sources */,
 				744E983C1FAE99AD0089EF6C /* LeftGOTTableViewCell.swift in Sources */,
 				744E983E1FAE99BE0089EF6C /* RightGOTTableViewCell.swift in Sources */,
+				746F764B1FB2C1C40091FC65 /* DetailViewController.swift in Sources */,
 				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
 			);
