@@ -11,11 +11,20 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchResultsUpdating {
 
     var episodeArray = [GOTEpisode]()
+    var arrayOfSections = [String]()
+    
+    func getSections() {
+        for episode in episodeArray {
+            if !arrayOfSections.contains(String(episode.season)) {
+                arrayOfSections.append(String(episode.season))
+            }
+        }
+    }
     @IBOutlet weak var tableView: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    var filteredepisodeArr: [GOTEpisode] {
+    var filteredEpisodeArr: [GOTEpisode] {
         guard let searchTerm = searchTerm, searchTerm != "" else {
             return episodeArray
         }
@@ -53,6 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     func loadData() {
         self.episodeArray = GOTEpisode.allEpisodes
+        getSections()
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -66,17 +76,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 7
+        return arrayOfSections.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let season = section + 1
-        let episodesInSeason = filteredepisodeArr.filter{$0.season == season}
+        let episodesInSeason = filteredEpisodeArr.filter{$0.season == season}
         return episodesInSeason.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let season = indexPath.section + 1
-        let episodesInSeason = filteredepisodeArr.filter{$0.season == season}
+        let episodesInSeason = filteredEpisodeArr.filter{$0.season == season}
         
         let episode = episodesInSeason[indexPath.row]
         guard episode.season % 2 == 0 else {
@@ -95,7 +105,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return episodeCell
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         let season = section + 1
         return "Season \(season)"
     }
@@ -103,7 +112,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         
-        var currentSeason = filteredepisodeArr.filter{$0.season == tableView.indexPathForSelectedRow!.section + 1 }
+        var currentSeason = filteredEpisodeArr.filter{$0.season == tableView.indexPathForSelectedRow!.section + 1 }
 //        navigationController?.dismiss(animated: false, completion: nil)
         switch segue.identifier! {
         case "leftSegue":
