@@ -9,10 +9,16 @@ import UIKit
 
 extension GOTViewController: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
-    //MARK: - TableView Controller Delegates
+    //MARK: - TableView Controller
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return gotSeasonxEpisodes.count
+        let numberOfSection: Int
+        if self.searchTerm == nil || self.searchTerm == "" {
+            numberOfSection = gotSeasonxEpisodes.count
+        } else {
+            numberOfSection = 1
+        }
+        return numberOfSection
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -20,22 +26,43 @@ extension GOTViewController: UITableViewDataSource, UITableViewDelegate, UISearc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gotSeasonxEpisodes[section].episodes.count
+        let numberOfRowInSection: Int
+        if self.searchTerm == nil || self.searchTerm == "" {
+            numberOfRowInSection = gotSeasonxEpisodes[section].episodes.count
+        } else {
+            numberOfRowInSection = filteredEpisodes.count
+        }
+        return numberOfRowInSection
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Season: \(gotSeasonxEpisodes[section].season)"
+        var titleOfSection = ""
+        if self.searchTerm == nil || self.searchTerm == "" {
+            titleOfSection = "Season: \(gotSeasonxEpisodes[section].season)"
+        } else {
+            titleOfSection = ""
+        }
+        return titleOfSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let gotEpisode = gotSeasonxEpisodes[indexPath.section].episodes[indexPath.row]
-        let gotSection = gotSeasonxEpisodes[indexPath.section].season
-        let cellLocation = gotSection % 2 == 0 ? "Table Cell Right": "Table Cell Left"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellLocation, for: indexPath) as? GOTTableViewCell
-        cell?.gotMediumImage.image = UIImage(named: gotEpisode.mediumImageID)
-        cell?.gotEpisode.text = gotEpisode.name
-        cell?.gotSeasonEpisodeTag.text = "S: \(gotEpisode.season) E: \(gotEpisode.number)"
-        return cell!
+        if self.searchTerm == nil || self.searchTerm == "" {
+            let gotEpisode = gotSeasonxEpisodes[indexPath.section].episodes[indexPath.row]
+            let gotSection = gotSeasonxEpisodes[indexPath.section].season
+            let cellLocation = gotSection % 2 == 0 ? "Table Cell Right": "Table Cell Left"
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellLocation, for: indexPath) as? GOTTableViewCell
+            cell?.gotMediumImage.image = UIImage(named: gotEpisode.mediumImageID)
+            cell?.gotEpisode.text = gotEpisode.name
+            cell?.gotSeasonEpisodeTag.text = "S: \(gotEpisode.season) E: \(gotEpisode.number)"
+            return cell!
+        } else {
+            let gotEpisode = filteredEpisodes[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Table Cell Right", for: indexPath) as? GOTTableViewCell
+            cell?.gotMediumImage.image = UIImage(named: gotEpisode.mediumImageID)
+            cell?.gotEpisode.text = gotEpisode.name
+            cell?.gotSeasonEpisodeTag.text = "S: \(gotEpisode.season) E: \(gotEpisode.number)"
+            return cell!
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,16 +76,16 @@ extension GOTViewController: UITableViewDataSource, UITableViewDelegate, UISearc
     
     
     //MARK: - SearchBar Delegate Methods
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        self.searchTerm = searchBar.text
-//        print("The user pressed seach!")
-//    }
-//
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        self.searchTerm = searchText
-//    }
-//
-//    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-//        self.gotTableView.reloadData()
-//    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchTerm = searchBar.text
+        //print("The user pressed seach!")
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchTerm = searchText
+    }
+
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        self.gotTableView.reloadData()
+    }
 }
