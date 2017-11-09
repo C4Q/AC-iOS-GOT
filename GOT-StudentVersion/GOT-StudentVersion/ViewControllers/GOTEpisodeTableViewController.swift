@@ -19,11 +19,7 @@ class GOTEpisodeTableViewController: UIViewController, UITableViewDataSource, UI
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-
-        //set the array
-        //episodes = GOTEpisode.allEpisodes
-        // Do any additional setup after loading the view.
-    }
+}
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -88,18 +84,6 @@ class GOTEpisodeTableViewController: UIViewController, UITableViewDataSource, UI
             let episode = season.episodes[indexPath.row]
             
             detailVC.episode = episode
-        
-            // get the indexpath of the selected cell
-            // get the correct episode from episodes
-            
-            // get the desination ViewController from the segue as? DetailVC
-            
-            // the the episode in the DetailVC
-//            if let detailVC = segue.destination as? EpisodeDetailViewController {
-//                // this is wrong. Need to pass the correct episode
-//                detailVC.episode = episodes[0]
-//            }
-        
     }
     
 }

@@ -25,11 +25,6 @@ class EpisodeDetailViewController: UIViewController {
         super.viewDidLoad()
         setUpScreen()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        setUpScreen()
-//    }
 
     func setUpScreen() {
         imageView.image = UIImage(named: String(episode.originalImageID))
@@ -41,7 +36,5 @@ class EpisodeDetailViewController: UIViewController {
         descriptionTextView.text = episode.summary
         
         navigationItem.title = episode.name
-        
-        // set all properties like labels and stuff from episode
     }
 }
