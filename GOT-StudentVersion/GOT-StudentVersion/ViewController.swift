@@ -49,7 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        definesPresentationContext = true
+        definesPresentationContext = true ///StackOverflow
         self.tableView.delegate = self
         self.tableView.dataSource = self
         loadData()
@@ -83,6 +83,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let episodesInSeason = filteredEpisodeArr.filter{$0.season == season}
         return episodesInSeason.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let season = indexPath.section + 1
@@ -104,6 +105,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         return episodeCell
     }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let season = section + 1
         return "Season \(season)"
@@ -111,9 +113,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
         var currentSeason = filteredEpisodeArr.filter{$0.season == tableView.indexPathForSelectedRow!.section + 1 }
-//        navigationController?.dismiss(animated: false, completion: nil)
         switch segue.identifier! {
         case "leftSegue":
             if let destination = segue.destination as? SummaryViewController {
