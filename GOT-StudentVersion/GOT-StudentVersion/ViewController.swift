@@ -8,18 +8,129 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchResultsUpdating {
 
+    var episodeArray = [GOTEpisode]()
+    var arrayOfSections = [String]()
+    
+    func getSections() {
+        for episode in episodeArray {
+            if !arrayOfSections.contains(String(episode.season)) {
+                arrayOfSections.append(String(episode.season))
+            }
+        }
+    }
+    @IBOutlet weak var tableView: UITableView!
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var filteredEpisodeArr: [GOTEpisode] {
+        guard let searchTerm = searchTerm, searchTerm != "" else {
+            return episodeArray
+        }
+        guard let scopeTitles = self.searchController.searchBar.scopeButtonTitles else {
+            return episodeArray
+        }
+        let selectedIndex = self.searchController.searchBar.selectedScopeButtonIndex
+        let filteringCriteria = scopeTitles[selectedIndex]
+        switch filteringCriteria {
+        case "Title":
+            return episodeArray.filter{$0.name.lowercased().contains(searchTerm.lowercased())}
+        case "Description":
+            return episodeArray.filter{$0.summary.lowercased().contains(searchTerm.lowercased())}
+        default:
+            return episodeArray
+        }
+    }
+    var searchTerm: String? {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        definesPresentationContext = true ///StackOverflow
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        loadData()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search Episodes"
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        searchController.searchBar.scopeButtonTitles = ["Title", "Description"]
+        searchController.searchBar.delegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func loadData() {
+        self.episodeArray = GOTEpisode.allEpisodes
+        getSections()
     }
-
-
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        self.searchTerm = searchController.searchBar.text
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchTerm = searchBar.text
+    }
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        tableView.reloadData()
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return arrayOfSections.count
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let season = section + 1
+        let episodesInSeason = filteredEpisodeArr.filter{$0.season == season}
+        return episodesInSeason.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let season = indexPath.section + 1
+        let episodesInSeason = filteredEpisodeArr.filter{$0.season == season}
+        
+        let episode = episodesInSeason[indexPath.row]
+        guard episode.season % 2 == 0 else {
+        let episodeCell = tableView.dequeueReusableCell(withIdentifier: "Episode Cell Left", for: indexPath)
+            if let cell = episodeCell as? LeftTableViewCell {
+                cell.leftCell(to: episode)
+                return cell
+            }
+        return episodeCell
+    }
+        let episodeCell = tableView.dequeueReusableCell(withIdentifier: "Episode Cell Right", for: indexPath)
+        if let cell = episodeCell as? RightTableViewCell {
+            cell.rightCell(to: episode)
+            return cell
+        }
+        return episodeCell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let season = section + 1
+        return "Season \(season)"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        var currentSeason = filteredEpisodeArr.filter{$0.season == tableView.indexPathForSelectedRow!.section + 1 }
+        switch segue.identifier! {
+        case "leftSegue":
+            if let destination = segue.destination as? SummaryViewController {
+                let selectedRow = tableView.indexPathForSelectedRow!.row
+                let selectedEpisode = currentSeason[selectedRow]
+                destination.episodeDetails = selectedEpisode
+            }
+        case "rightSegue":
+            if let destination = segue.destination as? SummaryViewController {
+                let selectedRow = tableView.indexPathForSelectedRow!.row
+                let selectedEpisode = currentSeason[selectedRow]
+                destination.episodeDetails = selectedEpisode
+            }
+        default:
+            break
+        }
+    }
+    
 }
 
