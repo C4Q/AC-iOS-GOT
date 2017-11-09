@@ -17,38 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gotSeasons[section].count
     }
-//        return allGOTEpisodes.count
-//        var numberOfRows: Int
-//        switch section {
-//        case 0:
-//            //season 1
-//            let theSeason1 = seasons.filter { $0.season == 1 }
-//            numberOfRows = theSeason1.count
-//        case 1:
-//            let theSeason2 = seasons.filter { $0.season == 2 }
-//            numberOfRows = theSeason2.count
-//        case 2:
-//            let theSeason3 = seasons.filter { $0.season == 3 }
-//            numberOfRows = theSeason3.count
-//        case 3:
-//            let theSeason4 = seasons.filter { $0.season == 4 }
-//            numberOfRows = theSeason4.count
-//        case 4:
-//            let theSeason5 = seasons.filter { $0.season ==  5 }
-//            numberOfRows = theSeason5.count
-//        case 5:
-//            let theSeason6 = seasons.filter { $0.season ==  6 }
-//            numberOfRows = theSeason6.count
-//        case 6:
-//            let theSeason7 = seasons.filter { $0.season == 7 }
-//            numberOfRows = theSeason7.count
-//        default:
-//            numberOfRows = 0
-//        }
-//        print(numberOfRows)
-//        return numberOfRows
 //
-//    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -139,10 +108,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
 
-//ignore this
-//func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//            let section = section + 1
-//            return "Season: " + section.description
-// this is setting up the header of the sections. since sections start at 0, I created a variable section that just adds 1 to whatever section its looking at so it spits out the right number
-//        }
-//
