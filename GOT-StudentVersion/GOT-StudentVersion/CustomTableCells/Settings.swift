@@ -19,5 +19,5 @@ struct Settings {
     static var blue:Float = 1
     static var currentFont:String = "Arial"
     static var textCase: TextCase = .lower
-    static var fonts = ["Arial", "Sans Serif", "Times New Roman", "HelveticaNeue-Thin"]
+    static var fonts = ["ArialMT", "Sans Serif", "Times New Roman-Bold", "HelveticaNeue-Bold", "AlNile-Bold", "AmericanTypewriter", "AppleColorEmoji", "AppleSDGothicNeo-SemiBold", "AvenirNextCondensed-Bold", "Bodoni Ornaments", "Zapfino"]
 }

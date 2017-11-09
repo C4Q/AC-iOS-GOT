@@ -29,12 +29,8 @@ class SettingsViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     }
     //--PickerView Methods End
     @IBOutlet weak var blueSlider: UISlider!
-    
     @IBOutlet weak var greenSlider: UISlider!
-    
-
     @IBOutlet weak var redSlider: UISlider!
-    
     @IBAction func inputRedSlider(_ sender: UISlider) {
         Settings.red = sender.value
     }
@@ -54,6 +50,7 @@ class SettingsViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         self.greenSlider.value = Settings.green
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
+        self.myPickerView.selectRow(Settings.fonts.count/2, inComponent: 0, animated: true)
         // Do any additional setup after loading the view.
     }
 

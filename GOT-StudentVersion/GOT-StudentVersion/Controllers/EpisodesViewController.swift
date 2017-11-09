@@ -89,6 +89,8 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
                 episodeCell.EpisodeNameAndSeason.text = "S:\(episodeSetup.season) E:\(episodeSetup.number)"
                 episodeCell.backgroundColor = UIColor(displayP3Red: CGFloat(Settings.red), green: CGFloat(Settings.green), blue: CGFloat(Settings.blue), alpha: 1)
                 episodeCell.EpisodeName.font = UIFont(name: Settings.currentFont, size: 16)
+                episodeCell.EpisodeNameAndSeason.font = UIFont(name: Settings.currentFont, size: 16)
+
                 return episodeCell
             }
             return cell
@@ -106,6 +108,8 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
                 episodeCell.episodeNameAndSeason.text = "S:\(episodeSetup.season) E:\(episodeSetup.number)"
                 episodeCell.backgroundColor = UIColor(displayP3Red: CGFloat(Settings.red), green: CGFloat(Settings.green), blue: CGFloat(Settings.blue), alpha: 1)
                 episodeCell.episodeName.font = UIFont(name: Settings.currentFont, size: 16)
+                episodeCell.episodeNameAndSeason.font = UIFont(name: Settings.currentFont, size: 16)
+
                 return episodeCell
             }
             return cell
@@ -122,13 +126,16 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
 //    override func viewDidLayoutSubviews() {
+//    for soft changes
 //        self.gotTableView.reloadData()
 //    }
     override func viewWillLayoutSubviews() {
+                // for hard changes like constraints
         print(Settings.currentFont)
         self.gotTableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
+
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
