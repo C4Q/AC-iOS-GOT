@@ -25,11 +25,15 @@ class DetailedViewController: UIViewController {
         super.viewDidLoad()
         imageView.image = UIImage(named: thisEpisode.originalImageID)
         titleLabel.text = thisEpisode.name
-        seasonLabel.text = String(thisEpisode.season)
-        episodeLabel.text = String(thisEpisode.number)
-        runtime.text = String(thisEpisode.runtime)
-        airdate.text = thisEpisode.airdate
-        detailedTextScroll.text = thisEpisode.summary
+        seasonLabel.text = "Season: \(String(thisEpisode.season))"
+        episodeLabel.text = "Episode: \(String(thisEpisode.number))"
+        runtime.text = "Runtime: \(String(thisEpisode.runtime))"
+        airdate.text = "Airdate: \(thisEpisode.airdate)"
+        detailedTextScroll.text =
+        """
+        Summary:
+        \(thisEpisode.summary)
+        """
         
         // Do any additional setup after loading the view.
     }

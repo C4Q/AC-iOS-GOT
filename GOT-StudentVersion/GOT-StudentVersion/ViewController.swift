@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     var gotArr = GOTEpisode.allEpisodes
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
    
 
@@ -20,6 +21,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+
      
     }
 
@@ -46,13 +48,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
     }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as! DetailedViewController? {
-//            //destination. = self.
-//            print("trying to go from cell to details")
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailedViewController {
+            let selectedRow = tableView.indexPathForSelectedRow?.row //What row did you select?
+            let selectedEpisode = gotArr[selectedRow!] //how to get your episode
+            destination.thisEpisode = selectedEpisode // sending over info to detailedvc, selects specific episode info
+            
+            
+            
+        }
+    }
 
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
+        print("Search button clicked!")
+    }
+    
+    
+    
+    
 }
 
