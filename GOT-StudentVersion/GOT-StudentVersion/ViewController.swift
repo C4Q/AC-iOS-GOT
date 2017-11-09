@@ -20,13 +20,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(selectedEpisode)
         updateViews(for: selectedEpisode)
     }
     
     func updateViews(for episode: GOTEpisode) {
-        //self.detailImageView.image
+        self.detailImageView.image = UIImage(named: selectedEpisode.mediumImageID)
         self.episodeLabel.text = "Episode: \(selectedEpisode.name)"
         self.seasonLabel.text = "Season: \(selectedEpisode.season)"
+        self.releasedLabel.text = "Released: \(selectedEpisode.airdate)"
+        self.runtimeLabel.text = "Runtime: \(selectedEpisode.runtime)"
+        self.descriptionTextBox.text = String(selectedEpisode.summary)
     }
 
 }

@@ -20,7 +20,6 @@ class TableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 7
     }
 
@@ -30,6 +29,7 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: indexPath.section % 2 == 0 ? "Left Cell" : "Right Cell", for: indexPath)
+        
         if let cell = cell as? TableViewCell {
             cell.episodeTextLabel?.text = episodeArr.filter{$0.season == indexPath.section + 1}[indexPath.row].name
             cell.seasonAndEpisodeTextLabel?.text = "S:" + "\(episodeArr.filter{$0.season == indexPath.section + 1}[indexPath.row].season) " + "E:" + "\(episodeArr.filter{$0.season == indexPath.section + 1}[indexPath.row].number)"
@@ -38,14 +38,22 @@ class TableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Season \(section + 1)"
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //if let cell = sender as? UITableViewCell {
-        if segue.identifier == "Details" {
-            if let destination = segue.destination as? ViewController {
-                destination.selectedEpisode = episodeArr[tableView.indexPathForSelectedRow!.row]
-                //}
+        
+        if let cellSelected =  sender as? UITableViewCell {
+            
+            if segue.identifier == "Details" {
+                let season = ((tableView.indexPath(for: cellSelected)?.section)! + 1)
+                let episode = ((tableView.indexPath(for: cellSelected)?.row)! + 1)
+                
+                if let destination = segue.destination as? ViewController {
+                    destination.selectedEpisode = episodeArr.filter{$0.season == season}[episode - 1]
+                }
             }
         }
     }
-    
 }
