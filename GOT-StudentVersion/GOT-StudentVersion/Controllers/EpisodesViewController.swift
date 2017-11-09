@@ -88,7 +88,7 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
                 episodeCell.EpisodeSmallPoster.image = UIImage(named: episodeSetup.mediumImageID)
                 episodeCell.EpisodeNameAndSeason.text = "S:\(episodeSetup.season) E:\(episodeSetup.number)"
                 episodeCell.backgroundColor = UIColor(displayP3Red: CGFloat(Settings.red), green: CGFloat(Settings.green), blue: CGFloat(Settings.blue), alpha: 1)
-                episodeCell.textLabel?.font = UIFont(name: Settings.currentFont, size: 18)
+                episodeCell.EpisodeName.font = UIFont(name: Settings.currentFont, size: 16)
                 return episodeCell
             }
             return cell
@@ -105,8 +105,7 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
                 episodeCell.episodePoster.image = UIImage(named: episodeSetup.mediumImageID)
                 episodeCell.episodeNameAndSeason.text = "S:\(episodeSetup.season) E:\(episodeSetup.number)"
                 episodeCell.backgroundColor = UIColor(displayP3Red: CGFloat(Settings.red), green: CGFloat(Settings.green), blue: CGFloat(Settings.blue), alpha: 1)
-                episodeCell.textLabel?.font = UIFont(name: Settings.currentFont, size: 18)
-                
+                episodeCell.episodeName.font = UIFont(name: Settings.currentFont, size: 16)
                 return episodeCell
             }
             return cell
@@ -122,7 +121,11 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidLayoutSubviews() {
+//    override func viewDidLayoutSubviews() {
+//        self.gotTableView.reloadData()
+//    }
+    override func viewWillLayoutSubviews() {
+        print(Settings.currentFont)
         self.gotTableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
