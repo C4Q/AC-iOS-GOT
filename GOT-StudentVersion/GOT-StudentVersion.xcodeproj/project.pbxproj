@@ -13,6 +13,9 @@
 		54B11AC11FABCE48004E1EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC01FABCE48004E1EAF /* Assets.xcassets */; };
 		54B11AC41FABCE48004E1EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */; };
 		54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */; };
+		C46AAB091FACBB5300C194BA /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46AAB081FACBB5300C194BA /* EpisodeDetailViewController.swift */; };
+		C487A4061FABF92200596D44 /* GOTImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C487A4051FABF92200596D44 /* GOTImageTableViewCell.swift */; };
+		C4FA30B41FB0BE860050DF48 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FA30B31FB0BE860050DF48 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		54B11AC31FABCE48004E1EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54B11AC51FABCE48004E1EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
+		C46AAB081FACBB5300C194BA /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
+		C487A4051FABF92200596D44 /* GOTImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTImageTableViewCell.swift; sourceTree = "<group>"; };
+		C4FA30B31FB0BE860050DF48 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +62,11 @@
 		54B11AB81FABCE47004E1EAF /* GOT-StudentVersion */ = {
 			isa = PBXGroup;
 			children = (
+				C487A4071FABF92700596D44 /* Table View Cells */,
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
-				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
-				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
+				C4C744DC1FB16A2C00D1CA53 /* View Controllers */,
+				C4FA30B51FB0BE8A0050DF48 /* Styling */,
+				C4C744DD1FB16A3900D1CA53 /* Model */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
@@ -73,6 +81,39 @@
 				54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C487A4071FABF92700596D44 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C487A4051FABF92200596D44 /* GOTImageTableViewCell.swift */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		C4C744DC1FB16A2C00D1CA53 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
+				C46AAB081FACBB5300C194BA /* EpisodeDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C4C744DD1FB16A3900D1CA53 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C4FA30B51FB0BE8A0050DF48 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				C4FA30B31FB0BE860050DF48 /* Colors.swift */,
+			);
+			path = Styling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +188,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C487A4061FABF92200596D44 /* GOTImageTableViewCell.swift in Sources */,
+				C4FA30B41FB0BE860050DF48 /* Colors.swift in Sources */,
+				C46AAB091FACBB5300C194BA /* EpisodeDetailViewController.swift in Sources */,
 				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
 				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
