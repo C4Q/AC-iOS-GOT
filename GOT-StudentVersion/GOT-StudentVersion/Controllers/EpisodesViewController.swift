@@ -88,8 +88,8 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
                 episodeCell.EpisodeSmallPoster.image = UIImage(named: episodeSetup.mediumImageID)
                 episodeCell.EpisodeNameAndSeason.text = "S:\(episodeSetup.season) E:\(episodeSetup.number)"
                 episodeCell.backgroundColor = UIColor(displayP3Red: CGFloat(Settings.red), green: CGFloat(Settings.green), blue: CGFloat(Settings.blue), alpha: 1)
-                episodeCell.EpisodeName.font = UIFont(name: Settings.currentFont, size: 16)
-                episodeCell.EpisodeNameAndSeason.font = UIFont(name: Settings.currentFont, size: 16)
+                episodeCell.EpisodeName.font = UIFont(name: Settings.currentFont, size: CGFloat(Settings.fontSize))
+                episodeCell.EpisodeNameAndSeason.font = UIFont(name: Settings.currentFont, size: CGFloat(Settings.fontSize))
 
                 return episodeCell
             }
@@ -107,8 +107,8 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
                 episodeCell.episodePoster.image = UIImage(named: episodeSetup.mediumImageID)
                 episodeCell.episodeNameAndSeason.text = "S:\(episodeSetup.season) E:\(episodeSetup.number)"
                 episodeCell.backgroundColor = UIColor(displayP3Red: CGFloat(Settings.red), green: CGFloat(Settings.green), blue: CGFloat(Settings.blue), alpha: 1)
-                episodeCell.episodeName.font = UIFont(name: Settings.currentFont, size: 16)
-                episodeCell.episodeNameAndSeason.font = UIFont(name: Settings.currentFont, size: 16)
+                episodeCell.episodeName.font = UIFont(name: Settings.currentFont, size: CGFloat(Settings.fontSize))
+                episodeCell.episodeNameAndSeason.font = UIFont(name: Settings.currentFont, size: CGFloat(Settings.fontSize))
 
                 return episodeCell
             }

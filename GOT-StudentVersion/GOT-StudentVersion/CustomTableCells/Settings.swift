@@ -20,4 +20,6 @@ struct Settings {
     static var currentFont:String = "Arial"
     static var textCase: TextCase = .lower
     static var fonts = ["ArialMT", "Sans Serif", "Times New Roman-Bold", "HelveticaNeue-Bold", "AlNile-Bold", "AmericanTypewriter", "AppleColorEmoji", "AppleSDGothicNeo-SemiBold", "AvenirNextCondensed-Bold", "Bodoni Ornaments", "Zapfino"]
+    static var fontSizes = Array(1...30)
+    static var fontSize = 14
 }

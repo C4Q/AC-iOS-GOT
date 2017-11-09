@@ -13,19 +13,39 @@ class SettingsViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     // Mark: -- Picker View methods Required && delegate and data source needs to be intialized in the viewDidLoad
     let fonts = Settings.fonts
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return fonts.count
+        switch component {
+        case 1:
+            return fonts.count
+        default:
+            return Settings.fontSizes.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(fonts[row])"
+        switch component {
+        case 1:
+            return "\(fonts[row])"
+        case 0:
+            return "\(Settings.fontSizes[row])"
+        default:
+            return ""
+        }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        Settings.currentFont = fonts[row]
-        print("row has been selected \(fonts[row])")
+        switch component {
+        case 1:
+            Settings.currentFont = fonts[row]
+            print("row has been selected \(fonts[row])")
+        case 0:
+            Settings.fontSize = Settings.fontSizes[row]
+        default:
+            break
+        }
+
     }
     //--PickerView Methods End
     @IBOutlet weak var blueSlider: UISlider!

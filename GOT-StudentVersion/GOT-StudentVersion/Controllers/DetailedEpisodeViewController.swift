@@ -39,7 +39,6 @@ class DetailedEpisodeViewController: UIViewController {
         airDate.text = "Airdate: \(episode.airdate)"
         episodeDescription.text = episode.summary
         episodeId.text = "Episode: \(episode.id)"
-        
         // Do any additional setup after loading the view.
     }
 
