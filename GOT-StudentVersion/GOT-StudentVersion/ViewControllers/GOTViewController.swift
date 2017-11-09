@@ -57,7 +57,7 @@ class GOTViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         loadGOTData()
         /*
          https://stackoverflow.com/questions/39438606/change-navigation-bar-title-font-swift
-         used to chande the font of the navigation bar title to make UI consistent
+         used to change the font of the navigation bar title to make UI consistent
          */
         guard let navController = self.navigationController, let navBarFont = UIFont(name: "Gurmukhi MN", size: 22) else {
             return

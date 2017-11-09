@@ -53,7 +53,7 @@
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OQE-YY-WLZ">
                                 <rect key="frame" x="0.0" y="164" width="375" height="503"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.8789740801" green="0.85500437019999997" blue="0.84634602069999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Left GOT Cell" rowHeight="100" id="IlU-DY-P0s" userLabel="Left Cell" customClass="LeftGOTTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
@@ -195,37 +195,37 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Episode Summary Here..." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Rzf-Rk-Ti7">
-                                <rect key="frame" x="8" y="466" width="359" height="191"/>
+                                <rect key="frame" x="8" y="453" width="359" height="204"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="season" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1G-Vi-3hN">
-                                <rect key="frame" x="16" y="321" width="343" height="24"/>
+                                <rect key="frame" x="16" y="320" width="343" height="24"/>
                                 <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="episode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPk-rw-x0W">
-                                <rect key="frame" x="16" y="353" width="343" height="24"/>
+                                <rect key="frame" x="16" y="348" width="343" height="24"/>
                                 <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="runtime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbs-KX-pbY">
-                                <rect key="frame" x="16" y="385" width="343" height="24"/>
+                                <rect key="frame" x="16" y="376" width="343" height="24"/>
                                 <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="airdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbk-cg-KvM">
-                                <rect key="frame" x="16" y="417" width="343" height="24"/>
+                                <rect key="frame" x="16" y="404" width="343" height="24"/>
                                 <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PJ3-hs-lec">
-                                <rect key="frame" x="8" y="265" width="351" height="31"/>
+                                <rect key="frame" x="8" y="273" width="351" height="31"/>
                                 <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -239,19 +239,19 @@
                             <constraint firstItem="vvG-nw-iwO" firstAttribute="trailing" secondItem="PJ3-hs-lec" secondAttribute="trailing" constant="16" id="6wi-GA-OkM"/>
                             <constraint firstItem="vvG-nw-iwO" firstAttribute="trailing" secondItem="bbs-KX-pbY" secondAttribute="trailing" constant="16" id="Csn-yS-VSv"/>
                             <constraint firstItem="vvG-nw-iwO" firstAttribute="trailing" secondItem="jPk-rw-x0W" secondAttribute="trailing" constant="16" id="Edf-s8-6uI"/>
-                            <constraint firstItem="Zbk-cg-KvM" firstAttribute="top" secondItem="bbs-KX-pbY" secondAttribute="bottom" constant="8" id="Kl2-wg-1eN"/>
-                            <constraint firstItem="bbs-KX-pbY" firstAttribute="top" secondItem="jPk-rw-x0W" secondAttribute="bottom" constant="8" id="Q8U-ho-Fds"/>
+                            <constraint firstItem="Zbk-cg-KvM" firstAttribute="top" secondItem="bbs-KX-pbY" secondAttribute="bottom" constant="4" id="Kl2-wg-1eN"/>
+                            <constraint firstItem="bbs-KX-pbY" firstAttribute="top" secondItem="jPk-rw-x0W" secondAttribute="bottom" constant="4" id="Q8U-ho-Fds"/>
                             <constraint firstItem="vvG-nw-iwO" firstAttribute="trailing" secondItem="Rzf-Rk-Ti7" secondAttribute="trailing" constant="8" id="Sx4-X1-s1G"/>
                             <constraint firstItem="Rzf-Rk-Ti7" firstAttribute="top" secondItem="Zbk-cg-KvM" secondAttribute="bottom" constant="25" id="Vos-jd-OVQ"/>
                             <constraint firstItem="jPk-rw-x0W" firstAttribute="leading" secondItem="vvG-nw-iwO" secondAttribute="leading" constant="16" id="aDC-Aq-pZm"/>
                             <constraint firstItem="vvG-nw-iwO" firstAttribute="trailing" secondItem="Zbk-cg-KvM" secondAttribute="trailing" constant="16" id="c7s-1S-uzi"/>
                             <constraint firstItem="Zbk-cg-KvM" firstAttribute="leading" secondItem="vvG-nw-iwO" secondAttribute="leading" constant="16" id="eKI-Z8-VLr"/>
-                            <constraint firstItem="PJ3-hs-lec" firstAttribute="top" secondItem="iVv-RH-hky" secondAttribute="bottom" constant="8" id="fL4-Xs-VPo"/>
+                            <constraint firstItem="PJ3-hs-lec" firstAttribute="top" secondItem="iVv-RH-hky" secondAttribute="bottom" constant="16" id="fL4-Xs-VPo"/>
                             <constraint firstItem="a1G-Vi-3hN" firstAttribute="leading" secondItem="vvG-nw-iwO" secondAttribute="leading" constant="16" id="ipw-OU-pW8"/>
                             <constraint firstItem="vvG-nw-iwO" firstAttribute="trailing" secondItem="iVv-RH-hky" secondAttribute="trailing" constant="8" id="lkB-KX-MiG"/>
-                            <constraint firstItem="jPk-rw-x0W" firstAttribute="top" secondItem="a1G-Vi-3hN" secondAttribute="bottom" constant="8" id="lx8-x9-eBm"/>
+                            <constraint firstItem="jPk-rw-x0W" firstAttribute="top" secondItem="a1G-Vi-3hN" secondAttribute="bottom" constant="4" id="lx8-x9-eBm"/>
                             <constraint firstItem="vvG-nw-iwO" firstAttribute="bottom" secondItem="Rzf-Rk-Ti7" secondAttribute="bottom" constant="10" id="oHL-rQ-51y"/>
-                            <constraint firstItem="a1G-Vi-3hN" firstAttribute="top" secondItem="PJ3-hs-lec" secondAttribute="bottom" constant="25" id="ooZ-vO-FcB"/>
+                            <constraint firstItem="a1G-Vi-3hN" firstAttribute="top" secondItem="PJ3-hs-lec" secondAttribute="bottom" constant="16" id="ooZ-vO-FcB"/>
                             <constraint firstItem="Rzf-Rk-Ti7" firstAttribute="leading" secondItem="vvG-nw-iwO" secondAttribute="leading" constant="8" id="pyj-Pi-hSE"/>
                             <constraint firstItem="bbs-KX-pbY" firstAttribute="leading" secondItem="vvG-nw-iwO" secondAttribute="leading" constant="16" id="syb-I7-7AW"/>
                             <constraint firstItem="iVv-RH-hky" firstAttribute="top" secondItem="vvG-nw-iwO" secondAttribute="top" constant="8" id="x4L-2v-AFE"/>
@@ -270,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wv-iE-3Mm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933.33333333333337" y="86.413043478260875"/>
+            <point key="canvasLocation" x="932" y="85.907046476761622"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
