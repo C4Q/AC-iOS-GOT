@@ -63,5 +63,49 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 			destination.episode = episode
 		}
 	}
+	
+	//-----------------------------------------------------------------------------------------------------
+	/*
+	var filteredepisodesArr: [GOTEpisode] {
+		guard let searchTerm = searchTerm, searchTerm != "" else {
+			return episodesArr
+		}
+		guard let scopeTitles = self.searchBar.scopeButtonTitles else {
+			return episodesArr
+		}
+		let selectedIndex = self.searchBar.selectedScopeButtonIndex
+		let filteringCriteria = scopeTitles[selectedIndex]
+		switch filteringCriteria {
+		case "Title":
+			return episodesArr.filter{(episode) in
+				episode.name.lowercased().contains(searchTerm.lowercased())
+			}
+		case "Description":
+			return episodesArr.filter{(episode) in
+				episode.location.lowercased().contains(searchTerm.lowercased())
+			}
+		default:
+			return episodesArr
+		}
+	}
+	
+	var searchTerm: String? {//computed property
+		didSet { //create a property observer to let us know when the search term changes, reload the data
+			self.tableView.reloadData() //whenever we change the search term, reload the data
+		}
+	}
+	
+	//MARK: - Search Bar Delegate Methods
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		self.searchTerm = searchBar.text
+		print("The user pressed search!")
+		searchBar.resignFirstResponder()
+	}
+	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+		self.searchTerm = searchText
+	}
+	*/
+	
+	
 }
 
