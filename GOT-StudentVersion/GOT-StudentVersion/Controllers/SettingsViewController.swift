@@ -8,7 +8,29 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+    // Mark: -- Picker View methods Required && delegate and data source needs to be intialized in the viewDidLoad
+    let fonts = Settings.fonts
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return fonts.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(fonts[row])"
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("row has been selected \(fonts[row])")
+    }
+    //--PickerView Methods End
+    
+    
+    @IBOutlet weak var myPickerView: UIPickerView!
+    
+    
 
     @IBOutlet weak var blueSlider: UISlider!
     
@@ -34,6 +56,8 @@ class SettingsViewController: UIViewController {
         self.blueSlider.value = Settings.blue
         self.redSlider.value = Settings.red
         self.greenSlider.value = Settings.green
+        self.myPickerView.delegate = self
+        self.myPickerView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
