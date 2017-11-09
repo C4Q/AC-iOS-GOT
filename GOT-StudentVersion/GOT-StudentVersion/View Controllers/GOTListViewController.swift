@@ -34,7 +34,6 @@ class GOTListViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.view.endEditing(true)
     }
     
-    //Set Up
     func setUpDataSource() {
         let numberOfSeasons = GOTEpisode.allEpisodes[GOTEpisode.allEpisodes.count-1].season
         for currentSeason in 1...numberOfSeasons {
@@ -53,7 +52,7 @@ class GOTListViewController: UIViewController, UITableViewDelegate, UITableViewD
         searchController.searchBar.showsScopeBar = true
         searchController.searchBar.backgroundColor = .black
         searchController.searchBar.tintColor = .white
-
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
     }
     
     //Table View
@@ -73,7 +72,6 @@ class GOTListViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         if isFiltering() {
             return nil
         }
@@ -93,7 +91,6 @@ class GOTListViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //if search bar is used
         if isFiltering() {
             let filteredRowToSetUp = indexPath.row
             let cell = tableView.dequeueReusableCell(withIdentifier: "GOTFilteredCell")!
@@ -132,17 +129,14 @@ class GOTListViewController: UIViewController, UITableViewDelegate, UITableViewD
  
     //Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //Identify sender
         guard let cell = sender as? UITableViewCell else {
             return
         }
         
-        //Identify current cell
         guard let currentIndexPath = GOTTableView.indexPath(for: cell) else {
             return
         }
         
-        //Identify segue identifer and destination VC
         if segue.identifier == "DetailedViewSegue", let destinationVC = segue.destination as? GOTDetailedViewController {
             if isFiltering() {
                 destinationVC.episode = filteredEpisodes[currentIndexPath.row]
@@ -181,19 +175,14 @@ extension GOTListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         let currentScope = searchController.searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        
         filterContentForSearchText(searchController.searchBar.text!, scope: currentScope)
     }
 }
 
-//Having the view controller "react" to changes in the search bar
+//Search Bar Delegate Methods
 extension GOTListViewController: UISearchBarDelegate {
-    //Search Bar Delegate Methods
-    
-    //called when user switches scopes in the scope bar
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
     }
 }
 
-//CHANGE TEXT COLOR!!!!

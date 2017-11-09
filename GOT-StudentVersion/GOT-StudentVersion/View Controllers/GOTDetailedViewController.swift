@@ -38,5 +38,6 @@ class GOTDetailedViewController: UIViewController {
         summaryTextView.layer.masksToBounds = true
         summaryTextView.layer.borderWidth = 1
         summaryTextView.layer.borderColor = UIColor.darkGray.cgColor
+
     }
 }
