@@ -8,9 +8,9 @@
 
 import UIKit
 
-class LeftTableViewCell: UITableViewCell {
+class TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var leftImageView: UIImageView!
+    @IBOutlet weak var episodeImageView: UIImageView!
     
     @IBOutlet weak var episodeTextLabel: UILabel!
     
