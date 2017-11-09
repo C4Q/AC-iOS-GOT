@@ -58,34 +58,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kIr-oJ-sOb" userLabel="episodeImageView">
-                                                    <rect key="frame" x="10" y="10" width="140" height="90"/>
+                                                    <rect key="frame" x="8" y="10" width="140" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="LNx-ZK-u3T"/>
                                                         <constraint firstAttribute="width" constant="140" id="ML8-HV-jZu"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="episodeTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmO-z7-RG2" userLabel="episodeTitleLabel">
-                                                    <rect key="frame" x="160" y="24" width="210" height="21"/>
+                                                    <rect key="frame" x="156" y="24" width="210" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S:   E:  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjs-Cr-pop" userLabel="seasonEpisodeLabel">
-                                                    <rect key="frame" x="242.5" y="65" width="46.5" height="21"/>
+                                                    <rect key="frame" x="238.5" y="63" width="46.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MmO-z7-RG2" firstAttribute="leading" secondItem="kIr-oJ-sOb" secondAttribute="trailing" constant="10" id="H5G-5Q-J3b"/>
-                                                <constraint firstItem="MmO-z7-RG2" firstAttribute="bottom" secondItem="kIr-oJ-sOb" secondAttribute="centerY" constant="-10" id="IeO-Da-7Sq"/>
-                                                <constraint firstItem="kIr-oJ-sOb" firstAttribute="leading" secondItem="6bj-vf-1Tr" secondAttribute="leading" constant="10" id="JE4-5E-ciQ"/>
+                                                <constraint firstItem="MmO-z7-RG2" firstAttribute="leading" secondItem="kIr-oJ-sOb" secondAttribute="trailing" constant="8" id="H5G-5Q-J3b" userLabel="episodeTitleLabel.leading = episodeImageView.trailing + 8"/>
+                                                <constraint firstItem="MmO-z7-RG2" firstAttribute="bottom" secondItem="kIr-oJ-sOb" secondAttribute="centerY" constant="-10" id="IeO-Da-7Sq" userLabel="episodeTitleLabel.bottom = episodeImageView.centerY - 8"/>
+                                                <constraint firstItem="kIr-oJ-sOb" firstAttribute="leading" secondItem="6bj-vf-1Tr" secondAttribute="leading" constant="8" id="JE4-5E-ciQ" userLabel="episodeImageView.leading = leading + 8"/>
                                                 <constraint firstItem="bjs-Cr-pop" firstAttribute="centerX" secondItem="MmO-z7-RG2" secondAttribute="centerX" id="gjZ-bV-A5z"/>
-                                                <constraint firstItem="MmO-z7-RG2" firstAttribute="width" secondItem="kIr-oJ-sOb" secondAttribute="width" multiplier="1.5" id="gpl-i8-7zg"/>
+                                                <constraint firstItem="kIr-oJ-sOb" firstAttribute="width" secondItem="MmO-z7-RG2" secondAttribute="width" multiplier="0.666667" id="gpl-i8-7zg"/>
                                                 <constraint firstItem="kIr-oJ-sOb" firstAttribute="centerY" secondItem="6bj-vf-1Tr" secondAttribute="centerY" id="mmS-An-Q3C"/>
                                                 <constraint firstItem="bjs-Cr-pop" firstAttribute="height" secondItem="MmO-z7-RG2" secondAttribute="height" id="rAW-bj-PyL"/>
-                                                <constraint firstItem="bjs-Cr-pop" firstAttribute="top" secondItem="kIr-oJ-sOb" secondAttribute="centerY" constant="10" id="zHV-YE-DbJ"/>
+                                                <constraint firstItem="bjs-Cr-pop" firstAttribute="top" secondItem="kIr-oJ-sOb" secondAttribute="centerY" constant="8" id="zHV-YE-DbJ" userLabel="seasonEpisodeLabel.top = episodeImageView.centerY + 8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -103,34 +103,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ku-ya-tG4" userLabel="episodeImageView">
-                                                    <rect key="frame" x="225" y="10" width="140" height="90"/>
+                                                    <rect key="frame" x="227" y="10" width="140" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="140" id="5SH-jm-9Fy"/>
                                                         <constraint firstAttribute="height" constant="90" id="YPf-BW-zkV"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="episodeTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAb-2d-VeV" userLabel="episodeTitleLabel">
-                                                    <rect key="frame" x="5" y="24" width="210" height="21"/>
+                                                    <rect key="frame" x="9" y="24" width="210" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S:   E:  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAP-Y9-UWC" userLabel="seasonEpisodeLabel">
-                                                    <rect key="frame" x="87.5" y="65" width="46.5" height="21"/>
+                                                    <rect key="frame" x="91.5" y="63" width="46.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="vAb-2d-VeV" firstAttribute="width" secondItem="8ku-ya-tG4" secondAttribute="width" multiplier="1.5" id="DRk-bH-taE"/>
+                                                <constraint firstItem="8ku-ya-tG4" firstAttribute="width" secondItem="vAb-2d-VeV" secondAttribute="width" multiplier="0.666667" id="DRk-bH-taE"/>
                                                 <constraint firstItem="8ku-ya-tG4" firstAttribute="centerY" secondItem="8cP-IC-iuF" secondAttribute="centerY" id="GOP-M6-Khi"/>
-                                                <constraint firstItem="cAP-Y9-UWC" firstAttribute="top" secondItem="8ku-ya-tG4" secondAttribute="centerY" constant="10" id="XqM-Ic-QQl"/>
+                                                <constraint firstItem="cAP-Y9-UWC" firstAttribute="top" secondItem="8ku-ya-tG4" secondAttribute="centerY" constant="8" id="XqM-Ic-QQl" userLabel="seasonEpisodeLabel.top = episodeImageView.centerY + 8"/>
                                                 <constraint firstItem="cAP-Y9-UWC" firstAttribute="centerX" secondItem="vAb-2d-VeV" secondAttribute="centerX" id="ch8-UE-3d0"/>
                                                 <constraint firstItem="cAP-Y9-UWC" firstAttribute="height" secondItem="vAb-2d-VeV" secondAttribute="height" id="jxQ-He-D9y"/>
-                                                <constraint firstItem="vAb-2d-VeV" firstAttribute="bottom" secondItem="8ku-ya-tG4" secondAttribute="centerY" constant="-10" id="wE4-4V-UBS"/>
-                                                <constraint firstItem="8ku-ya-tG4" firstAttribute="leading" secondItem="vAb-2d-VeV" secondAttribute="trailing" constant="10" id="xAY-EM-NV5"/>
-                                                <constraint firstAttribute="trailing" secondItem="8ku-ya-tG4" secondAttribute="trailing" constant="10" id="zLh-pd-1oH"/>
+                                                <constraint firstItem="vAb-2d-VeV" firstAttribute="bottom" secondItem="8ku-ya-tG4" secondAttribute="centerY" constant="-10" id="wE4-4V-UBS" userLabel="episodeTitleLabel.bottom = episodeImageView.centerY - 8"/>
+                                                <constraint firstItem="8ku-ya-tG4" firstAttribute="leading" secondItem="vAb-2d-VeV" secondAttribute="trailing" constant="8" id="xAY-EM-NV5" userLabel="episodeImageView.leading = episodeTitleLabel.trailing + 8"/>
+                                                <constraint firstAttribute="trailing" secondItem="8ku-ya-tG4" secondAttribute="trailing" constant="8" id="zLh-pd-1oH" userLabel="trailing = episodeImageView.trailing + 8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -159,8 +159,8 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="A71-mV-tdl" id="Uhl-fF-etB"/>
-                        <outlet property="tableView" destination="XdY-sn-Yqo" id="a2n-9V-8Co"/>
+                        <outlet property="searchBar" destination="A71-mV-tdl" id="Q2U-Xt-eYk"/>
+                        <outlet property="tableView" destination="XdY-sn-Yqo" id="2jF-ax-yEw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IT-4m-THm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -176,16 +176,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1KW-Id-QBk" userLabel="episodeImageView">
-                                <rect key="frame" x="37" y="84" width="301.5" height="220"/>
+                                <rect key="frame" x="37" y="72" width="301.5" height="220"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="episodeTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBK-gj-0h6" userLabel="episodeTitle">
-                                <rect key="frame" x="37" y="312" width="301.5" height="19.5"/>
+                                <rect key="frame" x="37" y="300" width="301.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UbO-pG-kBZ" userLabel="attributes Stack View">
-                                <rect key="frame" x="37" y="351.5" width="301.5" height="98"/>
+                                <rect key="frame" x="37" y="327.5" width="301.5" height="98"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bN0-Cg-eYt" userLabel="seasonLabel">
                                         <rect key="frame" x="0.0" y="0.0" width="301.5" height="17"/>
@@ -214,7 +214,7 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="I13-gG-lgO" userLabel="episodeSummary">
-                                <rect key="frame" x="37" y="467" width="301.5" height="180"/>
+                                <rect key="frame" x="37" y="443" width="301.5" height="216"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -233,11 +233,11 @@
                             <constraint firstItem="1KW-Id-QBk" firstAttribute="height" secondItem="ewT-1O-6hx" secondAttribute="height" multiplier="0.33" id="NAj-GG-Oyz"/>
                             <constraint firstItem="I13-gG-lgO" firstAttribute="centerX" secondItem="UbO-pG-kBZ" secondAttribute="centerX" id="TC0-iO-VXz"/>
                             <constraint firstItem="1KW-Id-QBk" firstAttribute="centerX" secondItem="ewT-1O-6hx" secondAttribute="centerX" id="a43-AV-jMH"/>
-                            <constraint firstItem="UbO-pG-kBZ" firstAttribute="top" secondItem="YBK-gj-0h6" secondAttribute="bottom" constant="20" id="fhp-PM-7gc"/>
+                            <constraint firstItem="UbO-pG-kBZ" firstAttribute="top" secondItem="YBK-gj-0h6" secondAttribute="bottom" constant="8" id="fhp-PM-7gc" userLabel="attributes Stack View.top = episodeTitle.bottom + "/>
                             <constraint firstItem="UbO-pG-kBZ" firstAttribute="width" secondItem="YBK-gj-0h6" secondAttribute="width" id="rqa-0b-fvq"/>
                             <constraint firstItem="1KW-Id-QBk" firstAttribute="width" secondItem="l4g-Bv-teI" secondAttribute="height" multiplier="0.5" id="unq-KO-5jI"/>
-                            <constraint firstItem="1KW-Id-QBk" firstAttribute="top" secondItem="l4g-Bv-teI" secondAttribute="top" constant="20" id="vh0-hz-MOF"/>
-                            <constraint firstItem="l4g-Bv-teI" firstAttribute="bottom" secondItem="I13-gG-lgO" secondAttribute="bottom" constant="20" id="xGd-bt-d2b"/>
+                            <constraint firstItem="1KW-Id-QBk" firstAttribute="top" secondItem="l4g-Bv-teI" secondAttribute="top" constant="8" id="vh0-hz-MOF"/>
+                            <constraint firstItem="l4g-Bv-teI" firstAttribute="bottom" secondItem="I13-gG-lgO" secondAttribute="bottom" constant="8" id="xGd-bt-d2b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l4g-Bv-teI"/>
                     </view>

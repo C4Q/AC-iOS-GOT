@@ -6,7 +6,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-	
+
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var searchBar: UISearchBar!
 	
@@ -46,8 +46,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let section = seasonWithEpisodes[indexPath.section].season
-		let cellIdentity = section % 2 == 0 ? "RightAligned": "LeftAligned"
-		let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentity, for: indexPath) as? TableViewCell
+		let cellType = section % 2 == 0 ? "RightAligned": "LeftAligned"
+		let cell = tableView.dequeueReusableCell(withIdentifier: cellType, for: indexPath) as? TableViewCell
 		let episode = seasonWithEpisodes[indexPath.section].episodes[indexPath.row]
 		cell?.episodeImageView.image = UIImage(named: episode.mediumImageID)
 		cell?.episodeTitleLabel.text = episode.name
