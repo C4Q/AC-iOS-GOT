@@ -178,7 +178,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1KW-Id-QBk" userLabel="episodeImageView">
                                 <rect key="frame" x="37" y="84" width="301.5" height="220"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBK-gj-0h6" userLabel="episodeTitle">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="episodeTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBK-gj-0h6" userLabel="episodeTitle">
                                 <rect key="frame" x="37" y="312" width="301.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -223,6 +223,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="I13-gG-lgO" firstAttribute="width" secondItem="1KW-Id-QBk" secondAttribute="width" id="2u2-EL-Oqf"/>
                             <constraint firstItem="YBK-gj-0h6" firstAttribute="width" secondItem="1KW-Id-QBk" secondAttribute="width" id="64f-aD-Tv1"/>
                             <constraint firstItem="YBK-gj-0h6" firstAttribute="centerX" secondItem="1KW-Id-QBk" secondAttribute="centerX" id="9o0-Z2-iMi"/>
                             <constraint firstItem="YBK-gj-0h6" firstAttribute="top" secondItem="1KW-Id-QBk" secondAttribute="bottom" constant="8" id="BHM-fq-0F6"/>
