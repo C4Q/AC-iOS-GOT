@@ -120,6 +120,7 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
         self.mySearchBar.delegate = self
         // Do any additional setup after loading the view.
     }
+    
     override func viewDidLayoutSubviews() {
         self.gotTableView.reloadData()
     }
