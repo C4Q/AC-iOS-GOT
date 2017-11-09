@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(selectedEpisode)
         updateViews(for: selectedEpisode)
     }
     

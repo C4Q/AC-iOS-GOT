@@ -13,8 +13,8 @@
 		54B11AC41FABCE48004E1EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */; };
 		54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */; };
 		8126E1811FAE89AD000B8AF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126E1801FAE89AD000B8AF1 /* ViewController.swift */; };
-		8126E1831FAE89F3000B8AF1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126E1821FAE89F3000B8AF1 /* TableViewController.swift */; };
 		81662C801FB40C5B00AF9E97 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81662C7F1FB40C5B00AF9E97 /* TableViewCell.swift */; };
+		81ED115A1FB4B5DB000DCE81 /* GoTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED11591FB4B5DB000DCE81 /* GoTViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		54B11AC51FABCE48004E1EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
 		8126E1801FAE89AD000B8AF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8126E1821FAE89F3000B8AF1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		81662C7F1FB40C5B00AF9E97 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		81ED11591FB4B5DB000DCE81 /* GoTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +63,9 @@
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
 				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
+				81ED11591FB4B5DB000DCE81 /* GoTViewController.swift */,
 				81662C7F1FB40C5B00AF9E97 /* TableViewCell.swift */,
 				8126E1801FAE89AD000B8AF1 /* ViewController.swift */,
-				8126E1821FAE89F3000B8AF1 /* TableViewController.swift */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
 			);
@@ -157,7 +157,7 @@
 				81662C801FB40C5B00AF9E97 /* TableViewCell.swift in Sources */,
 				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
-				8126E1831FAE89F3000B8AF1 /* TableViewController.swift in Sources */,
+				81ED115A1FB4B5DB000DCE81 /* GoTViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
