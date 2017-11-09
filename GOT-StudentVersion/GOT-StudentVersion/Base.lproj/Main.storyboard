@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAq-ss-93S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1782" y="-427"/>
+            <point key="canvasLocation" x="-1578" y="-437"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hj3-gy-jgS">
-                                <rect key="frame" x="0.0" y="32" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GOT Cell" rowHeight="120" id="Eml-Lx-JRF" customClass="GotTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -145,19 +145,31 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nSO-Yh-24R">
+                                <rect key="frame" x="0.0" y="64" width="375" height="100"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Name</string>
+                                    <string>Description</string>
+                                </scopeButtonTitles>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Hj3-gy-jgS" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="AGC-aM-mvY"/>
-                            <constraint firstItem="Hj3-gy-jgS" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="GiX-bH-fP3"/>
-                            <constraint firstItem="Hj3-gy-jgS" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="HBs-g4-u3R"/>
-                            <constraint firstItem="Hj3-gy-jgS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rhM-kC-SlM"/>
+                            <constraint firstItem="nSO-Yh-24R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3Jq-CG-lBN"/>
+                            <constraint firstItem="Hj3-gy-jgS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PAv-Te-lvF"/>
+                            <constraint firstAttribute="bottom" secondItem="Hj3-gy-jgS" secondAttribute="bottom" id="PGe-Rr-dBJ"/>
+                            <constraint firstItem="nSO-Yh-24R" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="R26-po-FSX"/>
+                            <constraint firstItem="Hj3-gy-jgS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fsL-iK-sul"/>
+                            <constraint firstItem="Hj3-gy-jgS" firstAttribute="top" secondItem="nSO-Yh-24R" secondAttribute="bottom" id="kNy-Yr-bzO"/>
+                            <constraint firstItem="nSO-Yh-24R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xvg-rG-fhw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="O9n-Sz-cYK"/>
                     <connections>
                         <outlet property="GOTableView" destination="Hj3-gy-jgS" id="dWW-gQ-OXw"/>
+                        <outlet property="searchBar" destination="nSO-Yh-24R" id="uoo-83-VRc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
