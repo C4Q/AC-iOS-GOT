@@ -2,24 +2,34 @@
 //  ViewController.swift
 //  GOT-StudentVersion
 //
-//  Created by C4Q  on 11/2/17.
+//  Created by C4Q on 11/4/17.
 //  Copyright © 2017 C4Q . All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
+    var selectedEpisode: GOTEpisode!
 
+    @IBOutlet weak var detailImageView: UIImageView!
+    @IBOutlet weak var seasonLabel: UILabel!
+    @IBOutlet weak var episodeLabel: UILabel!
+    @IBOutlet weak var runtimeLabel: UILabel!
+    @IBOutlet weak var releasedLabel: UILabel!
+    @IBOutlet weak var descriptionTextBox: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        updateViews(for: selectedEpisode)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func updateViews(for episode: GOTEpisode) {
+        self.detailImageView.image = UIImage(named: selectedEpisode.mediumImageID)
+        self.episodeLabel.text = "Episode: \(selectedEpisode.name)"
+        self.seasonLabel.text = "Season: \(selectedEpisode.season)"
+        self.releasedLabel.text = "Released: \(selectedEpisode.airdate)"
+        self.runtimeLabel.text = "Runtime: \(selectedEpisode.runtime)"
+        self.descriptionTextBox.text = String(selectedEpisode.summary)
     }
-
 
 }
-
