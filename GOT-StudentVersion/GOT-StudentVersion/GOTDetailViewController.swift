@@ -9,7 +9,7 @@
 import UIKit
 
 class GOTDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var episodeImage: UIImageView!
     @IBOutlet weak var epsisodeNameTitle: UILabel!
     @IBOutlet weak var episodeSeasonTitle: UILabel!
@@ -33,21 +33,8 @@ class GOTDetailViewController: UIViewController {
         episodeAirDateTitle.text = "Airdate: \(gotEpisodeDetails.airdate)"
         episodeDescriptionTextView.text = gotEpisodeDetails.summary
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

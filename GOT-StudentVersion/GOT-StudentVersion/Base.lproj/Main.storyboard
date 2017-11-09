@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EAH-02-goQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EAH-02-goQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -67,7 +67,7 @@
                                             <outlet property="episodeIndexedLabel" destination="mL9-nC-hhO" id="D1v-gJ-ydB"/>
                                             <outlet property="episodeMediumImage" destination="kJV-3k-QFL" id="h49-sm-c6x"/>
                                             <outlet property="episodeNameLabel" destination="XGt-bc-UFJ" id="R8g-bW-AQK"/>
-                                            <segue destination="lyx-NA-UuF" kind="show" trigger="accessoryAction" id="0Ma-o7-Ex3"/>
+                                            <segue destination="lyx-NA-UuF" kind="show" identifier="LeftAlignedSegue" id="Mbg-2R-rdt"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rightAlignedEpisodeCells" rowHeight="94" id="2y3-Px-c3w" customClass="GOTRightAlignedTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -114,6 +114,7 @@
                                             <outlet property="episodeIndexLabel" destination="Q3o-0c-p7Z" id="d2a-Y9-cyv"/>
                                             <outlet property="episodeMediumImage" destination="Aib-1b-BYn" id="aZA-gg-cTN"/>
                                             <outlet property="episodeNameLabel" destination="C3N-JX-qsf" id="Kge-uM-UwL"/>
+                                            <segue destination="lyx-NA-UuF" kind="show" identifier="RightAlignedSegue" id="uby-S1-IR4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -246,4 +247,7 @@
         <image name="142370" width="1920" height="1080"/>
         <image name="142372" width="1920" height="1080"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="uby-S1-IR4"/>
+    </inferredMetricsTieBreakers>
 </document>
