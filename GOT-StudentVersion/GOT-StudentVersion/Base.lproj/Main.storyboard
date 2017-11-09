@@ -20,8 +20,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search By Episode Title" translatesAutoresizingMaskIntoConstraints="NO" id="KHP-LS-QnZ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZp-XF-ReB">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LeftGOTCell" rowHeight="112" id="Bzk-bc-3zx" customClass="LeftGOTTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -121,18 +125,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hZp-XF-ReB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6Xd-DF-XBe"/>
+                            <constraint firstItem="KHP-LS-QnZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HMo-fA-Bhk"/>
                             <constraint firstItem="hZp-XF-ReB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="J9p-47-bez"/>
                             <constraint firstItem="hZp-XF-ReB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OLu-PR-uFC"/>
-                            <constraint firstItem="hZp-XF-ReB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PsM-fb-2vf"/>
-                            <constraint firstItem="hZp-XF-ReB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="THf-HL-0re"/>
-                            <constraint firstItem="hZp-XF-ReB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="r2g-Xl-Rvv"/>
+                            <constraint firstItem="KHP-LS-QnZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ttz-6l-kID"/>
+                            <constraint firstItem="KHP-LS-QnZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wwl-Y1-U15"/>
+                            <constraint firstItem="hZp-XF-ReB" firstAttribute="top" secondItem="KHP-LS-QnZ" secondAttribute="bottom" id="hvH-0d-6q4"/>
                             <constraint firstItem="hZp-XF-ReB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vvN-HB-7an"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="QUJ-ZE-fAB"/>
                     <connections>
+                        <outlet property="gotEpisodeSearchBar" destination="KHP-LS-QnZ" id="lFh-oU-seC"/>
                         <outlet property="gotTableView" destination="hZp-XF-ReB" id="lbr-1F-Bdc"/>
                     </connections>
                 </viewController>

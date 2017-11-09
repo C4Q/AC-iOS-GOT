@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     @IBOutlet var gotTableView: UITableView!
+    
+    @IBOutlet var gotEpisodeSearchBar: UISearchBar!
     
     static let gotSeasonSections = ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6", "Season 7"]
     
@@ -20,6 +22,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         gotTableView.delegate = self
         gotTableView.dataSource = self
+        gotEpisodeSearchBar.delegate = self
+        navigationController?.navigationBar.isHidden = true
         
         for episode in GOTEpisode.allEpisodes {
                 let seasons = episode.season
@@ -27,20 +31,53 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    var searchItem: String? {
+        didSet{
+            self.gotTableView.reloadData()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchItem = searchBar.text
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchItem = searchText
+    }
+    
+    var filteredGOTSeasonsMatrix: [[GOTEpisode]]{
+        guard let searchItem = searchItem, searchItem != "" else {
+            return gotEpisodesBySeason
+        }
+        var filteredGOTEpisodes = [GOTEpisode]()
+        var finalGOTEpisodeArr = [[GOTEpisode]]()
+        for season in gotEpisodesBySeason {
+            for episode in season {
+                if episode.name.lowercased().contains(searchItem.lowercased()) {
+                    filteredGOTEpisodes.append(episode)
+                }
+            }
+            finalGOTEpisodeArr.append(filteredGOTEpisodes)
+            filteredGOTEpisodes = []
+        }
+        return finalGOTEpisodeArr
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return gotEpisodesBySeason.count
+        return filteredGOTSeasonsMatrix.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gotEpisodesBySeason[section].count
+        return filteredGOTSeasonsMatrix[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let leftCell = gotTableView.dequeueReusableCell(withIdentifier: "LeftGOTCell", for: indexPath) as! LeftGOTTableViewCell
         let rightCell = gotTableView.dequeueReusableCell(withIdentifier: "RightGOTCell", for: indexPath) as! RightGOTTableViewCell
         let rowToSetUp = indexPath.row
-        let currentSection = indexPath.section //NEW
-        let gotEpisodeInfo = gotEpisodesBySeason[currentSection][rowToSetUp] //NEW
+        let currentSection = indexPath.section
+        let currentGOTSeason = filteredGOTSeasonsMatrix[currentSection]
+        let gotEpisodeInfo = currentGOTSeason[rowToSetUp]
         let gotSeasonNum = gotEpisodeInfo.season
         let gotEpisodeNum = gotEpisodeInfo.number
         let gotEpisodeTitle = gotEpisodeInfo.name
@@ -88,22 +125,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "RightGOTCellSegue" || segue.identifier == "LeftGOTCellSegue" {
-            let detailedVC = segue.destination as! DetailViewController
-            if let indexPath = self.gotTableView.indexPathForSelectedRow {
-                let gotEpisode = gotEpisodesBySeason[indexPath.section][indexPath.row]
-                detailedVC.episodeTitle = gotEpisode.name
-                detailedVC.seasonNumber = String(gotEpisode.season)
-                detailedVC.episodeNumber = String(gotEpisode.number)
-                detailedVC.episodeRunTime = String(gotEpisode.runtime)
-                detailedVC.episodeAirDate = gotEpisode.airdate
-                detailedVC.episodeSummary = gotEpisode.summary
-                detailedVC.episodeImageID = gotEpisode.originalImageID
-            }
+        if let destination = segue.destination as? DetailViewController {
+            let section = gotTableView.indexPathForSelectedRow?.section
+            let row = gotTableView.indexPathForSelectedRow?.row
+            let selectedGOTseason = filteredGOTSeasonsMatrix[section!]
+            let selectedGOTepisode = selectedGOTseason[row!]
+            destination.GOTEpisode = selectedGOTepisode
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-
 }
-
