@@ -47,19 +47,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aIl-xf-Qmi">
-                                                    <rect key="frame" x="10" y="9.9999999999999929" width="103.66666666666667" height="113.33333333333331"/>
+                                                    <rect key="frame" x="10" y="9.9999999999999929" width="104" height="113.33333333333331"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VR-rL-SeC">
-                                                    <rect key="frame" x="123.66666666666666" y="9.9999999999999929" width="270.33333333333337" height="113.33333333333331"/>
+                                                    <rect key="frame" x="124" y="9.9999999999999929" width="270" height="113.33333333333331"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EpisodeName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfO-7Y-Gs6" userLabel="EpisodeName">
-                                                            <rect key="frame" x="7.9999999999999858" y="8" width="191" height="20"/>
+                                                            <rect key="frame" x="8" y="8" width="191" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EpisodeNam and Season" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zD-hG-ooq" userLabel="EpisodeNam and Season">
-                                                            <rect key="frame" x="7.9999999999999858" y="36" width="191" height="20"/>
+                                                            <rect key="frame" x="8" y="36" width="191" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -294,43 +294,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXP-Cr-bzW">
-                                <rect key="frame" x="20" y="393.66666666666669" width="374" height="20.333333333333314"/>
+                                <rect key="frame" x="20" y="443.66666666666669" width="374" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="735" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BV4-fv-ooS" userLabel="GreenSlider">
-                                <rect key="frame" x="73" y="444" width="281" height="31"/>
+                                <rect key="frame" x="73" y="494" width="281" height="31"/>
                                 <connections>
                                     <action selector="inputGreenSlider:" destination="Q8e-fn-7z4" eventType="valueChanged" id="oqi-EO-hN7"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Green" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYx-Gq-qmK">
-                                <rect key="frame" x="20" y="504" width="374" height="21"/>
+                                <rect key="frame" x="20" y="554" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="745" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="G1w-fu-At5" userLabel="BlueSlider">
-                                <rect key="frame" x="73" y="555" width="281" height="31"/>
+                                <rect key="frame" x="73" y="605" width="281" height="31"/>
                                 <connections>
                                     <action selector="inputBlueSlider:" destination="Q8e-fn-7z4" eventType="valueChanged" id="VAj-p7-QeL"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Blue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6d-Gc-tCA">
-                                <rect key="frame" x="20" y="615" width="374" height="21"/>
+                                <rect key="frame" x="20" y="665" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="krb-1u-F2f" userLabel="RedSlider">
-                                <rect key="frame" x="77" y="343.66666666666669" width="260" height="31"/>
+                                <rect key="frame" x="77" y="393.66666666666669" width="260" height="31"/>
                                 <connections>
                                     <action selector="inputRedSlider:" destination="Q8e-fn-7z4" eventType="valueChanged" id="wMM-Nq-7j2"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Cells Colors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OS-Gu-6SZ">
-                                <rect key="frame" x="20" y="272.66666666666669" width="374" height="21"/>
+                                <rect key="frame" x="20" y="322.66666666666669" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -342,7 +342,7 @@
                             <constraint firstItem="Hec-cj-uJp" firstAttribute="trailing" secondItem="BV4-fv-ooS" secondAttribute="trailing" constant="62" id="4yw-hA-o2i"/>
                             <constraint firstItem="krb-1u-F2f" firstAttribute="top" secondItem="8OS-Gu-6SZ" secondAttribute="bottom" constant="50" id="5Dm-mw-vCH"/>
                             <constraint firstItem="Hec-cj-uJp" firstAttribute="trailing" secondItem="G1w-fu-At5" secondAttribute="trailing" constant="62" id="6fK-dp-C3p"/>
-                            <constraint firstItem="Hec-cj-uJp" firstAttribute="bottom" secondItem="L6d-Gc-tCA" secondAttribute="bottom" constant="100" id="8e9-1R-apu"/>
+                            <constraint firstItem="Hec-cj-uJp" firstAttribute="bottom" secondItem="L6d-Gc-tCA" secondAttribute="bottom" constant="50" id="8e9-1R-apu"/>
                             <constraint firstItem="G1w-fu-At5" firstAttribute="leading" secondItem="Hec-cj-uJp" secondAttribute="leading" constant="75" id="Eom-Bd-v5T"/>
                             <constraint firstItem="dXP-Cr-bzW" firstAttribute="leading" secondItem="Hec-cj-uJp" secondAttribute="leading" constant="20" id="F2s-Q0-tT0"/>
                             <constraint firstItem="L6d-Gc-tCA" firstAttribute="leading" secondItem="Hec-cj-uJp" secondAttribute="leading" constant="20" id="H0L-UL-34g"/>
