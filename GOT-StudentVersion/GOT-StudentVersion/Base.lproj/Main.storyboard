@@ -53,19 +53,20 @@
                                                     <rect key="frame" x="124" y="9.9999999999999929" width="270" height="113.33333333333331"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EpisodeName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfO-7Y-Gs6" userLabel="EpisodeName">
-                                                            <rect key="frame" x="8" y="8" width="191" height="20"/>
+                                                            <rect key="frame" x="8" y="8" width="242" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EpisodeNam and Season" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zD-hG-ooq" userLabel="EpisodeNam and Season">
-                                                            <rect key="frame" x="8" y="36" width="191" height="20"/>
+                                                            <rect key="frame" x="8" y="36" width="242" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="sfO-7Y-Gs6" secondAttribute="trailing" constant="20" id="Tol-6R-cKk"/>
                                                         <constraint firstItem="sfO-7Y-Gs6" firstAttribute="leading" secondItem="7VR-rL-SeC" secondAttribute="leadingMargin" id="WvD-Hf-YUC"/>
                                                         <constraint firstItem="sfO-7Y-Gs6" firstAttribute="top" secondItem="7VR-rL-SeC" secondAttribute="topMargin" id="crx-MR-WtZ"/>
                                                         <constraint firstItem="sfO-7Y-Gs6" firstAttribute="leading" secondItem="1zD-hG-ooq" secondAttribute="leading" id="kjy-oX-5yJ"/>

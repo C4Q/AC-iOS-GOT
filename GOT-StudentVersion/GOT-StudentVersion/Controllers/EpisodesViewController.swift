@@ -35,7 +35,7 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     var searchTerm: String?{
         didSet{
-        gotTableView.reloadData()
+            gotTableView.reloadData()
         }
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -51,7 +51,7 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
         let seasonNumber = section + 1
         let episodesInSeason = filteredGOT.filter { $0.season == seasonNumber }
         return episodesInSeason.count
-
+        
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         // to get the number of sections from a sorted array
@@ -83,12 +83,12 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
             }
             if let episodeCell = cell as? RightCellTableViewCell{
                 let rowSetup = indexPath.row
-                print(rowSetup)
                 let episodeSetup = episodesInSeason[rowSetup]
                 episodeCell.EpisodeName.text = episodeSetup.name
                 episodeCell.EpisodeSmallPoster.image = UIImage(named: episodeSetup.mediumImageID)
                 episodeCell.EpisodeNameAndSeason.text = "S:\(episodeSetup.season) E:\(episodeSetup.number)"
                 episodeCell.backgroundColor = UIColor(displayP3Red: CGFloat(Settings.red), green: CGFloat(Settings.green), blue: CGFloat(Settings.blue), alpha: 1)
+                episodeCell.textLabel?.font = UIFont(name: Settings.currentFont, size: 18)
                 return episodeCell
             }
             return cell
@@ -100,12 +100,13 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
             }
             if let episodeCell = cell as? LeftCellTableViewCell{
                 let rowSetup = indexPath.row
-                print(rowSetup)
                 let episodeSetup = episodesInSeason[rowSetup]
                 episodeCell.episodeName.text = episodeSetup.name
                 episodeCell.episodePoster.image = UIImage(named: episodeSetup.mediumImageID)
                 episodeCell.episodeNameAndSeason.text = "S:\(episodeSetup.season) E:\(episodeSetup.number)"
                 episodeCell.backgroundColor = UIColor(displayP3Red: CGFloat(Settings.red), green: CGFloat(Settings.green), blue: CGFloat(Settings.blue), alpha: 1)
+                episodeCell.textLabel?.font = UIFont(name: Settings.currentFont, size: 18)
+                
                 return episodeCell
             }
             return cell
@@ -128,8 +129,6 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
     // MARK: - Navigation
     
