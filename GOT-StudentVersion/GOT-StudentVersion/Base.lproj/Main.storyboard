@@ -11,7 +11,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +30,7 @@
             </objects>
             <point key="canvasLocation" x="-1269" y="191"/>
         </scene>
-        <!--View Controller-->
+        <!--All Episodes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,10 +80,7 @@
                                             <outlet property="SELabel" destination="Ndt-1e-Hl4" id="qpH-o4-gdW"/>
                                             <outlet property="gotImageView" destination="Gyl-hD-MKf" id="Mwq-A1-flm"/>
                                             <outlet property="titleLabel" destination="8ba-lB-fDT" id="fqU-bH-73b"/>
-                                            <segue destination="nng-e0-ZjR" kind="show" id="7pJ-5p-0OK">
-                                                <segue key="commit" inheritsFrom="parent" id="StM-Oa-idR"/>
-                                                <segue key="preview" inheritsFrom="commit" id="xIp-Ca-8fN"/>
-                                            </segue>
+                                            <segue destination="nng-e0-ZjR" kind="show" id="BnV-lA-9Ja"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Right Episode Cell" id="KM7-wL-h2b" customClass="GOTTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -125,6 +121,7 @@
                                             <outlet property="SELabel" destination="ZW1-qu-Vzi" id="wnz-Im-8ll"/>
                                             <outlet property="gotImageView" destination="RFk-5P-6GR" id="aMT-VI-MY4"/>
                                             <outlet property="titleLabel" destination="hvS-id-4m4" id="DUl-EO-jWH"/>
+                                            <segue destination="nng-e0-ZjR" kind="show" id="qBI-bi-hzJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -139,7 +136,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WJG-SS-JPC"/>
+                    <navigationItem key="navigationItem" title="All Episodes" id="WJG-SS-JPC"/>
                     <connections>
                         <outlet property="tableView" destination="tJa-8p-iSX" id="Ry5-53-rqd"/>
                     </connections>
@@ -238,10 +235,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e05-6l-gap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692" y="35.532233883058474"/>
+            <point key="canvasLocation" x="945" y="33"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7pJ-5p-0OK"/>
+        <segue reference="BnV-lA-9Ja"/>
     </inferredMetricsTieBreakers>
 </document>

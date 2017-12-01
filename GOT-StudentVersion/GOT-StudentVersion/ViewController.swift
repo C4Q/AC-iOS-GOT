@@ -21,12 +21,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        //MARK: - Load Data
          gotEpisode = GOTEpisode.allEpisodes
         fillSeasonEpisodes()
     }
     
    
-    // MARK: -Data Source
+    // MARK: -Table view Data Source Methods
     func numberOfSections(in tableView: UITableView) -> Int {
         return gotSeasonEpisode.count
     }
@@ -50,12 +52,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let episode = gotSeasonEpisode[indexPath.section].episodes[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellPosition, for: indexPath) as? GOTTableViewCell
-        cell?.titleLabel.text = episode.name
-        cell?.SELabel.text = "S: \(episode.season) E: \(episode.number)"
-        cell?.gotImageView.image = UIImage(named: episode.mediumImageID)
+        
+        if let unwrappedCell = cell {
+            unwrappedCell.titleLabel.text = episode.name
+            unwrappedCell.SELabel.text = "S: \(episode.season) E: \(episode.number)"
+            unwrappedCell.gotImageView.image = UIImage(named: episode.mediumImageID)
+            
+            return unwrappedCell
+        }
+        
         return cell!
+        
     }
-    
     
     func fillSeasonEpisodes () {
         let maxSeason = GOTEpisode.allEpisodes.max{$0.season < $1.season ? true: false}!.season
@@ -64,14 +72,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             gotSeasonEpisode.append((index, GOTEpisode.allEpisodes.filter{$0.season == index}))
         }
     }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let episode = segue.destination as? DetailViewController
-        let section = tableView.indexPathForSelectedRow?.section
-        let row = tableView.indexPathForSelectedRow?.row
-        episode?.detailedInfo = gotSeasonEpisode[section!].episodes[row!]
+        
+        if let detailVC = segue.destination as? DetailViewController,
+            let selectedCell = sender as? UITableViewCell,
+            let selectedIndexPath = tableView.indexPath(for: selectedCell) {
+            
+            let selectedSeason = gotSeasonEpisode[selectedIndexPath.section]
+            detailVC.episodeInfo = selectedSeason.episodes[selectedIndexPath.row]
+            
         }
         
     }
 
-
+}
 
