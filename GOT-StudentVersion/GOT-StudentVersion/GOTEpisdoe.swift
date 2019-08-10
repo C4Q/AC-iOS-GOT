@@ -29,6 +29,7 @@ class GOTEpisode {
         self.mediumImageID = mediumImageID
         self.originalImageID = originalImageID
     }
+    
     static let allEpisodes = [
         GOTEpisode(airdate: "2011-04-17", id: 4952, name: "Winter is Coming", number: 1, season: 1, runtime: 60, summary: "Lord Eddard Stark, ruler of the North, is summoned to court by his old friend, King Robert Baratheon, to serve as the King's Hand. Eddard reluctantly agrees after learning of a possible threat to the King's life. Eddard's bastard son Jon Snow must make a painful decision about his own future, while in the distant east Viserys Targaryen plots to reclaim his father's throne, usurped by Robert, by selling his sister in marriage.", mediumImageID: "2668", originalImageID: "2668"),
         GOTEpisode(airdate: "2011-04-24", id: 4953, name: "The Kingsroad", number: 2, season: 1, runtime: 60, summary: "An incident on the Kingsroad threatens Eddard and Robert's friendship. Jon and Tyrion travel to the Wall, where they discover that the reality of the Night's Watch may not match the heroic image of it.", mediumImageID: "2669", originalImageID: "2669"),
@@ -98,4 +99,83 @@ class GOTEpisode {
         GOTEpisode(airdate: "2017-08-20", id: 1221414, name: "Beyond the Wall", number: 6, season: 7, runtime: 60, summary: "Jon's mission continues north of the wall, but the odds against his ragged band of misfits may be greater than he imagined.", mediumImageID: "312651", originalImageID: "312651"),
         GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502")
     ]
+    
+    static let seasonOne = getSeasonOne()
+    
+    static let seasonTwo = getSeasonTwo()
+    
+    static let seasonThree = getSeasonThree()
+    
+    static let seasonFour = getSeasonFour()
+    
+    static let seasonFive = getSeasonFive()
+    
+    static let seasonSix = getSeasonSix()
+    
+    static let seasonSeven = getSeasonSeven()
+    
+    private static func getSeasonOne() -> [GOTEpisode] {
+        var arr = [GOTEpisode]()
+        for episode in allEpisodes where episode.season == 1 {
+            arr.append(episode)
+        }
+        
+        return arr
+    }
+    
+    private static func getSeasonTwo() -> [GOTEpisode] {
+        var arr = [GOTEpisode]()
+        for episode in allEpisodes where episode.season == 2 {
+            arr.append(episode)
+        }
+        
+        return arr
+    }
+    
+    private static func getSeasonThree() -> [GOTEpisode] {
+        var arr = [GOTEpisode]()
+        for episode in allEpisodes where episode.season == 3 {
+            arr.append(episode)
+        }
+        
+        return arr
+    }
+    
+    private static func getSeasonFour() -> [GOTEpisode] {
+        var arr = [GOTEpisode]()
+        for episode in allEpisodes where episode.season == 4 {
+            arr.append(episode)
+        }
+        
+        return arr
+    }
+    
+    private static func getSeasonFive() -> [GOTEpisode] {
+        var arr = [GOTEpisode]()
+        for episode in allEpisodes where episode.season == 5 {
+            arr.append(episode)
+        }
+        
+        return arr
+    }
+    
+    private static func getSeasonSix() -> [GOTEpisode] {
+        var arr = [GOTEpisode]()
+        for episode in allEpisodes where episode.season == 6 {
+            arr.append(episode)
+        }
+        
+        return arr
+    }
+    
+    private static func getSeasonSeven() -> [GOTEpisode] {
+        var arr = [GOTEpisode]()
+        for episode in allEpisodes where episode.season == 7 {
+            arr.append(episode)
+        }
+        
+        return arr
+    }
+    
+    
 }
