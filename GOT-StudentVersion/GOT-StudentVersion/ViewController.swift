@@ -62,6 +62,25 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
+        switch section {
+    
+        case 0:
+            return GOTEpisode.Seasons.seasonOne.rawValue
+        case 1:
+        return GOTEpisode.Seasons.seasonTwo.rawValue
+        case 2:
+        return GOTEpisode.Seasons.seasonThree.rawValue
+        case 3:
+        return GOTEpisode.Seasons.seasonFour.rawValue
+        case 4:
+        return GOTEpisode.Seasons.seasonFive.rawValue
+        case 5:
+        return GOTEpisode.Seasons.seasonSix.rawValue
+        case 6:
+        return GOTEpisode.Seasons.seasonSeven.rawValue
+        default:
+        return "Should not print"
+    }
         }
 }
 

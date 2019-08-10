@@ -28,6 +28,17 @@ class GOTEpisode {
         self.summary = summary
         self.mediumImageID = mediumImageID
         self.originalImageID = originalImageID
+        
+    }
+    
+    enum Seasons: String {
+        case seasonOne = "Season 1"
+        case seasonTwo = "Season 2"
+        case seasonThree = "Season 3"
+        case seasonFour = "Season 4"
+        case seasonFive = "Season 5"
+        case seasonSix = "Season 6"
+        case seasonSeven = "Season 7"
     }
     
     private static let allEpisodes = [
@@ -176,6 +187,7 @@ class GOTEpisode {
         
         return arr
     }
+    
     
     
 }
