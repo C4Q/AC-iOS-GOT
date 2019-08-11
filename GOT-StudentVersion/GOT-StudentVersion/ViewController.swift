@@ -25,10 +25,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         myTableView.dataSource = self
         myTableView.rowHeight = 80
-        
+        myTableView.sectionHeaderHeight = 40
+                
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +40,8 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
+   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return seasons[section].count
     }
@@ -55,6 +57,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         if indexPath.section % 2 == 0 {
             if let cell = myTableView.dequeueReusableCell(withIdentifier: "SeasonTableViewCell", for: indexPath) as? SeasonTableViewCell {
+            
                 cell.nameLabel.text = episode.name
                 cell.seasonAndNumberLabel.text = "S:\(episode.season) E:\(episode.number)"
                 cell.mediumImageLabel.image = image
@@ -77,6 +80,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
+
+        
         switch section {
     
         case 0:
@@ -97,5 +102,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return "Should not print"
     }
         }
+    
+    
 }
+
+
+
 
