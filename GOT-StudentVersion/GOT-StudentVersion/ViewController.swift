@@ -9,17 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let seasonOne = GOTEpisode.seasonOne
-    let seasonTwo = GOTEpisode.seasonTwo
-    let seasonThree = GOTEpisode.seasonThree
-    let seasonFour = GOTEpisode.seasonFour
-    let seasonFive = GOTEpisode.seasonFive
-    let seasonSix = GOTEpisode.seasonSix
-    let seasonSeven = GOTEpisode.seasonSeven
+    
+    let seasons: [[GOTEpisode]] = [
+        GOTEpisode.seasonOne,
+        GOTEpisode.seasonTwo,
+        GOTEpisode.seasonThree,
+        GOTEpisode.seasonFour,
+        GOTEpisode.seasonFive,
+        GOTEpisode.seasonSix,
+        GOTEpisode.seasonSeven,
+    ]
+    
+    @IBOutlet weak var myTableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        myTableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,33 +39,39 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return seasonOne.count
-        case 1:
-            return seasonTwo.count
-        case 2:
-            return seasonThree.count
-        case 3:
-            return seasonFour.count
-        case 4:
-            return seasonFive.count
-        case 5:
-            return seasonSix.count
-        case 6:
-            return seasonSeven.count
-        default:
-            return -1
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        return seasons[section].count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 7
     }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let currentSeason: [GOTEpisode] = seasons[indexPath.section]
+        let episode: GOTEpisode = currentSeason[indexPath.row]
+        let image: UIImage = (UIImage(named: episode.mediumImageID ))!
+        
+        if indexPath.section % 2 == 0 {
+            if let cell = myTableView.dequeueReusableCell(withIdentifier: "SeasonTableViewCell", for: indexPath) as? SeasonTableViewCell {
+                cell.nameLabel.text = episode.name
+                cell.seasonAndNumberLabel.text = "S:\(episode.season) E:\(episode.number)"
+                cell.mediumImageLabel.image = image
+                return cell
+            }
+        } else {
+            if let cell = myTableView.dequeueReusableCell(withIdentifier: "SeasonTableViewCell2", for: indexPath) as? SeasonTableViewCell2 {
+                cell.nameLabel.text = episode.name
+                cell.seasonAndNumberLabel.text = "S:\(episode.season) E:\(episode.number)"
+                cell.mediumImageLabel.image = image
+                return cell
+            }
+        }
+        let cell2 = myTableView.dequeueReusableCell(withIdentifier: "SeasonTableViewCell", for: indexPath)
+        cell2.textLabel?.text = "test"
+        return cell2
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
