@@ -61,19 +61,53 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        switch indexPath.section {
+        case 0:
+            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonOne)
+        case 1:
+            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonTwo)
+        case 2:
+            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonThree)
+        case 3:
+            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonFour)
+        case 4:
+            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonFive)
+        case 5:
+            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonSix)
+        case 6:
+            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonSeven)
+        default:
+            return UITableViewCell()
+        }
     }
     
+    //MARK: -- Custom Methods
+    func populateCell(indexPath: IndexPath, season: [GOTEpisode]) -> UITableViewCell {
+        if indexPath.section % 2 == 0 {
+            if let evenCell = gotTableView.dequeueReusableCell(withIdentifier: "evenSeasons", for: indexPath) as? EvenSeasonsTableViewCell {
+                evenCell.evenSeasonsTitleLabel?.text = season[indexPath.row].name
+                evenCell.evenSeasonsEpisodeLabel?.text = "S:\(season[indexPath.row].season) E:\(season[indexPath.row].number)"
+                return evenCell
+            }
+        } else if indexPath.section % 2 != 0 {
+            if let oddCell = gotTableView.dequeueReusableCell(withIdentifier: "oddSeasons", for: indexPath) as? OddSeasonsTableViewCell {
+                oddCell.oddSeasonsTitleLabel?.text = season[indexPath.row].name
+                oddCell.oddSeasonsEpisodeLabel?.text = "S:\(season[indexPath.row].season) E:\(season[indexPath.row].number)"
+                return oddCell
+            }
+        }
+        return UITableViewCell()
+    }
+
     //MARK: -- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        gotTableView.dataSource = self
+        gotTableView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        gotTableView.dataSource = self
-        gotTableView.delegate = self
     }
     
     
