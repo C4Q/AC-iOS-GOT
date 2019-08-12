@@ -10,6 +10,10 @@ import UIKit
 
 class EvenTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var evenImage: UIImageView!
+    @IBOutlet weak var evenTitleLabel: UILabel!
+    @IBOutlet weak var evenSeasonEpLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
