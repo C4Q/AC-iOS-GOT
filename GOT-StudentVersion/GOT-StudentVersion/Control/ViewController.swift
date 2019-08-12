@@ -10,18 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //TODO: connect searchbar, extend searchbardelegate
+    //MARK:  --Outlets
     @IBOutlet weak var gotTableView: UITableView!
+    
+    //this will return an array, when calling data in function, use indexpath to get the element needed
+    let data = EpisodeData.allEpisodes
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        gotTableView.dataSource = self
+        gotTableView.delegate = self
     }
 
 
 }
 
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = data[indexPath.row].name
+      
+        return cell
+    }
+    
+    
+}
