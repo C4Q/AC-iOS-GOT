@@ -83,14 +83,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //MARK: -- Custom Methods
     func populateCell(indexPath: IndexPath, season: [GOTEpisode]) -> UITableViewCell {
-        if indexPath.section % 2 == 0 {
+        if indexPath.section % 2 != 0 {
             if let evenCell = gotTableView.dequeueReusableCell(withIdentifier: "evenSeasons", for: indexPath) as? EvenSeasonsTableViewCell {
+                evenCell.evenSeasonsImageView.image = UIImage(named: season[indexPath.row].originalImageID)
                 evenCell.evenSeasonsTitleLabel?.text = season[indexPath.row].name
                 evenCell.evenSeasonsEpisodeLabel?.text = "S:\(season[indexPath.row].season) E:\(season[indexPath.row].number)"
                 return evenCell
             }
-        } else if indexPath.section % 2 != 0 {
+        } else if indexPath.section % 2 == 0 {
             if let oddCell = gotTableView.dequeueReusableCell(withIdentifier: "oddSeasons", for: indexPath) as? OddSeasonsTableViewCell {
+                oddCell.oddSeasonsImageView.image = UIImage(named: season[indexPath.row].originalImageID)
                 oddCell.oddSeasonsTitleLabel?.text = season[indexPath.row].name
                 oddCell.oddSeasonsEpisodeLabel?.text = "S:\(season[indexPath.row].season) E:\(season[indexPath.row].number)"
                 return oddCell
