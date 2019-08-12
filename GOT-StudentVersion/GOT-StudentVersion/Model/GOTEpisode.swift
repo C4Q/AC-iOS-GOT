@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GOTEpisode {
+class GOTEpisode {
     var airdate: String
     var id: Int
     var name: String
@@ -18,15 +18,16 @@ struct GOTEpisode {
     var summary: String
     var mediumImageID: String
     var originalImageID: String
-    //    init(airdate: String, id: Int, name: String, number: Int, season: Int, runtime: Int, summary: String, mediumImageID: String, originalImageID: String) {
-    //        self.airdate = airdate
-    //        self.id = id
-    //        self.name = name
-    //        self.number = number
-    //        self.season = season
-    //        self.runtime = runtime
-    //        self.summary = summary
-    //        self.mediumImageID = mediumImageID
-    //        self.originalImageID = originalImageID
+        init(airdate: String, id: Int, name: String, number: Int, season: Int, runtime: Int, summary: String, mediumImageID: String, originalImageID: String) {
+            self.airdate = airdate
+            self.id = id
+            self.name = name
+            self.number = number
+            self.season = season
+            self.runtime = runtime
+            self.summary = summary
+            self.mediumImageID = mediumImageID
+            self.originalImageID = originalImageID
+    }
     
 }
