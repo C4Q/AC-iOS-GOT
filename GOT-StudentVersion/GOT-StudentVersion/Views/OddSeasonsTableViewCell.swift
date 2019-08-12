@@ -9,7 +9,11 @@
 import UIKit
 
 class OddSeasonsTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var oddSeasonsImageView: UIImageView!
+    @IBOutlet weak var oddSeasonsTitleLabel: UILabel!
+    @IBOutlet weak var oddSeasonsEpisodeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

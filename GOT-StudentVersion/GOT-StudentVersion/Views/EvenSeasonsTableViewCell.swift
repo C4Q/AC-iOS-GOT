@@ -9,6 +9,10 @@
 import UIKit
 
 class EvenSeasonsTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var evenSeasonsImageView: UIImageView!
+    @IBOutlet weak var evenSeasonsTitleLabel: UILabel!
+    @IBOutlet weak var evenSeasonsEpisodeLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

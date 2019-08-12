@@ -61,6 +61,11 @@
                                                 <constraint firstItem="qpE-G5-WVI" firstAttribute="width" secondItem="7IK-ZK-Hmr" secondAttribute="width" id="tJe-iV-Ndu"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="oddSeasonsEpisodeLabel" destination="qpE-G5-WVI" id="1zW-8F-xrZ"/>
+                                            <outlet property="oddSeasonsImageView" destination="bzu-gQ-9lJ" id="20a-iq-E1c"/>
+                                            <outlet property="oddSeasonsTitleLabel" destination="7IK-ZK-Hmr" id="dVc-t3-FjY"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="evenSeasons" rowHeight="200" id="Zmc-pz-8pM" customClass="EvenSeasonsTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="228" width="414" height="200"/>
@@ -104,6 +109,11 @@
                                                 <constraint firstItem="fbW-oE-ka2" firstAttribute="leading" secondItem="uTJ-dA-zbm" secondAttribute="trailing" constant="17.25" id="zO5-rT-P3J"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="evenSeasonsEpisodeLabel" destination="yeZ-vW-WQC" id="dHz-64-y5B"/>
+                                            <outlet property="evenSeasonsImageView" destination="uTJ-dA-zbm" id="O3J-Xp-JC7"/>
+                                            <outlet property="evenSeasonsTitleLabel" destination="fbW-oE-ka2" id="b50-Gq-Ja1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
