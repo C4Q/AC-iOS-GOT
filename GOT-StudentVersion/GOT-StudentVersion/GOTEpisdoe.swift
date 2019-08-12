@@ -111,81 +111,34 @@ class GOTEpisode {
         GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502")
     ]
     
+    
+    private static let seasonOne = GOTEpisode.allEpisodes.filter({$0.season == 1})
+    
+    private static let seasonTwo = GOTEpisode.allEpisodes.filter({$0.season == 2})
+    
+    private static let seasonThree = GOTEpisode.allEpisodes.filter({$0.season == 3})
+    
+    private static let seasonFour = GOTEpisode.allEpisodes.filter({$0.season == 4})
+    
+    private static let seasonFive = GOTEpisode.allEpisodes.filter({$0.season == 5})
+    
+    private static let seasonSix = GOTEpisode.allEpisodes.filter({$0.season == 6})
+    
+    private static let seasonSeven = GOTEpisode.allEpisodes.filter({$0.season == 7})
+    
     static var savedFilters = ["": getAllSeasons()]
     
     static let allSeasons = getAllSeasons()
-    
-    private static func getSeasonOne() -> [GOTEpisode] {
-        var arr = [GOTEpisode]()
-        for episode in allEpisodes where episode.season == 1 {
-            arr.append(episode)
-        }
-        
-        return arr
-    }
-    
-    private static func getSeasonTwo() -> [GOTEpisode] {
-        var arr = [GOTEpisode]()
-        for episode in allEpisodes where episode.season == 2 {
-            arr.append(episode)
-        }
-        
-        return arr
-    }
-    
-    private static func getSeasonThree() -> [GOTEpisode] {
-        var arr = [GOTEpisode]()
-        for episode in allEpisodes where episode.season == 3 {
-            arr.append(episode)
-        }
-        
-        return arr
-    }
-    
-    private static func getSeasonFour() -> [GOTEpisode] {
-        var arr = [GOTEpisode]()
-        for episode in allEpisodes where episode.season == 4 {
-            arr.append(episode)
-        }
-        
-        return arr
-    }
-    
-    private static func getSeasonFive() -> [GOTEpisode] {
-        var arr = [GOTEpisode]()
-        for episode in allEpisodes where episode.season == 5 {
-            arr.append(episode)
-        }
-        
-        return arr
-    }
-    
-    private static func getSeasonSix() -> [GOTEpisode] {
-        var arr = [GOTEpisode]()
-        for episode in allEpisodes where episode.season == 6 {
-            arr.append(episode)
-        }
-        
-        return arr
-    }
-    
-    private static func getSeasonSeven() -> [GOTEpisode] {
-        var arr = [GOTEpisode]()
-        for episode in allEpisodes where episode.season == 7 {
-            arr.append(episode)
-        }
-        
-        return arr
-    }
+
     
     private static func getAllSeasons() -> [[GOTEpisode]] {
-        return [ GOTEpisode.getSeasonOne(),
-                 GOTEpisode.getSeasonTwo(),
-                 GOTEpisode.getSeasonThree(),
-                 GOTEpisode.getSeasonFour(),
-                 GOTEpisode.getSeasonFive(),
-                 GOTEpisode.getSeasonSix(),
-                 GOTEpisode.getSeasonSeven()
+        return [ GOTEpisode.seasonOne,
+                 GOTEpisode.seasonTwo,
+                 GOTEpisode.seasonThree,
+                 GOTEpisode.seasonFour,
+                 GOTEpisode.seasonFive,
+                 GOTEpisode.seasonSix,
+                 GOTEpisode.seasonSeven
                 ]
     }
     
