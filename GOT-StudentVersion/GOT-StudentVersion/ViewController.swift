@@ -10,22 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let seasons: [[GOTEpisode]] = [
-        GOTEpisode.seasonOne,
-        GOTEpisode.seasonTwo,
-        GOTEpisode.seasonThree,
-        GOTEpisode.seasonFour,
-        GOTEpisode.seasonFive,
-        GOTEpisode.seasonSix,
-        GOTEpisode.seasonSeven,
-    ]
+    var seasons: [[GOTEpisode]] = GOTEpisode.allSeasons
     
     @IBOutlet weak var myTableView: UITableView!
     
+    @IBOutlet weak var mySearchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.dataSource = self
+        mySearchBar.delegate = self
         myTableView.rowHeight = 80
         myTableView.sectionHeaderHeight = 40
                 
@@ -102,10 +96,29 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return "Should not print"
     }
         }
-    
-    
 }
 
-
+extension ViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    
+        if let filteredSeasons = GOTEpisode.savedFilters[searchText] {
+            seasons = filteredSeasons
+            myTableView.reloadData()
+            return
+        }
+        
+        var filteredSeasons = [[GOTEpisode]]()
+        
+        for season in seasons {
+            let currentFilter = season.filter{$0.name.contains(searchText)}
+            filteredSeasons.append(currentFilter)
+        }
+        
+        GOTEpisode.savedFilters[searchText] = filteredSeasons
+        seasons = filteredSeasons
+        myTableView.reloadData()
+        
+    }
+}
 
 

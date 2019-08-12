@@ -111,19 +111,9 @@ class GOTEpisode {
         GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502")
     ]
     
-    static let seasonOne = getSeasonOne()
+    static var savedFilters = ["": getAllSeasons()]
     
-    static let seasonTwo = getSeasonTwo()
-    
-    static let seasonThree = getSeasonThree()
-    
-    static let seasonFour = getSeasonFour()
-    
-    static let seasonFive = getSeasonFive()
-    
-    static let seasonSix = getSeasonSix()
-    
-    static let seasonSeven = getSeasonSeven()
+    static let allSeasons = getAllSeasons()
     
     private static func getSeasonOne() -> [GOTEpisode] {
         var arr = [GOTEpisode]()
@@ -188,6 +178,16 @@ class GOTEpisode {
         return arr
     }
     
+    private static func getAllSeasons() -> [[GOTEpisode]] {
+        return [ GOTEpisode.getSeasonOne(),
+                 GOTEpisode.getSeasonTwo(),
+                 GOTEpisode.getSeasonThree(),
+                 GOTEpisode.getSeasonFour(),
+                 GOTEpisode.getSeasonFive(),
+                 GOTEpisode.getSeasonSix(),
+                 GOTEpisode.getSeasonSeven()
+                ]
+    }
     
     
 }
