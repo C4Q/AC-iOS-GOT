@@ -40,7 +40,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        switch section {
+        case 0:
+            return GOTEpisode.seasonOne.count
+        case 1:
+            return GOTEpisode.seasonTwo.count
+        case 2:
+            return GOTEpisode.seasonThree.count
+        case 3:
+            return GOTEpisode.seasonFour.count
+        case 4:
+            return GOTEpisode.seasonFive.count
+        case 5:
+            return GOTEpisode.seasonSix.count
+        case 6:
+            return GOTEpisode.seasonSeven.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
