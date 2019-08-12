@@ -79,8 +79,22 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        switch indexPath.section % 2 == 0 {
+            case false:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "OddTableViewCell", for: indexPath) as? OddTableViewCell {
+                    cell.oddTitleLabel?.text = GOTEpisode.allEpisodes[indexPath.row].name
+                }
+            case true:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "EvenTableViewCell", for: indexPath) as? EvenTableViewCell {
+                    cell.evenTitleLabel?.text = GOTEpisode.allEpisodes[indexPath.row].name
+                }
+        }
+        return UITableViewCell()
     }
     
+ 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 200
+    }
     
 }
