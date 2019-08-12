@@ -27,7 +27,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="p6u-9S-p3N">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="p6u-9S-p3N" customClass="oddGOTTVCell" customModule="GOT_StudentVersion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="84" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p6u-9S-p3N" id="jLc-pc-Itm">
@@ -55,10 +55,13 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="oddEpisodeInfoLabel" destination="rNJ-Pu-Jm5" id="DQD-KW-zTq"/>
+                                            <outlet property="oddImage" destination="U7c-L0-V5X" id="z7o-Jm-Snr"/>
+                                            <outlet property="oddTitleLabel" destination="Dj6-xz-VHk" id="r28-bi-A4I"/>
                                             <segue destination="2nF-FC-Euo" kind="showDetail" id="7Fw-f8-m2n"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="5pd-Jm-mu4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="5pd-Jm-mu4" customClass="evenGOTTVCell" customModule="GOT_StudentVersion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="234" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5pd-Jm-mu4" id="5G7-qo-k7x">
@@ -86,6 +89,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="evenEpisodeLabel" destination="X6j-CT-sSR" id="dwN-cI-fPS"/>
+                                            <outlet property="evenImage" destination="y4p-IY-w6c" id="eZG-n3-PgM"/>
+                                            <outlet property="evenTitleLabel" destination="jrz-GW-wJd" id="UAZ-3H-ncL"/>
                                             <segue destination="2nF-FC-Euo" kind="showDetail" id="CmT-5n-lgf"/>
                                         </connections>
                                     </tableViewCell>

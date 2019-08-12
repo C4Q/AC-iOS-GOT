@@ -10,6 +10,11 @@ import UIKit
 
 class oddGOTTVCell: UITableViewCell {
 
+    @IBOutlet weak var oddImage: UIImageView!
+    @IBOutlet weak var oddTitleLabel: UILabel!
+    @IBOutlet weak var oddEpisodeInfoLabel: UILabel!
+    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -10,6 +10,12 @@ import UIKit
 
 class evenGOTTVCell: UITableViewCell {
 
+    
+    @IBOutlet weak var evenTitleLabel: UILabel!
+    @IBOutlet weak var evenEpisodeLabel: UILabel!
+    @IBOutlet weak var evenImage: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
