@@ -76,6 +76,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="7Pu-Do-EbS"/>
+                    <connections>
+                        <outlet property="gotTableView" destination="VZj-fn-wLa" id="uLy-ZD-I4g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
