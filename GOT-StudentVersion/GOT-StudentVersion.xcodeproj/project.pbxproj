@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D003C942301A212001E0BB4 /* filterBySeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D003C932301A212001E0BB4 /* filterBySeason.swift */; };
+		4D003C972301A2D9001E0BB4 /* EpisodesArrBySeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D003C962301A2D9001E0BB4 /* EpisodesArrBySeason.swift */; };
+		4D003C992301A3EC001E0BB4 /* cellOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D003C982301A3EC001E0BB4 /* cellOneTableViewCell.swift */; };
+		4D003C9B2301A403001E0BB4 /* cellTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D003C9A2301A403001E0BB4 /* cellTwoTableViewCell.swift */; };
 		54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11AB91FABCE47004E1EAF /* AppDelegate.swift */; };
 		54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ABB1FABCE47004E1EAF /* ViewController.swift */; };
 		54B11ABF1FABCE47004E1EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11ABD1FABCE47004E1EAF /* Main.storyboard */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D003C932301A212001E0BB4 /* filterBySeason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterBySeason.swift; sourceTree = "<group>"; };
+		4D003C962301A2D9001E0BB4 /* EpisodesArrBySeason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesArrBySeason.swift; sourceTree = "<group>"; };
+		4D003C982301A3EC001E0BB4 /* cellOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellOneTableViewCell.swift; sourceTree = "<group>"; };
+		4D003C9A2301A403001E0BB4 /* cellTwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellTwoTableViewCell.swift; sourceTree = "<group>"; };
 		54B11AB61FABCE47004E1EAF /* GOT-StudentVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GOT-StudentVersion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B11AB91FABCE47004E1EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54B11ABB1FABCE47004E1EAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +45,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D003C952301A239001E0BB4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
+				4D003C932301A212001E0BB4 /* filterBySeason.swift */,
+				4D003C962301A2D9001E0BB4 /* EpisodesArrBySeason.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4D003C9C2301A40B001E0BB4 /* TabelViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				4D003C982301A3EC001E0BB4 /* cellOneTableViewCell.swift */,
+				4D003C9A2301A403001E0BB4 /* cellTwoTableViewCell.swift */,
+			);
+			path = TabelViewCells;
+			sourceTree = "<group>";
+		};
 		54B11AAD1FABCE47004E1EAF = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +85,8 @@
 			children = (
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
 				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
-				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
+				4D003C9C2301A40B001E0BB4 /* TabelViewCells */,
+				4D003C952301A239001E0BB4 /* Models */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
@@ -148,8 +176,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
+				4D003C942301A212001E0BB4 /* filterBySeason.swift in Sources */,
+				4D003C992301A3EC001E0BB4 /* cellOneTableViewCell.swift in Sources */,
+				4D003C9B2301A403001E0BB4 /* cellTwoTableViewCell.swift in Sources */,
 				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
+				4D003C972301A2D9001E0BB4 /* EpisodesArrBySeason.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
