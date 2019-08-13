@@ -9,7 +9,7 @@
 import Foundation
 
 struct EpisodeData {
-    static let allEpisodes = [
+     static let allEpisodes = [
         GOTEpisode(airdate: "2011-04-17", id: 4952, name: "Winter is Coming", number: 1, season: 1, runtime: 60, summary: "Lord Eddard Stark, ruler of the North, is summoned to court by his old friend, King Robert Baratheon, to serve as the King's Hand. Eddard reluctantly agrees after learning of a possible threat to the King's life. Eddard's bastard son Jon Snow must make a painful decision about his own future, while in the distant east Viserys Targaryen plots to reclaim his father's throne, usurped by Robert, by selling his sister in marriage.", mediumImageID: "2668", originalImageID: "2668"),
         GOTEpisode(airdate: "2011-04-24", id: 4953, name: "The Kingsroad", number: 2, season: 1, runtime: 60, summary: "An incident on the Kingsroad threatens Eddard and Robert's friendship. Jon and Tyrion travel to the Wall, where they discover that the reality of the Night's Watch may not match the heroic image of it.", mediumImageID: "2669", originalImageID: "2669"),
         GOTEpisode(airdate: "2011-05-01", id: 4954, name: "Lord Snow", number: 3, season: 1, runtime: 60, summary: "Jon Snow attempts to find his place amongst the Night's Watch. Eddard and his daughters arrive at King's Landing.", mediumImageID: "2671", originalImageID: "2671"),
@@ -78,7 +78,15 @@ struct EpisodeData {
         GOTEpisode(airdate: "2017-08-20", id: 1221414, name: "Beyond the Wall", number: 6, season: 7, runtime: 60, summary: "Jon's mission continues north of the wall, but the odds against his ragged band of misfits may be greater than he imagined.", mediumImageID: "312651", originalImageID: "312651"),
         GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502")
     ]
-    
-    static let season1 = EpisodeData.allEpisodes.filter({$0.season == 1})
+
+    static let allSeasons = [
+        EpisodeData.allEpisodes.filter({$0.season == 1}),
+        EpisodeData.allEpisodes.filter({$0.season == 2}),
+        EpisodeData.allEpisodes.filter({$0.season == 3}),
+        EpisodeData.allEpisodes.filter({$0.season == 4}),
+        EpisodeData.allEpisodes.filter({$0.season == 5}),
+        EpisodeData.allEpisodes.filter({$0.season == 6}),
+        EpisodeData.allEpisodes.filter({$0.season == 7})
+    ]
     
 }

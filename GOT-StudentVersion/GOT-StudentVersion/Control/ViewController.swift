@@ -11,23 +11,18 @@ import UIKit
 class ViewController: UIViewController {
     
     //TODO: connect searchbar, extend searchbardelegate
-    
-    
+        
     //MARK:  --Outlets
     @IBOutlet weak var gotTableView: UITableView!
     
     //will return an array, when calling data in function, use indexpath to get the element needed
-    let data = EpisodeData.season1
-    
-    
-    
+    var data = EpisodeData.allEpisodes
+    let gotSeasons = EpisodeData.allSeasons
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupProtocols()
     }
-    
-    
     
     private func setupProtocols() {
         gotTableView.delegate = self
@@ -39,16 +34,28 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return gotSeasons[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = gotTableView.dequeueReusableCell(withIdentifier: "oddCell", for: indexPath) as? oddGOTTVCell {
-            cell.oddTitleLabel?.text = data[indexPath.row].name
-            cell.oddEpisodeInfoLabel?.text = "s:  \(String(data[indexPath.row].season)) ep: \(data[indexPath.row].number)"
-            cell.oddImage.image = UIImage(named: data[indexPath.row].mediumImageID)
-            
-            return cell
+        let gotSeason = gotSeasons[indexPath.section][indexPath.row]
+        
+        if gotSeason.season % 2 == 1 {
+            if let cell = gotTableView.dequeueReusableCell(withIdentifier: "oddCell", for: indexPath) as? oddGOTTVCell {
+                cell.oddTitleLabel?.text = gotSeason.name
+                cell.oddEpisodeInfoLabel?.text = "s:  \(String(gotSeason.season)) ep: \(gotSeason.number)"
+                cell.oddImage.image = UIImage(named: gotSeason.mediumImageID)
+                
+                return cell
+            }
+        } else if gotSeason.season % 2 == 0 {
+            if let cell = gotTableView.dequeueReusableCell(withIdentifier: "evenCell", for: indexPath) as? evenGOTTVCell {
+                cell.evenTitleLabel?.text = gotSeason.name
+                cell.evenEpisodeLabel?.text = "s:  \(String(gotSeason.season)) ep: \(gotSeason.number)"
+                cell.evenImage.image = UIImage(named: gotSeason.mediumImageID)
+                
+                return cell
+            }
         }
         return UITableViewCell()
     }
@@ -57,4 +64,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return 150
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return gotSeasons.count
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if let gotSeason = gotSeasons[section].first?.season {
+        
+        return "season \(gotSeason)"
+        }
+        return "well that didn't work"
+    }
 }
