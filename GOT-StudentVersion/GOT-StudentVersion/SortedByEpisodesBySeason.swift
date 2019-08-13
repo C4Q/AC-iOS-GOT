@@ -9,46 +9,17 @@
 import UIKit
 
 class sortedBySeason{
-    var season1 = [GOTEpisode]()
-    var season2 = [GOTEpisode]()
-    var season3 = [GOTEpisode]()
-    var season4 = [GOTEpisode]()
-    var season5 = [GOTEpisode]()
-    var season6 = [GOTEpisode]()
-    var season7 = [GOTEpisode]()
+    var season1 = GOTEpisode.allEpisodes.filter({$0.season == 1})
+    var season2 = GOTEpisode.allEpisodes.filter({$0.season == 2})
+    var season3 = GOTEpisode.allEpisodes.filter({$0.season == 3})
+    var season4 = GOTEpisode.allEpisodes.filter({$0.season == 4})
+    var season5 = GOTEpisode.allEpisodes.filter({$0.season == 5})
+    var season6 = GOTEpisode.allEpisodes.filter({$0.season == 6})
+    var season7 = GOTEpisode.allEpisodes.filter({$0.season == 7})
     
-    func Sorting() -> [[GOTEpisode]]{
-        
-        var result:[[GOTEpisode]] = [[]]
-        
-        for eachSeason in GOTEpisode.allEpisodes{
-            if eachSeason.season == 1{
-                season1.append(eachSeason)
-            }else if eachSeason.season == 2{
-                season2.append(eachSeason)
-            }else if eachSeason.season == 3{
-                season3.append(eachSeason)
-            }else if eachSeason.season == 4{
-                season4.append(eachSeason)
-            }else if eachSeason.season == 5{
-                season5.append(eachSeason)
-            }else if eachSeason.season == 6{
-                season6.append(eachSeason)
-            }else if eachSeason.season == 7{
-                season7.append(eachSeason)
-            }
-        }
-        result.append(season1)
-        result.append(season2)
-        result.append(season3)
-        result.append(season4)
-        result.append(season5)
-        result.append(season6)
-        result.append(season7)
-        
-        
-        
-        return result
+   func Sorting() -> [[GOTEpisode]]{
+        let amountOdSeasons = [season1, season2, season3, season4, season5, season6, season7]
+        return amountOdSeasons
     }
 }
 

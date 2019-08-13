@@ -12,8 +12,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: -- Outlet & imported Variables
     @IBOutlet var gotTableView: UITableView!
-    var gotArrayBySeason = sortedBySeason.init().Sorting()
+    var gotArrayBySeason = sortedBySeason()
     var searchGOTNames = [String]()
+    var searching = true
+    var gotArrayOfNames = EpisodeNames().putNameOfEpisodesInAnArray()
     @IBOutlet var searchBar: UISearchBar!
     
     // add sections in the view
@@ -24,7 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: -- Table
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return gotArrayBySeason.count
+        return 7
     }
     // adds header for every season
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -56,7 +58,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gotArrayBySeason[section].count
+        return gotArrayBySeason.Sorting()[section].count
     }
     
     //sets the height of the sections
@@ -68,18 +70,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "GOTID2") as! GotTableViewCell
         
+       let info = gotArrayBySeason.Sorting()[indexPath.section][indexPath.row]
        
-            cell.gotName.text = "\( gotArrayBySeason[indexPath.section][indexPath.row].name) \(indexPath.section)"
-            cell.seasonAndEpisode.text = "S:\( gotArrayBySeason[indexPath.section][indexPath.row].season) E: \(gotArrayBySeason[indexPath.section][indexPath.row].number)"
-            cell.gotImageView.image = UIImage(named: gotArrayBySeason[indexPath.section][indexPath.row].mediumImageID)
+            cell.gotName.text = "\( info.name)"
+            cell.seasonAndEpisode.text = "S:\( info.season) E: \(info.number)"
+            cell.gotImageView.image = UIImage(named: info.mediumImageID)
         
+            cell2.gotName.text = "\( info.name)"
+            cell2.seasonAndEpisode.text = "S:\( info.season) E: \(info.number)"
+            cell2.gotImageView.image = UIImage(named: info.mediumImageID)
+       // }
         
-       
-            cell2.gotName.text = "\( gotArrayBySeason[indexPath.section][indexPath.row].name) \(indexPath.section)"
-            cell2.seasonAndEpisode.text = "S:\( gotArrayBySeason[indexPath.section][indexPath.row].season) E: \(gotArrayBySeason[indexPath.section][indexPath.row].number)"
-            cell2.gotImageView.image = UIImage(named: gotArrayBySeason[indexPath.section][indexPath.row].mediumImageID)
-        
-        if gotArrayBySeason[indexPath.section][indexPath.row].season % 2 == 1{
+        if info.season % 2 == 1{
            return cell
         }else {
             return cell2
@@ -94,20 +96,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let detailViewControler = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
-        
-        detailViewControler.getImage = UIImage(named: gotArrayBySeason[indexPath.section][indexPath.row].originalImageID)!
-        
-        detailViewControler.getTitle = gotArrayBySeason[indexPath.section][indexPath.row].name
-        
-        detailViewControler.getSeason = "Season: \( gotArrayBySeason[indexPath.section][indexPath.row].season)"
-        
-        detailViewControler.getEpisode = "Episode: \( gotArrayBySeason[indexPath.section][indexPath.row].id)"
-        
-        detailViewControler.getRunningTime = "Run Time: \( gotArrayBySeason[indexPath.section][indexPath.row].runtime)"
-        
-        detailViewControler.getAirTime = "Air Time: \(gotArrayBySeason[indexPath.section][indexPath.row].airdate)"
-        
-        detailViewControler.getDiscription = gotArrayBySeason[indexPath.section][indexPath.row].summary
+         let info = gotArrayBySeason.Sorting()[indexPath.section][indexPath.row]
+        // this line passes the model to the second view controller and allows the second view controller tro figure out what it needs to assign to its attritubes
+        detailViewControler.gotEpisode = info
         
         self.navigationController?.pushViewController(detailViewControler, animated: true)
         
@@ -115,6 +106,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //TODO
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
        
+        searchGOTNames.filter({$0.prefix(searchText.count) == searchText})
         
             }
     

@@ -128,7 +128,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="detailDiscription" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SeP-Vl-k7u">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="detailDiscription" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SeP-Vl-k7u">
                                 <rect key="frame" x="20" y="548.5" width="374" height="219.5"/>
                                 <color key="backgroundColor" red="1" green="0.9999879002571106" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -231,13 +231,16 @@
         <!--Navigation Controller-->
         <scene sceneID="0L1-Pu-WHl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ruE-Xs-dMJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsWhenKeyboardAppears="YES" id="ruE-Xs-dMJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l1T-vm-wlm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WA0-9I-dEm">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wKA-HU-9qe"/>
                     </connections>

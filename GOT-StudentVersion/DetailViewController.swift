@@ -9,14 +9,8 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    
-var getImage = UIImage()
-    var getTitle = String()
-    var getSeason = String()
-    var getEpisode = String()
-    var getRunningTime = String()
-    var getAirTime = String()
-    var getDiscription = String()
+ 
+    var gotEpisode: GOTEpisode!
     
     @IBOutlet var detailTitleLabel: UILabel!
     @IBOutlet var detailImageView: UIImageView!
@@ -27,25 +21,18 @@ var getImage = UIImage()
     
     @IBOutlet var detailDiscription: UITextView!
     func loadDetailsToViewController(){
-        detailImageView.image = getImage
-        detailSeasonLabel.text = getSeason
-        detailEpisodeLabel.text = getEpisode
-        detailRunningTime.text = getRunningTime
-        detailAirTime.text = getAirTime
-        detailTitleLabel.text = getTitle
-        detailDiscription.text = getDiscription
+        detailImageView.image = UIImage(named: gotEpisode.originalImageID)
+        detailSeasonLabel.text = "Season: \(gotEpisode.season)"
+        detailEpisodeLabel.text = "Episode: \(gotEpisode.number)"
+        detailRunningTime.text = "Run Time: \(gotEpisode.runtime)"
+        detailAirTime.text = gotEpisode.airdate
+        detailTitleLabel.text = gotEpisode.name
+        detailDiscription.text = gotEpisode.summary
     }
     override func viewDidLoad() {
         super.viewDidLoad()
 loadDetailsToViewController()
         
-       detailImageView.layer.cornerRadius = detailImageView.frame.size.width/2.3
-        detailImageView.clipsToBounds = true
-        
-        detailImageView.layer.masksToBounds = true
-        
-      //  detailImageView.layer.borderColor = [UIColor colorWithRed:148/255. green:79/255. blue:216/255. alpha:1.0].CGColor
-       detailImageView.layer.borderWidth=3
         
     }
 }
