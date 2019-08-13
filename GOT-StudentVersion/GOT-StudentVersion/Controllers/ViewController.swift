@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    let allEpisodes = GOTEpisode.allEpisodes
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -80,13 +81,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section % 2 == 0 {
-            case false:
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "OddTableViewCell", for: indexPath) as? OddTableViewCell {
-                    cell.oddTitleLabel?.text = GOTEpisode.allEpisodes[indexPath.row].name
-                }
             case true:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "OddTableViewCell", for: indexPath) as? OddTableViewCell {
+                    cell.oddTitleLabel?.text = allEpisodes[indexPath.row].name
+                    cell.oddSeasonEpLabel?.text = "S: \(allEpisodes[indexPath.row].season) E: \(allEpisodes[indexPath.row].number)"
+                    cell.oddImage.image = UIImage(named: allEpisodes[indexPath.row].originalImageID)
+                }
+            case false:
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "EvenTableViewCell", for: indexPath) as? EvenTableViewCell {
-                    cell.evenTitleLabel?.text = GOTEpisode.allEpisodes[indexPath.row].name
+                    cell.evenTitleLabel?.text = allEpisodes[indexPath.row].name
+                    cell.evenSeasonEpLabel?.text = "S: \(allEpisodes[indexPath.row].season) E: \(allEpisodes[indexPath.row].number)"
+                    cell.evenImage.image = UIImage(named: allEpisodes[indexPath.row].originalImageID)
                 }
         }
         return UITableViewCell()
@@ -94,7 +99,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
  
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 200
+            return 100
     }
     
 }

@@ -14,7 +14,6 @@ class OddTableViewCell: UITableViewCell {
     @IBOutlet weak var oddTitleLabel: UILabel!
     @IBOutlet weak var oddSeasonEpLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

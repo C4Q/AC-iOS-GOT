@@ -22,30 +22,30 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OddTableViewCell" rowHeight="150" id="wzL-1L-6GX" customClass="OddTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OddTableViewCell" rowHeight="100" id="wzL-1L-6GX" customClass="OddTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wzL-1L-6GX" id="1o6-g0-UPn">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aae-pf-pvd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oDe-Tw-73g" userLabel="Odd Section Image">
-                                                            <rect key="frame" x="0.0" y="0.0" width="207" height="149.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="207" height="99.5"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ACg-rT-vrh">
-                                                            <rect key="frame" x="207" y="0.0" width="207" height="149.5"/>
+                                                            <rect key="frame" x="207" y="0.0" width="207" height="99.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjY-Lm-TkK" userLabel="Odd Name Label">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="75"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="jjY-Lm-TkK" userLabel="Odd Name Label">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZC-Pd-MwU" userLabel="Odd Season Ep Label">
-                                                                    <rect key="frame" x="0.0" y="75" width="207" height="74.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="yZC-Pd-MwU" userLabel="Odd Season Ep Label">
+                                                                    <rect key="frame" x="0.0" y="50" width="207" height="49.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -84,27 +84,27 @@
                                             <outlet property="oddTitleLabel" destination="jjY-Lm-TkK" id="vD4-Y4-zw1"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EvenTableViewCell" rowHeight="150" id="7VI-z3-Otn" customClass="EvenTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="178" width="414" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EvenTableViewCell" rowHeight="100" id="7VI-z3-Otn" customClass="EvenTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7VI-z3-Otn" id="aHt-NS-0Ql">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ld-fj-CxH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="U5J-Np-TXU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="207" height="149.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="207" height="99.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1p-pE-e7W" userLabel="Even Name Label">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="75"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="B1p-pE-e7W" userLabel="Even Name Label">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWx-Za-rWs" userLabel="Even Season Ep Label">
-                                                                    <rect key="frame" x="0.0" y="75" width="207" height="74.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="cWx-Za-rWs" userLabel="Even Season Ep Label">
+                                                                    <rect key="frame" x="0.0" y="50" width="207" height="49.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -118,7 +118,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xud-HY-COS" userLabel="Even Section Image">
-                                                            <rect key="frame" x="207" y="0.0" width="207" height="149.5"/>
+                                                            <rect key="frame" x="207" y="0.0" width="207" height="99.5"/>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
