@@ -15,7 +15,7 @@
 		54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */; };
 		EA64D69B23020A5100765420 /* OddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64D69A23020A5100765420 /* OddTableViewCell.swift */; };
 		EA64D69D23020A5C00765420 /* EvenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64D69C23020A5C00765420 /* EvenTableViewCell.swift */; };
-		EA64D6A22302EE8C00765420 /* EpisodeDetailViewSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64D6A12302EE8C00765420 /* EpisodeDetailViewSegue.swift */; };
+		EA64D6AD2303372000765420 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64D6AC2303372000765420 /* EpisodeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisode.swift; sourceTree = "<group>"; };
 		EA64D69A23020A5100765420 /* OddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddTableViewCell.swift; sourceTree = "<group>"; };
 		EA64D69C23020A5C00765420 /* EvenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenTableViewCell.swift; sourceTree = "<group>"; };
-		EA64D6A12302EE8C00765420 /* EpisodeDetailViewSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewSegue.swift; sourceTree = "<group>"; };
+		EA64D6AC2303372000765420 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +64,8 @@
 			children = (
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
 				EA64D69F23020AF000765420 /* Models */,
-				EA64D69E23020A6600765420 /* Views */,
 				EA64D6A023020AFF00765420 /* Controllers */,
+				EA64D69E23020A6600765420 /* Views */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
 			);
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
-				EA64D6A12302EE8C00765420 /* EpisodeDetailViewSegue.swift */,
+				EA64D6AC2303372000765420 /* EpisodeDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,10 +182,10 @@
 			files = (
 				54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */,
 				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
+				EA64D6AD2303372000765420 /* EpisodeDetailViewController.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
 				EA64D69D23020A5C00765420 /* EvenTableViewCell.swift in Sources */,
 				EA64D69B23020A5100765420 /* OddTableViewCell.swift in Sources */,
-				EA64D6A22302EE8C00765420 /* EpisodeDetailViewSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -82,7 +82,7 @@
                                             <outlet property="oddImage" destination="oDe-Tw-73g" id="hZU-K2-qzB"/>
                                             <outlet property="oddSeasonEpLabel" destination="yZC-Pd-MwU" id="HHs-ig-8gW"/>
                                             <outlet property="oddTitleLabel" destination="jjY-Lm-TkK" id="vD4-Y4-zw1"/>
-                                            <segue destination="Ki2-Rn-OEi" kind="show" identifier="EpisodeDetailViewSegue" customClass="EpisodeDetailViewSegue" customModule="GOT_StudentVersion" customModuleProvider="target" id="tjx-6v-cKO"/>
+                                            <segue destination="Ki2-Rn-OEi" kind="show" identifier="EpisodeDetailViewSegueOdd" id="iVh-FQ-fCn"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EvenTableViewCell" rowHeight="100" id="7VI-z3-Otn" customClass="EvenTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -143,7 +143,7 @@
                                             <outlet property="evenImage" destination="Xud-HY-COS" id="wJa-r1-FJC"/>
                                             <outlet property="evenSeasonEpLabel" destination="cWx-Za-rWs" id="E4A-4h-ALU"/>
                                             <outlet property="evenTitleLabel" destination="B1p-pE-e7W" id="a1T-7h-oWv"/>
-                                            <segue destination="Ki2-Rn-OEi" kind="show" identifier="EpisodeDetailViewSegue" customClass="EpisodeDetailViewSegue" customModule="GOT_StudentVersion" customModuleProvider="target" id="CR0-8N-hQ0"/>
+                                            <segue destination="Ki2-Rn-OEi" kind="show" identifier="EpisodeDetailViewSegueEven" id="den-qz-zuR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -167,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
         </scene>
-        <!--Episode Detail View Segue-->
+        <!--Episode Detail View Controller-->
         <scene sceneID="rZg-dz-AUJ">
             <objects>
-                <viewController id="Ki2-Rn-OEi" customClass="EpisodeDetailViewSegue" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ki2-Rn-OEi" customClass="EpisodeDetailViewController" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kqT-c4-EDt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,13 +227,13 @@
                         <viewLayoutGuide key="safeArea" id="XaD-Pw-Nsl"/>
                     </view>
                     <connections>
-                        <outlet property="episodeDetailAirdate" destination="1b8-v9-exe" id="uSf-yy-CmS"/>
-                        <outlet property="episodeDetailDescription" destination="bMu-1w-v5C" id="pfi-iW-5vW"/>
-                        <outlet property="episodeDetailEpisode" destination="cAh-x0-OrC" id="cZC-79-jK0"/>
-                        <outlet property="episodeDetailImage" destination="i9T-Zh-7Hc" id="0Xm-qV-bZY"/>
-                        <outlet property="episodeDetailName" destination="Cay-m0-BGi" id="x7j-V2-rJu"/>
-                        <outlet property="episodeDetailRuntime" destination="BAA-FY-07N" id="Taz-kv-C52"/>
-                        <outlet property="episodeDetailSeason" destination="LAU-FI-Wr4" id="hxM-ej-1Su"/>
+                        <outlet property="episodeDetailAirdate" destination="1b8-v9-exe" id="JvU-gd-8r6"/>
+                        <outlet property="episodeDetailDescription" destination="bMu-1w-v5C" id="RW8-XJ-pU5"/>
+                        <outlet property="episodeDetailEpisode" destination="cAh-x0-OrC" id="tyl-hc-jac"/>
+                        <outlet property="episodeDetailImage" destination="i9T-Zh-7Hc" id="1BL-Sw-dRr"/>
+                        <outlet property="episodeDetailName" destination="Cay-m0-BGi" id="7Ph-ub-DDz"/>
+                        <outlet property="episodeDetailRuntime" destination="BAA-FY-07N" id="PLh-VA-8iw"/>
+                        <outlet property="episodeDetailSeason" destination="LAU-FI-Wr4" id="bdb-eg-k1d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5r-UG-DoD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -260,6 +260,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tjx-6v-cKO"/>
+        <segue reference="den-qz-zuR"/>
     </inferredMetricsTieBreakers>
 </document>
