@@ -34,10 +34,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == ""
-    }
-
 }
 
 
@@ -151,5 +147,77 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 100
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else { fatalError("No identifier in segue")}
+        
+        switch segueIdentifier {
+        case "EpisodeDetailViewSegueOdd":
+            guard let episodeDetailVC = segue.destination as? EpisodeDetailViewController
+                else {
+                    fatalError("Unexpected segue VC")
+            }
+            guard let selectedIndexPath = self.tableView.indexPathForSelectedRow
+                else {
+                    fatalError("No row was selected")
+            }
+            
+            
+            switch selectedIndexPath.section {
+            case 0:
+                episodeDetailVC.episode = seasonOne[selectedIndexPath.row]
+            case 1:
+                episodeDetailVC.episode = seasonTwo[selectedIndexPath.row]
+            case 2:
+                episodeDetailVC.episode = seasonThree[selectedIndexPath.row]
+            case 3:
+                episodeDetailVC.episode = seasonFour[selectedIndexPath.row]
+            case 4:
+                episodeDetailVC.episode = seasonFive[selectedIndexPath.row]
+            case 5:
+                episodeDetailVC.episode = seasonSix[selectedIndexPath.row]
+            case 6:
+                episodeDetailVC.episode = seasonSeven[selectedIndexPath.row]
+            default:
+                fatalError("No!")
+            }
+        case "EpisodeDetailViewSegueEven":
+            guard let episodeDetailVC = segue.destination as? EpisodeDetailViewController
+                else {
+                    fatalError("Unexpected segue VC")
+            }
+            guard let selectedIndexPath = self.tableView.indexPathForSelectedRow
+                else {
+                    fatalError("No row was selected")
+            }
+            
+            
+            switch selectedIndexPath.section {
+            case 0:
+                episodeDetailVC.episode = seasonOne[selectedIndexPath.row]
+            case 1:
+                episodeDetailVC.episode = seasonTwo[selectedIndexPath.row]
+            case 2:
+                episodeDetailVC.episode = seasonThree[selectedIndexPath.row]
+            case 3:
+                episodeDetailVC.episode = seasonFour[selectedIndexPath.row]
+            case 4:
+                episodeDetailVC.episode = seasonFive[selectedIndexPath.row]
+            case 5:
+                episodeDetailVC.episode = seasonSix[selectedIndexPath.row]
+            case 6:
+                episodeDetailVC.episode = seasonSeven[selectedIndexPath.row]
+            default:
+                fatalError("No!")
+            }
+            
+            
+        default:
+            fatalError("Unexpected segue identifier")
+            
+        }
+    }
+
     
 }
