@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //MARK: -- Outlet & imported Variables
     @IBOutlet var gotTableView: UITableView!
     var gotArrayBySeason = sortedBySeason.init().Sorting()
     
@@ -18,6 +19,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func changeHeaderColor(tableView:UITableView){
         tableView.backgroundColor = .blue
     }
+    
+    //MARK: -- Table
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return gotArrayBySeason.count
@@ -47,23 +50,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             changeHeaderColor(tableView: tableView)
             return "Season 7"
         default:
-            return "GOT SEASONS 1 - 7"
+            return ""
         }
     }
-    // this changes the color of the section header but overrides the "titleForHeaderInSection" method
-    
-    //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    //        let label = UIView()
-    //
-    //        switch section % 2 == 0{
-    //
-    //        case true:
-    //            label.backgroundColor = .blue
-    //        case false:
-    //            label.backgroundColor = .yellow
-    //    }
-    //        return label
-    //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gotArrayBySeason[section].count
@@ -74,16 +63,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return CGFloat(150)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GOTID", for: indexPath) as! GotTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GOTID") as! GotTableViewCell
         
-        cell.gotName.text = "\( gotArrayBySeason[indexPath.section][indexPath.row].name) \(indexPath.section)"
-        cell.seasonAndEpisode.text = "S:\( gotArrayBySeason[indexPath.section][indexPath.row].season) E: \(gotArrayBySeason[indexPath.section][indexPath.row].number)"
-        cell.gotImageView.image = UIImage(named: gotArrayBySeason[indexPath.section][indexPath.row].mediumImageID)
+        let cell2 = tableView.dequeueReusableCell(withIdentifier: "GOTID2") as! GotTableViewCell
+        
+       
+            cell.gotName.text = "\( gotArrayBySeason[indexPath.section][indexPath.row].name) \(indexPath.section)"
+            cell.seasonAndEpisode.text = "S:\( gotArrayBySeason[indexPath.section][indexPath.row].season) E: \(gotArrayBySeason[indexPath.section][indexPath.row].number)"
+            cell.gotImageView.image = UIImage(named: gotArrayBySeason[indexPath.section][indexPath.row].mediumImageID)
         
         
-        // write my code in here
-        return cell
+       
+            cell2.gotName.text = "\( gotArrayBySeason[indexPath.section][indexPath.row].name) \(indexPath.section)"
+            cell2.seasonAndEpisode.text = "S:\( gotArrayBySeason[indexPath.section][indexPath.row].season) E: \(gotArrayBySeason[indexPath.section][indexPath.row].number)"
+            cell2.gotImageView.image = UIImage(named: gotArrayBySeason[indexPath.section][indexPath.row].mediumImageID)
+        
+        if gotArrayBySeason[indexPath.section][indexPath.row].season % 2 == 1{
+           return cell
+        }else {
+            return cell2
+        }
+        
     }
+    
     //function to pass data from one tableView Controller to another tableView Controller
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

@@ -38,5 +38,14 @@ var getImage = UIImage()
     override func viewDidLoad() {
         super.viewDidLoad()
 loadDetailsToViewController()
+        
+       detailImageView.layer.cornerRadius = detailImageView.frame.size.width/2.3
+        detailImageView.clipsToBounds = true
+        
+        detailImageView.layer.masksToBounds = true
+        
+      //  detailImageView.layer.borderColor = [UIColor colorWithRed:148/255. green:79/255. blue:216/255. alpha:1.0].CGColor
+       detailImageView.layer.borderWidth=3
+        
     }
 }
