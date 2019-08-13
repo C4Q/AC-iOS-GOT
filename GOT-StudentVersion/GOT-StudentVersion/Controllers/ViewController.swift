@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let allEpisodes = GOTEpisode.allEpisodes
     let seasonOne = GOTEpisode.seasonOne
     let seasonTwo = GOTEpisode.seasonTwo
     let seasonThree = GOTEpisode.seasonThree
@@ -149,7 +148,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             UITableViewCell()
         }
-        
         return UITableViewCell()
     }
     
