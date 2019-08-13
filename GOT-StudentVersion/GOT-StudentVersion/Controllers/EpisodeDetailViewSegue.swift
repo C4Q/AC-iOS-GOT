@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import UIKit
+
+class EpisodeDetailViewSegue: ViewController {
+    
+    @IBOutlet weak var episodeDetailImage: UIImageView!
+    @IBOutlet weak var episodeDetailName: UILabel!
+    @IBOutlet weak var episodeDetailSeason: UILabel!
+    @IBOutlet weak var episodeDetailEpisode: UILabel!
+    @IBOutlet weak var episodeDetailRuntime: UILabel!
+    @IBOutlet weak var episodeDetailAirdate: UILabel!
+    @IBOutlet weak var episodeDetailDescription: UITextView!
+    
+}

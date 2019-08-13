@@ -87,20 +87,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        switch indexPath.section % 2 == 0 {
-//            case true:
-//                if let cell = tableView.dequeueReusableCell(withIdentifier: "OddTableViewCell", for: indexPath) as? OddTableViewCell {
-//                    cell.oddTitleLabel?.text = allEpisodes[indexPath.row].name
-//                    cell.oddSeasonEpLabel?.text = "S: \(allEpisodes[indexPath.row].season) E: \(allEpisodes[indexPath.row].number)"
-//                    cell.oddImage.image = UIImage(named: allEpisodes[indexPath.row].originalImageID)
-//                }
-//            case false:
-//                if let cell = tableView.dequeueReusableCell(withIdentifier: "EvenTableViewCell", for: indexPath) as? EvenTableViewCell {
-//                    cell.evenTitleLabel?.text = allEpisodes[indexPath.row].name
-//                    cell.evenSeasonEpLabel?.text = "S: \(allEpisodes[indexPath.row].season) E: \(allEpisodes[indexPath.row].number)"
-//                    cell.evenImage.image = UIImage(named: allEpisodes[indexPath.row].originalImageID)
-//                }
-//        }
         
         switch indexPath.section {
         case 0:
@@ -108,42 +94,49 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.evenTitleLabel?.text = seasonOne[indexPath.row].name
                 cell.evenSeasonEpLabel?.text = "S: \(seasonOne[indexPath.row].season) E: \(seasonOne[indexPath.row].number)"
                 cell.evenImage.image = UIImage(named: seasonOne[indexPath.row].originalImageID)
+                return cell
             }
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "OddTableViewCell", for: indexPath) as? OddTableViewCell {
                 cell.oddTitleLabel?.text = seasonTwo[indexPath.row].name
                 cell.oddSeasonEpLabel?.text = "S: \(seasonTwo[indexPath.row].season) E: \(seasonTwo[indexPath.row].number)"
                 cell.oddImage.image = UIImage(named: seasonTwo[indexPath.row].originalImageID)
+                return cell
             }
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "EvenTableViewCell", for: indexPath) as? EvenTableViewCell {
                 cell.evenTitleLabel?.text = seasonThree[indexPath.row].name
                 cell.evenSeasonEpLabel?.text = "S: \(seasonThree[indexPath.row].season) E: \(seasonThree[indexPath.row].number)"
                 cell.evenImage.image = UIImage(named: seasonThree[indexPath.row].originalImageID)
+                return cell
             }
         case 3:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "OddTableViewCell", for: indexPath) as? OddTableViewCell {
                 cell.oddTitleLabel?.text = seasonFour[indexPath.row].name
                 cell.oddSeasonEpLabel?.text = "S: \(seasonFour[indexPath.row].season) E: \(seasonFour[indexPath.row].number)"
                 cell.oddImage.image = UIImage(named: seasonFour[indexPath.row].originalImageID)
+                return cell
             }
         case 4:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "EvenTableViewCell", for: indexPath) as? EvenTableViewCell {
                 cell.evenTitleLabel?.text = seasonFive[indexPath.row].name
                 cell.evenSeasonEpLabel?.text = "S: \(seasonFive[indexPath.row].season) E: \(seasonFive[indexPath.row].number)"
                 cell.evenImage.image = UIImage(named: seasonFive[indexPath.row].originalImageID)
+                return cell
             }
         case 5:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "OddTableViewCell", for: indexPath) as? OddTableViewCell {
                 cell.oddTitleLabel?.text = seasonSix[indexPath.row].name
                 cell.oddSeasonEpLabel?.text = "S: \(seasonSix[indexPath.row].season) E: \(seasonSix[indexPath.row].number)"
                 cell.oddImage.image = UIImage(named: seasonSix[indexPath.row].originalImageID)
+                return cell
             }
         case 6:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "EvenTableViewCell", for: indexPath) as? EvenTableViewCell {
                 cell.evenTitleLabel?.text = seasonSeven[indexPath.row].name
                 cell.evenSeasonEpLabel?.text = "S: \(seasonSeven[indexPath.row].season) E: \(seasonSeven[indexPath.row].number)"
                 cell.evenImage.image = UIImage(named: seasonSeven[indexPath.row].originalImageID)
+                return cell
             }
         default:
             UITableViewCell()
