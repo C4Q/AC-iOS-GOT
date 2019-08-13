@@ -25,10 +25,10 @@ class EpisodeDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         episodeDetailImage.image = UIImage(named: episode.mediumImageID)
         episodeDetailName.text = episode.name
-        episodeDetailSeason.text = String(episode.season)
-        episodeDetailEpisode.text = String(episode.number)
-        episodeDetailRuntime.text = String(episode.runtime)
-        episodeDetailAirdate.text = episode.airdate
+        episodeDetailSeason.text = "Season: \(episode.season)"
+        episodeDetailEpisode.text = "Episode: \(episode.number)"
+        episodeDetailRuntime.text = "Runtime: \(episode.runtime)"
+        episodeDetailAirdate.text = "Air date: \(episode.airdate)"
         episodeDetailDescription.text = episode.summary
     }
     
