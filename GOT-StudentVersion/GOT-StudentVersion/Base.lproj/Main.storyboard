@@ -29,25 +29,39 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="123.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcL-WZ-jye">
-                                                    <rect key="frame" x="277" y="90" width="76" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcL-WZ-jye">
+                                                    <rect key="frame" x="277" y="90" width="686" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hb7-I6-LzC">
-                                                    <rect key="frame" x="20" y="12" width="206" height="99"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hb7-I6-LzC">
+                                                    <rect key="frame" x="20" y="12" width="150" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="agH-Lh-nxJ"/>
+                                                        <constraint firstAttribute="height" constant="100" id="quz-Dt-hLY"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qk-Hc-ZjR">
-                                                    <rect key="frame" x="277" y="12" width="76" height="19"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qk-Hc-ZjR">
+                                                    <rect key="frame" x="277" y="12" width="686" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="n2c-QA-lVA"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Hb7-I6-LzC" firstAttribute="centerY" secondItem="BSW-mH-rFB" secondAttribute="centerY" id="6nD-Sf-y6f"/>
+                                                <constraint firstItem="ZcL-WZ-jye" firstAttribute="leading" secondItem="Hb7-I6-LzC" secondAttribute="trailing" constant="107" id="Cdj-gR-oxH"/>
+                                                <constraint firstItem="Hb7-I6-LzC" firstAttribute="bottom" secondItem="ZcL-WZ-jye" secondAttribute="bottom" constant="1" id="OaD-qH-fNK"/>
+                                                <constraint firstItem="Hb7-I6-LzC" firstAttribute="top" secondItem="2Qk-Hc-ZjR" secondAttribute="top" id="TkZ-RI-46z"/>
+                                                <constraint firstItem="2Qk-Hc-ZjR" firstAttribute="leading" secondItem="ZcL-WZ-jye" secondAttribute="leading" id="WwO-Sq-iFy"/>
+                                                <constraint firstItem="2Qk-Hc-ZjR" firstAttribute="trailing" secondItem="ZcL-WZ-jye" secondAttribute="trailing" id="eef-5e-y2G"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2Qk-Hc-ZjR" secondAttribute="trailing" constant="41" id="w13-Of-Jdb"/>
+                                                <constraint firstItem="Hb7-I6-LzC" firstAttribute="leading" secondItem="BSW-mH-rFB" secondAttribute="leadingMargin" id="xeh-V8-1Vz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
