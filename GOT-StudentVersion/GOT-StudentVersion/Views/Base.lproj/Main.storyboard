@@ -82,7 +82,7 @@
                                             <outlet property="oddImage" destination="oDe-Tw-73g" id="hZU-K2-qzB"/>
                                             <outlet property="oddSeasonEpLabel" destination="yZC-Pd-MwU" id="HHs-ig-8gW"/>
                                             <outlet property="oddTitleLabel" destination="jjY-Lm-TkK" id="vD4-Y4-zw1"/>
-                                            <segue destination="Ki2-Rn-OEi" kind="showDetail" id="9ID-Zj-B7h"/>
+                                            <segue destination="Ki2-Rn-OEi" kind="show" identifier="EpisodeDetailViewSegue" id="tjx-6v-cKO"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EvenTableViewCell" rowHeight="100" id="7VI-z3-Otn" customClass="EvenTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -143,7 +143,7 @@
                                             <outlet property="evenImage" destination="Xud-HY-COS" id="wJa-r1-FJC"/>
                                             <outlet property="evenSeasonEpLabel" destination="cWx-Za-rWs" id="E4A-4h-ALU"/>
                                             <outlet property="evenTitleLabel" destination="B1p-pE-e7W" id="a1T-7h-oWv"/>
-                                            <segue destination="Ki2-Rn-OEi" kind="showDetail" id="4a9-7v-5Pg"/>
+                                            <segue destination="Ki2-Rn-OEi" kind="show" id="CR0-8N-hQ0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -232,6 +232,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4a9-7v-5Pg"/>
+        <segue reference="tjx-6v-cKO"/>
     </inferredMetricsTieBreakers>
 </document>

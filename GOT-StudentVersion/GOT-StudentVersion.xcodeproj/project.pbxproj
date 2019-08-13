@@ -15,6 +15,7 @@
 		54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */; };
 		EA64D69B23020A5100765420 /* OddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64D69A23020A5100765420 /* OddTableViewCell.swift */; };
 		EA64D69D23020A5C00765420 /* EvenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64D69C23020A5C00765420 /* EvenTableViewCell.swift */; };
+		EA64D6A22302EE8C00765420 /* EpisodeDetailViewSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA64D6A12302EE8C00765420 /* EpisodeDetailViewSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisode.swift; sourceTree = "<group>"; };
 		EA64D69A23020A5100765420 /* OddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddTableViewCell.swift; sourceTree = "<group>"; };
 		EA64D69C23020A5C00765420 /* EvenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenTableViewCell.swift; sourceTree = "<group>"; };
+		EA64D6A12302EE8C00765420 /* EpisodeDetailViewSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
+				EA64D6A12302EE8C00765420 /* EpisodeDetailViewSegue.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
 				EA64D69D23020A5C00765420 /* EvenTableViewCell.swift in Sources */,
 				EA64D69B23020A5100765420 /* OddTableViewCell.swift in Sources */,
+				EA64D6A22302EE8C00765420 /* EpisodeDetailViewSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
