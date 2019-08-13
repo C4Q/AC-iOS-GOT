@@ -13,6 +13,11 @@
 		54B11AC11FABCE48004E1EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC01FABCE48004E1EAF /* Assets.xcassets */; };
 		54B11AC41FABCE48004E1EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */; };
 		54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */; };
+		97F595982301F87D005E09E2 /* GoTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F595972301F87D005E09E2 /* GoTTableViewCell.swift */; };
+		97F5959C23020064005E09E2 /* imageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5959B23020064005E09E2 /* imageable.swift */; };
+		97F5959E230206B4005E09E2 /* GoTOddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5959D230206B4005E09E2 /* GoTOddTableViewCell.swift */; };
+		97F595A023021080005E09E2 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5959F23021080005E09E2 /* detailViewController.swift */; };
+		97FAE9D32302EF6A00B99FAF /* UIViewSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FAE9D22302EF6A00B99FAF /* UIViewSubclass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		54B11AC31FABCE48004E1EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54B11AC51FABCE48004E1EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
+		97F595972301F87D005E09E2 /* GoTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTTableViewCell.swift; sourceTree = "<group>"; };
+		97F5959B23020064005E09E2 /* imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageable.swift; sourceTree = "<group>"; };
+		97F5959D230206B4005E09E2 /* GoTOddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTOddTableViewCell.swift; sourceTree = "<group>"; };
+		97F5959F23021080005E09E2 /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
+		97FAE9D22302EF6A00B99FAF /* UIViewSubclass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewSubclass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +67,11 @@
 			isa = PBXGroup;
 			children = (
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
-				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
+				97F595A22302353E005E09E2 /* Views */,
+				97F595972301F87D005E09E2 /* GoTTableViewCell.swift */,
+				97F5959D230206B4005E09E2 /* GoTOddTableViewCell.swift */,
 				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
+				97F5959B23020064005E09E2 /* imageable.swift */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
@@ -73,6 +86,16 @@
 				54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		97F595A22302353E005E09E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
+				97F5959F23021080005E09E2 /* detailViewController.swift */,
+				97FAE9D22302EF6A00B99FAF /* UIViewSubclass.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,8 +170,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97FAE9D32302EF6A00B99FAF /* UIViewSubclass.swift in Sources */,
+				97F5959E230206B4005E09E2 /* GoTOddTableViewCell.swift in Sources */,
 				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
 				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
+				97F595982301F87D005E09E2 /* GoTTableViewCell.swift in Sources */,
+				97F5959C23020064005E09E2 /* imageable.swift in Sources */,
+				97F595A023021080005E09E2 /* detailViewController.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
