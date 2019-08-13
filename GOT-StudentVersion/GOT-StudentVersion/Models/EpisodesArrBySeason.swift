@@ -14,3 +14,5 @@ var gotSeason4 = filterBySeason(got: GOTEpisode.allEpisodes, season: 4)
 var gotSeason5 = filterBySeason(got: GOTEpisode.allEpisodes, season: 5)
 var gotSeason6 = filterBySeason(got: GOTEpisode.allEpisodes, season: 6)
 var gotSeason7 = filterBySeason(got: GOTEpisode.allEpisodes, season: 7)
+
+var arrOfSeasons = [gotSeason1,gotSeason2,gotSeason3,gotSeason4,gotSeason5,gotSeason6,gotSeason7]
