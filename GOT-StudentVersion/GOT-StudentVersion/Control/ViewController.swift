@@ -52,6 +52,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return UITableViewCell()
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
