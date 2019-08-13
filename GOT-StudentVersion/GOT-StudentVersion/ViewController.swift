@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     //MARK: -- Outlet & imported Variables
     @IBOutlet var gotTableView: UITableView!
     var gotArrayBySeason = sortedBySeason.init().Sorting()
-    
+    var searchGOTNames = [String]()
+    @IBOutlet var searchBar: UISearchBar!
     
     // add sections in the view
     func changeHeaderColor(tableView:UITableView){
@@ -111,13 +112,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.navigationController?.pushViewController(detailViewControler, animated: true)
         
     }
+    //TODO
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+       
+        
+            }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         gotTableView.delegate = self
         gotTableView.dataSource = self
-        
+        searchBar.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
     
