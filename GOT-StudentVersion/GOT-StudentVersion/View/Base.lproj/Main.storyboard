@@ -38,19 +38,19 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7c-L0-V5X">
                                                     <rect key="frame" x="20" y="11" width="175" height="128"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj6-xz-VHk">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj6-xz-VHk">
                                                     <rect key="frame" x="215" y="26" width="179" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNJ-Pu-Jm5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNJ-Pu-Jm5">
                                                     <rect key="frame" x="215" y="64" width="179" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="179" id="GKx-Eq-SHw"/>
                                                         <constraint firstAttribute="height" constant="21" id="dvf-0N-ux0"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -73,7 +73,7 @@
                                             <outlet property="oddEpisodeInfoLabel" destination="rNJ-Pu-Jm5" id="DQD-KW-zTq"/>
                                             <outlet property="oddImage" destination="U7c-L0-V5X" id="z7o-Jm-Snr"/>
                                             <outlet property="oddTitleLabel" destination="Dj6-xz-VHk" id="r28-bi-A4I"/>
-                                            <segue destination="2nF-FC-Euo" kind="show" id="7V8-e3-RCf"/>
+                                            <segue destination="2nF-FC-Euo" kind="show" identifier="oddEpisode" id="7V8-e3-RCf"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="evenCell" rowHeight="150" id="5pd-Jm-mu4" customClass="evenGOTTVCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -88,17 +88,17 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6j-CT-sSR">
                                                     <rect key="frame" x="20" y="75" width="179" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrz-GW-wJd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrz-GW-wJd">
                                                     <rect key="frame" x="20" y="35" width="179" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="179" id="k6b-5r-1WJ"/>
                                                         <constraint firstAttribute="height" constant="21" id="v9r-Ev-do0"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -122,7 +122,7 @@
                                             <outlet property="evenEpisodeLabel" destination="X6j-CT-sSR" id="dwN-cI-fPS"/>
                                             <outlet property="evenImage" destination="y4p-IY-w6c" id="eZG-n3-PgM"/>
                                             <outlet property="evenTitleLabel" destination="jrz-GW-wJd" id="UAZ-3H-ncL"/>
-                                            <segue destination="2nF-FC-Euo" kind="show" id="vXv-dK-Fo8"/>
+                                            <segue destination="2nF-FC-Euo" kind="show" identifier="evenEpisode" id="vXv-dK-Fo8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -133,6 +133,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="7Pu-Do-EbS"/>
                     <connections>
+                        <outlet property="gotSearchBar" destination="hJy-ks-Y8z" id="4eJ-bg-cuw"/>
                         <outlet property="gotTableView" destination="VZj-fn-wLa" id="uLy-ZD-I4g"/>
                     </connections>
                 </viewController>
@@ -143,66 +144,107 @@
         <!--back-->
         <scene sceneID="kOz-gk-feZ">
             <objects>
-                <viewController id="2nF-FC-Euo" sceneMemberID="viewController">
+                <viewController id="2nF-FC-Euo" customClass="DetailViewController" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3S5-mD-Lva">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DG6-Ya-VPv">
-                                <rect key="frame" x="55" y="141" width="304" height="215"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DG6-Ya-VPv">
+                                <rect key="frame" x="52" y="110" width="311" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="3Xa-Hq-YFF"/>
+                                    <constraint firstAttribute="width" constant="311" id="dd2-Fc-dMt"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="episode name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkB-rk-ZK7">
-                                <rect key="frame" x="173" y="364" width="108" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="episode name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkB-rk-ZK7">
+                                <rect key="frame" x="30" y="338" width="354" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="zrM-an-HXB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="season" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2m-BB-3jc">
-                                <rect key="frame" x="69" y="462" width="55" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="season" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2m-BB-3jc">
+                                <rect key="frame" x="30" y="411" width="174" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="oFv-T7-GJR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="episode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOw-0E-z79">
-                                <rect key="frame" x="72" y="507" width="61" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="episode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOw-0E-z79">
+                                <rect key="frame" x="30" y="451" width="174" height="32"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="runtime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckB-Vq-pCI">
-                                <rect key="frame" x="77" y="540" width="59" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="runtime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckB-Vq-pCI">
+                                <rect key="frame" x="30" y="491" width="333" height="32"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="airdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slv-09-Wio">
-                                <rect key="frame" x="90" y="579" width="53" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="airdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slv-09-Wio">
+                                <rect key="frame" x="30" y="531" width="333" height="32"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="episode synopsis" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="84Y-5p-9ID">
-                                <rect key="frame" x="87" y="651" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="episode synopsis" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="84Y-5p-9ID">
+                                <rect key="frame" x="40" y="571" width="334" height="253"/>
+                                <color key="textColor" red="0.93994146585464478" green="0.76644438505172729" blue="0.74329489469528198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ckB-Vq-pCI" firstAttribute="leading" secondItem="4Zv-f5-76M" secondAttribute="leading" constant="30" id="3Oo-hO-jep"/>
+                            <constraint firstItem="4Zv-f5-76M" firstAttribute="trailing" secondItem="DG6-Ya-VPv" secondAttribute="trailing" constant="51" id="460-Rf-4PJ"/>
+                            <constraint firstItem="E2m-BB-3jc" firstAttribute="height" secondItem="VOw-0E-z79" secondAttribute="height" id="4Mf-ZC-caZ"/>
+                            <constraint firstItem="DG6-Ya-VPv" firstAttribute="leading" secondItem="4Zv-f5-76M" secondAttribute="leading" constant="52" id="4Rt-TY-sb4"/>
+                            <constraint firstItem="4Zv-f5-76M" firstAttribute="trailing" secondItem="E2m-BB-3jc" secondAttribute="trailing" constant="210" id="5a3-oi-qzJ"/>
+                            <constraint firstItem="VOw-0E-z79" firstAttribute="top" secondItem="E2m-BB-3jc" secondAttribute="bottom" constant="8" id="693-od-T1M"/>
+                            <constraint firstItem="4Zv-f5-76M" firstAttribute="trailing" secondItem="EkB-rk-ZK7" secondAttribute="trailing" constant="30" id="6fo-lG-aR9"/>
+                            <constraint firstItem="Slv-09-Wio" firstAttribute="leading" secondItem="4Zv-f5-76M" secondAttribute="leading" constant="30" id="87U-ad-3E6"/>
+                            <constraint firstItem="E2m-BB-3jc" firstAttribute="width" secondItem="VOw-0E-z79" secondAttribute="width" id="EmM-2p-gwv"/>
+                            <constraint firstItem="4Zv-f5-76M" firstAttribute="trailing" secondItem="ckB-Vq-pCI" secondAttribute="trailing" constant="51" id="FZ9-k9-Kh2"/>
+                            <constraint firstItem="E2m-BB-3jc" firstAttribute="top" secondItem="EkB-rk-ZK7" secondAttribute="bottom" constant="8" id="GlS-QB-Y7j"/>
+                            <constraint firstItem="DG6-Ya-VPv" firstAttribute="top" secondItem="4Zv-f5-76M" secondAttribute="top" constant="22" id="MsS-Ti-rXy"/>
+                            <constraint firstItem="4Zv-f5-76M" firstAttribute="trailing" secondItem="VOw-0E-z79" secondAttribute="trailing" constant="210" id="REV-hx-u94"/>
+                            <constraint firstItem="E2m-BB-3jc" firstAttribute="leading" secondItem="4Zv-f5-76M" secondAttribute="leading" constant="30" id="RlK-nR-uuN"/>
+                            <constraint firstItem="Slv-09-Wio" firstAttribute="top" secondItem="ckB-Vq-pCI" secondAttribute="bottom" constant="8" id="SH0-8h-ZVn"/>
+                            <constraint firstItem="4Zv-f5-76M" firstAttribute="trailing" secondItem="Slv-09-Wio" secondAttribute="trailing" constant="51" id="Smf-Nl-Ulv"/>
+                            <constraint firstItem="84Y-5p-9ID" firstAttribute="top" secondItem="Slv-09-Wio" secondAttribute="bottom" constant="8" id="TON-uY-KZP"/>
+                            <constraint firstItem="E2m-BB-3jc" firstAttribute="height" secondItem="Slv-09-Wio" secondAttribute="height" id="UZe-lj-ahu"/>
+                            <constraint firstItem="EkB-rk-ZK7" firstAttribute="leading" secondItem="4Zv-f5-76M" secondAttribute="leading" constant="30" id="bfH-vm-FbY"/>
+                            <constraint firstItem="EkB-rk-ZK7" firstAttribute="top" secondItem="DG6-Ya-VPv" secondAttribute="bottom" constant="8" id="dfa-k4-uOo"/>
+                            <constraint firstItem="ckB-Vq-pCI" firstAttribute="width" secondItem="Slv-09-Wio" secondAttribute="width" id="e3e-kI-r0G"/>
+                            <constraint firstItem="84Y-5p-9ID" firstAttribute="leading" secondItem="4Zv-f5-76M" secondAttribute="leading" constant="40" id="hQ8-ob-YRo"/>
+                            <constraint firstItem="4Zv-f5-76M" firstAttribute="trailing" secondItem="84Y-5p-9ID" secondAttribute="trailing" constant="40" id="mOV-8i-b6Q"/>
+                            <constraint firstItem="VOw-0E-z79" firstAttribute="leading" secondItem="4Zv-f5-76M" secondAttribute="leading" constant="30" id="oJ7-F5-Fgo"/>
+                            <constraint firstItem="4Zv-f5-76M" firstAttribute="bottom" secondItem="84Y-5p-9ID" secondAttribute="bottom" constant="38" id="tVQ-5t-793"/>
+                            <constraint firstItem="E2m-BB-3jc" firstAttribute="height" secondItem="ckB-Vq-pCI" secondAttribute="height" id="wdj-G7-6Xb"/>
+                            <constraint firstItem="ckB-Vq-pCI" firstAttribute="top" secondItem="VOw-0E-z79" secondAttribute="bottom" constant="8" id="zME-RM-Zha"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4Zv-f5-76M"/>
                     </view>
                     <navigationItem key="navigationItem" title="back" id="iCQ-2k-D6q"/>
+                    <connections>
+                        <outlet property="airdateLabel" destination="Slv-09-Wio" id="otP-2R-e3g"/>
+                        <outlet property="episodeNameLabel" destination="EkB-rk-ZK7" id="vfT-OA-TAi"/>
+                        <outlet property="episodeNumLabel" destination="VOw-0E-z79" id="95k-kt-Tnx"/>
+                        <outlet property="episodeRuntimeLabel" destination="ckB-Vq-pCI" id="AhR-Xr-yE1"/>
+                        <outlet property="episodeSummaryTextView" destination="84Y-5p-9ID" id="00D-e1-eBG"/>
+                        <outlet property="gotEpisodeImage" destination="DG6-Ya-VPv" id="O1n-8G-Ecs"/>
+                        <outlet property="seasonNumLabel" destination="E2m-BB-3jc" id="nHM-gA-faV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Io0-JI-rOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1797.1014492753625" y="115.84821428571428"/>
+            <point key="canvasLocation" x="2233" y="100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HCQ-MW-Ex1">
