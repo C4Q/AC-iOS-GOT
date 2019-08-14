@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let gotEpisodes = GOTEpisode.allEpisodes
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,5 +22,22 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return gotEpisodes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
 }
 
