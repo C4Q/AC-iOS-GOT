@@ -18,8 +18,8 @@ class sortedBySeason{
     var season7 = GOTEpisode.allEpisodes.filter({$0.season == 7})
     
    func Sorting() -> [[GOTEpisode]]{
-        let amountOdSeasons = [season1, season2, season3, season4, season5, season6, season7]
-        return amountOdSeasons
+        let amountOfSeasons = [season1, season2, season3, season4, season5, season6, season7]
+        return amountOfSeasons
     }
 }
 

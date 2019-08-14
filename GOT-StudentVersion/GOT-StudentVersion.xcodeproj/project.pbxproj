@@ -48,7 +48,6 @@
 		54B11AAD1FABCE47004E1EAF = {
 			isa = PBXGroup;
 			children = (
-				853AB4FC2300BC4E0021D9D8 /* DetailViewController.swift */,
 				54B11AB81FABCE47004E1EAF /* GOT-StudentVersion */,
 				54B11AB71FABCE47004E1EAF /* Products */,
 			);
@@ -66,12 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
-				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
-				853AB4F422FF630A0021D9D8 /* GotTableViewCell.swift */,
-				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
-				853AB4F622FFC80F0021D9D8 /* SortedByEpisodesBySeason.swift */,
+				850342FB23048ED40007479E /* View Controllers */,
+				850342FC23048F020007479E /* Models */,
+				850342FD23048F190007479E /* Table View Cell */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
-				850342EA230265C90007479E /* GOTEpisodeName.swift */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
 			);
@@ -85,6 +82,33 @@
 				54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		850342FB23048ED40007479E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
+				853AB4FC2300BC4E0021D9D8 /* DetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		850342FC23048F020007479E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
+				853AB4F622FFC80F0021D9D8 /* SortedByEpisodesBySeason.swift */,
+				850342EA230265C90007479E /* GOTEpisodeName.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		850342FD23048F190007479E /* Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				853AB4F422FF630A0021D9D8 /* GotTableViewCell.swift */,
+			);
+			path = "Table View Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

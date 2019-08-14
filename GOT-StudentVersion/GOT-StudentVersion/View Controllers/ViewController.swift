@@ -18,77 +18,51 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var gotArrayOfNames = EpisodeNames().putNameOfEpisodesInAnArray()
     @IBOutlet var searchBar: UISearchBar!
     
-    // add sections in the view
-    func changeHeaderColor(tableView:UITableView){
-        tableView.backgroundColor = .blue
-    }
     
-    //MARK: -- Table
+    //MARK: -- Table View Data Source
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 7
+        return gotArrayBySeason.Sorting().count
     }
-    // adds header for every season
+    //This code goes into the [[GOTEpisode]], grabs each section starting from index 0, and grabs the classification string and returns it to be displayed in the title header
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 1:
-            changeHeaderColor(tableView: tableView)
-            return "Season 1"
-        case 2:
-            changeHeaderColor(tableView: tableView)
-            return "Season 2"
-        case 3:
-            changeHeaderColor(tableView: tableView)
-            return "Season 3"
-        case 4:
-            changeHeaderColor(tableView: tableView)
-            return "Season 4"
-        case 5:
-            changeHeaderColor(tableView: tableView)
-            return "Season 5"
-        case 6:
-            changeHeaderColor(tableView: tableView)
-            return "Season 6"
-        case 7:
-            changeHeaderColor(tableView: tableView)
-            return "Season 7"
-        default:
-            return ""
-        }
+        
+        return "Season \(gotArrayBySeason.Sorting()[section][0].season)"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gotArrayBySeason.Sorting()[section].count
     }
     
-    //sets the height of the sections
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(150)
-    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GOTID") as! GotTableViewCell
         
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "GOTID2") as! GotTableViewCell
         
-       let info = gotArrayBySeason.Sorting()[indexPath.section][indexPath.row]
-       
-            cell.gotName.text = "\( info.name)"
-            cell.seasonAndEpisode.text = "S:\( info.season) E: \(info.number)"
-            cell.gotImageView.image = UIImage(named: info.mediumImageID)
+        let info = gotArrayBySeason.Sorting()[indexPath.section][indexPath.row]
         
-            cell2.gotName.text = "\( info.name)"
-            cell2.seasonAndEpisode.text = "S:\( info.season) E: \(info.number)"
-            cell2.gotImageView.image = UIImage(named: info.mediumImageID)
-       // }
+        cell.gotName.text = "\( info.name)"
+        cell.seasonAndEpisode.text = "S:\( info.season) E: \(info.number)"
+        cell.gotImageView.image = UIImage(named: info.mediumImageID)
+        
+        cell2.gotName.text = "\( info.name)"
+        cell2.seasonAndEpisode.text = "S:\( info.season) E: \(info.number)"
+        cell2.gotImageView.image = UIImage(named: info.mediumImageID)
         
         if info.season % 2 == 1{
-           return cell
+            return cell
         }else {
             return cell2
         }
         
     }
     
+    //MARK: -- Table View Delgates
+    //sets the height of the sections
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(150)
+    }
+   
     //function to pass data from one tableView Controller to another tableView Controller
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
