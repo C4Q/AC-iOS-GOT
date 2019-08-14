@@ -96,6 +96,32 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return "Should not print"
     }
         }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let segueIdentifier = segue.identifier else {fatalError("No identifier selected")}
+        
+        switch segueIdentifier {
+        case "SeasonCellSegue":
+            guard let DetailVC = segue.destination as? EpisodeDetailViewController else {fatalError("Unexpected segue VC")}
+            
+            guard let selectedIndexPath = myTableView.indexPathForSelectedRow else {fatalError("No row selected")}
+            
+            let currentEpisode = seasons[selectedIndexPath.section][selectedIndexPath.row]
+            
+            DetailVC.episode = currentEpisode
+            case "SeasonCell2Segue":
+                guard let DetailVC = segue.destination as? EpisodeDetailViewController else {fatalError("Unexpected segue VC")}
+                
+                guard let selectedIndexPath = myTableView.indexPathForSelectedRow else {fatalError("No row selected")}
+                
+                let currentEpisode = seasons[selectedIndexPath.section][selectedIndexPath.row]
+                
+                DetailVC.episode = currentEpisode
+        default:
+            fatalError("unexpected segue indentified")
+        }
+    }
 }
 
 extension ViewController: UISearchBarDelegate{
