@@ -10,32 +10,38 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
     let gotData = GOTEpisode.allEpisodes
+    let seasonOne = GOTEpisode.seasonOne
+    let seasonTwo = GOTEpisode.seasonTwo
+    let seasonThree = GOTEpisode.seasonThree
+    let seasonFour = GOTEpisode.seasonFour
+    let seasonFive = GOTEpisode.seasonFive
+    let seasonSix = GOTEpisode.seasonSix
+    let seasonSeven = GOTEpisode.seasonSeven
+    
+    
 
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return GOTEpisode.seasonOne.count
+            return seasonOne.count
         case 1:
-            return GOTEpisode.seasonTwo.count
+            return seasonTwo.count
         case 2:
-            return GOTEpisode.seasonThree.count
+            return seasonThree.count
         case 3:
-            return GOTEpisode.seasonFour.count
+            return seasonFour.count
         case 4:
-            return GOTEpisode.seasonFive.count
+            return seasonFive.count
         case 5:
-            return GOTEpisode.seasonSix.count
+            return seasonSix.count
         case 6:
-            return GOTEpisode.seasonSeven.count
+            return seasonSeven.count
         default:
             return 0
         }
-//        return gotData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,64 +49,57 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         switch indexPath.section {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "GOTCell", for: indexPath) as? GOTTableViewCell {
-                cell.topLabel.text = GOTEpisode.seasonOne[indexPath.row].name
-                cell.bottomLabel.text = GOTEpisode.seasonOne[indexPath.row].description
-                cell.imageOutlet.image = GOTEpisode.seasonOne[indexPath.row].getImage()
+                cell.topLabel.text = seasonOne[indexPath.row].name
+                cell.bottomLabel.text = seasonOne[indexPath.row].description
+                cell.imageOutlet.image = seasonOne[indexPath.row].getImage()
                 return cell
             }
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "GOTCell2", for: indexPath) as? GOTTableViewCell {
-                cell.topLabel.text = GOTEpisode.seasonTwo[indexPath.row].name
-                cell.bottomLabel.text = GOTEpisode.seasonTwo[indexPath.row].description
-                cell.imageOutlet.image = GOTEpisode.seasonTwo[indexPath.row].getImage()
+                cell.topLabel.text = seasonTwo[indexPath.row].name
+                cell.bottomLabel.text = seasonTwo[indexPath.row].description
+                cell.imageOutlet.image = seasonTwo[indexPath.row].getImage()
                 return cell
             }
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "GOTCell", for: indexPath) as? GOTTableViewCell {
-                cell.topLabel.text = GOTEpisode.seasonThree[indexPath.row].name
-                cell.bottomLabel.text = GOTEpisode.seasonThree[indexPath.row].description
-                cell.imageOutlet.image = GOTEpisode.seasonThree[indexPath.row].getImage()
+                cell.topLabel.text = seasonThree[indexPath.row].name
+                cell.bottomLabel.text = seasonThree[indexPath.row].description
+                cell.imageOutlet.image = seasonThree[indexPath.row].getImage()
                 return cell
             }
         case 3:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "GOTCell2", for: indexPath) as? GOTTableViewCell {
-                cell.topLabel.text = GOTEpisode.seasonFour[indexPath.row].name
-                cell.bottomLabel.text = GOTEpisode.seasonFour[indexPath.row].description
-                cell.imageOutlet.image = GOTEpisode.seasonFour[indexPath.row].getImage()
+                cell.topLabel.text = seasonFour[indexPath.row].name
+                cell.bottomLabel.text = seasonFour[indexPath.row].description
+                cell.imageOutlet.image = seasonFour[indexPath.row].getImage()
                 return cell
             }
         case 4:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "GOTCell", for: indexPath) as? GOTTableViewCell {
-                cell.topLabel.text = GOTEpisode.seasonFive[indexPath.row].name
-                cell.bottomLabel.text = GOTEpisode.seasonFive[indexPath.row].description
-                cell.imageOutlet.image = GOTEpisode.seasonFive[indexPath.row].getImage()
+                cell.topLabel.text = seasonFive[indexPath.row].name
+                cell.bottomLabel.text = seasonFive[indexPath.row].description
+                cell.imageOutlet.image = seasonFive[indexPath.row].getImage()
                 return cell
             }
         case 5:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "GOTCell2", for: indexPath) as? GOTTableViewCell {
-                cell.topLabel.text = GOTEpisode.seasonSix[indexPath.row].name
-                cell.bottomLabel.text = GOTEpisode.seasonSix[indexPath.row].description
-                cell.imageOutlet.image = GOTEpisode.seasonSix[indexPath.row].getImage()
+                cell.topLabel.text = seasonSix[indexPath.row].name
+                cell.bottomLabel.text = seasonSix[indexPath.row].description
+                cell.imageOutlet.image = seasonSix[indexPath.row].getImage()
                 return cell
             }
         case 6:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "GOTCell", for: indexPath) as? GOTTableViewCell {
-                cell.topLabel.text = GOTEpisode.seasonSeven[indexPath.row].name
-                cell.bottomLabel.text = GOTEpisode.seasonSeven[indexPath.row].description
-                cell.imageOutlet.image = GOTEpisode.seasonSeven[indexPath.row].getImage()
+                cell.topLabel.text = seasonSeven[indexPath.row].name
+                cell.bottomLabel.text = seasonSeven[indexPath.row].description
+                cell.imageOutlet.image = seasonSeven[indexPath.row].getImage()
                 return cell
             }
         default:
             return UITableViewCell()
         }
         
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: "GOTCell", for: indexPath) as? GOTTableViewCell {
-//            cell.topLabel.text = gotData[indexPath.row].name
-//            cell.bottomLabel.text = gotData[indexPath.row].description
-//            cell.imageOutlet.image = gotData[indexPath.row].getImage()
-//            return cell
-//        }
-//        return UITableViewCell()
         return UITableViewCell()
     }
     
@@ -130,6 +129,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return "Season 7"
         default:
             return "error: season not found"
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //we want to move to the vc with the storyboard ID "movieDetailViewController"
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if let viewController = storyBoard.instantiateViewController(withIdentifier: "GOTDetailViewController") as? GOTDetailViewController {
+            switch indexPath.section {
+            case 0:
+                viewController.gotEpisode = seasonOne[indexPath.row]
+                navigationController?.pushViewController(viewController, animated: true)
+            case 1:
+                viewController.gotEpisode = seasonTwo[indexPath.row]
+                navigationController?.pushViewController(viewController, animated: true)
+            case 2:
+                viewController.gotEpisode = seasonThree[indexPath.row]
+                navigationController?.pushViewController(viewController, animated: true)
+            case 3:
+                viewController.gotEpisode = seasonFour[indexPath.row]
+                navigationController?.pushViewController(viewController, animated: true)
+            case 4:
+                viewController.gotEpisode = seasonFive[indexPath.row]
+                navigationController?.pushViewController(viewController, animated: true)
+            case 5:
+                viewController.gotEpisode = seasonSix[indexPath.row]
+                navigationController?.pushViewController(viewController, animated: true)
+            case 6:
+                viewController.gotEpisode = seasonSeven[indexPath.row]
+                navigationController?.pushViewController(viewController, animated: true)
+            default:
+                print("error")
+            }
+            
         }
     }
     

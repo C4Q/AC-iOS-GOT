@@ -15,6 +15,7 @@
 		54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */; };
 		FCFC5E3D2301A7BD0068452D /* GOTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC5E3C2301A7BD0068452D /* GOTTableViewCell.swift */; };
 		FCFC5E652301FAED0068452D /* Imagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC5E642301FAED0068452D /* Imagable.swift */; };
+		FCFC5E79230369580068452D /* GOTDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC5E78230369580068452D /* GOTDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisode.swift; sourceTree = "<group>"; };
 		FCFC5E3C2301A7BD0068452D /* GOTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTTableViewCell.swift; sourceTree = "<group>"; };
 		FCFC5E642301FAED0068452D /* Imagable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imagable.swift; sourceTree = "<group>"; };
+		FCFC5E78230369580068452D /* GOTDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +64,9 @@
 			children = (
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
 				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
-				FCFC5E642301FAED0068452D /* Imagable.swift */,
-				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
+				FCFC5E78230369580068452D /* GOTDetailViewController.swift */,
 				FCFC5E3C2301A7BD0068452D /* GOTTableViewCell.swift */,
+				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				FCFC5E3B2300DE820068452D /* Data */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
@@ -84,6 +86,7 @@
 		FCFC5E3B2300DE820068452D /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FCFC5E642301FAED0068452D /* Imagable.swift */,
 				54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */,
 			);
 			path = Data;
@@ -163,6 +166,7 @@
 			files = (
 				54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */,
 				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
+				FCFC5E79230369580068452D /* GOTDetailViewController.swift in Sources */,
 				FCFC5E3D2301A7BD0068452D /* GOTTableViewCell.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
 				FCFC5E652301FAED0068452D /* Imagable.swift in Sources */,
