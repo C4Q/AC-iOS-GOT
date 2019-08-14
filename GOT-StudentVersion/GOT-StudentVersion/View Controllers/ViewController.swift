@@ -1,10 +1,4 @@
-//
-//  ViewController.swift
-//  GOT-StudentVersion
-//
-//  Created by C4Q  on 11/2/17.
-//  Copyright © 2017 C4Q . All rights reserved.
-//
+
 
 import UIKit
 
@@ -42,11 +36,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let info = gotArrayBySeason.Sorting()[indexPath.section][indexPath.row]
         
         cell.gotName.text = "\( info.name)"
+        cell.gotName.font = UIFont(name: "Papyrus", size: 14)
+        cell.gotName.textColor = .white
         cell.seasonAndEpisode.text = "S:\( info.season) E: \(info.number)"
+        cell.seasonAndEpisode.textColor = .white
         cell.gotImageView.image = UIImage(named: info.mediumImageID)
         
         cell2.gotName.text = "\( info.name)"
+        cell2.gotName.font = UIFont(name: "Papyrus", size: 14)
+        cell.gotName.textColor = .white
         cell2.seasonAndEpisode.text = "S:\( info.season) E: \(info.number)"
+        cell.seasonAndEpisode.textColor = .white
         cell2.gotImageView.image = UIImage(named: info.mediumImageID)
         
         if info.season % 2 == 1{
@@ -57,12 +57,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .black
+    }
     //MARK: -- Table View Delgates
     //sets the height of the sections
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(150)
     }
-   
+    
     //function to pass data from one tableView Controller to another tableView Controller
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -70,7 +74,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let detailViewControler = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
-         let info = gotArrayBySeason.Sorting()[indexPath.section][indexPath.row]
+        let info = gotArrayBySeason.Sorting()[indexPath.section][indexPath.row]
         // this line passes the model to the second view controller and allows the second view controller tro figure out what it needs to assign to its attritubes
         detailViewControler.gotEpisode = info
         
@@ -79,10 +83,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     //TODO
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-       
+        
         searchGOTNames.filter({$0.prefix(searchText.count) == searchText})
         
-            }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
