@@ -14,6 +14,8 @@ class GOTDetailViewController: UIViewController {
 
     @IBOutlet weak var detailImage: UIImageView!
     
+    @IBOutlet weak var episodeNameLabel: UILabel!
+    
     @IBOutlet weak var seasonLabel: UILabel!
     
     @IBOutlet weak var episodeLabel: UILabel!
@@ -31,10 +33,11 @@ class GOTDetailViewController: UIViewController {
     }
     
     private func setUpViews() {
-        seasonLabel.text = gotEpisode.name
-        episodeLabel.text = String(gotEpisode.number)
-        runtimeLabel.text = String(gotEpisode.runtime)
-        airdateLabel.text = String(gotEpisode.airdate)
+        episodeNameLabel.text = gotEpisode.name
+        seasonLabel.text = "Season: \(gotEpisode.season)"
+        episodeLabel.text = "Episode: \(gotEpisode.number)"
+        runtimeLabel.text = "Runtime: \(gotEpisode.runtime)"
+        airdateLabel.text = "Airdate: \(gotEpisode.airdate)"
         summaryField.text = gotEpisode.summary
         detailImage.image = gotEpisode.getImage()
     }
