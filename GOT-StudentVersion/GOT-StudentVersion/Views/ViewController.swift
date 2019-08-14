@@ -13,26 +13,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
-    var GOTEpisodeToBePassed = GOTEpisode(airdate: "", id: 0, name: "", number: 0, season: 0, runtime: 0, summary: "", mediumImageID: "", originalImageID: "")
-    
     
     let allSeasons = [GOTEpisode.season1, GOTEpisode.season2, GOTEpisode.season3, GOTEpisode.season4, GOTEpisode.season5, GOTEpisode.season6, GOTEpisode.season7]
     
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let currentSeason: [GOTEpisode] = allSeasons[indexPath.section]
-        let currentEpisode: GOTEpisode = currentSeason[indexPath.row]
-        GOTEpisodeToBePassed.summary = currentEpisode.summary
-        GOTEpisodeToBePassed.originalImageID = currentEpisode.originalImageID
-        GOTEpisodeToBePassed.airdate = currentEpisode.airdate
-        GOTEpisodeToBePassed.season = currentEpisode.season
-        GOTEpisodeToBePassed.number = currentEpisode.number
-        GOTEpisodeToBePassed.name = currentEpisode.name
-        GOTEpisodeToBePassed.runtime = currentEpisode.runtime
-        
-        performSegue(withIdentifier: "segueToDetail", sender: self)
-        
-    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 7
@@ -117,15 +100,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destVC : detailViewController = segue.destination as! detailViewController
-        destVC.myCurrentGOTEpisode.summary = GOTEpisodeToBePassed.summary
-        destVC.myCurrentGOTEpisode.originalImageID = GOTEpisodeToBePassed.originalImageID
-        destVC.myCurrentGOTEpisode.name = GOTEpisodeToBePassed.name
-        destVC.myCurrentGOTEpisode.runtime = GOTEpisodeToBePassed.runtime
-        destVC.myCurrentGOTEpisode.season = GOTEpisodeToBePassed.season
-        destVC.myCurrentGOTEpisode.number = GOTEpisodeToBePassed.number
-        destVC.myCurrentGOTEpisode.airdate = GOTEpisodeToBePassed.airdate
-        
+        guard let segueIdentifer = segue.identifier else {fatalError("No indentifier in segue")}
+        switch segueIdentifer {
+            
+        case "segueToDetail":
+            guard let destVC = segue.destination as? detailViewController else {
+                fatalError("Unexpected segue VC")
+            }
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow else {fatalError("No row selected")
+            }
+            let currentEpisode = allSeasons[selectedIndexPath.section][selectedIndexPath.row]
+            destVC.myCurrentGOTEpisode = currentEpisode
+            
+        default:
+            fatalError("unexpected segue identifies")
+            
+        }
     }
     
 }

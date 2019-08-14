@@ -12,7 +12,8 @@ import UIKit
 class detailViewController: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var descriptionLabel: UITextView!
     
     @IBOutlet weak var imagePreview: UIImageView!
     
@@ -30,7 +31,7 @@ class detailViewController: UIViewController {
         performSegue(withIdentifier: "backToTable", sender: self)
     }
    
-    var myCurrentGOTEpisode = GOTEpisode(airdate: "", id: 0, name: "", number: 0, season: 0, runtime: 0, summary: "", mediumImageID: "", originalImageID: "")
+    var myCurrentGOTEpisode: GOTEpisode!
     
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
