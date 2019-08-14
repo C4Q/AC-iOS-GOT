@@ -126,7 +126,8 @@ class GOTEpisode {
     
     private static let seasonSeven = GOTEpisode.allEpisodes.filter({$0.season == 7})
     
-    static var savedFilters = ["": getAllSeasons()]
+    static var nameFilters = ["": getAllSeasons()]
+    static var summaryFilters = ["": getAllSeasons()]
     
     static let allSeasons = getAllSeasons()
 
@@ -140,6 +141,31 @@ class GOTEpisode {
                  GOTEpisode.seasonSix,
                  GOTEpisode.seasonSeven
                 ]
+    }
+    
+    static func getFilteredResults(selectedStr: String, searchText: String) -> [[GOTEpisode]] {
+        
+        var typeFilter = (selectedStr == "Title") ? GOTEpisode.nameFilters : GOTEpisode.summaryFilters
+        
+        if let filteredSeasons = typeFilter[searchText] {
+            return filteredSeasons
+        }
+        
+        var filteredSeasons = [[GOTEpisode]]()
+        
+        for season in GOTEpisode.allSeasons {
+            var currentFilter: [GOTEpisode]
+            
+            if selectedStr == "Title" {
+                currentFilter = season.filter{$0.name.lowercased().contains(searchText.lowercased())}
+            } else {
+                currentFilter = season.filter{$0.summary.lowercased().contains(searchText.lowercased())}
+            }
+            filteredSeasons.append(currentFilter)
+        }
+        
+        typeFilter[searchText] = filteredSeasons
+        return filteredSeasons
     }
     
     

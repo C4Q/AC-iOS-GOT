@@ -45,8 +45,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let currentSeason: [GOTEpisode] = seasons[indexPath.section]
-        let episode: GOTEpisode = currentSeason[indexPath.row]
+        
+        let episode = seasons[indexPath.section][indexPath.row]
+       
         let image: UIImage = (UIImage(named: episode.mediumImageID ))!
         
         if indexPath.section % 2 == 0 {
@@ -110,6 +111,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             let currentEpisode = seasons[selectedIndexPath.section][selectedIndexPath.row]
             
             DetailVC.episode = currentEpisode
+            
             case "SeasonCell2Segue":
                 guard let DetailVC = segue.destination as? EpisodeDetailViewController else {fatalError("Unexpected segue VC")}
                 
@@ -126,25 +128,16 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    
-        if let filteredSeasons = GOTEpisode.savedFilters[searchText] {
-            seasons = filteredSeasons
+        
+        if let scopeArrTitles = searchBar.scopeButtonTitles {
+            let currentIndex = searchBar.selectedScopeButtonIndex
+            let selectedStr = scopeArrTitles[currentIndex]
+            // For this function to identify how to properly filter and return the
+            // relative results
+            seasons = GOTEpisode.getFilteredResults(selectedStr: selectedStr, searchText: searchText)
             myTableView.reloadData()
-            return
+            
         }
-        
-        var filteredSeasons = [[GOTEpisode]]()
-        
-        for season in seasons {
-            let currentFilter = season.filter{$0.name.contains(searchText)}
-            filteredSeasons.append(currentFilter)
-        }
-        
-        GOTEpisode.savedFilters[searchText] = filteredSeasons
-        seasons = filteredSeasons
-        myTableView.reloadData()
-        
     }
+
 }
-
-
