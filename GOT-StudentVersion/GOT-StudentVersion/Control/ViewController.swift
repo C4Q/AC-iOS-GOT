@@ -49,6 +49,7 @@ class ViewController: UIViewController {
     private func setupProtocols() {
         gotTableView.delegate = self
         gotTableView.dataSource = self
+        gotSearchBar.delegate = self
     }
     
     
@@ -61,36 +62,47 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let gotSeason = gotSeasons[indexPath.section][indexPath.row]
+        let customView = UIView()
+        customView.backgroundColor = UIColor(red: 59/255, green: 90/255, blue: 99/255, alpha: 0.5)
+        let gotColor = UIColor(red: 12/255, green: 29/255, blue: 66/255, alpha: 1)
         
         if gotSeason.season % 2 == 1 {
             if let cell = gotTableView.dequeueReusableCell(withIdentifier: "oddCell", for: indexPath) as? oddGOTTVCell {
-                cell.backgroundColor = .darkText
-                cell.oddTitleLabel?.textColor = .red
+                cell.backgroundColor = gotColor
+                cell.oddTitleLabel?.textColor = .white
                 cell.oddTitleLabel?.text = gotSeason.name
                 cell.oddEpisodeInfoLabel?.textColor = .lightText
                 cell.oddEpisodeInfoLabel?.text = "S:  \(String(gotSeason.season)) ep: \(gotSeason.number)"
                 cell.oddImage.image = UIImage(named: gotSeason.mediumImageID)
-                
+                cell.selectedBackgroundView = customView
                 return cell
             }
         } else if gotSeason.season % 2 == 0 {
             if let cell = gotTableView.dequeueReusableCell(withIdentifier: "evenCell", for: indexPath) as? evenGOTTVCell {
-                cell.backgroundColor = .darkText
-                cell.evenTitleLabel?.textColor = .red
+                cell.backgroundColor = gotColor
+                cell.evenTitleLabel?.textColor = .white
                 cell.evenTitleLabel?.text = gotSeason.name
+                
                 cell.evenEpisodeLabel?.textColor = .lightText
                 cell.evenEpisodeLabel?.text = "S:  \(String(gotSeason.season)) ep: \(gotSeason.number)"
+                
                 cell.evenImage.image = UIImage(named: gotSeason.mediumImageID)
                 
+                cell.selectedBackgroundView = customView
+
                 return cell
             }
         }
         return UITableViewCell()
     }
     
+
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return gotSeasons.count
@@ -106,5 +118,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension ViewController: UISearchBarDelegate {
+    
     
 }

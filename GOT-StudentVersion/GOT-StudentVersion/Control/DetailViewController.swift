@@ -23,13 +23,13 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .darkText
+        view.backgroundColor = UIColor(red: 12/255, green: 29/255, blue: 66/255, alpha: 1)
         updateGotUI()
     }
     
     private func updateGotUI() {
         gotEpisodeImage.image = UIImage(named: (gotData.originalImageID))
-        episodeNameLabel.textColor = .red
+        episodeNameLabel.textColor = .white
         episodeNameLabel.text = gotData.name
         
         seasonNumLabel.textColor = .lightText
