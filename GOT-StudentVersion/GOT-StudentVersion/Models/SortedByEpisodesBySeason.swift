@@ -9,17 +9,17 @@
 import UIKit
 
 class sortedBySeason{
-    var season1 = GOTEpisode.allEpisodes.filter({$0.season == 1})
-    var season2 = GOTEpisode.allEpisodes.filter({$0.season == 2})
-    var season3 = GOTEpisode.allEpisodes.filter({$0.season == 3})
-    var season4 = GOTEpisode.allEpisodes.filter({$0.season == 4})
-    var season5 = GOTEpisode.allEpisodes.filter({$0.season == 5})
-    var season6 = GOTEpisode.allEpisodes.filter({$0.season == 6})
-    var season7 = GOTEpisode.allEpisodes.filter({$0.season == 7})
+    var allSeasons: [[GOTEpisode]]
     
-   func Sorting() -> [[GOTEpisode]]{
-        let amountOfSeasons = [season1, season2, season3, season4, season5, season6, season7]
-        return amountOfSeasons
+    init(){
+        let season1 = GOTEpisode.allEpisodes.filter({$0.season == 1})
+        let season2 = GOTEpisode.allEpisodes.filter({$0.season == 2})
+        let season3 = GOTEpisode.allEpisodes.filter({$0.season == 3})
+        let season4 = GOTEpisode.allEpisodes.filter({$0.season == 4})
+        let season5 = GOTEpisode.allEpisodes.filter({$0.season == 5})
+        let season6 = GOTEpisode.allEpisodes.filter({$0.season == 6})
+        let season7 = GOTEpisode.allEpisodes.filter({$0.season == 7})
+        allSeasons = [season1, season2, season3, season4, season5, season6, season7]
     }
 }
 

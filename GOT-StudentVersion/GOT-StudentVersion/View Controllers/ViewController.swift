@@ -16,16 +16,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: -- Table View Data Source
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return gotArrayBySeason.Sorting().count
+        return gotArrayBySeason.allSeasons.count
     }
     //This code goes into the [[GOTEpisode]], grabs each section starting from index 0, and grabs the classification string and returns it to be displayed in the title header
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return "Season \(gotArrayBySeason.Sorting()[section][0].season)"
+        return "Season \(gotArrayBySeason.allSeasons [section][0].season)"
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gotArrayBySeason.Sorting()[section].count
+        return gotArrayBySeason.allSeasons[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -33,7 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "GOTID2") as! GotTableViewCell
         
-        let info = gotArrayBySeason.Sorting()[indexPath.section][indexPath.row]
+        let info = gotArrayBySeason.allSeasons[indexPath.section][indexPath.row]
         
         cell.gotName.text = "\( info.name)"
         cell.gotName.font = UIFont(name: "Papyrus", size: 14)
@@ -44,9 +45,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell2.gotName.text = "\( info.name)"
         cell2.gotName.font = UIFont(name: "Papyrus", size: 14)
-        cell.gotName.textColor = .white
+        cell2.gotName.textColor = .white
         cell2.seasonAndEpisode.text = "S:\( info.season) E: \(info.number)"
-        cell.seasonAndEpisode.textColor = .white
+        cell2.seasonAndEpisode.textColor = .white
         cell2.gotImageView.image = UIImage(named: info.mediumImageID)
         
         if info.season % 2 == 1{
@@ -74,7 +75,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let detailViewControler = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
-        let info = gotArrayBySeason.Sorting()[indexPath.section][indexPath.row]
+        let info = gotArrayBySeason.allSeasons[indexPath.section][indexPath.row]
         // this line passes the model to the second view controller and allows the second view controller tro figure out what it needs to assign to its attritubes
         detailViewControler.gotEpisode = info
         
@@ -84,7 +85,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //TODO
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        searchGOTNames.filter({$0.prefix(searchText.count) == searchText})
+        searchGOTNames.filter({
+            $0.prefix(searchText.count) == searchText})
         
     }
     
