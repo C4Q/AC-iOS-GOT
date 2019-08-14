@@ -73,7 +73,7 @@
                                             <outlet property="oddEpisodeInfoLabel" destination="rNJ-Pu-Jm5" id="DQD-KW-zTq"/>
                                             <outlet property="oddImage" destination="U7c-L0-V5X" id="z7o-Jm-Snr"/>
                                             <outlet property="oddTitleLabel" destination="Dj6-xz-VHk" id="r28-bi-A4I"/>
-                                            <segue destination="2nF-FC-Euo" kind="show" identifier="oddEpisode" id="7V8-e3-RCf"/>
+                                            <segue destination="2nF-FC-Euo" kind="show" identifier="oddEpisode" id="vQm-Pm-ET9"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="evenCell" rowHeight="150" id="5pd-Jm-mu4" customClass="evenGOTTVCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -122,7 +122,7 @@
                                             <outlet property="evenEpisodeLabel" destination="X6j-CT-sSR" id="dwN-cI-fPS"/>
                                             <outlet property="evenImage" destination="y4p-IY-w6c" id="eZG-n3-PgM"/>
                                             <outlet property="evenTitleLabel" destination="jrz-GW-wJd" id="UAZ-3H-ncL"/>
-                                            <segue destination="2nF-FC-Euo" kind="show" identifier="evenEpisode" id="vXv-dK-Fo8"/>
+                                            <segue destination="2nF-FC-Euo" kind="show" identifier="evenEpisode" id="kzt-XE-h3B"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -266,6 +266,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vXv-dK-Fo8"/>
+        <segue reference="vQm-Pm-ET9"/>
     </inferredMetricsTieBreakers>
 </document>

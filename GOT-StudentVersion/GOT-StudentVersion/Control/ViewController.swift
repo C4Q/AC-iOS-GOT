@@ -11,39 +11,39 @@ import UIKit
 class ViewController: UIViewController {
     
     //TODO: connect searchbar, extend searchbardelegate
-        
+    
     //MARK:  --Outlets
     @IBOutlet weak var gotTableView: UITableView!
     @IBOutlet weak var gotSearchBar: UISearchBar!
     
     //will return an array, when calling data in function, use indexpath to get the element needed
-    var data = EpisodeData.allEpisodes
-    let gotSeasons = EpisodeData.allSeasons
+    var data = GOTEpisode.allEpisodes
+    let gotSeasons = GOTEpisode.allSeasons
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupProtocols()
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         switch segue.identifier {
         case "oddEpisode":
             guard let destination = segue.destination as? DetailViewController,
                 let cellSelected = gotTableView.indexPathForSelectedRow else {return}
-            let episodeSelected = data[cellSelected.row]
+            let episodeSelected = gotSeasons[cellSelected.section][cellSelected.row]
             destination.gotData = episodeSelected
         case "evenEpisode":
             guard let destination = segue.destination as? DetailViewController,
                 let cellSelected = gotTableView.indexPathForSelectedRow else {return}
-            let episodeSelected = data[cellSelected.row]
+            let episodeSelected = gotSeasons[cellSelected.section][cellSelected.row]
             destination.gotData = episodeSelected
-//        case "allEpisodes":
-//            guard let destination = segue.destination as? DetailViewController else { return }
-//            destination.gotData = self.data
+            
         default:
+            print("issue with seguing data")
             return
-        
-    }
+            
+        }
     }
     
     private func setupProtocols() {
@@ -95,10 +95,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return gotSeasons.count
     }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if let gotSeason = gotSeasons[section].first?.season {
-        
-        return "Season \(gotSeason)"
+            
+            return "Season \(gotSeason)"
         }
         return "well that didn't work"
     }
