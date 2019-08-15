@@ -36,6 +36,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return 7
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 145
+    }
+    
     //  Titles for each sections
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
