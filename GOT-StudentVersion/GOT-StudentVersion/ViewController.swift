@@ -31,6 +31,12 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
+    // Number of sections (starts from 0)
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 7
+    }
+    
+    //  Titles for each sections
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         <#code#>
     }
