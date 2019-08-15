@@ -8,7 +8,7 @@
 
 import UIKit
 
-class episodeTableViewCell: UITableViewCell {
+class EpisodeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var epName: UILabel!
     @IBOutlet weak var epImage: UIImageView!
