@@ -59,8 +59,27 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    // Number of rows for each section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gotEpisodes.count
+        
+        switch section {
+        case 0:
+            return GOTEpisode.season1.count
+        case 1:
+            return GOTEpisode.season2.count
+        case 2:
+            return GOTEpisode.season3.count
+        case 3:
+            return GOTEpisode.season4.count
+        case 4:
+            return GOTEpisode.season5.count
+        case 5:
+            return GOTEpisode.season6.count
+        case 6:
+            return GOTEpisode.season7.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
