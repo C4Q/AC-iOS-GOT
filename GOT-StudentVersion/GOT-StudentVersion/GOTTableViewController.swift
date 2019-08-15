@@ -11,6 +11,16 @@ import UIKit
 class GOTTableViewController: UITableViewController {
     
     var episodes = GOTEpisode.allEpisodes
+    
+//    var seasonOne = GOTEpisode.seasonOne
+//    var seasonTwo = GOTEpisode.seasonTwo
+//    var seasonThree = GOTEpisode.seasonThree
+//    var seasonFour = GOTEpisode.seasonFour
+//    var seasonFive = GOTEpisode.seasonFive
+//    var seasonSix = GOTEpisode.seasonSix
+//    var seasonSeven = GOTEpisode.seasonSeven
+    var wholeShow = GOTEpisode.allSeasons
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +36,51 @@ class GOTTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 7
+        return wholeShow.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         switch section {
         case 0:
-        return "Season 1"
+        return wholeShow[0].count
+        case 1:
+            return wholeShow[1].count
+        case 2:
+            return wholeShow[2].count
+        case 3:
+            return wholeShow[3].count
+        case 4:
+            return wholeShow[4].count
+        case 5:
+            return wholeShow[5].count
+        case 6:
+            return wholeShow[6].count
+        default:
+            return 0
+        }
+//        case 1:
+//        return seasonTwo.count
+//        case 2:
+//        return seasonThree.count
+//        case 3:
+//        return seasonFour.count
+//        case 4:
+//        return seasonFive.count
+//        case 5:
+//        return seasonSix.count
+//        case 6:
+//        return seasonSeven.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Season 1"
         case 1:
             return "Season 2"
         case 2:
@@ -47,20 +94,21 @@ class GOTTableViewController: UITableViewController {
         case 6:
             return "Season 7"
         default:
-            return 0
+            return "0"
         }
-        
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as ? UITableCell()  {
+            
+        }
 
         // Configure the cell...
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

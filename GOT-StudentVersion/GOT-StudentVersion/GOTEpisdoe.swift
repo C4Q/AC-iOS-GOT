@@ -112,5 +112,6 @@ static let seasonSeven = GOTEpisode.allEpisodes.filter{$0.season == 7}
     
 
 
-//static let allAnimals = [mammals, amphibians, insects, reptiles, birds]
+static let allSeasons = [seasonOne, seasonTwo, seasonThree, seasonFour, seasonFive, seasonSix, seasonSeven]
+    
 }
