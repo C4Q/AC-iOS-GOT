@@ -38,7 +38,25 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     //  Titles for each sections
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        <#code#>
+        
+        switch section {
+        case 0:
+            return "Season 1"
+        case 1:
+            return "Season 2"
+        case 2:
+            return "Season 3"
+        case 3:
+            return "Season 4"
+        case 4:
+            return "Season 5"
+        case 5:
+            return "Season 6"
+        case 6:
+            return "Season 7"
+        default:
+            return ""
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
