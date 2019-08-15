@@ -81,7 +81,17 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <connections>
+                                                <outlet property="episodeImage" destination="xYJ-2c-lG6" id="Jem-OC-nql"/>
+                                                <outlet property="episodeTitle" destination="H6G-NG-2fM" id="1hO-tn-uox"/>
+                                                <outlet property="seasonEpisode" destination="sHL-go-OEZ" id="KLQ-00-2qw"/>
+                                            </connections>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="episodeImage" destination="xYJ-2c-lG6" id="JTw-Qb-cBp"/>
+                                            <outlet property="episodeTitle" destination="H6G-NG-2fM" id="fvf-Sb-9PR"/>
+                                            <outlet property="seasonEpisode" destination="sHL-go-OEZ" id="zp3-Kl-TBf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -9,7 +9,13 @@
 import UIKit
 
 class EpisodeTableViewCell2: UITableViewCell {
-
+    
+    
+    @IBOutlet weak var episodeTitle: UILabel!
+    @IBOutlet weak var episodeImage: UIImageView!
+    @IBOutlet weak var seasonEpisode: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
