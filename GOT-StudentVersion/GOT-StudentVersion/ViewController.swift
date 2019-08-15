@@ -9,8 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     let gotEpisodes = GOTEpisode.allEpisodes
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
