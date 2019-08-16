@@ -119,7 +119,7 @@
         <!--Detail View Controller-->
         <scene sceneID="tbm-MH-q6p">
             <objects>
-                <viewController id="Vp8-Jx-XSA" userLabel="Detail View Controller" sceneMemberID="viewController">
+                <viewController id="Vp8-Jx-XSA" userLabel="Detail View Controller" customClass="DetailViewController" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bDy-e3-3ad">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,6 +175,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ca9-ro-9jk"/>
                     </view>
+                    <connections>
+                        <outlet property="detailAirdate" destination="FKc-Of-eaQ" id="ct8-Vu-gtW"/>
+                        <outlet property="detailDescription" destination="ehJ-IO-2Ww" id="22Z-L2-qJ5"/>
+                        <outlet property="detailEpisode" destination="s64-Rc-8OQ" id="x6o-xt-gRD"/>
+                        <outlet property="detailImage" destination="o3u-jU-2iS" id="kik-UG-dTg"/>
+                        <outlet property="detailRuntime" destination="zq4-MY-ERl" id="aHX-bH-JDW"/>
+                        <outlet property="detailSeason" destination="yYi-Wr-CBv" id="VDN-su-Pww"/>
+                        <outlet property="detailTitle" destination="cGM-Ex-S9l" id="93T-SW-uzr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Si-rj-nrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
