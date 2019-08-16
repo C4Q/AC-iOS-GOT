@@ -88,9 +88,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch indexPath.section {
-            
-        case 0:
+        if indexPath.section % 2 == 0 {
             
             if let cell = tableView.dequeueReusableCell(withIdentifier: "left-image-row", for: indexPath) as? EpisodeTableViewCell {
                 
@@ -101,26 +99,27 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.seasonEpisode.text = " S:\(gotEpisodes[indexPath.row].season) E: \(gotEpisodes[indexPath.row].number)"
                 
                 return cell
-                }
-            
-                
-                case 1:
-                
-                //            if let cell = tableView.dequeueReusableCell(withIdentifier: "right-image-row", for: indexPath) as? episodeTableViewCell {
-                //
-                //                cell.epImage.image = UIImage(named: gotEpisodes[indexPath.row].mediumImageID)
-                //
-                //                cell.epName.text = gotEpisodes[indexPath.row].name
-                //
-                //                cell.seasonEpisode.text = " S:\(gotEpisodes[indexPath.row].season) E: \(gotEpisodes[indexPath.row].number)"
-                
-                //return cell
-                return UITableViewCell()
-                
-                default:
-                break
             }
-            return UITableViewCell()
+            
         }
+        
+        if indexPath.section % 2 != 0 {
+            
+            
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "right-image-row", for: indexPath) as? EpisodeTableViewCell2 {
+                
+                cell.episodeImage.image = UIImage(named: gotEpisodes[indexPath.row].mediumImageID)
+                
+                cell.episodeTitle.text = gotEpisodes[indexPath.row].name
+                
+                cell.seasonEpisode.text = " S:\(gotEpisodes[indexPath.row].season) E: \(gotEpisodes[indexPath.row].number)"
+                
+                return cell
+            
+            }
+        }
+        return UITableViewCell()
+
+    }
 }
 
