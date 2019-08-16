@@ -16,6 +16,18 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     
+    var searchString: String? {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    
+    var searchResults: [GOTEpisode] {
+        get {
+            return [GOTEpisode]()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
