@@ -12,6 +12,7 @@
 		54B11AC11FABCE48004E1EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC01FABCE48004E1EAF /* Assets.xcassets */; };
 		54B11AC41FABCE48004E1EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */; };
 		54B11ACC1FABCED7004E1EAF /* GOTEpisodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisodeList.swift */; };
+		D800C2942307373900B4BE8E /* ArrayOfSeasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800C2932307373900B4BE8E /* ArrayOfSeasons.swift */; };
 		D80681B72304A272006C3288 /* GoTEpsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80681B62304A272006C3288 /* GoTEpsListTableViewController.swift */; };
 		D80681B92304DAEF006C3288 /* GoTEpsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80681B82304DAEF006C3288 /* GoTEpsDetailsViewController.swift */; };
 		D83659AB2300C5F500CF45FA /* TableViewCellLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83659AA2300C5F500CF45FA /* TableViewCellLeft.swift */; };
@@ -27,6 +28,7 @@
 		54B11AC31FABCE48004E1EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54B11AC51FABCE48004E1EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54B11ACB1FABCED7004E1EAF /* GOTEpisodeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisodeList.swift; sourceTree = "<group>"; };
+		D800C2932307373900B4BE8E /* ArrayOfSeasons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayOfSeasons.swift; sourceTree = "<group>"; };
 		D80681B62304A272006C3288 /* GoTEpsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTEpsListTableViewController.swift; sourceTree = "<group>"; };
 		D80681B82304DAEF006C3288 /* GoTEpsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTEpsDetailsViewController.swift; sourceTree = "<group>"; };
 		D83659AA2300C5F500CF45FA /* TableViewCellLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellLeft.swift; sourceTree = "<group>"; };
@@ -65,10 +67,10 @@
 		54B11AB81FABCE47004E1EAF /* GOT-StudentVersion */ = {
 			isa = PBXGroup;
 			children = (
-				D80681B523049DED006C3288 /* ViewController */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
+				D80681B523049DED006C3288 /* ViewController */,
 				D83659F82301F79000CF45FA /* TableViewCells */,
 				D83659F72301F6FD00CF45FA /* Model_Files */,
 			);
@@ -98,6 +100,7 @@
 			children = (
 				54B11ACB1FABCED7004E1EAF /* GOTEpisodeList.swift */,
 				D83659F92301F9F800CF45FA /* Episodes_By_Season.swift */,
+				D800C2932307373900B4BE8E /* ArrayOfSeasons.swift */,
 			);
 			path = Model_Files;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
 				D83659AD2300C5FF00CF45FA /* TableViewCellRight.swift in Sources */,
 				D83659FA2301F9F800CF45FA /* Episodes_By_Season.swift in Sources */,
+				D800C2942307373900B4BE8E /* ArrayOfSeasons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

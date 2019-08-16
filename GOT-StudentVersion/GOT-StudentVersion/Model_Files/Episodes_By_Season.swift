@@ -10,3 +10,4 @@ import Foundation
 
 func filterSeasonsBy(episode: [GOTEpisode], andSeasonNum: Int) -> [GOTEpisode] { return episode.filter( {$0.season == andSeasonNum} )
 }
+

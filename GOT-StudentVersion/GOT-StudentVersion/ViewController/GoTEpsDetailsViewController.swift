@@ -9,10 +9,29 @@
 import UIKit
 
 class GoTEpsDetailsViewController: UIViewController {
+  
+  var episode: GOTEpisode?
 
+  @IBOutlet weak var detailsPageImageView: UIImageView!
+  @IBOutlet weak var detailsEpsTitleLabel: UILabel!
+  @IBOutlet weak var detailsSeasonNumLabel: UILabel!
+  @IBOutlet weak var detailsEpsiodeNum: UILabel!
+  @IBOutlet weak var detailsRuntimeLabel: UILabel!
+  @IBOutlet weak var detailsAirdateLabel: UILabel!
+  @IBOutlet weak var detailsSummaryTextView: UITextView!
+  
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      guard let episode = episode else { return }
+      
+      detailsPageImageView.image = UIImage(named: episode.mediumImageID)
+      detailsEpsTitleLabel.text = "Title: \(episode.name)"
+      detailsSeasonNumLabel.text = "Season \(episode.season)"
+      detailsEpsiodeNum.text = "Episode \(episode.number)"
+      detailsRuntimeLabel.text = "Runtime: \(episode.runtime)"
+      detailsAirdateLabel.text = "Airdate: \(episode.airdate)"
+      detailsSummaryTextView.text = episode.summary
         // Do any additional setup after loading the view.
     }
     

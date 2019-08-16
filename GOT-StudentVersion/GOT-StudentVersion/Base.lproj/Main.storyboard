@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I6z-ci-c85">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lB6-5B-r5w">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -64,6 +64,7 @@
                                     <outlet property="OddEpsTitleLabel" destination="hOJ-Ey-QD1" id="qcU-Pk-D8p"/>
                                     <outlet property="OddSeasonNumberLabel" destination="TAr-qM-Mjn" id="HPA-aZ-gpv"/>
                                     <outlet property="leftImageView" destination="00S-fI-8hS" id="ExG-8V-cXE"/>
+                                    <segue destination="rxv-wx-ir6" kind="show" id="D9k-bo-wHV"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RightImageEvenSeason" rowHeight="195" id="Cyj-SJ-ZAM" customClass="TableViewCellRight" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -112,6 +113,7 @@
                                     <outlet property="EvenEpsTitleLabel" destination="O2u-lG-bgf" id="XbV-7z-Hh8"/>
                                     <outlet property="EvenSeasonLabel" destination="Zou-zw-kqy" id="n3P-c2-Rqb"/>
                                     <outlet property="rightImageView" destination="Dx2-ed-37V" id="gxt-xb-yt0"/>
+                                    <segue destination="rxv-wx-ir6" kind="show" id="c6h-vc-32A"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -120,10 +122,11 @@
                             <outlet property="delegate" destination="I6z-ci-c85" id="kk8-hV-3y5"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="vfR-6a-4JV"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbW-MV-TB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1010" y="27"/>
+            <point key="canvasLocation" x="-100.00000000000001" y="26.785714285714285"/>
         </scene>
         <!--GoT Eps Details View Controller-->
         <scene sceneID="LHD-Md-wS9">
@@ -133,61 +136,113 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eQE-BM-zl6">
-                                <rect key="frame" x="57" y="153" width="300" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eQE-BM-zl6">
+                                <rect key="frame" x="57" y="153" width="300" height="166"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Episode Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9a-kh-zIj">
-                                <rect key="frame" x="158" y="289" width="99" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Epsiode #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E38-bw-WJi">
+                                <rect key="frame" x="57" y="427" width="300" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Season # " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuY-es-irM">
-                                <rect key="frame" x="57" y="371" width="76" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Runtime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdU-ZS-KDK">
+                                <rect key="frame" x="57" y="459" width="300" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Epsiode #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E38-bw-WJi">
-                                <rect key="frame" x="57" y="400" width="76" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Airdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udd-w2-t6c">
+                                <rect key="frame" x="57" y="490" width="300" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Runtime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdU-ZS-KDK">
-                                <rect key="frame" x="57" y="429" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Airdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udd-w2-t6c">
-                                <rect key="frame" x="57" y="458" width="55" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woh-ID-rXz">
-                                <rect key="frame" x="57" y="540" width="300" height="191"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woh-ID-rXz">
+                                <rect key="frame" x="57" y="522" width="300" height="287"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Herculanum" family="Herculanum" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season # " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuY-es-irM">
+                                <rect key="frame" x="57" y="395" width="300" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Title" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9a-kh-zIj">
+                                <rect key="frame" x="57" y="363" width="300" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8OX-dj-wdp" firstAttribute="trailing" secondItem="woh-ID-rXz" secondAttribute="trailing" constant="57" id="0AH-wY-wr4"/>
+                            <constraint firstItem="c9a-kh-zIj" firstAttribute="leading" secondItem="8OX-dj-wdp" secondAttribute="leading" constant="57" id="0Re-QX-VWP"/>
+                            <constraint firstItem="eQE-BM-zl6" firstAttribute="leading" secondItem="8OX-dj-wdp" secondAttribute="leading" constant="57" id="2Cy-ka-jym"/>
+                            <constraint firstAttribute="bottom" secondItem="HdU-ZS-KDK" secondAttribute="bottom" constant="414" id="9l9-jW-cZ4"/>
+                            <constraint firstItem="cuY-es-irM" firstAttribute="leading" secondItem="8OX-dj-wdp" secondAttribute="leading" constant="57" id="ARw-zR-WNS"/>
+                            <constraint firstItem="8OX-dj-wdp" firstAttribute="trailing" secondItem="cuY-es-irM" secondAttribute="trailing" constant="57" id="CQN-QR-7dy"/>
+                            <constraint firstItem="8OX-dj-wdp" firstAttribute="trailing" secondItem="HdU-ZS-KDK" secondAttribute="trailing" constant="57" id="ENz-PR-U7Z"/>
+                            <constraint firstItem="woh-ID-rXz" firstAttribute="top" secondItem="udd-w2-t6c" secondAttribute="bottom" constant="8" symbolic="YES" id="Ejd-Cw-2hk"/>
+                            <constraint firstItem="E38-bw-WJi" firstAttribute="leading" secondItem="8OX-dj-wdp" secondAttribute="leading" constant="57" id="GGC-An-eIC"/>
+                            <constraint firstItem="eQE-BM-zl6" firstAttribute="top" secondItem="8OX-dj-wdp" secondAttribute="top" constant="65" id="K58-OQ-BAJ"/>
+                            <constraint firstItem="eQE-BM-zl6" firstAttribute="top" secondItem="8OX-dj-wdp" secondAttribute="top" constant="65" id="Khx-Q0-naV"/>
+                            <constraint firstItem="udd-w2-t6c" firstAttribute="leading" secondItem="8OX-dj-wdp" secondAttribute="leading" constant="57" id="OV4-4P-CSD"/>
+                            <constraint firstItem="8OX-dj-wdp" firstAttribute="bottom" secondItem="woh-ID-rXz" secondAttribute="bottom" constant="53" id="Q5B-dY-OTK"/>
+                            <constraint firstItem="8OX-dj-wdp" firstAttribute="trailing" secondItem="eQE-BM-zl6" secondAttribute="trailing" constant="57" id="QhD-f3-gSh"/>
+                            <constraint firstItem="HdU-ZS-KDK" firstAttribute="top" secondItem="E38-bw-WJi" secondAttribute="bottom" constant="8" symbolic="YES" id="WC8-nh-8dg"/>
+                            <constraint firstItem="c9a-kh-zIj" firstAttribute="top" secondItem="eQE-BM-zl6" secondAttribute="bottom" constant="44" id="WvY-Vf-1Pb"/>
+                            <constraint firstItem="c9a-kh-zIj" firstAttribute="top" secondItem="eR7-uA-qmg" secondAttribute="top" constant="363" id="b3M-eD-aO2"/>
+                            <constraint firstItem="8OX-dj-wdp" firstAttribute="trailing" secondItem="c9a-kh-zIj" secondAttribute="trailing" constant="57" id="bsW-ZH-f0l"/>
+                            <constraint firstItem="eQE-BM-zl6" firstAttribute="leading" secondItem="8OX-dj-wdp" secondAttribute="leading" constant="57" id="gGB-qP-ElZ"/>
+                            <constraint firstItem="8OX-dj-wdp" firstAttribute="trailing" secondItem="udd-w2-t6c" secondAttribute="trailing" constant="57" id="giF-lq-ea2"/>
+                            <constraint firstItem="8OX-dj-wdp" firstAttribute="trailing" secondItem="E38-bw-WJi" secondAttribute="trailing" constant="57" id="uF1-Yd-rs0"/>
+                            <constraint firstItem="cuY-es-irM" firstAttribute="top" secondItem="c9a-kh-zIj" secondAttribute="bottom" constant="8" symbolic="YES" id="uJ8-SA-mVM"/>
+                            <constraint firstItem="woh-ID-rXz" firstAttribute="leading" secondItem="8OX-dj-wdp" secondAttribute="leading" constant="57" id="vEE-ZO-stq"/>
+                            <constraint firstItem="8OX-dj-wdp" firstAttribute="trailing" secondItem="eQE-BM-zl6" secondAttribute="trailing" constant="57" id="x8n-Jd-gLI"/>
+                            <constraint firstItem="HdU-ZS-KDK" firstAttribute="leading" secondItem="8OX-dj-wdp" secondAttribute="leading" constant="57" id="xF1-hf-PJB"/>
+                            <constraint firstItem="udd-w2-t6c" firstAttribute="top" secondItem="HdU-ZS-KDK" secondAttribute="bottom" constant="8" symbolic="YES" id="zf2-H2-r4v"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8OX-dj-wdp"/>
                     </view>
+                    <connections>
+                        <outlet property="detailsAirdateLabel" destination="udd-w2-t6c" id="zeT-FN-baq"/>
+                        <outlet property="detailsEpsTitleLabel" destination="c9a-kh-zIj" id="mbh-gE-F8k"/>
+                        <outlet property="detailsEpsiodeNum" destination="E38-bw-WJi" id="RcI-Mp-bxp"/>
+                        <outlet property="detailsPageImageView" destination="eQE-BM-zl6" id="5Ud-3e-n6a"/>
+                        <outlet property="detailsRuntimeLabel" destination="HdU-ZS-KDK" id="ghX-KK-bMU"/>
+                        <outlet property="detailsSeasonNumLabel" destination="cuY-es-irM" id="Qts-vi-i5d"/>
+                        <outlet property="detailsSummaryTextView" destination="woh-ID-rXz" id="vX4-yA-tpW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEo-dK-cxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-278.26086956521743" y="26.785714285714285"/>
+            <point key="canvasLocation" x="630.43478260869574" y="26.785714285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tG6-Qj-zTQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lB6-5B-r5w" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tNz-9I-f3J">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="I6z-ci-c85" kind="relationship" relationship="rootViewController" id="5P5-Fy-JgM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8NH-Gc-UB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1010.144927536232" y="26.785714285714285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="D9k-bo-wHV"/>
+    </inferredMetricsTieBreakers>
 </document>
