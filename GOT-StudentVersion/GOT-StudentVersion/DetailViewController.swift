@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
         detailTitle.text = got.name
         detailSeason.text = "Season: \(got.season)"
         detailEpisode.text = "Episode: \(got.number)"
-        detailRuntime.text = "Runtime \(got.runtime)"
+        detailRuntime.text = "Runtime: \(got.runtime)"
         detailAirdate.text = "Airdate: \(got.airdate)"
         detailDescription.text = got.summary
 
