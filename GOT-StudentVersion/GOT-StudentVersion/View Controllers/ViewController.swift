@@ -6,11 +6,41 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: -- Outlet & imported Variables
     @IBOutlet var gotTableView: UITableView!
+    var got = GOTEpisode.allEpisodes
     var gotArrayBySeason = sortedBySeason()
-    var searchGOTNames = [String]()
-    var searching = true
-    var gotArrayOfNames = EpisodeNames().putNameOfEpisodesInAnArray()
     @IBOutlet var searchBar: UISearchBar!
+    
+    var gotSeachResults:[GOTEpisode] {
+        get{
+            guard let gotSearchString = gotSearchString else {
+                return got
+            } //this filters searches through the searchString and makes sure its not empty else returns Person.allPeople
+            guard gotSearchString != "" else {
+                return got
+            }
+            
+            if let gotScoptTitles = searchBar.scopeButtonTitles {
+                let currentScopeIndex = searchBar.selectedScopeButtonIndex
+                
+                switch gotScoptTitles[currentScopeIndex]{
+                case "Season":
+                    return got.filter({$0.season == Int(gotSearchString)})
+                case "Episode":
+                    return got.filter({$0.name.lowercased().contains(gotSearchString.lowercased())})
+                default:
+                    return got
+                }
+            }
+            return got
+        }
+    }
+    //used to store values of persons and reload the tableView each time
+    
+    var gotSearchString:String? = nil {
+        didSet {
+            self.gotTableView.reloadData()
+        }
+    }
     
     
     //MARK: -- Table View Data Source
@@ -27,6 +57,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gotArrayBySeason.allSeasons[section].count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -34,7 +65,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "GOTID2") as! GotTableViewCell
         
-        let info = gotArrayBySeason.allSeasons[indexPath.section][indexPath.row]
+        let info = gotSeachResults[indexPath.row]
         
         cell.gotName.text = "\( info.name)"
         cell.gotName.font = UIFont(name: "Papyrus", size: 14)
@@ -75,7 +106,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let detailViewControler = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
-        let info = gotArrayBySeason.allSeasons[indexPath.section][indexPath.row]
+        let info = gotSeachResults[indexPath.row]
         // this line passes the model to the second view controller and allows the second view controller tro figure out what it needs to assign to its attritubes
         detailViewControler.gotEpisode = info
         
@@ -84,10 +115,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     //TODO
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        searchGOTNames.filter({
-            $0.prefix(searchText.count) == searchText})
-        
+        gotSearchString = searchBar.text
     }
     
     override func viewDidLoad() {
