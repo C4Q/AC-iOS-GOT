@@ -15,6 +15,7 @@
 		54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */; };
 		EC8719092304D19B000C9414 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8719082304D19B000C9414 /* EpisodeTableViewCell.swift */; };
 		EC87190B2304E0F1000C9414 /* EpisodeTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87190A2304E0F1000C9414 /* EpisodeTableViewCell2.swift */; };
+		ECD271E12306327A0093DD0B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD271E02306327A0093DD0B /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisode.swift; sourceTree = "<group>"; };
 		EC8719082304D19B000C9414 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		EC87190A2304E0F1000C9414 /* EpisodeTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell2.swift; sourceTree = "<group>"; };
+		ECD271E02306327A0093DD0B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
 				54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
+				ECD271E02306327A0093DD0B /* DetailViewController.swift */,
 				EC8719082304D19B000C9414 /* EpisodeTableViewCell.swift */,
 				EC87190A2304E0F1000C9414 /* EpisodeTableViewCell2.swift */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
@@ -156,6 +159,7 @@
 				54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */,
 				EC87190B2304E0F1000C9414 /* EpisodeTableViewCell2.swift in Sources */,
 				EC8719092304D19B000C9414 /* EpisodeTableViewCell.swift in Sources */,
+				ECD271E12306327A0093DD0B /* DetailViewController.swift in Sources */,
 				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
 			);
