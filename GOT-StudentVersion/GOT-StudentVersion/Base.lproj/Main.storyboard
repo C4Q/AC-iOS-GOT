@@ -114,6 +114,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="djj-zD-ihO"/>
                     <connections>
+                        <outlet property="searchBarOutlet" destination="t6V-M1-WBk" id="0pK-OX-wq8"/>
                         <outlet property="tableView" destination="uvL-Ga-6ty" id="wEI-FU-Yrc"/>
                     </connections>
                 </viewController>
