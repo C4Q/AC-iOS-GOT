@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b8M-Bk-inN">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uvL-Ga-6ty" customClass="E">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="left-image-row" rowHeight="140" id="eBK-6X-kCI" customClass="EpisodeTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -53,6 +53,7 @@
                                             <outlet property="epImage" destination="rnD-h4-nB5" id="WAg-Mz-36B"/>
                                             <outlet property="epName" destination="2gr-ZQ-ndx" id="imL-Fs-Onn"/>
                                             <outlet property="seasonEpisode" destination="N1D-Ym-Bhi" id="PZW-kq-hgG"/>
+                                            <segue destination="Vp8-Jx-XSA" kind="show" id="lEJ-SR-6fc"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="right-image-row" rowHeight="140" id="deD-dp-B1o" customClass="EpisodeTableViewCell2" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -91,6 +92,7 @@
                                             <outlet property="episodeImage" destination="xYJ-2c-lG6" id="JTw-Qb-cBp"/>
                                             <outlet property="episodeTitle" destination="H6G-NG-2fM" id="fvf-Sb-9PR"/>
                                             <outlet property="seasonEpisode" destination="sHL-go-OEZ" id="zp3-Kl-TBf"/>
+                                            <segue destination="Vp8-Jx-XSA" kind="show" id="9dS-ZA-CHc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -105,13 +107,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="djj-zD-ihO"/>
                     <connections>
                         <outlet property="tableView" destination="uvL-Ga-6ty" id="wEI-FU-Yrc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57.971014492753625" y="20.758928571428569"/>
+            <point key="canvasLocation" x="968.11594202898561" y="20.758928571428569"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="tbm-MH-q6p">
@@ -126,7 +129,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Si-rj-nrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="959" y="21"/>
+            <point key="canvasLocation" x="1868.1159420289857" y="20.758928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pGi-cD-ntB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b8M-Bk-inN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hBH-VM-BMa">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="URD-cI-5Zx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8l-R4-mAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.971014492753625" y="20.758928571428569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9dS-ZA-CHc"/>
+    </inferredMetricsTieBreakers>
 </document>
