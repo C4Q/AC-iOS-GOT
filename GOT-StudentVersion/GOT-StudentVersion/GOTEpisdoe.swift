@@ -145,12 +145,12 @@ class GOTEpisode {
     
     static func getFilteredResults(selectedStr: String, searchText: String) -> [[GOTEpisode]] {
         
-        var typeFilter = (selectedStr == "Title") ? GOTEpisode.nameFilters : GOTEpisode.summaryFilters
-        
-        if let filteredSeasons = typeFilter[searchText] {
-            return filteredSeasons
-        }
-        
+//        var typeFilter = (selectedStr == "Title") ? GOTEpisode.nameFilters : GOTEpisode.summaryFilters
+//
+//        if let filteredSeasons = typeFilter[searchText] {
+//            return filteredSeasons
+//        }
+//
         var filteredSeasons = [[GOTEpisode]]()
         
         for season in GOTEpisode.allSeasons {
@@ -164,7 +164,7 @@ class GOTEpisode {
             filteredSeasons.append(currentFilter)
         }
         
-        typeFilter[searchText] = filteredSeasons
+//        typeFilter[searchText] = filteredSeasons
         return filteredSeasons
     }
     

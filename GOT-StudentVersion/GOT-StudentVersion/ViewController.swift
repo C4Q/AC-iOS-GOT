@@ -12,6 +12,29 @@ class ViewController: UIViewController {
     
     var seasons: [[GOTEpisode]] = GOTEpisode.allSeasons
     
+    var filteredSeasons: [[GOTEpisode]] {
+        get {
+            guard let searchString = searchString else { return seasons }
+            
+            guard searchString != "" else { return seasons}
+            
+            if let scopeArrTitles = mySearchBar.scopeButtonTitles {
+                let currentIndex = mySearchBar.selectedScopeButtonIndex
+                let selectedStr = scopeArrTitles[currentIndex]
+                
+                return GOTEpisode.getFilteredResults(selectedStr: selectedStr, searchText: searchString)
+            }
+            
+            return seasons
+        }
+    }
+    
+    var searchString: String? = nil {
+        didSet {
+            self.myTableView.reloadData()
+        }
+    }
+    
     @IBOutlet weak var myTableView: UITableView!
     
     @IBOutlet weak var mySearchBar: UISearchBar!
@@ -37,7 +60,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return seasons[section].count
+        return filteredSeasons[section].count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,7 +69,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let episode = seasons[indexPath.section][indexPath.row]
+        let episode = filteredSeasons[indexPath.section][indexPath.row]
        
         let image: UIImage = (UIImage(named: episode.mediumImageID ))!
         
@@ -108,7 +131,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             
             guard let selectedIndexPath = myTableView.indexPathForSelectedRow else {fatalError("No row selected")}
             
-            let currentEpisode = seasons[selectedIndexPath.section][selectedIndexPath.row]
+            let currentEpisode = filteredSeasons[selectedIndexPath.section][selectedIndexPath.row]
             
             DetailVC.episode = currentEpisode
             
@@ -117,7 +140,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
                 
                 guard let selectedIndexPath = myTableView.indexPathForSelectedRow else {fatalError("No row selected")}
                 
-                let currentEpisode = seasons[selectedIndexPath.section][selectedIndexPath.row]
+                let currentEpisode = filteredSeasons[selectedIndexPath.section][selectedIndexPath.row]
                 
                 DetailVC.episode = currentEpisode
         default:
@@ -128,16 +151,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        if let scopeArrTitles = searchBar.scopeButtonTitles {
-            let currentIndex = searchBar.selectedScopeButtonIndex
-            let selectedStr = scopeArrTitles[currentIndex]
-            // For this function to identify how to properly filter and return the
-            // relative results
-            seasons = GOTEpisode.getFilteredResults(selectedStr: selectedStr, searchText: searchText)
-            myTableView.reloadData()
-            
-        }
+        searchString = searchText
+    
     }
 
 }
