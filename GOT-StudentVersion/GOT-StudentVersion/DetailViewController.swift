@@ -9,6 +9,10 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    var got: GOTEpisode!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
