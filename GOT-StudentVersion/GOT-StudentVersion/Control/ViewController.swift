@@ -16,14 +16,47 @@ class ViewController: UIViewController {
     @IBOutlet weak var gotTableView: UITableView!
     @IBOutlet weak var gotSearchBar: UISearchBar!
     
+    let gotSeasons = GOTEpisode.allSeasons
     //will return an array, when calling data in function, use indexpath to get the element needed
-    var data = GOTEpisode.allEpisodes {
+    var episodes = GOTEpisode.allEpisodes {
         didSet {
             gotTableView.reloadData()
         }
     }
-    let gotSeasons = GOTEpisode.allSeasons
     
+    
+  
+    var gotSearchResult: [[GOTEpisode]] {
+        get {
+            guard let searchString = searchString else {
+                return gotSeasons
+            }
+            guard searchString != "" else {
+                return gotSeasons
+            }
+            if let scopeTitles = gotSearchBar.scopeButtonTitles {
+                let currentScopeIndex = gotSearchBar.selectedScopeButtonIndex
+                
+                switch scopeTitles[currentScopeIndex] {
+                case "Ep. Name":
+                    return [gotSeasons.joined().filter{$0.name.lowercased().contains(searchString.lowercased())}]
+                case "Summary":
+                    return [gotSeasons.joined().filter{$0.summary.lowercased().contains(searchString.lowercased())}]
+                default:
+                    return gotSeasons                }
+            }
+            return gotSeasons
+        }
+    }
+    
+    var searchString: String? = nil {
+        didSet {
+            print(searchString as Any)
+            //this function makes the tableView
+            gotTableView.reloadData()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupProtocols()
@@ -58,15 +91,26 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gotSeasons[section].count
+        return gotSearchResult.count == 0 ?  1 : gotSearchResult.count
+//        return gotSeasons[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let gotSeason = gotSeasons[indexPath.section][indexPath.row]
+        
+        let gotSeason = gotSearchResult[indexPath.section][indexPath.row]
         let customView = UIView()
         customView.backgroundColor = UIColor(red: 59/255, green: 90/255, blue: 99/255, alpha: 0.5)
         let gotColor = UIColor(red: 12/255, green: 29/255, blue: 66/255, alpha: 1)
         var cell = oddGOTTVCell()
+        
+        if gotSearchResult.count == 0 {
+            let  searchCell = UITableViewCell()
+            searchCell.backgroundColor = gotColor
+            searchCell.textLabel?.textColor = .lightText
+            searchCell.textLabel?.font = UIFont(name: "Papyrus", size: 30)
+            searchCell.textLabel?.text = "Result Not Found"
+            return searchCell
+        }
         
         switch gotSeason.season % 2 {
         case 0:
@@ -95,16 +139,22 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        
+        if gotSearchResult.count == 0 {
+            return 250
+        } else {
+            return 150
+        }
+
     }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return gotSeasons.count
+        return gotSearchResult.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if let gotSeason = gotSeasons[section].first?.season {
+        if let gotSeason = gotSearchResult[section].first?.season {
             
             return "Season \(gotSeason)"
         }
@@ -114,14 +164,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension ViewController: UISearchBarDelegate {
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if searchBar.text == "" || searchBar.text == " " {
-            data = GOTEpisode.allEpisodes
-        }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchString = searchBar.text?.lowercased()
         
-        data = data.filter(){$0.name == searchBar.text}
-        searchBar.resignFirstResponder()
-        searchBar.text = ""
+        if gotSearchResult.count == 0 {
+            searchBar.resignFirstResponder()
+        }
     }
-    
 }
