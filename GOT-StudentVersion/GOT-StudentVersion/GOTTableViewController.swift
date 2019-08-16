@@ -105,7 +105,7 @@ class GOTTableViewController: UITableViewController {
                 
             cell!.episodeImage.image = UIImage(named: String( wholeShow[indexPath.section][indexPath.row].mediumImageID))
             
-            cell!.episodeDetailsOutlet.text = String(wholeShow[indexPath.section][indexPath.row].number)
+            cell!.episodeDetailsOutlet.text = "S:\(String(wholeShow[indexPath.section][indexPath.row].season))  E:\(String(wholeShow[indexPath.section][indexPath.row].number))"
             return cell!
             } else {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reverseEpisodeCell", for: indexPath) as? reverseEpisodeTableViewCell
@@ -113,16 +113,12 @@ class GOTTableViewController: UITableViewController {
                     
             cell!.episodeImage.image = UIImage(named: String( wholeShow[indexPath.section][indexPath.row].mediumImageID))
                     
-            cell!.episodeDetailOutlet.text = String(wholeShow[indexPath.section][indexPath.row].number)
+            cell!.episodeDetailOutlet.text = "S:\( String(wholeShow[indexPath.section][indexPath.row].season))  E:\(String(wholeShow[indexPath.section][indexPath.row].number))"
             return cell!
             }
-
-            return UITableViewCell()
         
+        return UITableViewCell()
         }
-
-
-
 }
 
 
