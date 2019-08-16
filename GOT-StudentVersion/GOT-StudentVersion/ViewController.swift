@@ -26,6 +26,29 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let segueIdentifier = segue.identifier else {
+            fatalError("No identifier on segue")
+        }
+        
+        switch segueIdentifier {
+            
+        case "EpisodeDetail", "EpisodeDetail2":
+            
+            guard let episodeDetail = segue.destination as? DetailViewController else {
+                fatalError("Unexpected segue VC")
+            }
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
+                fatalError("No row was selected")
+            }
+            episodeDetail.got = gotEpisodes[selectedIndexPath.row] //[selectedIndexPath.row]
+        // we need the section and the row from the static array of all the filtered animals
+        default:
+            fatalError("Unexpected segue identifier")
+        }
+    }
+    
     
 }
 
