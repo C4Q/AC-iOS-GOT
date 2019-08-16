@@ -21,27 +21,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return gotData.count
         switch section {
-        case 1:
+        case 0:
             return gotSeason1.count
-        case 2:
+        case 1:
             return gotSeason2.count
-        case 3:
+        case 2:
             return gotSeason3.count
-        case 4:
+        case 3:
             return gotSeason4.count
-        case 5:
+        case 4:
             return gotSeason5.count
-        case 6:
+        case 5:
             return gotSeason6.count
-        case 7:
+        case 6:
             return gotSeason7.count
-        default: return 1
+        default: return 0
 
         }
         
     }
     
-    func filterSeasonsBy(episode: [GOTEpisode], andSeasonNum: Int) -> [GOTEpisode] { return episode.filter( {$0.season == andSeasonNum} )
+    func filterSeasonsBy(episode: [GOTEpisode], andSeasonNum: Int) -> [GOTEpisode] {
+        return episode.filter( {$0.season == andSeasonNum} )
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,15 +50,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         switch indexPath.section % 2 {
             
         case 0:
-             guard let oddCell = gotMainTableView.dequeueReusableCell(withIdentifier: "oddSeasons", for: indexPath) as? TableViewCellOddSeasons else{ return UITableViewCell()}
+            guard let oddCell = gotMainTableView.dequeueReusableCell(withIdentifier: "oddSeasons", for: indexPath) as? TableViewCellOddSeasons else{ return UITableViewCell()}
+            
             let seasonArr0 = filterSeasonsBy(episode: gotData, andSeasonNum: indexPath.section + 1)
             let infoForOddCell = seasonArr0[indexPath.row]
+            
             oddCell.episodeTitleLabelOdd.text = infoForOddCell.name
             oddCell.seasonLabelOdd.text = "Season: \(infoForOddCell.season) Episode: \(infoForOddCell.number)"
             oddCell.uiImageViewOdd.image = UIImage(named: String(infoForOddCell.mediumImageID))
+            
             return oddCell
+            
         case 1:
-              guard let evenCell = gotMainTableView.dequeueReusableCell(withIdentifier: "evenSeasons", for: indexPath) as? TableViewCellEvenSeasons else{ return UITableViewCell()}
+            guard let evenCell = gotMainTableView.dequeueReusableCell(withIdentifier: "evenSeasons", for: indexPath) as? TableViewCellEvenSeasons else{ return UITableViewCell()}
             let seasonArr1 = filterSeasonsBy(episode: gotData, andSeasonNum: indexPath.section + 1)
             let infoForEvenCell = seasonArr1[indexPath.row]
             evenCell.episodeTitleLabelEven.text = infoForEvenCell.name
