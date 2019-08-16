@@ -70,6 +70,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
 
     @IBOutlet weak var gOTTableView: UITableView!
+    @IBOutlet weak var searchBarOutlet: UISearchBar!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = gOTTableView.indexPathForSelectedRow,

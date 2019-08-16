@@ -21,9 +21,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3lc-M8-Igd">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="0Lr-EY-n0w">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellOne" rowHeight="90" id="adI-cR-TSm" customClass="cellOneTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="adI-cR-TSm" id="Tam-XT-AvL">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
@@ -70,7 +75,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTwo" rowHeight="90" id="vph-O0-T3c" customClass="cellTwoTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="118" width="414" height="90"/>
+                                        <rect key="frame" x="0.0" y="162" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vph-O0-T3c" id="GUm-Hf-xzV">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
@@ -131,6 +136,7 @@
                     <navigationItem key="navigationItem" id="tDD-OM-3f9"/>
                     <connections>
                         <outlet property="gOTTableView" destination="3lc-M8-Igd" id="6Kg-1g-YaH"/>
+                        <outlet property="searchBarOutlet" destination="0Lr-EY-n0w" id="tPM-My-zYT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
