@@ -14,10 +14,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var searchBarOutlet: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        searchBarOutlet.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -146,3 +149,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        <#code#>
+    }
+}
