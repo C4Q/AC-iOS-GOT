@@ -18,18 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VZj-fn-wLa">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJy-ks-Y8z">
+                                <rect key="frame" x="0.0" y="88" width="414" height="100"/>
+                                <color key="tintColor" red="0.39160260963979193" green="0.44337371371569262" blue="0.58679013328832486" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="barTintColor" red="0.047058823529411764" green="0.11372549019607843" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Ep. Name</string>
+                                    <string>Summary</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VZj-fn-wLa">
+                                <rect key="frame" x="0.0" y="188" width="414" height="674"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="hJy-ks-Y8z">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="oddCell" rowHeight="150" id="p6u-9S-p3N" customClass="oddGOTTVCell" customModule="GOT_StudentVersion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="84" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p6u-9S-p3N" id="jLc-pc-Itm">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
@@ -73,11 +77,11 @@
                                             <outlet property="oddEpisodeInfoLabel" destination="rNJ-Pu-Jm5" id="DQD-KW-zTq"/>
                                             <outlet property="oddImage" destination="U7c-L0-V5X" id="z7o-Jm-Snr"/>
                                             <outlet property="oddTitleLabel" destination="Dj6-xz-VHk" id="r28-bi-A4I"/>
-                                            <segue destination="2nF-FC-Euo" kind="show" identifier="oddEpisode" id="vQm-Pm-ET9"/>
+                                            <segue destination="2nF-FC-Euo" kind="show" identifier="oddEpisode" id="yuE-b8-Kfz"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="evenCell" rowHeight="150" id="5pd-Jm-mu4" customClass="evenGOTTVCell" customModule="GOT_StudentVersion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="234" width="414" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="evenCell" rowHeight="150" id="5pd-Jm-mu4" customClass="oddGOTTVCell" customModule="GOT_StudentVersion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="178" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5pd-Jm-mu4" id="5G7-qo-k7x">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
@@ -86,7 +90,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y4p-IY-w6c">
                                                     <rect key="frame" x="219" y="11" width="175" height="128"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6j-CT-sSR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6j-CT-sSR">
                                                     <rect key="frame" x="20" y="75" width="179" height="21"/>
                                                     <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="19"/>
                                                     <nil key="textColor"/>
@@ -119,16 +123,25 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="evenEpisodeLabel" destination="X6j-CT-sSR" id="dwN-cI-fPS"/>
-                                            <outlet property="evenImage" destination="y4p-IY-w6c" id="eZG-n3-PgM"/>
-                                            <outlet property="evenTitleLabel" destination="jrz-GW-wJd" id="UAZ-3H-ncL"/>
-                                            <segue destination="2nF-FC-Euo" kind="show" identifier="evenEpisode" id="kzt-XE-h3B"/>
+                                            <outlet property="oddEpisodeInfoLabel" destination="jrz-GW-wJd" id="8SQ-ia-EEX"/>
+                                            <outlet property="oddImage" destination="y4p-IY-w6c" id="dF5-Qe-52L"/>
+                                            <outlet property="oddTitleLabel" destination="X6j-CT-sSR" id="nZV-x5-gDX"/>
+                                            <segue destination="2nF-FC-Euo" kind="show" identifier="evenEpisode" id="c34-tF-qoH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VZj-fn-wLa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3xg-66-4vS"/>
+                            <constraint firstItem="hJy-ks-Y8z" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6eA-CE-gq8"/>
+                            <constraint firstItem="VZj-fn-wLa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bcr-9g-PeO"/>
+                            <constraint firstItem="hJy-ks-Y8z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hxu-qt-dLt"/>
+                            <constraint firstItem="VZj-fn-wLa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="MPI-BF-OcN"/>
+                            <constraint firstItem="VZj-fn-wLa" firstAttribute="top" secondItem="hJy-ks-Y8z" secondAttribute="bottom" id="NRi-O1-4vG"/>
+                            <constraint firstItem="hJy-ks-Y8z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="v8a-i2-DkL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="7Pu-Do-EbS"/>
@@ -245,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Io0-JI-rOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2233" y="100"/>
+            <point key="canvasLocation" x="1954" y="100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HCQ-MW-Ex1">
@@ -267,6 +280,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kzt-XE-h3B"/>
+        <segue reference="c34-tF-qoH"/>
     </inferredMetricsTieBreakers>
 </document>

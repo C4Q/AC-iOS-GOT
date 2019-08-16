@@ -17,7 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var gotSearchBar: UISearchBar!
     
     //will return an array, when calling data in function, use indexpath to get the element needed
-    var data = GOTEpisode.allEpisodes
+    var data = GOTEpisode.allEpisodes {
+        didSet {
+            gotTableView.reloadData()
+        }
+    }
     let gotSeasons = GOTEpisode.allSeasons
     
     override func viewDidLoad() {
@@ -25,37 +29,34 @@ class ViewController: UIViewController {
         setupProtocols()
     }
     
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //if/else
+        guard let destination = segue.destination as? DetailViewController,
+            let cellSelected = gotTableView.indexPathForSelectedRow else {return}
+        let episodeSelected = gotSeasons[cellSelected.section][cellSelected.row]
         
-        switch segue.identifier {
-        case "oddEpisode":
-            guard let destination = segue.destination as? DetailViewController,
-                let cellSelected = gotTableView.indexPathForSelectedRow else {return}
-            let episodeSelected = gotSeasons[cellSelected.section][cellSelected.row]
+        
+        if segue.identifier == "oddEpisode"  {
             destination.gotData = episodeSelected
-        case "evenEpisode":
-            guard let destination = segue.destination as? DetailViewController,
-                let cellSelected = gotTableView.indexPathForSelectedRow else {return}
-            let episodeSelected = gotSeasons[cellSelected.section][cellSelected.row]
+        } else if segue.identifier == "evenEpisode" {
             destination.gotData = episodeSelected
-            
-        default:
-            print("issue with seguing data")
-            return
-            
         }
     }
+    
+    
+    
     
     private func setupProtocols() {
         gotTableView.delegate = self
         gotTableView.dataSource = self
         gotSearchBar.delegate = self
     }
-    
-    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gotSeasons[section].count
     }
@@ -65,38 +66,32 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let customView = UIView()
         customView.backgroundColor = UIColor(red: 59/255, green: 90/255, blue: 99/255, alpha: 0.5)
         let gotColor = UIColor(red: 12/255, green: 29/255, blue: 66/255, alpha: 1)
+        var cell = oddGOTTVCell()
         
-        if gotSeason.season % 2 == 1 {
-            if let cell = gotTableView.dequeueReusableCell(withIdentifier: "oddCell", for: indexPath) as? oddGOTTVCell {
-                cell.backgroundColor = gotColor
-                cell.oddTitleLabel?.textColor = .white
-                cell.oddTitleLabel?.text = gotSeason.name
-                cell.oddEpisodeInfoLabel?.textColor = .lightText
-                cell.oddEpisodeInfoLabel?.text = "S:  \(String(gotSeason.season)) ep: \(gotSeason.number)"
-                cell.oddImage.image = UIImage(named: gotSeason.mediumImageID)
-                cell.selectedBackgroundView = customView
-                return cell
-            }
-        } else if gotSeason.season % 2 == 0 {
-            if let cell = gotTableView.dequeueReusableCell(withIdentifier: "evenCell", for: indexPath) as? evenGOTTVCell {
-                cell.backgroundColor = gotColor
-                cell.evenTitleLabel?.textColor = .white
-                cell.evenTitleLabel?.text = gotSeason.name
-                
-                cell.evenEpisodeLabel?.textColor = .lightText
-                cell.evenEpisodeLabel?.text = "S:  \(String(gotSeason.season)) ep: \(gotSeason.number)"
-                
-                cell.evenImage.image = UIImage(named: gotSeason.mediumImageID)
-                
-                cell.selectedBackgroundView = customView
-
-                return cell
-            }
+        switch gotSeason.season % 2 {
+        case 0:
+            cell = gotTableView.dequeueReusableCell(withIdentifier: "evenCell", for: indexPath) as! oddGOTTVCell
+        case 1:
+            cell = gotTableView.dequeueReusableCell(withIdentifier: "oddCell", for: indexPath) as! oddGOTTVCell
+        default:
+            cell = oddGOTTVCell()
         }
-        return UITableViewCell()
+        
+        cell.backgroundColor = gotColor
+        cell.oddTitleLabel?.textColor = .white
+        cell.oddTitleLabel?.text = gotSeason.name
+        
+        cell.oddEpisodeInfoLabel?.textColor = .lightText
+        cell.oddEpisodeInfoLabel?.text = "S:  \(String(gotSeason.season)) ep: \(gotSeason.number)"
+        
+        cell.oddImage.image = UIImage(named: gotSeason.mediumImageID)
+        
+        cell.selectedBackgroundView = customView
+        
+        return cell
     }
     
-
+    
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -119,5 +114,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension ViewController: UISearchBarDelegate {
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchBar.text == "" || searchBar.text == " " {
+            data = GOTEpisode.allEpisodes
+        }
+        
+        data = data.filter(){$0.name == searchBar.text}
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
+    }
     
 }

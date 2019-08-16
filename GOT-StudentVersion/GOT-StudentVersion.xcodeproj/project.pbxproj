@@ -14,7 +14,6 @@
 		54B11AC41FABCE48004E1EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */; };
 		54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */; };
 		C6D1BD4B2301FB6400F82FBF /* oddGOTTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D1BD4A2301FB6400F82FBF /* oddGOTTVCell.swift */; };
-		C6D1BD4E2301FB7E00F82FBF /* evenGOTTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D1BD4C2301FB7E00F82FBF /* evenGOTTVCell.swift */; };
 		C6D1BD502301FD1400F82FBF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D1BD4F2301FD1400F82FBF /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		54B11AC51FABCE48004E1EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisode.swift; sourceTree = "<group>"; };
 		C6D1BD4A2301FB6400F82FBF /* oddGOTTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oddGOTTVCell.swift; sourceTree = "<group>"; };
-		C6D1BD4D2301FB7E00F82FBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/evenGOTTVCell.swift; sourceTree = "<group>"; };
 		C6D1BD4F2301FD1400F82FBF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +101,6 @@
 			children = (
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				C6D1BD4A2301FB6400F82FBF /* oddGOTTVCell.swift */,
-				C6D1BD4C2301FB7E00F82FBF /* evenGOTTVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,7 +179,6 @@
 			files = (
 				54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */,
 				C6D1BD4B2301FB6400F82FBF /* oddGOTTVCell.swift in Sources */,
-				C6D1BD4E2301FB7E00F82FBF /* evenGOTTVCell.swift in Sources */,
 				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
 				C6D1BD502301FD1400F82FBF /* DetailViewController.swift in Sources */,
@@ -206,14 +202,6 @@
 				54B11AC31FABCE48004E1EAF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		C6D1BD4C2301FB7E00F82FBF /* evenGOTTVCell.swift */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C6D1BD4D2301FB7E00F82FBF /* Base */,
-			);
-			name = evenGOTTVCell.swift;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
