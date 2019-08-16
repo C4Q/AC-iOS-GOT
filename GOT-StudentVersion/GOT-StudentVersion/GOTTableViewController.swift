@@ -24,7 +24,7 @@ class GOTTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -40,7 +40,6 @@ class GOTTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         switch section {
         case 0:
         return wholeShow[0].count
@@ -100,84 +99,33 @@ class GOTTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as? episodeCell {
-            cell.episodeNameOutlet.text = wholeShow.[indexPath.row].name
+        if indexPath.section % 2 != 0{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as? episodeCell
+            cell!.episodeNameOutlet.text = wholeShow[indexPath.section][indexPath.row].name
                 
-            cell.episodeImage.image = UIImage(named: String( seasonOne[indexPath.row].mediumImageID))
+            cell!.episodeImage.image = UIImage(named: String( wholeShow[indexPath.section][indexPath.row].mediumImageID))
             
-            cell.episodeNameOutlet.text = seasonOne[indexPath.row].number
-                return cell
-                }
-                
-                
-        case 1:
-            
-            default:
-                return UITableViewCell()
-            
+            cell!.episodeDetailsOutlet.text = String(wholeShow[indexPath.section][indexPath.row].number)
+            return cell!
+            } else {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reverseEpisodeCell", for: indexPath) as? reverseEpisodeTableViewCell
+            cell!.episodeNameOutlet.text = wholeShow[indexPath.section][indexPath.row].name
+                    
+            cell!.episodeImage.image = UIImage(named: String( wholeShow[indexPath.section][indexPath.row].mediumImageID))
+                    
+            cell!.episodeDetailOutlet.text = String(wholeShow[indexPath.section][indexPath.row].number)
+            return cell!
             }
-            
-//
-//            func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//                switch indexPath.section {
-//                case 0:
-//                    if let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as? animalCell {
-//                        cell.animalName.text = mammal[indexPath.row].name
-//
-//                        cell.animalImage.image = UIImage(named: String( mammal[indexPath.row].imageNumber))
-//                        cell.animalOrigin.text = mammal[indexPath.row].origin
-//                        return cell
-//                    }
-//                case 1:
-//                    if let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as? animalCell {
-//                        cell.animalName.text = amphibian[indexPath.row].name
-//
-//                        cell.animalImage.image = UIImage(named: String( amphibian[indexPath.row].imageNumber))
-//                        cell.animalOrigin.text = amphibian[indexPath.row].origin
-//                        return cell
-//                    }
-//                case 2:
-//                    if let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as? animalCell {
-//                        cell.animalName.text = insect[indexPath.row].name
-//
-//                        cell.animalImage.image = UIImage(named: String( insect[indexPath.row].imageNumber))
-//                        cell.animalOrigin.text = insect[indexPath.row].origin
-//                        return cell
-//                    }
-//                case 3:
-//                    if let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as? animalCell {
-//                        cell.animalName.text = reptile[indexPath.row].name
-//
-//                        cell.animalImage.image = UIImage(named: String( reptile[indexPath.row].imageNumber))
-//                        cell.animalOrigin.text = reptile[indexPath.row].origin
-//                        return cell
-//                    }
-//                case 4:
-//                    if let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as? animalCell {
-//                        cell.animalName.text = bird[indexPath.row].name
-//
-//                        cell.animalImage.image = UIImage(named: String( bird[indexPath.row].imageNumber))
-//                        cell.animalOrigin.text = bird[indexPath.row].origin
-//                        return cell
-//
-//
-//                    }
-//                default:
-//                    return UITableViewCell()
-////                }
-//                return UITableViewCell()
-//            }
-//
 
-            
-//        }
+            return UITableViewCell()
+        
+        }
 
-        // Configure the cell...
 
-//        return cell
-//    }
+
+}
+
+
 
 
     /*
@@ -225,4 +173,4 @@ class GOTTableViewController: UITableViewController {
     }
     */
 
-}
+
