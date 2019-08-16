@@ -10,6 +10,15 @@ import UIKit
 
 class episodeCell: UITableViewCell {
 
+    @IBOutlet weak var episodeNameOutlet: UILabel!
+    
+    @IBOutlet weak var episodeDetailsOutlet: UILabel!
+    
+    
+    @IBOutlet weak var episodeImage: UIImageView!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

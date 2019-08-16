@@ -74,7 +74,7 @@ class GOTTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return 180
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -98,16 +98,86 @@ class GOTTableViewController: UITableViewController {
         }
     }
 
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as ? UITableCell()  {
+        switch indexPath.section {
+        case 0:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as? episodeCell {
+            cell.episodeNameOutlet.text = wholeShow.[indexPath.row].name
+                
+            cell.episodeImage.image = UIImage(named: String( seasonOne[indexPath.row].mediumImageID))
             
-        }
+            cell.episodeNameOutlet.text = seasonOne[indexPath.row].number
+                return cell
+                }
+                
+                
+        case 1:
+            
+            default:
+                return UITableViewCell()
+            
+            }
+            
+//
+//            func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//                switch indexPath.section {
+//                case 0:
+//                    if let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as? animalCell {
+//                        cell.animalName.text = mammal[indexPath.row].name
+//
+//                        cell.animalImage.image = UIImage(named: String( mammal[indexPath.row].imageNumber))
+//                        cell.animalOrigin.text = mammal[indexPath.row].origin
+//                        return cell
+//                    }
+//                case 1:
+//                    if let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as? animalCell {
+//                        cell.animalName.text = amphibian[indexPath.row].name
+//
+//                        cell.animalImage.image = UIImage(named: String( amphibian[indexPath.row].imageNumber))
+//                        cell.animalOrigin.text = amphibian[indexPath.row].origin
+//                        return cell
+//                    }
+//                case 2:
+//                    if let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as? animalCell {
+//                        cell.animalName.text = insect[indexPath.row].name
+//
+//                        cell.animalImage.image = UIImage(named: String( insect[indexPath.row].imageNumber))
+//                        cell.animalOrigin.text = insect[indexPath.row].origin
+//                        return cell
+//                    }
+//                case 3:
+//                    if let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as? animalCell {
+//                        cell.animalName.text = reptile[indexPath.row].name
+//
+//                        cell.animalImage.image = UIImage(named: String( reptile[indexPath.row].imageNumber))
+//                        cell.animalOrigin.text = reptile[indexPath.row].origin
+//                        return cell
+//                    }
+//                case 4:
+//                    if let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as? animalCell {
+//                        cell.animalName.text = bird[indexPath.row].name
+//
+//                        cell.animalImage.image = UIImage(named: String( bird[indexPath.row].imageNumber))
+//                        cell.animalOrigin.text = bird[indexPath.row].origin
+//                        return cell
+//
+//
+//                    }
+//                default:
+//                    return UITableViewCell()
+////                }
+//                return UITableViewCell()
+//            }
+//
+
+            
+//        }
 
         // Configure the cell...
 
-        return cell
-    }
+//        return cell
+//    }
 
 
     /*
