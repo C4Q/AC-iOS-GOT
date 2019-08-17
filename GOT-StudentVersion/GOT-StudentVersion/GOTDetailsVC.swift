@@ -24,16 +24,19 @@ class GOTDetailsVC: UIViewController {
     
     @IBOutlet weak var EpisodeInfo: UITextView!
     
-    
     @IBOutlet weak var SeasonLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    EpisodeName.text = gotEpisodeDetail.name
-//    EpisodeImage.image = UIImage (named: String(gotEpisodeDetail.originalImageID))
-//       SeasonOutlet.text = gotEpisodeDetail.season.description
+        EpisodeName.text = gotEpisodeDetail.name
+        EpisodeImage.image = UIImage (named: String(gotEpisodeDetail.originalImageID))
+        SeasonLabel.text = gotEpisodeDetail.season.description
         EpisodeNum.text = gotEpisodeDetail.number.description
+        Runtime.text = gotEpisodeDetail.runtime.description
+        Airdate.text = gotEpisodeDetail.airdate
+        EpisodeInfo.text = gotEpisodeDetail.summary
+        
         
         
         
