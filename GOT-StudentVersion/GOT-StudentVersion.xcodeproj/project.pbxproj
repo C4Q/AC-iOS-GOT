@@ -13,6 +13,8 @@
 		54B11AC11FABCE48004E1EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC01FABCE48004E1EAF /* Assets.xcassets */; };
 		54B11AC41FABCE48004E1EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */; };
 		54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */; };
+		DFF30EC02307502800AF7B4B /* OddSeasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF30EBF2307502800AF7B4B /* OddSeasonTableViewCell.swift */; };
+		DFF30EC22307504A00AF7B4B /* EvenSeasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF30EC12307504A00AF7B4B /* EvenSeasonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		54B11AC31FABCE48004E1EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54B11AC51FABCE48004E1EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
+		DFF30EBF2307502800AF7B4B /* OddSeasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddSeasonTableViewCell.swift; sourceTree = "<group>"; };
+		DFF30EC12307504A00AF7B4B /* EvenSeasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenSeasonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
-				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
-				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
-				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
+				DFF30EBC23074B5D00AF7B4B /* Controllers */,
+				DFF30EBA23074B2D00AF7B4B /* Models */,
+				DFF30EBB23074B4400AF7B4B /* Views */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
 			);
@@ -73,6 +77,32 @@
 				54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DFF30EBA23074B2D00AF7B4B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DFF30EBB23074B4400AF7B4B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
+				DFF30EBF2307502800AF7B4B /* OddSeasonTableViewCell.swift */,
+				DFF30EC12307504A00AF7B4B /* EvenSeasonTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DFF30EBC23074B5D00AF7B4B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +180,8 @@
 			files = (
 				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
 				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
+				DFF30EC22307504A00AF7B4B /* EvenSeasonTableViewCell.swift in Sources */,
+				DFF30EC02307502800AF7B4B /* OddSeasonTableViewCell.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
