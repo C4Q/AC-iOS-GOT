@@ -253,7 +253,6 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         switch indexPath.section % 2 {
             
         case 0:
-            
             let cell = tableView.dequeueReusableCell(withIdentifier: "odd") as? TableViewCell
             cell?.episodeName.text = dataInfo.name
             cell?.episodeID.text = " Season: \(dataInfo.season) Episode: \(dataInfo.number)"
@@ -261,10 +260,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             return cell!
         case 1:
             
-            let cell2 = tableView.dequeueReusableCell(withIdentifier: "even") as? TableViewCell
-            cell2?.episodeName.text = dataInfo.name
-            cell2?.episodeID.text = " Season: \(dataInfo.season) Episode: \(dataInfo.number)"
-            cell2?.imageView?.image = UIImage(named:dataInfo.mediumImageID)
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: "even") as? RightTableViewCell
+            cell2?.episodeImageView.image = UIImage(named:dataInfo.mediumImageID)
+            cell2?.nameCell.text = dataInfo.name
+            cell2?.ID.text = " Season: \(dataInfo.season) Episode: \(dataInfo.number)"
+//            cell2?.episodeName.text = dataInfo.name
+//            cell2?.episodeID.text = " Season: \(dataInfo.season) Episode: \(dataInfo.number)"
+//            cell2?.imageView?.image = UIImage(named:dataInfo.mediumImageID)
             return cell2!
             
         default:

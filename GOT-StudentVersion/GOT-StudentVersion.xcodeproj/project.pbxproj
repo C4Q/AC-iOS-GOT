@@ -16,6 +16,7 @@
 		6973D8E72301FD7A00239B8B /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6973D8E62301FD7A00239B8B /* DetailedViewController.swift */; };
 		6973D8E92302009A00239B8B /* seasonStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6973D8E82302009A00239B8B /* seasonStruct.swift */; };
 		6973D8EB2302065200239B8B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6973D8EA2302065200239B8B /* TableViewCell.swift */; };
+		69E370562307683100D109CD /* RightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E370552307683100D109CD /* RightTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6973D8E62301FD7A00239B8B /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		6973D8E82302009A00239B8B /* seasonStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seasonStruct.swift; sourceTree = "<group>"; };
 		6973D8EA2302065200239B8B /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		69E370552307683100D109CD /* RightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				6973D8EA2302065200239B8B /* TableViewCell.swift */,
+				69E370552307683100D109CD /* RightTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
+				69E370562307683100D109CD /* RightTableViewCell.swift in Sources */,
 				6973D8E92302009A00239B8B /* seasonStruct.swift in Sources */,
 				6973D8E72301FD7A00239B8B /* DetailedViewController.swift in Sources */,
 				6973D8EB2302065200239B8B /* TableViewCell.swift in Sources */,
