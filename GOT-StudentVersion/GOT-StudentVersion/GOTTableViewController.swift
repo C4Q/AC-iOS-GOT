@@ -99,7 +99,10 @@ class GOTTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section % 2 != 0{
+        
+        // try "if statement" on episodes. season instead of on index path, also return the cell
+        
+        if indexPath.section % 2 != 0 {
         let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as? episodeCell
             cell!.episodeNameOutlet.text = wholeShow[indexPath.section][indexPath.row].name
                 
@@ -119,6 +122,29 @@ class GOTTableViewController: UITableViewController {
         
         return UITableViewCell()
         }
+    
+ //
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow,
+            let detailVC = segue.destination as? GOTDetailsVC else {return}
+        let theEpisode = wholeShow[indexPath.section][indexPath.row]
+        
+        detailVC.gotEpisodeDetail = theEpisode
+        
+        
+        
+//        guard let destination = segue.destination as? GOTDetailsVC
+//            else {return}
+//
+//        if segue.identifier == "GOTDetailsVC" {
+//            guard let indexPath = tableView.indexPathForSelectedRow else {return}
+//            let episode = GOTEpisode.allSeasons[indexPath.section][indexPath.row]
+//            destination.gotEpisodeDetail = episode
+//
+//
+//        }
+    }
+    //
 }
 
 
