@@ -18,8 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZgX-8T-L2j">
+                                <rect key="frame" x="20" y="88" width="374" height="100"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Episode</string>
+                                    <string>Summary</string>
+                                </scopeButtonTitles>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Fg-wv-Hel">
-                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                                <rect key="frame" x="20" y="189" width="374" height="673"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GOTCell" rowHeight="229" id="xNy-2I-yOW" customClass="GOTTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -113,17 +121,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0Fg-wv-Hel" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4Es-HC-5bQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Fg-wv-Hel" secondAttribute="trailing" constant="20" id="S6N-LC-U7U"/>
+                            <constraint firstItem="0Fg-wv-Hel" firstAttribute="top" secondItem="ZgX-8T-L2j" secondAttribute="bottom" constant="1" id="V1A-Q6-kQq"/>
+                            <constraint firstItem="ZgX-8T-L2j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WNn-La-2f6"/>
                             <constraint firstItem="0Fg-wv-Hel" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Xa2-96-WXN"/>
+                            <constraint firstItem="ZgX-8T-L2j" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ynq-Pp-WQf"/>
                             <constraint firstItem="0Fg-wv-Hel" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oKO-ea-fW8"/>
-                            <constraint firstItem="0Fg-wv-Hel" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="orQ-Ff-bMS"/>
+                            <constraint firstItem="ZgX-8T-L2j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xoz-qf-M7b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Fg-wv-Hel" secondAttribute="bottom" id="zv7-kk-tJg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="cVt-aK-L3g"/>
                     <connections>
+                        <outlet property="gotSearchBarOutlet" destination="ZgX-8T-L2j" id="CMW-Zi-Guh"/>
                         <outlet property="tableViewOutlet" destination="0Fg-wv-Hel" id="j0V-3p-6bP"/>
                     </connections>
                 </viewController>
@@ -131,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="118.52678571428571"/>
         </scene>
-        <!--GOTDetailViewController-->
+        <!--Episode Details-->
         <scene sceneID="u2o-pK-bae">
             <objects>
-                <viewController storyboardIdentifier="GOTDetailViewController" title="GOTDetailViewController" id="m5l-Bg-QJx" customClass="GOTDetailViewController" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GOTDetailViewController" title="Episode Details" id="m5l-Bg-QJx" customClass="GOTDetailViewController" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CIW-Io-mUi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,7 +190,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuz-AR-zAZ">
-                                <rect key="frame" x="52" y="279" width="311" height="21"/>
+                                <rect key="frame" x="51.5" y="279" width="311" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="311" id="KHi-aj-3TU"/>
                                 </constraints>

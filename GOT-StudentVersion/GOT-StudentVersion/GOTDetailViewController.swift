@@ -13,23 +13,16 @@ class GOTDetailViewController: UIViewController {
     var gotEpisode: GOTEpisode!
 
     @IBOutlet weak var detailImage: UIImageView!
-    
     @IBOutlet weak var episodeNameLabel: UILabel!
-    
     @IBOutlet weak var seasonLabel: UILabel!
-    
     @IBOutlet weak var episodeLabel: UILabel!
-    
     @IBOutlet weak var runtimeLabel: UILabel!
-    
     @IBOutlet weak var airdateLabel: UILabel!
-    
     @IBOutlet weak var summaryField: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
-        // Do any additional setup after loading the view.
     }
     
     private func setUpViews() {
@@ -41,14 +34,4 @@ class GOTDetailViewController: UIViewController {
         summaryField.text = gotEpisode.summary
         detailImage.image = gotEpisode.getImage()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
