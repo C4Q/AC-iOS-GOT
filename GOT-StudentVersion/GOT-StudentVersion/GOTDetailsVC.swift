@@ -31,12 +31,11 @@ class GOTDetailsVC: UIViewController {
 
         EpisodeName.text = gotEpisodeDetail.name
         EpisodeImage.image = UIImage (named: String(gotEpisodeDetail.originalImageID))
-        SeasonLabel.text = gotEpisodeDetail.season.description
-        EpisodeNum.text = gotEpisodeDetail.number.description
-        Runtime.text = gotEpisodeDetail.runtime.description
-        Airdate.text = gotEpisodeDetail.airdate
+        SeasonLabel.text = "Season: \(String(gotEpisodeDetail.season.description))"
+        EpisodeNum.text = "Episode:  \(String(gotEpisodeDetail.number.description))"
+        Runtime.text = "Runtime: \(String(gotEpisodeDetail.runtime.description))"
+        Airdate.text = "Airdate: \(String(gotEpisodeDetail.airdate))"
         EpisodeInfo.text = gotEpisodeDetail.summary
-        
         
         
         
