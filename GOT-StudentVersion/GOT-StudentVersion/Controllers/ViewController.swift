@@ -73,10 +73,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let indexPath =  GOTTableView.indexPathForSelectedRow, let detailedViewController = segue.destination as? DetailViewController else {return}
+        guard let indexPath =  GOTTableView.indexPathForSelectedRow,
+            let detailedViewController = segue.destination as? DetailViewController else {return}
 
-        let theEpisodes = GOTSeasons[indexPath.section][indexPath.row]
-        detailedViewController.detailGOTEpisode = theEpisodes
+        let selectedEpisode = GOTSeasons[indexPath.section][indexPath.row]
+        detailedViewController.detailGOTEpisode = selectedEpisode
     }
-
 }
+
+
