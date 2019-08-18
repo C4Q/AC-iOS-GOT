@@ -11,7 +11,7 @@ import UIKit
 class DetailViewController: ViewController {
 
     
-    var detailGOT: GOTEpisode!
+    var detailGOTEpisode: GOTEpisode?
     
     @IBOutlet var detailTitleLabel: UILabel!
     @IBOutlet var detailImageView: UIImageView!
@@ -21,20 +21,19 @@ class DetailViewController: ViewController {
     @IBOutlet var detailAirTime: UILabel!
     @IBOutlet var detailDescription: UITextView!
     
-    
-    
-    private  func showDetailsViewController() {
-        detailImageView.image = UIImage(named: detailGOT.originalImageID)
-        detailSeasonLabel.text = "Season: \(detailGOT.season.description)"
-        detailEpisodeLabel.text = "Episode: \(detailGOT.number.description)"
-        detailRunningTime.text = "Run Time: \(detailGOT.runtime.description)"
-        detailAirTime.text = detailGOT?.airdate.description
-        detailTitleLabel.text = detailGOT?.name
-        detailDescription.text = detailGOT?.summary
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        showDetailsViewController()
+        
+        guard let detailGOTEpisode = detailGOTEpisode
+            else { return }
+        detailImageView.image = UIImage(named: detailGOTEpisode.originalImageID)
+        detailTitleLabel.text = detailGOTEpisode.name
+        detailSeasonLabel.text = "Season: \(detailGOTEpisode.season)"
+        detailEpisodeLabel.text = "Episode: \(detailGOTEpisode.number)"
+        detailRunningTime.text = "Running Time: \(detailGOTEpisode.runtime)"
+        detailAirTime.text = "Air Date: \(detailGOTEpisode.airdate)"
+        detailDescription.text = detailGOTEpisode.summary
+
     }
 }
     
