@@ -13,6 +13,7 @@
 		54B11AC11FABCE48004E1EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC01FABCE48004E1EAF /* Assets.xcassets */; };
 		54B11AC41FABCE48004E1EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */; };
 		54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */; };
+		DF02605823090D7400F8F085 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02605723090D7400F8F085 /* DetailViewController.swift */; };
 		DFF30EC02307502800AF7B4B /* OddSeasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF30EBF2307502800AF7B4B /* OddSeasonTableViewCell.swift */; };
 		DFF30EC22307504A00AF7B4B /* EvenSeasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF30EC12307504A00AF7B4B /* EvenSeasonTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		54B11AC31FABCE48004E1EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54B11AC51FABCE48004E1EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
+		DF02605723090D7400F8F085 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DFF30EBF2307502800AF7B4B /* OddSeasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddSeasonTableViewCell.swift; sourceTree = "<group>"; };
 		DFF30EC12307504A00AF7B4B /* EvenSeasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenSeasonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
+				DF02605723090D7400F8F085 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
 				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
 				DFF30EC22307504A00AF7B4B /* EvenSeasonTableViewCell.swift in Sources */,
+				DF02605823090D7400F8F085 /* DetailViewController.swift in Sources */,
 				DFF30EC02307502800AF7B4B /* OddSeasonTableViewCell.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
 			);

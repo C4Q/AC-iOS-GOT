@@ -9,35 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-   
     
-
     var GOTSeasons = GOTEpisode.seasons
     // to access static properties, use its' class
     
     @IBOutlet weak var GOTTableView: UITableView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
        GOTTableView.dataSource = self
         GOTTableView.delegate = self
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         return GOTSeasons.count
-        
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return GOTSeasons[section].count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section % 2 == 0 {
@@ -58,7 +51,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return cell
         }
     }
-    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
@@ -75,15 +67,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return "Season 6"
         case 6:
             return "Season 7"
-            
         default:
             return "not show"
-            
         }
     }
-
- 
-
-
 }
-
