@@ -44,16 +44,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let episode = GOTSeasons[indexPath.section][indexPath.row]
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "oddSeasonCell", for: indexPath) as? OddSeasonTableViewCell else {
                 return UITableViewCell() }
+            cell.oddSeasonLabel.text = episode.number.description
             cell.oddEpisodeLabel.text = episode.name
-            cell.oddSeasonLabel.text = episode.season.description
             cell.oddSeasonImage.image = UIImage(named: episode.mediumImageID)
             return cell
         } else {
             let episode = GOTSeasons[indexPath.section][indexPath.row]
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "evenSeasonCell", for: indexPath) as? EvenSeasonTableViewCell else {
                 return UITableViewCell() }
+            cell.evenSeasonLabel.text = episode.number.description
             cell.evenEpisodeLabel.text = episode.name
-            cell.evenSeasonLabel.text = episode.season.description
             cell.evenSeasonImage.image = UIImage(named: episode.mediumImageID)
             return cell
         }
