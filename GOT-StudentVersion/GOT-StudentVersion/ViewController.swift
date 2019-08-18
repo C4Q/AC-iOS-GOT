@@ -18,37 +18,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 7
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return GOTEpisode.seasonOne.count
-        case 1:
-            return GOTEpisode.seasonTwo.count
-        case 2:
-            return GOTEpisode.seasonThree.count
-        case 3:
-            return GOTEpisode.seasonFour.count
-        case 4:
-            return GOTEpisode.seasonFive.count
-        case 5:
-            return GOTEpisode.seasonSix.count
-        case 6:
-           return GOTEpisode.seasonSeven.count
-        default:
-            return 0
-        }
+        return GOTEpisode.episodesBySeason(season: section + 1).count
+//        switch section {
+//        case 0:
+//            return GOTEpisode.seasonOne.count
+//        case 1:
+//            return GOTEpisode.seasonTwo.count
+//        case 2:
+//            return GOTEpisode.seasonThree.count
+//        case 3:
+//            return GOTEpisode.seasonFour.count
+//        case 4:
+//            return GOTEpisode.seasonFive.count
+//        case 5:
+//            return GOTEpisode.seasonSix.count
+//        case 6:
+//           return GOTEpisode.seasonSeven.count
+//        default:
+//            return 0
+//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        switch indexPath.section {
-//        case 0:
-//        if let cell = gotTableView.dequeueReusableCell(withIdentifier: "gotIDCell", for: indexPath) as? EpisodeTVC {
-//            cell.textLabel?.text = episode[indexPath.row].name
-//            return cell
-//        }
-//        return cell
-//        default:
-//            break
-//        }
+        if let cell = gotTableView.dequeueReusableCell(withIdentifier: "gotIDCell", for: indexPath) as? EpisodeTVC {
+            let episodes = GOTEpisode.episodesBySeason(season: indexPath.section + 1)
+            cell.episodeNameLabel?.text = episodes[indexPath.row].name
+            cell.seasonNumberLabel?.text = "S:\(episodes[indexPath.row].season) E:\(episodes[indexPath.row].number)"
+            return cell
+        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
