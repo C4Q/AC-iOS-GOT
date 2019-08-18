@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailViewController-->
         <scene sceneID="C49-u1-qWH">
             <objects>
-                <viewController id="ahu-Mm-fUB" sceneMemberID="viewController">
+                <viewController title="DetailViewController" id="ahu-Mm-fUB" customClass="DetailViewController" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JKI-dM-agb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,6 +216,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oYj-T6-kG6"/>
                     </view>
+                    <connections>
+                        <outlet property="airDateLabel" destination="VKd-aX-S6A" id="Wcp-0K-vh6"/>
+                        <outlet property="descriptionTextView" destination="dNz-I4-W6U" id="uad-HM-bla"/>
+                        <outlet property="episodeImage" destination="lcK-aM-xlH" id="3MZ-TQ-L5s"/>
+                        <outlet property="episodeLabel" destination="vds-Ta-5d3" id="52k-6K-4Y8"/>
+                        <outlet property="episodeTItleLabel" destination="CSV-pl-CMt" id="HDc-z5-OY4"/>
+                        <outlet property="runtimeLabel" destination="dTS-5U-kE5" id="Lm5-F4-rX8"/>
+                        <outlet property="seasonLabel" destination="bGP-tW-X9K" id="SpE-hI-8rK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyh-Yd-lwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

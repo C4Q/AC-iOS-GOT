@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08AAF5B02309A79D0082582D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AAF5AF2309A79D0082582D /* DetailViewController.swift */; };
 		08FB1DF92301FBC800E8546D /* OddSeasonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FB1DF82301FBC800E8546D /* OddSeasonsTableViewCell.swift */; };
 		08FB1DFB2301FBD500E8546D /* EvenSeasonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FB1DFA2301FBD500E8546D /* EvenSeasonsTableViewCell.swift */; };
 		54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11AB91FABCE47004E1EAF /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08AAF5AF2309A79D0082582D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		08FB1DF82301FBC800E8546D /* OddSeasonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddSeasonsTableViewCell.swift; sourceTree = "<group>"; };
 		08FB1DFA2301FBD500E8546D /* EvenSeasonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenSeasonsTableViewCell.swift; sourceTree = "<group>"; };
 		54B11AB61FABCE47004E1EAF /* GOT-StudentVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GOT-StudentVersion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				08FB1DF72301FBAC00E8546D /* Views */,
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
 				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
+				08AAF5AF2309A79D0082582D /* DetailViewController.swift */,
 				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
@@ -164,6 +167,7 @@
 				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
 				08FB1DFB2301FBD500E8546D /* EvenSeasonsTableViewCell.swift in Sources */,
 				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
+				08AAF5B02309A79D0082582D /* DetailViewController.swift in Sources */,
 				08FB1DF92301FBC800E8546D /* OddSeasonsTableViewCell.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
 			);
