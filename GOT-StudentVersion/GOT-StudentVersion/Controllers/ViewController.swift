@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        return 130
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,7 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let episode = GOTSeasons[indexPath.section][indexPath.row]
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "oddSeasonCell", for: indexPath) as? OddSeasonTableViewCell else {
                 return UITableViewCell() }
-            cell.oddSeasonLabel.text = episode.number.description
+            cell.oddSeasonLabel.text = "S: \(episode.season.description) E: \(episode.number.description)"
             cell.oddEpisodeLabel.text = episode.name
             cell.oddSeasonImage.image = UIImage(named: episode.mediumImageID)
             return cell
@@ -52,7 +52,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let episode = GOTSeasons[indexPath.section][indexPath.row]
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "evenSeasonCell", for: indexPath) as? EvenSeasonTableViewCell else {
                 return UITableViewCell() }
-            cell.evenSeasonLabel.text = episode.number.description
+            cell.evenSeasonLabel.text = "S: \(episode.season.description) E: \(episode.number.description)"
             cell.evenEpisodeLabel.text = episode.name
             cell.evenSeasonImage.image = UIImage(named: episode.mediumImageID)
             return cell
