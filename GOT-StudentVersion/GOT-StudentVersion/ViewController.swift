@@ -112,6 +112,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let oddCell = sender as? OddSeasonsTableViewCell {
+            if segue.identifier == "oddCellDetails" {
+                let detailViewController = segue.destination as! DetailViewController
+                let cellIndexPath = gotTableView.indexPath(for: oddCell)!
+                detailViewController.gotEpisode = GOTEpisode.gotEpisodeDirectory[cellIndexPath.section]![cellIndexPath.row]
+            }
+        } else if let evenCell = sender as? EvenSeasonsTableViewCell {
+            if segue.identifier == "evenCellDetails" {
+                let detailViewController = segue.destination as! DetailViewController
+                let cellIndexPath = gotTableView.indexPath(for: evenCell)!
+                detailViewController.gotEpisode = GOTEpisode.gotEpisodeDirectory[cellIndexPath.section]![cellIndexPath.row]
+            }
+        }
+    }
 }
 
