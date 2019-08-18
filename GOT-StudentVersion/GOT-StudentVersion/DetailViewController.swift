@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    var gotEpisode: GOTEpisode!
+    
     @IBOutlet weak var episodeImage: UIImageView!
     @IBOutlet weak var episodeTItleLabel: UILabel!
     @IBOutlet weak var seasonLabel: UILabel!
