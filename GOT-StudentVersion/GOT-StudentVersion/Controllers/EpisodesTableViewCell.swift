@@ -1,18 +1,18 @@
 //
-//  EpisodeTVC.swift
-//  GOT-StudentVersion
+//  EpisodesTableViewCell.swift
+//  GOTE Project
 //
-//  Created by Mariel Hoepelman on 8/12/19.
-//  Copyright © 2019 C4Q . All rights reserved.
+//  Created by Mariel Hoepelman on 8/18/19.
+//  Copyright © 2019 Mariel Hoepelman. All rights reserved.
 //
 
 import UIKit
 
-class EpisodeTVC: UITableViewCell {
+class EpisodesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var episodeNameLabel: UILabel!
-    
     @IBOutlet weak var seasonNumberLabel: UILabel!
+    @IBOutlet weak var episodeImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

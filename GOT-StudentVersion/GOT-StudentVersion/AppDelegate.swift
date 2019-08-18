@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  GOT-StudentVersion
+//  GOTE Project
 //
-//  Created by C4Q  on 11/2/17.
-//  Copyright © 2017 C4Q . All rights reserved.
+//  Created by Mariel Hoepelman on 8/18/19.
+//  Copyright © 2019 Mariel Hoepelman. All rights reserved.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
