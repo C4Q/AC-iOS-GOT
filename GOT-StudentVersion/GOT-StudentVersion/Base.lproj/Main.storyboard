@@ -141,10 +141,10 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
         </scene>
-        <!--DetailViewController-->
+        <!--Episode Details-->
         <scene sceneID="C49-u1-qWH">
             <objects>
-                <viewController title="DetailViewController" id="ahu-Mm-fUB" customClass="DetailViewController" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Episode Details" id="ahu-Mm-fUB" customClass="DetailViewController" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JKI-dM-agb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
