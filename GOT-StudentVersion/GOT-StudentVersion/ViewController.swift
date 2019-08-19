@@ -161,7 +161,7 @@ extension ViewController: UISearchBarDelegate{
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        setsSearchBarFeatures(searchBar: searchBar, showScopeBar: true, ShowsCancel: false)
+        searchBar.resignFirstResponder()
         searchBar.text = ""
         searchString = nil
     }
