@@ -43,6 +43,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08AAF5B52309B1AB0082582D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		08AAF5B62309B1CC0082582D /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
+				08AAF5AF2309A79D0082582D /* DetailViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		08FB1DF72301FBAC00E8546D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,10 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				08FB1DF72301FBAC00E8546D /* Views */,
+				08AAF5B62309B1CC0082582D /* View Controller */,
+				08AAF5B52309B1AB0082582D /* Model */,
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
-				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
-				08AAF5AF2309A79D0082582D /* DetailViewController.swift */,
-				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
