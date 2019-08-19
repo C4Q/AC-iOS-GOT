@@ -11,9 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     
     let gotEpisodes = GOTEpisode.allEpisodes
+    let episodes = GOTEpisode.seasons
+    
     
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     
     var searchString: String? {
@@ -22,10 +23,41 @@ class ViewController: UIViewController {
         }
     }
     
-    var searchResults: [GOTEpisode] {
+    var searchResults: [[GOTEpisode]] {
+        
         get {
-            return [GOTEpisode]()
+            
+            guard let searchString = searchString else {
+                return episodes
+            }
+            
+            guard searchString != "" else {
+                return episodes
+            }
+            
+            if let scopeTitles = searchBarOutlet.scopeButtonTitles {
+                
+                let currentScopeIndex = searchBarOutlet.selectedScopeButtonIndex
+                
+                switch scopeTitles[currentScopeIndex] {
+                    
+                case "Episode Name":
+                    let results: [[GOTEpisode]] = [GOTEpisode.allEpisodes.filter { (episode) -> Bool in
+                       return episode.name.lowercased().contains(searchString.lowercased())
+                    }]
+                    return results
+                    
+                case "Summary":
+                    let results: [[GOTEpisode]] = [GOTEpisode.allEpisodes.filter { $0.summary.lowercased().contains(searchString.lowercased())} ]
+                    return results
+                    
+                default:
+                    return episodes
+                }
+            }
+            return episodes
         }
+        
     }
     
     override func viewDidLoad() {
@@ -57,7 +89,7 @@ class ViewController: UIViewController {
             guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
                 fatalError("No row was selected")
             }
-            episodeDetail.got = gotEpisodes[selectedIndexPath.row] //[selectedIndexPath.row]
+            episodeDetail.got = searchResults[selectedIndexPath.section][selectedIndexPath.row] //[selectedIndexPath.row]
         // we need the section and the row from the static array of all the filtered animals
         default:
             fatalError("Unexpected segue identifier")
@@ -71,7 +103,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     // Number of sections (starts from 0)
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 7
+        return searchResults.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -103,25 +135,25 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     // Number of rows for each section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        switch section {
-        case 0:
-            return GOTEpisode.season1.count
-        case 1:
-            return GOTEpisode.season2.count
-        case 2:
-            return GOTEpisode.season3.count
-        case 3:
-            return GOTEpisode.season4.count
-        case 4:
-            return GOTEpisode.season5.count
-        case 5:
-            return GOTEpisode.season6.count
-        case 6:
-            return GOTEpisode.season7.count
-        default:
-            return 0
-        }
+        return searchResults[section].count
+//        switch section {
+//        case 0:
+//            return GOTEpisode.season1.count
+//        case 1:
+//            return GOTEpisode.season2.count
+//        case 2:
+//            return GOTEpisode.season3.count
+//        case 3:
+//            return GOTEpisode.season4.count
+//        case 4:
+//            return GOTEpisode.season5.count
+//        case 5:
+//            return GOTEpisode.season6.count
+//        case 6:
+//            return GOTEpisode.season7.count
+//        default:
+//            return 0
+//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -129,12 +161,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.section % 2 == 0 {
             
             if let cell = tableView.dequeueReusableCell(withIdentifier: "left-image-row", for: indexPath) as? EpisodeTableViewCell {
+                let episode = searchResults[indexPath.section][indexPath.row]
                 
-                cell.epImage.image = UIImage(named: gotEpisodes[indexPath.row].mediumImageID)
+                cell.epImage.image = UIImage(named: episode.mediumImageID)
                 
-                cell.epName.text = gotEpisodes[indexPath.row].name
+                cell.epName.text = episode.name
                 
-                cell.seasonEpisode.text = " S:\(gotEpisodes[indexPath.row].season) E: \(gotEpisodes[indexPath.row].number)"
+                cell.seasonEpisode.text = " S:\(episode.season) E: \(episode.number)"
                 
                 return cell
             }
@@ -145,19 +178,20 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             
             
             if let cell = tableView.dequeueReusableCell(withIdentifier: "right-image-row", for: indexPath) as? EpisodeTableViewCell2 {
+                let episode = searchResults[indexPath.section][indexPath.row]
                 
-                cell.episodeImage.image = UIImage(named: gotEpisodes[indexPath.row].mediumImageID)
+                cell.episodeImage.image = UIImage(named: episode.mediumImageID)
                 
-                cell.episodeTitle.text = gotEpisodes[indexPath.row].name
+                cell.episodeTitle.text = episode.name
                 
-                cell.seasonEpisode.text = " S:\(gotEpisodes[indexPath.row].season) E: \(gotEpisodes[indexPath.row].number)"
+                cell.seasonEpisode.text = " S:\(episode.season) E: \(episode.number)"
                 
                 return cell
-            
+                
             }
         }
         return UITableViewCell()
-
+        
     }
 }
 
