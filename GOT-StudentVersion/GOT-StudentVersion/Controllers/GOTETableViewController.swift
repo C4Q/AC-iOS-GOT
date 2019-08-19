@@ -55,7 +55,8 @@ class GOTETableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as? EpisodesTableViewCell {
+        let celltoDisplay = indexPath.section % 2 == 0 ? "episodeCellEven" : "episodeCellOdd"
+        if let cell = tableView.dequeueReusableCell(withIdentifier: celltoDisplay, for: indexPath) as? EpisodesTableViewCell {
             let episodes = GOTEpisode.episodesBySeason(season: indexPath.section + 1)
             cell.episodeNameLabel?.text = episodes[indexPath.row].name
             cell.seasonNumberLabel?.text = "S:\(episodes[indexPath.row].season) E:\(episodes[indexPath.row].number)"

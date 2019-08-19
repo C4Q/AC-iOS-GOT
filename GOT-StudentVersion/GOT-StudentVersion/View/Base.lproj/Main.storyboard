@@ -24,7 +24,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="episodeCell" rowHeight="155" id="5W1-7H-k67" customClass="EpisodesTableViewCell" customModule="GOTE_Project" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="episodeCellEven" rowHeight="155" id="5W1-7H-k67" customClass="EpisodesTableViewCell" customModule="GOTE_Project" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="84" width="414" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5W1-7H-k67" id="gUA-ih-b4H">
@@ -56,6 +56,39 @@
                                     <outlet property="episodeNameLabel" destination="4ap-bE-vJj" id="2kb-r9-mEc"/>
                                     <outlet property="seasonNumberLabel" destination="DGw-5w-LK8" id="B4T-ff-OVs"/>
                                     <segue destination="Xan-rB-1ks" kind="show" identifier="episodeID" id="xwG-Fr-5KY"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="episodeCellOdd" rowHeight="155" id="7gv-b8-XY0" customClass="EpisodesTableViewCell" customModule="GOTE_Project" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="239" width="414" height="155"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7gv-b8-XY0" id="5K6-Pk-Agm">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="154.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-pC-yxS">
+                                            <rect key="frame" x="189" y="30" width="225" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcU-bK-nyl">
+                                            <rect key="frame" x="20" y="16" width="151" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XP4-QH-h81">
+                                            <rect key="frame" x="188" y="67" width="226" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="episodeImage" destination="mcU-bK-nyl" id="wHV-ld-mfB"/>
+                                    <outlet property="episodeNameLabel" destination="M5U-pC-yxS" id="RpV-hw-oB2"/>
+                                    <outlet property="seasonNumberLabel" destination="XP4-QH-h81" id="8SD-VE-TkC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
