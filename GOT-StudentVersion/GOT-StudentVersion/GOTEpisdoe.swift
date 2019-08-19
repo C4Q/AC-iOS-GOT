@@ -99,3 +99,11 @@ class GOTEpisode {
         GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502")
     ]
 }
+
+var season1 = GOTEpisode.allEpisodes.filter( {$0.season == 1} )
+var season2 = GOTEpisode.allEpisodes.filter( {$0.season == 2} )
+var season3 = GOTEpisode.allEpisodes.filter( {$0.season == 3} )
+var season4 = GOTEpisode.allEpisodes.filter( {$0.season == 4} )
+var season5 = GOTEpisode.allEpisodes.filter( {$0.season == 5} )
+var season6 = GOTEpisode.allEpisodes.filter( {$0.season == 6} )
+var season7 = GOTEpisode.allEpisodes.filter( {$0.season == 7} )
