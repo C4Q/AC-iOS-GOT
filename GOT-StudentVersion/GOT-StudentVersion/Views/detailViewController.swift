@@ -40,6 +40,7 @@ class detailViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
         switch myCurrentGOTEpisode.season {
         case 1: backgroundImage.image = UIImage (named: "season1")
         case 2: backgroundImage.image = UIImage (named: "season2")
@@ -62,5 +63,7 @@ class detailViewController: UIViewController {
         
         let attrString = NSAttributedString(string: myCurrentGOTEpisode.name, attributes: [NSAttributedStringKey.strokeColor: UIColor.white, NSAttributedStringKey.foregroundColor: UIColor.yellow, NSAttributedStringKey.strokeWidth: -4.0, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20.0)])
         episodeNameLabel.attributedText = attrString
+        self.navigationController?.isNavigationBarHidden = false
+    
     }
 }
