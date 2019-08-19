@@ -9,18 +9,33 @@
 import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    var allEpisodesinSeasons = arrOfSeasonsData
+    var arrOfSeasons: [[GOTEpisode]] {
+        guard let searchString = searchString else {
+            return allEpisodesinSeasons
+        }
+        guard searchString != "" else {
+            return allEpisodesinSeasons
+        }
+        let searchResults = filterForSearchResult(arr: GOTEpisode.allEpisodes, string: searchString)
+        let separateSeasons = makeArrofSeasons(allEp: searchResults, seasons: 7)
+        return separateSeasons
+        
+    }
+    var searchString: String? = nil {
+        didSet {
+            self.gOTTableView.reloadData()
+        }
+    }
     
+    //MARK: -- TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch section % 2 {
         case 0:
-            let seasonNum = section + 1
-            let episodeArr = filterBySeason(got: GOTEpisode.allEpisodes, season: seasonNum)
-            return episodeArr.count
+            return arrOfSeasons[section].count
         case 1:
-            let seasonNum = section + 1
-            let episodeArr = filterBySeason(got: GOTEpisode.allEpisodes, season: seasonNum)
-            return episodeArr.count
+            return arrOfSeasons[section].count
         default:
             return GOTEpisode.allEpisodes.count
         }
@@ -33,20 +48,18 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         guard let cellTwo = tableView.dequeueReusableCell(withIdentifier: "cellTwo") as? cellTwoTableViewCell else {
             return UITableViewCell()
         }
+        let section = indexPath.section
+        let episodeArr = arrOfSeasons[section]
+        let theEpisode = episodeArr[indexPath.row]
         switch indexPath.section % 2 {
         case 0:
-            let seasonNum = indexPath.section + 1
-            let episodeArr = filterBySeason(got: GOTEpisode.allEpisodes, season: seasonNum)
-            cell.titleLabel.text = episodeArr[indexPath.row].name
-            cell.seasonEpisodeLabel.text = "S:\(seasonNum) E:\(episodeArr[indexPath.row].number)"
+            cell.titleLabel.text = theEpisode.name
+            cell.seasonEpisodeLabel.text = "S:\(theEpisode.season) E:\(theEpisode.number)"
             cell.imageCellOne.image = UIImage(named: episodeArr[indexPath.row].mediumImageID)
             return cell
         case 1:
-            let seasonNum = indexPath.section + 1
-            let episodeArr = filterBySeason(got: GOTEpisode.allEpisodes, season: seasonNum)
-            let theEpisode = episodeArr[indexPath.row]
             cellTwo.titleLabelCellTwo.text = theEpisode.name
-            cellTwo.seasonEpisodeCellTwoLabel.text = "S:\(seasonNum) E:\(theEpisode.number)"
+            cellTwo.seasonEpisodeCellTwoLabel.text = "S:\(theEpisode.season) E:\(theEpisode.number)"
             cellTwo.imageCellTwo.image = UIImage(named: theEpisode.mediumImageID)
             return cellTwo
         default:
@@ -68,9 +81,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             return "something"
         }
     }
+    
+    //MARK: -- Outlets
 
     @IBOutlet weak var gOTTableView: UITableView!
     @IBOutlet weak var searchBarOutlet: UISearchBar!
+    
+    //MARK: -- Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = gOTTableView.indexPathForSelectedRow,
@@ -85,6 +102,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
         gOTTableView.dataSource = self
         gOTTableView.delegate = self
+        searchBarOutlet.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -93,6 +111,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         // Dispose of any resources that can be recreated.
     }
 
-
 }
 
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchString = searchBar.text
+    }
+}

@@ -11,3 +11,4 @@ func filterBySeason(got: [GOTEpisode], season: Int) -> [GOTEpisode] {
     return got.filter({$0.season == season})
 }
 
+

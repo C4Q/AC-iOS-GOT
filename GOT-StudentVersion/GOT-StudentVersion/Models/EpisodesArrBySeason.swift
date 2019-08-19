@@ -15,4 +15,28 @@ var gotSeason5 = filterBySeason(got: GOTEpisode.allEpisodes, season: 5)
 var gotSeason6 = filterBySeason(got: GOTEpisode.allEpisodes, season: 6)
 var gotSeason7 = filterBySeason(got: GOTEpisode.allEpisodes, season: 7)
 
-var arrOfSeasons = [gotSeason1,gotSeason2,gotSeason3,gotSeason4,gotSeason5,gotSeason6,gotSeason7]
+var arrOfSeasonsData = [gotSeason1,gotSeason2,gotSeason3,gotSeason4,gotSeason5,gotSeason6,gotSeason7]
+
+func filterForSearchResult(arr: [GOTEpisode], string: String) -> [GOTEpisode] {
+    var newArrOfArr: [GOTEpisode] = []
+    for ep in arr {
+        if ep.name.lowercased().contains(string.lowercased()) {
+            newArrOfArr.append(ep)
+        }
+    }
+    return newArrOfArr
+}
+
+func makeArrofSeasons(allEp: [GOTEpisode], seasons: Int) -> [[GOTEpisode]] {
+    var newArrOfArr = [[GOTEpisode]]()
+    for seasonNum in 1...seasons {
+        var season = [GOTEpisode]()
+        for ep in allEp {
+            if ep.season == seasonNum {
+                season.append(ep)
+            }
+        }
+        newArrOfArr.append(season)
+    }
+    return newArrOfArr
+}
