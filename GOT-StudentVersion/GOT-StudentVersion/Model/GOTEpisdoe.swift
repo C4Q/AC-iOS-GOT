@@ -99,21 +99,13 @@ class GOTEpisode {
         GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502")
     ]
     
-    static let seasonOne = GOTEpisode.allEpisodes.filter {$0.season == 1}
-    static let seasonTwo = GOTEpisode.allEpisodes.filter {$0.season == 2}
-    static let seasonThree = GOTEpisode.allEpisodes.filter {$0.season == 3}
-    static let seasonFour = GOTEpisode.allEpisodes.filter {$0.season == 4}
-    static let seasonFive = GOTEpisode.allEpisodes.filter {$0.season == 5}
-    static let seasonSix = GOTEpisode.allEpisodes.filter {$0.season == 6}
-    static let seasonSeven = GOTEpisode.allEpisodes.filter {$0.season == 7}
-    
-    static let gotEpisodeDirectory: [Int:[GOTEpisode]] = [ 0:seasonOne,
-                                                           1:seasonTwo,
-                                                           2:seasonThree,
-                                                           3:seasonFour,
-                                                           4:seasonFive,
-                                                           5:seasonSix,
-                                                           6:seasonSeven
+    static let gotEpisodeDirectory: [Int:[GOTEpisode]] = [ 0:GOTEpisode.allEpisodes.filter {$0.season == 1},
+                                                           1:GOTEpisode.allEpisodes.filter {$0.season == 2},
+                                                           2:GOTEpisode.allEpisodes.filter {$0.season == 3},
+                                                           3:GOTEpisode.allEpisodes.filter {$0.season == 4},
+                                                           4:GOTEpisode.allEpisodes.filter {$0.season == 5},
+                                                           5:GOTEpisode.allEpisodes.filter {$0.season == 6},
+                                                           6:GOTEpisode.allEpisodes.filter {$0.season == 7}
     ]
 }
 
