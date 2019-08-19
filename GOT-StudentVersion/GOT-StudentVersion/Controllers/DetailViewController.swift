@@ -8,10 +8,10 @@
 
 import UIKit
 
-class DetailViewController: ViewController {
+class DetailViewController: UIViewController {
 
     
-    var detailGOTEpisode: GOTEpisode?
+    var detailGOTEpisode: GOTEpisode!
     
     @IBOutlet var detailTitleLabel: UILabel!
     @IBOutlet var detailImageView: UIImageView!
@@ -24,9 +24,9 @@ class DetailViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let detailGOTEpisode = detailGOTEpisode
-            else { return }
-        detailImageView.image = UIImage(named: detailGOTEpisode.originalImageID)
+//        guard let detailGOTEpisode = detailGOTEpisode
+//            else { return }
+        detailImageView.image = UIImage(named: detailGOTEpisode.mediumImageID)
         detailTitleLabel.text = detailGOTEpisode.name
         detailSeasonLabel.text = "Season: \(detailGOTEpisode.season)"
         detailEpisodeLabel.text = "Episode: \(detailGOTEpisode.number)"
