@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11AB91FABCE47004E1EAF /* AppDelegate.swift */; };
-		54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ABB1FABCE47004E1EAF /* ViewController.swift */; };
+		54B11ABC1FABCE47004E1EAF /* GOTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ABB1FABCE47004E1EAF /* GOTViewController.swift */; };
 		54B11ABF1FABCE47004E1EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11ABD1FABCE47004E1EAF /* Main.storyboard */; };
 		54B11AC11FABCE48004E1EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC01FABCE48004E1EAF /* Assets.xcassets */; };
 		54B11AC41FABCE48004E1EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */; };
-		54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */; };
-		97F595982301F87D005E09E2 /* GoTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F595972301F87D005E09E2 /* GoTTableViewCell.swift */; };
+		54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */; };
+		97F595982301F87D005E09E2 /* GoTEvenNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F595972301F87D005E09E2 /* GoTEvenNumberCell.swift */; };
 		97F5959C23020064005E09E2 /* imageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5959B23020064005E09E2 /* imageable.swift */; };
-		97F5959E230206B4005E09E2 /* GoTOddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5959D230206B4005E09E2 /* GoTOddTableViewCell.swift */; };
+		97F5959E230206B4005E09E2 /* GoTOddNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5959D230206B4005E09E2 /* GoTOddNumberCell.swift */; };
 		97F595A023021080005E09E2 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5959F23021080005E09E2 /* detailViewController.swift */; };
 		97FAE9D32302EF6A00B99FAF /* UIViewSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FAE9D22302EF6A00B99FAF /* UIViewSubclass.swift */; };
 /* End PBXBuildFile section */
@@ -23,15 +23,15 @@
 /* Begin PBXFileReference section */
 		54B11AB61FABCE47004E1EAF /* GOT-StudentVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GOT-StudentVersion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B11AB91FABCE47004E1EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		54B11ABB1FABCE47004E1EAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		54B11ABB1FABCE47004E1EAF /* GOTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTViewController.swift; sourceTree = "<group>"; };
 		54B11ABE1FABCE47004E1EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54B11AC01FABCE48004E1EAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54B11AC31FABCE48004E1EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54B11AC51FABCE48004E1EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
-		97F595972301F87D005E09E2 /* GoTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTTableViewCell.swift; sourceTree = "<group>"; };
+		54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisode.swift; sourceTree = "<group>"; };
+		97F595972301F87D005E09E2 /* GoTEvenNumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTEvenNumberCell.swift; sourceTree = "<group>"; };
 		97F5959B23020064005E09E2 /* imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageable.swift; sourceTree = "<group>"; };
-		97F5959D230206B4005E09E2 /* GoTOddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTOddTableViewCell.swift; sourceTree = "<group>"; };
+		97F5959D230206B4005E09E2 /* GoTOddNumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTOddNumberCell.swift; sourceTree = "<group>"; };
 		97F5959F23021080005E09E2 /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		97FAE9D22302EF6A00B99FAF /* UIViewSubclass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewSubclass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,13 +66,12 @@
 		54B11AB81FABCE47004E1EAF /* GOT-StudentVersion */ = {
 			isa = PBXGroup;
 			children = (
-				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
-				97F595A22302353E005E09E2 /* Views */,
-				97FAE9E823038FCE00B99FAF /* Cells */,
-				97FAE9E923038FF800B99FAF /* Model */,
-				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
+				97FAE9E923038FF800B99FAF /* Models */,
+				97376C42230A60E0002189B2 /* Views */,
+				97F595A22302353E005E09E2 /* Controllers */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
+				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
 			);
 			path = "GOT-StudentVersion";
 			sourceTree = "<group>";
@@ -81,37 +80,38 @@
 			isa = PBXGroup;
 			children = (
 				54B11AB91FABCE47004E1EAF /* AppDelegate.swift */,
-				54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		97F595A22302353E005E09E2 /* Views */ = {
+		97376C42230A60E0002189B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
-				97F5959F23021080005E09E2 /* detailViewController.swift */,
-				97FAE9D22302EF6A00B99FAF /* UIViewSubclass.swift */,
+				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
+				54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		97FAE9E823038FCE00B99FAF /* Cells */ = {
+		97F595A22302353E005E09E2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				97F595972301F87D005E09E2 /* GoTTableViewCell.swift */,
-				97F5959D230206B4005E09E2 /* GoTOddTableViewCell.swift */,
+				54B11ABB1FABCE47004E1EAF /* GOTViewController.swift */,
+				97F5959F23021080005E09E2 /* detailViewController.swift */,
+				97F595972301F87D005E09E2 /* GoTEvenNumberCell.swift */,
+				97F5959D230206B4005E09E2 /* GoTOddNumberCell.swift */,
+				97FAE9D22302EF6A00B99FAF /* UIViewSubclass.swift */,
 			);
-			path = Cells;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		97FAE9E923038FF800B99FAF /* Model */ = {
+		97FAE9E923038FF800B99FAF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
+				54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */,
 				97F5959B23020064005E09E2 /* imageable.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +146,7 @@
 				TargetAttributes = {
 					54B11AB51FABCE47004E1EAF = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -187,10 +188,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				97FAE9D32302EF6A00B99FAF /* UIViewSubclass.swift in Sources */,
-				97F5959E230206B4005E09E2 /* GoTOddTableViewCell.swift in Sources */,
-				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
-				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
-				97F595982301F87D005E09E2 /* GoTTableViewCell.swift in Sources */,
+				97F5959E230206B4005E09E2 /* GoTOddNumberCell.swift in Sources */,
+				54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */,
+				54B11ABC1FABCE47004E1EAF /* GOTViewController.swift in Sources */,
+				97F595982301F87D005E09E2 /* GoTEvenNumberCell.swift in Sources */,
 				97F5959C23020064005E09E2 /* imageable.swift in Sources */,
 				97F595A023021080005E09E2 /* detailViewController.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
@@ -339,8 +340,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.GOT-StudentVersion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -353,8 +354,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.GOT-StudentVersion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

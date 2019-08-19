@@ -2,23 +2,21 @@
 //  ViewController.swift
 //  GOT-StudentVersion
 //
-//  Created by C4Q  on 11/2/17.
-//  Copyright © 2017 C4Q . All rights reserved.
+//  Created by Anthony Gonzalez on 8/12/19.
+//  Copyright © 2019 C4Q . All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class GOTViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
-    
+   
     //MARK: - Properties
     let allSeasons = GOTEpisode.allSeasons
     var searchString: String? = nil { didSet { tableView.reloadData() } }
-    
     var EpisodeSearchResults: [[GOTEpisode]] {
         get {
             guard let searchString = searchString else { return allSeasons }
@@ -31,11 +29,11 @@ class ViewController: UIViewController {
         }
     }
     
-    //MARK: - Segue Function
+    //MARK: - Segue method
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueIdentifer = segue.identifier else {fatalError("No indentifier in segue")}
+        
         switch segueIdentifer {
-            
         case "segueToDetail":
             guard let destVC = segue.destination as? detailViewController else {
                 fatalError("Unexpected segue VC")
@@ -49,15 +47,17 @@ class ViewController: UIViewController {
         }
     }
     
-    //MARK -- View functions
+    //MARK: -- View methods
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
     }
+    
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         searchBarOutlet.delegate = self
+        tableView.sectionIndexColor = .white
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,8 +81,9 @@ class ViewController: UIViewController {
     }
 }
 
+
 //MARK: -- Table Datasource Methods
-extension ViewController: UITableViewDataSource {
+extension GOTViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return EpisodeSearchResults.count
@@ -101,32 +102,38 @@ extension ViewController: UITableViewDataSource {
         }
     }
     
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        if (searchBarOutlet.isFirstResponder) {
+            return nil
+        } else {
+            return ["1", "2", "3", "4", "5", "6", "7"]
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return EpisodeSearchResults[section].count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let currentEpisode: GOTEpisode = EpisodeSearchResults[indexPath.section][indexPath.row]
         
         switch indexPath.section % 2 {
         case 0:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "myGOTCell", for: indexPath) as? GoTTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "myGOTCell", for: indexPath) as? GoTEvenNumberCell {
                 cell.episodeNumberLabel.text = "S:\(currentEpisode.season) E:\(currentEpisode.number)"
                 cell.episodePreviewImage.image = currentEpisode.getImage()
                 
-                let attrString = NSAttributedString(string: currentEpisode.name, attributes: [NSAttributedStringKey.strokeColor: UIColor.white, NSAttributedStringKey.foregroundColor: UIColor.yellow, NSAttributedStringKey.strokeWidth: -4.0, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17.5)])
+                let attrString = NSAttributedString(string: currentEpisode.name, attributes: [NSAttributedString.Key.strokeColor: UIColor.white, NSAttributedString.Key.foregroundColor: UIColor.yellow, NSAttributedString.Key.strokeWidth: -4.0, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17.5)])
                 cell.episodeNameLabel.attributedText = attrString
                 return cell
             }
             
         case 1:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "myOddGOTCell", for: indexPath) as? GoTOddTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "myOddGOTCell", for: indexPath) as? GoTOddNumberCell {
                 cell.episodeNumberLabel.text = "S:\(currentEpisode.season) E:\(currentEpisode.number)"
                 cell.episodePreviewImage.image = currentEpisode.getImage()
                 
-                let attrString = NSAttributedString(string: currentEpisode.name, attributes: [NSAttributedStringKey.strokeColor: UIColor.white, NSAttributedStringKey.foregroundColor: UIColor.yellow, NSAttributedStringKey.strokeWidth: -4.0, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17.5)])
+                let attrString = NSAttributedString(string: currentEpisode.name, attributes: [NSAttributedString.Key.strokeColor: UIColor.white, NSAttributedString.Key.foregroundColor: UIColor.yellow, NSAttributedString.Key.strokeWidth: -4.0, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17.5)])
                 cell.episodeNameLabel.attributedText = attrString
                 return cell
             }
@@ -138,8 +145,9 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
+
 //MARK: -- Table Delegate Methods
-extension ViewController: UITableViewDelegate {
+extension GOTViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
         view.tintColor = UIColor(displayP3Red: 0.351, green: 0.121, blue: 0.097, alpha: 1)
         let header = view as! UITableViewHeaderFooterView
@@ -147,12 +155,13 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+        return 115
     }
 }
 
+
 //MARK: -- Searchbar Delegate Methods
-extension ViewController: UISearchBarDelegate  {
+extension GOTViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchString = searchText
     }
@@ -162,11 +171,11 @@ extension ViewController: UISearchBarDelegate  {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = nil
         searchBar.showsScopeBar = false
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.resignFirstResponder()
         searchBar.sizeToFit()
+        tableView.reloadSectionIndexTitles()
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -174,6 +183,7 @@ extension ViewController: UISearchBarDelegate  {
         searchBar.setShowsCancelButton(true, animated: true)
         searchBar.sizeToFit()
         tableView.headerView(forSection: 0)?.isHidden = true
+        tableView.reloadSectionIndexTitles()
         return true
     }
     
@@ -182,10 +192,12 @@ extension ViewController: UISearchBarDelegate  {
         searchBar.setShowsCancelButton(false, animated: true)       
         searchBar.sizeToFit()
         tableView.headerView(forSection: 0)?.isHidden = false
+        tableView.reloadSectionIndexTitles()
         return true
     }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        tableView.reloadData()
+    }
 }
-
-
-//TODO: -- GradientView subclass
 

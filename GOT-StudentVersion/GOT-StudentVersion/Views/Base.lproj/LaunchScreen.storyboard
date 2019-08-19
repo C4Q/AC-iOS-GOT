@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,20 +15,20 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="JZ8-mP-yMr">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" red="0.024692380800843239" green="0.034002538770437241" blue="0.09020242840051651" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="29" y="157" width="365" height="566"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JZ8-mP-yMr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1lQ-eH-E16"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="JZ8-mP-yMr" secondAttribute="leading" id="gqD-42-E5P"/>
-                            <constraint firstItem="JZ8-mP-yMr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lnP-i8-PDD"/>
-                            <constraint firstItem="JZ8-mP-yMr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pEh-sg-rlj"/>
+                            <constraint firstItem="JZ8-mP-yMr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="113" id="1lQ-eH-E16"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="JZ8-mP-yMr" secondAttribute="leading" constant="-29" id="gqD-42-E5P"/>
+                            <constraint firstItem="JZ8-mP-yMr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-139" id="lnP-i8-PDD"/>
+                            <constraint firstItem="JZ8-mP-yMr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="pEh-sg-rlj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -39,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splash" width="759" height="1073"/>
+        <image name="splash" width="742" height="874"/>
     </resources>
 </document>

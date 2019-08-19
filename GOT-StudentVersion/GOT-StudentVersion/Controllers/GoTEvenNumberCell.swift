@@ -1,5 +1,5 @@
 //
-//  GoTOddTableViewCell.swift
+//  GoTTableViewCell.swift
 //  GOT-StudentVersion
 //
 //  Created by Anthony Gonzalez on 8/12/19.
@@ -8,23 +8,17 @@
 
 import UIKit
 
-class GoTOddTableViewCell: UITableViewCell {
+class GoTEvenNumberCell: UITableViewCell {
 
-    
-    @IBOutlet weak var episodePreviewImage: UIImageView!
     @IBOutlet weak var episodeNameLabel: UILabel!
-    
     @IBOutlet weak var episodeNumberLabel: UILabel!
-    
+    @IBOutlet weak var episodePreviewImage: UIImageView!
+ 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }
