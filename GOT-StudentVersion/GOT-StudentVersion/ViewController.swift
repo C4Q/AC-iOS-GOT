@@ -79,7 +79,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        //Here is where the code breaks with no return from search. The gueard was my attempt to fix it.
         switch section {
         default:
             guard searchResults.joined().count != 0 else {return "No Result"}
