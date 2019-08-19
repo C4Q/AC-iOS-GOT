@@ -28,6 +28,6 @@ class EpisodeDetailedViewController: UIViewController {
         runtimeLabel.text = String(episode.runtime)
         airDateLabel.text = episode.airdate
         episodeDescriptionTextView.text = episode.summary
-
+        GOTEimage.image = UIImage(named: episode.originalImageID)
     }
 }
