@@ -91,6 +91,37 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let segueIdentifier = segue.identifier else{
+            fatalError("no identifier in segue")
+        }
+        
+        switch segueIdentifier {
+        case "oddCellsToDetailSegue":
+            guard let episodeDetailsVCOdd = segue.destination as? DetailsViewController else{
+                fatalError("Unexpected Error: No VC")
+            }
+            guard let selectedIndexPath = self.gotMainTableView.indexPathForSelectedRow else{
+                fatalError("No Selected Row")
+            }
+            episodeDetailsVCOdd.episodeDetails = gotData[selectedIndexPath.row]
+            
+        case "evenCellsToDetailSegue":
+            guard let episodeDetailsVCEven = segue.destination as? DetailsViewController else{
+                fatalError("Unexpected Error: No VC")
+            }
+            guard let selectedIndex = self.gotMainTableView.indexPathForSelectedRow else {
+                fatalError("No Selected Row")
+            }
+            episodeDetailsVCEven.episodeDetails = gotData[selectedIndex.row]
+     
+        default:
+            fatalError("Unexpected Identifier")
+        }
+        
+    }
 
 
 }
