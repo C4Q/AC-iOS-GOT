@@ -112,6 +112,40 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 200
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else { fatalError("No identifier in segue") }
+        
+        switch segueIdentifier {
+        case "GoTSegway" :
+            guard let gotVC = segue.destination as? GotViewController else {
+                fatalError("Unexpected segue VC")
+            }
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
+                fatalError("No row was selected")
+            }
+            switch selectedIndexPath.section{
+            case 0:
+                gotVC.GoT = GOTEpisode.num1 [selectedIndexPath.row]
+            case 1:
+                gotVC.GoT = GOTEpisode.num2[selectedIndexPath.row]
+            case 2:
+                gotVC.GoT = GOTEpisode.num3[selectedIndexPath.row]
+            case 3:
+                gotVC.GoT = GOTEpisode.num4[selectedIndexPath.row]
+            case 4:
+                gotVC.GoT = GOTEpisode.num5[selectedIndexPath.row]
+            case 5:
+                gotVC.GoT = GOTEpisode.num6[selectedIndexPath.row]
+            case 6:
+                gotVC.GoT = GOTEpisode.num7[selectedIndexPath.row]
+            default:
+                print("nice try")
+            }
+            
+        default:
+            fatalError("Unexpected segue identifier")
+        }
+        
+    }
     
 }
-
