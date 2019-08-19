@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZUe-2q-X1j">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="oddSeasons" rowHeight="200" id="3qY-LW-4nR" customClass="OddSeasonsTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -122,13 +122,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Oap-6v-ZZH">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ZUe-2q-X1j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="97r-qK-bLO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZUe-2q-X1j" secondAttribute="trailing" id="9PL-NX-sSh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZUe-2q-X1j" secondAttribute="bottom" id="OCe-fb-4oP"/>
-                            <constraint firstItem="ZUe-2q-X1j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ueb-o2-STS"/>
+                            <constraint firstItem="ZUe-2q-X1j" firstAttribute="top" secondItem="Oap-6v-ZZH" secondAttribute="bottom" id="8bB-0S-Z0L"/>
+                            <constraint firstItem="ZUe-2q-X1j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DnB-As-xLP"/>
+                            <constraint firstItem="ZUe-2q-X1j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NWc-0i-ZR5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oap-6v-ZZH" secondAttribute="trailing" id="SXS-Xq-L5l"/>
+                            <constraint firstItem="Oap-6v-ZZH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XRG-N8-HvD"/>
+                            <constraint firstItem="ZUe-2q-X1j" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kYY-Vb-ZOC"/>
+                            <constraint firstItem="Oap-6v-ZZH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tkc-zn-qJZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
