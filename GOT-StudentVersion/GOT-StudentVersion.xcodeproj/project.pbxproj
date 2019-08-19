@@ -13,6 +13,9 @@
 		54B11AC11FABCE48004E1EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC01FABCE48004E1EAF /* Assets.xcassets */; };
 		54B11AC41FABCE48004E1EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */; };
 		54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */; };
+		5542B67B230A4D9F008347F5 /* OddSeasonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542B67A230A4D9F008347F5 /* OddSeasonsTableViewCell.swift */; };
+		5542B67D230A4DB2008347F5 /* EvenSeasonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542B67C230A4DB2008347F5 /* EvenSeasonsTableViewCell.swift */; };
+		5542B67F230A5863008347F5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542B67E230A5863008347F5 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		54B11AC31FABCE48004E1EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54B11AC51FABCE48004E1EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
+		5542B67A230A4D9F008347F5 /* OddSeasonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddSeasonsTableViewCell.swift; sourceTree = "<group>"; };
+		5542B67C230A4DB2008347F5 /* EvenSeasonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenSeasonsTableViewCell.swift; sourceTree = "<group>"; };
+		5542B67E230A5863008347F5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +65,10 @@
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
 				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
 				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
+				5542B67A230A4D9F008347F5 /* OddSeasonsTableViewCell.swift */,
+				5542B67C230A4DB2008347F5 /* EvenSeasonsTableViewCell.swift */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
+				5542B67E230A5863008347F5 /* DetailViewController.swift */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
 			);
@@ -150,7 +159,10 @@
 			files = (
 				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
 				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
+				5542B67D230A4DB2008347F5 /* EvenSeasonsTableViewCell.swift in Sources */,
+				5542B67B230A4D9F008347F5 /* OddSeasonsTableViewCell.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
+				5542B67F230A5863008347F5 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
