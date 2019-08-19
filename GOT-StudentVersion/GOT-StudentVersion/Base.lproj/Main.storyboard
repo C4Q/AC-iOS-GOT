@@ -39,8 +39,11 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jMs-KQ-Ag2">
                                                     <rect key="frame" x="8" y="8" width="161" height="128"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="161" id="3Mp-9W-g3r"/>
                                                         <constraint firstAttribute="height" constant="128" id="NcF-cN-Z9w"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="ZAX-VH-pB9"/>
                                                         <constraint firstAttribute="width" constant="161" id="aUP-Wq-DDQ"/>
+                                                        <constraint firstAttribute="width" secondItem="jMs-KQ-Ag2" secondAttribute="height" multiplier="161:128" id="jGT-iH-o9r"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="season &amp; Episode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKN-r4-RHh">

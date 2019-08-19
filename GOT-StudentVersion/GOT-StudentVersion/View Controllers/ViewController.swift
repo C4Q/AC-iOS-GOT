@@ -77,7 +77,12 @@ extension ViewController: UITableViewDataSource{
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "GOTID2") as! GotTableViewCell
         
         let info = isSearching ? gotSeachResults[indexPath.row] : got[indexPath.section][indexPath.row]
-        
+        if isSearching == true{
+            cell.gotName.isHidden = true
+            cell2.gotName.isHidden = true
+        }else{
+            cell.gotName.isHidden = false
+            cell2.gotName.isHidden = false
         cell.gotName.text = "\( info.name)"
         cell.gotName.font = UIFont(name: "Papyrus", size: 14)
         cell.gotName.textColor = .white
@@ -91,7 +96,7 @@ extension ViewController: UITableViewDataSource{
         cell2.seasonAndEpisode.text = "S:\( info.season) E: \(info.number)"
         cell2.seasonAndEpisode.textColor = .white
         cell2.gotImageView.image = UIImage(named: info.mediumImageID)
-        
+        }
         if info.season % 2 == 1{
             return cell
         }else {
