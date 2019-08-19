@@ -98,13 +98,72 @@ class GOTEpisode {
         GOTEpisode(airdate: "2017-08-20", id: 1221414, name: "Beyond the Wall", number: 6, season: 7, runtime: 60, summary: "Jon's mission continues north of the wall, but the odds against his ragged band of misfits may be greater than he imagined.", mediumImageID: "312651", originalImageID: "312651"),
         GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502")
     ]
-   static let seasonOne:[GOTEpisode] = GOTEpisode.allEpisodes.filter({$0.season == 1})
-    static let seasonTwo:[GOTEpisode] = GOTEpisode.allEpisodes.filter({$0.season == 2})
-   static let seasonThree:[GOTEpisode] = GOTEpisode.allEpisodes.filter({$0.season == 3})
-    static let seasonFour:[GOTEpisode] = GOTEpisode.allEpisodes.filter({$0.season == 4})
-    static let seasonFive:[GOTEpisode] = GOTEpisode.allEpisodes.filter({$0.season == 5})
-    static let seasonSix:[GOTEpisode] = GOTEpisode.allEpisodes.filter({$0.season == 6})
-   static let seasonSeven:[GOTEpisode] = GOTEpisode.allEpisodes.filter({$0.season == 7})
+
     
-    static let allSeasons = [seasonOne, seasonTwo, seasonThree, seasonFour, seasonFive, seasonSix, seasonSeven]
+    static func createGOTDataMatrix() -> [[GOTEpisode]]{
+        var gotDataMatrix = [[GOTEpisode]]()
+        let seasonNumbers = [1,2,3,4,5,6,7]
+        
+        for season in seasonNumbers {
+            var episodesInASeason = [GOTEpisode]() // captures episodes of each season
+            
+            for episode in allEpisodes { // This for loop is going through all of the episodes
+                if season == episode.season { //
+                    episodesInASeason.append(episode) // we append it to that season .ie
+                    
+                    
+                }
+            }
+            gotDataMatrix.append(episodesInASeason)
+        }
+        return gotDataMatrix
+    }
+    static func filterBySearchWord(searchWord: String) -> [[GOTEpisode]] { //  takes the search word and filters the entire database for all the episodes that contain that search word
+        let filteredEpisodes = allEpisodes.filter{$0.name.lowercased().contains(searchWord.lowercased())} // list of all the episodes with such searchword.
+        var filterMatrix = [[GOTEpisode]]()
+        var searchResults = [[GOTEpisode]]()
+        let seasonNumbers = [1,2,3,4,5,6,7]
+        for season in seasonNumbers {
+            var episodesInAseason = [GOTEpisode]()
+            for episode in filteredEpisodes {
+                if season == episode.season {
+                    episodesInAseason.append(episode)
+                }
+            }
+            filterMatrix.append(episodesInAseason)
+        }
+        
+        for gotSeason in filterMatrix { // checking for only seasons that episode in it
+            if gotSeason.count > 0 {
+                searchResults.append(gotSeason)
+            }
+        }
+        return searchResults
+    }
+    
+    
+    static func filterBySummary(summarySearchWord: String) -> [[GOTEpisode]] {
+        // takes the search word and filters the entire database for all the episodes that contain that search word across the seasons.
+        let filteredEpisodes = allEpisodes.filter{$0.summary.lowercased().contains(summarySearchWord.lowercased())} // list of all the episodes with such searchword.
+        var filterMatrix = [[GOTEpisode]]()
+        var searchResults = [[GOTEpisode]]()
+        let seasonNumbers = [1,2,3,4,5,6,7]
+        for season in seasonNumbers {
+            var episodesInAseason = [GOTEpisode]()
+            for episode in filteredEpisodes {
+                if season == episode.season {
+                    episodesInAseason.append(episode)
+                }
+            }
+            filterMatrix.append(episodesInAseason)
+        }
+        
+        for gotSeason in filterMatrix { //  checking for only seasons that episode in it
+            if gotSeason.count > 0 {
+                searchResults.append(gotSeason)
+            }
+        }
+        return searchResults
+    }
+    
 }

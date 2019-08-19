@@ -23,9 +23,23 @@ class DetailedViewController:UIViewController {
         labelEpisode.text = "Episode: \(gameOfThrones.number)"
         labelRunTime.text = "Runtime: \(gameOfThrones.runtime) minutes"
         imageViewDetailed.image = UIImage(named:"\(gameOfThrones.originalImageID)")
+        labelTextField.text = gameOfThrones.summary
+    }
+    func changeUIcolors() {
+        labelName.textColor = .black
+        labelSeason.textColor = .black
+        labelAirDate.textColor = .black
+        labelEpisode.textColor = .black
+        labelRunTime.textColor = .black
+        labelTextField.textColor = .black
+        view.backgroundColor = .darkGray
+        labelTextField.backgroundColor = .darkGray
     }
     override func viewDidLoad() {
         super .viewDidLoad()
         setUpViews()
+        changeUIcolors()
+      
+
     }
 }
