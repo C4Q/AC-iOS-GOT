@@ -12,7 +12,9 @@
 		54B11ABF1FABCE47004E1EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11ABD1FABCE47004E1EAF /* Main.storyboard */; };
 		54B11AC11FABCE48004E1EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC01FABCE48004E1EAF /* Assets.xcassets */; };
 		54B11AC41FABCE48004E1EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */; };
-		54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */; };
+		54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */; };
+		C6D1BD4B2301FB6400F82FBF /* oddGOTTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D1BD4A2301FB6400F82FBF /* oddGOTTVCell.swift */; };
+		C6D1BD502301FD1400F82FBF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D1BD4F2301FD1400F82FBF /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +25,9 @@
 		54B11AC01FABCE48004E1EAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54B11AC31FABCE48004E1EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54B11AC51FABCE48004E1EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisdoe.swift; sourceTree = "<group>"; };
+		54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisode.swift; sourceTree = "<group>"; };
+		C6D1BD4A2301FB6400F82FBF /* oddGOTTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oddGOTTVCell.swift; sourceTree = "<group>"; };
+		C6D1BD4F2301FD1400F82FBF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +60,10 @@
 		54B11AB81FABCE47004E1EAF /* GOT-StudentVersion */ = {
 			isa = PBXGroup;
 			children = (
+				C6D1BD452301E95800F82FBF /* Control */,
+				C6D1BD462301E96F00F82FBF /* Model */,
+				C6D1BD472301E98400F82FBF /* View */,
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
-				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
-				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
-				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
-				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
 			);
 			path = "GOT-StudentVersion";
@@ -69,10 +72,37 @@
 		54B11ACD1FABCFEE004E1EAF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AB91FABCE47004E1EAF /* AppDelegate.swift */,
 				54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C6D1BD452301E95800F82FBF /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
+				C6D1BD4F2301FD1400F82FBF /* DetailViewController.swift */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		C6D1BD462301E96F00F82FBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C6D1BD472301E98400F82FBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
+				C6D1BD4A2301FB6400F82FBF /* oddGOTTVCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
+				54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */,
+				C6D1BD4B2301FB6400F82FBF /* oddGOTTVCell.swift in Sources */,
 				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
+				C6D1BD502301FD1400F82FBF /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +324,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 27KQ4G2M79;
 				INFOPLIST_FILE = "GOT-StudentVersion/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.GOT-StudentVersion";
@@ -306,6 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 27KQ4G2M79;
 				INFOPLIST_FILE = "GOT-StudentVersion/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.GOT-StudentVersion";
