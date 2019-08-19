@@ -2,39 +2,38 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class ViewController: UIViewController {
     
     //MARK: -- Outlet & imported Variables
     @IBOutlet var gotTableView: UITableView!
-    var got = GOTEpisode.allEpisodes
-    var gotArrayBySeason = sortedBySeason()
     @IBOutlet var searchBar: UISearchBar!
-    
+    var got = GOTEpisode.allSeasons
+    var gotEpisodes = GOTEpisode.allEpisodes
+    var isSearching = false
     var gotSeachResults:[GOTEpisode] {
         get{
             guard let gotSearchString = gotSearchString else {
-                return got
-            } //this filters searches through the searchString and makes sure its not empty else returns Person.allPeople
+                return gotEpisodes
+            } //this filters searches through the searchString and makes sure its not empty else returns gotEpisodes
             guard gotSearchString != "" else {
-                return got
+                return gotEpisodes
             }
             
             if let gotScoptTitles = searchBar.scopeButtonTitles {
                 let currentScopeIndex = searchBar.selectedScopeButtonIndex
                 
                 switch gotScoptTitles[currentScopeIndex]{
-                case "Season":
-                    return got.filter({$0.season == Int(gotSearchString)})
+                case "Summary":
+                    return gotEpisodes.filter({$0.summary.lowercased().replacingOccurrences(of: " ", with: "").contains(gotSearchString.lowercased().replacingOccurrences(of: " ", with: ""))})
                 case "Episode":
-                    return got.filter({$0.name.lowercased().contains(gotSearchString.lowercased())})
+                    return gotEpisodes.filter({$0.name.lowercased().replacingOccurrences(of: " ", with: "").contains(gotSearchString.lowercased().replacingOccurrences(of: " ", with: ""))})
                 default:
-                    return got
+                    return gotEpisodes
                 }
             }
-            return got
+            return gotEpisodes
         }
     }
-    //used to store values of persons and reload the tableView each time
     
     var gotSearchString:String? = nil {
         didSet {
@@ -42,21 +41,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        gotTableView.delegate = self
+        gotTableView.dataSource = self
+        searchBar.delegate = self
+    }
+}
+
+extension ViewController: UITableViewDataSource{
     //MARK: -- Table View Data Source
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return gotArrayBySeason.allSeasons.count
+        let numberOfSec = isSearching ? 1 : got.count
+        return numberOfSec
     }
     //This code goes into the [[GOTEpisode]], grabs each section starting from index 0, and grabs the classification string and returns it to be displayed in the title header
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return "Season \(gotArrayBySeason.allSeasons [section][0].season)"
+        let headerTitle = isSearching ? "" : "Season \(got[section][0].season)"
+        return headerTitle
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gotArrayBySeason.allSeasons[section].count
+        
+        let numberOfRow = isSearching ? gotSeachResults.count : got[section].count
+        return numberOfRow
         
     }
     
@@ -65,7 +76,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "GOTID2") as! GotTableViewCell
         
-        let info = gotSeachResults[indexPath.row]
+        let info = isSearching ? gotSeachResults[indexPath.row] : got[indexPath.section][indexPath.row]
         
         cell.gotName.text = "\( info.name)"
         cell.gotName.font = UIFont(name: "Papyrus", size: 14)
@@ -86,9 +97,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }else {
             return cell2
         }
-        
     }
-    
+}
+
+extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = .black
@@ -104,34 +116,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
-        let detailViewControler = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        
-        let info = gotSeachResults[indexPath.row]
-        // this line passes the model to the second view controller and allows the second view controller tro figure out what it needs to assign to its attritubes
-        detailViewControler.gotEpisode = info
-        
-        self.navigationController?.pushViewController(detailViewControler, animated: true)
-        
+        if let detailViewControler = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
+            
+            let info = isSearching ? gotSeachResults[indexPath.row] : got[indexPath.section][indexPath.row]
+            // this line passes the model to the second view controller and allows the second view controller tro figure out what it needs to assign to its attritubes
+            detailViewControler.gotEpisode = info
+            
+            self.navigationController?.pushViewController(detailViewControler, animated: true)
+        }
     }
-    //TODO
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        gotSearchString = searchBar.text
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        gotTableView.delegate = self
-        gotTableView.dataSource = self
-        searchBar.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
 }
 
+extension ViewController: UISearchBarDelegate{
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchBar.text == nil || searchBar.text == ""{
+            isSearching = false
+            gotTableView.reloadData()
+        }else{
+            isSearching = true
+            gotSearchString = searchBar.text
+        }
+    }
+}

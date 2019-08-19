@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
- 
+    
     var gotEpisode: GOTEpisode!
     
     @IBOutlet var detailTitleLabel: UILabel!
@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var detailAirTime: UILabel!
     
     @IBOutlet var detailDiscription: UITextView!
-  private  func loadDetailsToViewController(){
+    private  func loadDetailsToViewController(){
         detailImageView.image = UIImage(named: gotEpisode.originalImageID)
         detailSeasonLabel.text = "Season: \(gotEpisode.season)"
         detailEpisodeLabel.text = "Episode: \(gotEpisode.number)"
@@ -31,7 +31,7 @@ class DetailViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-loadDetailsToViewController()
+        loadDetailsToViewController()
         
         
     }

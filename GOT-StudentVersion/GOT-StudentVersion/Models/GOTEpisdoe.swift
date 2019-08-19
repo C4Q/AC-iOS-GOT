@@ -99,5 +99,14 @@ class GOTEpisode {
         GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502")
     ]
     
-   
+    static var allSeasons: [[GOTEpisode]]{
+        let season1 = GOTEpisode.allEpisodes.filter({$0.season == 1})
+        let season2 = GOTEpisode.allEpisodes.filter({$0.season == 2})
+        let season3 = GOTEpisode.allEpisodes.filter({$0.season == 3})
+        let season4 = GOTEpisode.allEpisodes.filter({$0.season == 4})
+        let season5 = GOTEpisode.allEpisodes.filter({$0.season == 5})
+        let season6 = GOTEpisode.allEpisodes.filter({$0.season == 6})
+        let season7 = GOTEpisode.allEpisodes.filter({$0.season == 7})
+        return [season1, season2, season3, season4, season5, season6, season7]
+    }
 }
