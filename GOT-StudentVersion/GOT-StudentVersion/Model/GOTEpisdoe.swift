@@ -98,4 +98,16 @@ class GOTEpisode {
         GOTEpisode(airdate: "2017-08-20", id: 1221414, name: "Beyond the Wall", number: 6, season: 7, runtime: 60, summary: "Jon's mission continues north of the wall, but the odds against his ragged band of misfits may be greater than he imagined.", mediumImageID: "312651", originalImageID: "312651"),
         GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502")
     ]
+    
+   static func filteredSeasons() -> [[GOTEpisode]]{
+        let seasoon1 = GOTEpisode.allEpisodes.filter({$0.season == 1})
+        let seasoon2 = GOTEpisode.allEpisodes.filter({$0.season == 2})
+        let seasoon3 = GOTEpisode.allEpisodes.filter({$0.season == 3})
+        let seasoon4 = GOTEpisode.allEpisodes.filter({$0.season == 4})
+        let seasoon5 = GOTEpisode.allEpisodes.filter({$0.season == 5})
+        let seasoon6 = GOTEpisode.allEpisodes.filter({$0.season == 6})
+        let seasoon7 = GOTEpisode.allEpisodes.filter({$0.season == 7})
+        let allSeason = [seasoon1, seasoon2, seasoon3, seasoon4, seasoon5, seasoon6,seasoon7]
+        return allSeason
+    }
 }
