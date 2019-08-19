@@ -167,14 +167,18 @@ extension ViewController: UISearchBarDelegate{
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        navigationController?.setNavigationBarHidden(true, animated: true)
         setsSearchBarFeatures(searchBar: searchBar, showScopeBar: true, ShowsCancel: true)
         return true
     }
     
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        navigationController?.setNavigationBarHidden(false, animated: true)
         setsSearchBarFeatures(searchBar: searchBar, showScopeBar: false, ShowsCancel: false)
         return true
     }
+    
+    
     
     func setsSearchBarFeatures(searchBar: UISearchBar, showScopeBar: Bool, ShowsCancel: Bool) {
         searchBar.showsScopeBar = showScopeBar
@@ -182,4 +186,8 @@ extension ViewController: UISearchBarDelegate{
         searchBar.sizeToFit()
     }
 
+}
+
+extension ViewController: UINavigationBarDelegate {
+    
 }
