@@ -41,16 +41,27 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myTableView.dataSource = self
-        mySearchBar.delegate = self
-        myTableView.rowHeight = 80
-        myTableView.sectionHeaderHeight = 40
+        configureTableView()
+        configureSearchBar()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func configureTableView() {
+        myTableView.dataSource = self
+        myTableView.delegate = self
+        myTableView.rowHeight = 80
+        myTableView.sectionHeaderHeight = 40
+    }
+    
+    func configureSearchBar() {
+        mySearchBar.delegate = self
+    }
+    
+    
 
 
 }
@@ -188,6 +199,4 @@ extension ViewController: UISearchBarDelegate{
 
 }
 
-extension ViewController: UINavigationBarDelegate {
-    
-}
+
