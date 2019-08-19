@@ -40,45 +40,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return GOTEpisode.seasonOne.count
-        case 1:
-            return GOTEpisode.seasonTwo.count
-        case 2:
-            return GOTEpisode.seasonThree.count
-        case 3:
-            return GOTEpisode.seasonFour.count
-        case 4:
-            return GOTEpisode.seasonFive.count
-        case 5:
-            return GOTEpisode.seasonSix.count
-        case 6:
-            return GOTEpisode.seasonSeven.count
-        default:
-            return 0
-        }
+        return GOTEpisode.gotEpisodeDirectory[section]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonOne)
-        case 1:
-            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonTwo)
-        case 2:
-            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonThree)
-        case 3:
-            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonFour)
-        case 4:
-            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonFive)
-        case 5:
-            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonSix)
-        case 6:
-            return populateCell(indexPath: indexPath, season: GOTEpisode.seasonSeven)
-        default:
-            return UITableViewCell()
-        }
+        return populateCell(indexPath: indexPath, season: GOTEpisode.gotEpisodeDirectory[indexPath.section]!)
     }
     
     //MARK: -- Custom Methods

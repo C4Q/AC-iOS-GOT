@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
         episodeTItleLabel.text = gotEpisode.name
         seasonLabel.text = "Season \(gotEpisode.season)"
         episodeLabel.text = "Episode \(gotEpisode.number)"
-        runtimeLabel.text = "Runtime: \(gotEpisode.runtime)"
+        runtimeLabel.text = "Runtime: \(gotEpisode.runtime) minutes"
         airDateLabel.text = "Air Date: \(gotEpisode.airdate)"
         descriptionTextView.text = gotEpisode.summary
     }
