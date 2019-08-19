@@ -107,6 +107,8 @@ class GOTEpisode {
     static let season6 = GOTEpisode.allEpisodes.filter { $0.season == 6 }
     static let season7 = GOTEpisode.allEpisodes.filter { $0.season == 7 }
     
+    static let seasons = [season1, season2, season3, season4, season5, season6, season7]
+    
 }
 
 

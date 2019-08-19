@@ -164,6 +164,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        <#code#>
+        searchString = searchBar.text
     }
 }
