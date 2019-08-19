@@ -19,6 +19,7 @@ class GotViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // used text coalescing to make it appear nicer
         image2.image = UIImage(named: GoT.originalImageID)
         newSeason.text = "Season: \(GoT.season)"
         newEpisode.text = "Episode: \(GoT.number)"
