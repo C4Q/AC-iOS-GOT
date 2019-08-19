@@ -55,6 +55,7 @@ class ViewController: UIViewController {
         myTableView.delegate = self
         myTableView.rowHeight = 80
         myTableView.sectionHeaderHeight = 40
+        myTableView.tableFooterView = UIView()
     }
     
     func configureSearchBar() {
@@ -108,8 +109,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-
-        
         switch section {
     
         case 0:
@@ -162,9 +161,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchString = searchText
-        let doShow = (searchText != "")
-        setsSearchBarFeatures(searchBar: searchBar, showScopeBar: doShow, ShowsCancel: doShow)
-    
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -195,6 +191,10 @@ extension ViewController: UISearchBarDelegate{
         searchBar.showsScopeBar = showScopeBar
         searchBar.setShowsCancelButton(ShowsCancel, animated: true)
         searchBar.sizeToFit()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        myTableView.reloadData()
     }
 
 }
