@@ -59,10 +59,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableviewController.dataSource = self
         tableviewController.delegate = self
         
-        
+      
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Season \( gotArray[section][section].season)"
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
