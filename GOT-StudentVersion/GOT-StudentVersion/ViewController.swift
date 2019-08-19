@@ -73,7 +73,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        guard searchResults.count > 0 else {return 1}
+//        guard searchResults.joined().count > 0 else {return 1}
         
         return searchResults.count
     }
@@ -82,7 +82,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Here is where the code breaks with no return from search. The gueard was my attempt to fix it.
         switch section {
         default:
-            guard searchResults.count != 0 else {return "None"}
+            guard searchResults.joined().count != 0 else {return "No Result"}
             return "Season: \(searchResults[section][0].season)"
         }
     }
