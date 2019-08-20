@@ -75,32 +75,42 @@ class GOTETableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let segueIdentifier = segue.identifier else { return showNotFoundAlert(titleType: "connection") }
-        
-        switch segueIdentifier {
-        case "episodeID":
-            guard let episodeDetailedViewController = segue.destination as? EpisodeDetailedViewController else {
-                 return showNotFoundAlert(titleType: "connection")
-            }
-            guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
-                return showNotFoundAlert(titleType: "row")
-            }
-            let episodes = GOTEpisode.episodesBySeason(season: selectedIndexPath.section + 1)
-            episodeDetailedViewController.episode = episodes[selectedIndexPath.row]
-        default:
-            fatalError("Unexpected segue identifier")
+        guard let episodeDetailedViewController = segue.destination as? EpisodeDetailedViewController else {
+             return showNotFoundAlert(titleType: "connection")
         }
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
+            return showNotFoundAlert(titleType: "row")
+        }
+        
+        let episodes = GOTEpisode.episodesBySeason(season: selectedIndexPath.section + 1)
+        
+        episodeDetailedViewController.episode = episodes[selectedIndexPath.row]
+        
     }
 
-    var searchString: String? = nil {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
+//    var searchString: String? = nil {
+//        didSet {
+//            self.tableView.reloadData()
+//        }
+//    }
+
+//    var episodeSearchResult:[GOTEpisode] {
+//        get {
+//            guard let searchString = searchString else {
+//                return episode
+//            }
+//            guard searchString != "" else {
+//                return episode
+//            }
+//            let episodeResults = episode.filter{$0.name.lowercased().contains(searchString.lowercased())}
+//            if episodeResults.count > 0 {
+//                return episodeResults
+//            }else{showNotFoundAlert(titleType: "Episode")}
+//        }
+//        return episode
+//    }
 }
 
-   
-    
 //extension GOTETableViewController: UISearchBarDelegate {
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 //                print(searchString)
