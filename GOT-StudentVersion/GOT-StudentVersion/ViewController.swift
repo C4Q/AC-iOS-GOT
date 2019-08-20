@@ -84,6 +84,49 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else {
+            fatalError("No identifier in segue")
+        }
+        switch segueIdentifier {
+            case "detailSegue":
+            guard let detailVC = segue.destination as? DetailViewController
+                else {
+                    fatalError("Unexpected segue")}
+            guard let selectedIndexPath = episodeData[indexPath.row] else {
+                fatalError("No row selected")
+            }
+            DetailViewController.detEpLabel = ind
+                return UITableViewCell
+            
+        default:
+            fatalError()
+        }
+        
+        
+    }
+        
+    }
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else {
+            fatalError("No identifier in segue")
+        }
+        switch segueIdentifier {
+        case "detailSegue":
+            guard let detailVC = segue.destination as? DetailViewController
+                else {
+                    fatalError("Unexpected segue")}
+            guard let selectedIndexPath = tableViewOut.indexPathForSelectedRow else {
+                fatalError("No row selected")
+            }
+            detailVC.detailSongs = songSearchResults[selectedIndexPath.row]
+        default:
+            fatalError("Unexpected segue identifier")
+        }
+    }
+ */
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 145
     }

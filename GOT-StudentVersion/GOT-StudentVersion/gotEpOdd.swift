@@ -15,8 +15,6 @@ class gotEpOdd: UITableViewCell {
     @IBOutlet weak var epIndexOdd: UILabel!
     @IBOutlet weak var gotImageOdd: UIImageView!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
