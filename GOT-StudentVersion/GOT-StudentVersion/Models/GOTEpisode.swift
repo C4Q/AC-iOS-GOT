@@ -30,7 +30,7 @@ class GOTEpisode {
         self.mediumImageID = mediumImageID
         self.originalImageID = originalImageID
     }
-   
+    
     static let allEpisodes = [
         GOTEpisode(airdate: "2011-04-17", id: 4952, name: "Winter is Coming", number: 1, season: 1, runtime: 60, summary: "Lord Eddard Stark, ruler of the North, is summoned to court by his old friend, King Robert Baratheon, to serve as the King's Hand. Eddard reluctantly agrees after learning of a possible threat to the King's life. Eddard's bastard son Jon Snow must make a painful decision about his own future, while in the distant east Viserys Targaryen plots to reclaim his father's throne, usurped by Robert, by selling his sister in marriage.", mediumImageID: "2668", originalImageID: "2668"),
         GOTEpisode(airdate: "2011-04-24", id: 4953, name: "The Kingsroad", number: 2, season: 1, runtime: 60, summary: "An incident on the Kingsroad threatens Eddard and Robert's friendship. Jon and Tyrion travel to the Wall, where they discover that the reality of the Night's Watch may not match the heroic image of it.", mediumImageID: "2669", originalImageID: "2669"),
@@ -98,7 +98,13 @@ class GOTEpisode {
         GOTEpisode(airdate: "2017-08-06", id: 1221412, name: "The Spoils of War", number: 4, season: 7, runtime: 60, summary: "Arya gets to the final destination. Daenerys takes it upon herself to strike back.", mediumImageID: "307677", originalImageID: "307677"),
         GOTEpisode(airdate: "2017-08-13", id: 1221413, name: "Eastwatch", number: 5, season: 7, runtime: 60, summary: "Daenerys demands loyalty from the surviving Lannister soldiers; Jon heeds Bran's warning about White Walkers on the move; Cersei vows to vanquish anyone or anything that stands in her way.", mediumImageID: "310839", originalImageID: "310839"),
         GOTEpisode(airdate: "2017-08-20", id: 1221414, name: "Beyond the Wall", number: 6, season: 7, runtime: 60, summary: "Jon's mission continues north of the wall, but the odds against his ragged band of misfits may be greater than he imagined.", mediumImageID: "312651", originalImageID: "312651"),
-        GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502")
+        GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502"),
+        GOTEpisode(airdate: "2019-04-14", id: 1221416, name: "Winterfell", number: 1, season: 8, runtime: 54, summary: "Jon and Daenerys arrive in Winterfell and are met with skepticism. Sam learns about the fate of his family. Cersei gives Euron the reward he aims for. Theon follows his heart.", mediumImageID: "801", originalImageID: "801"),
+        GOTEpisode(airdate: "2019-04-21", id: 1221417, name: "A Knight of the Seven Kingdoms", number: 2, season: 8, runtime: 58, summary:"Jaime faces judgment and Winterfell prepares for the battle to come.", mediumImageID: "802", originalImageID: "802"),
+        GOTEpisode(airdate: "2019-04-28", id: 1221418, name: "The Long Night", number: 3, season: 8, runtime: 82, summary: "The Night King and his army have arrived at Winterfell and the great battle begins.", mediumImageID: "803", originalImageID: "803"),
+        GOTEpisode(airdate: "2019-05-05", id: 1221419, name: "The Last of the Starks", number: 4, season: 8, runtime: 78, summary: "The Battle of Winterfell is over and a new chapter for Westeros begins.", mediumImageID: "804", originalImageID: "804"),
+        GOTEpisode(airdate: "2019-05-12", id: 1221420, name: "The Bells", number: 5, season: 8, runtime: 78, summary: "Forces have arrived at King's Landing for the final battle.", mediumImageID: "805", originalImageID: "805"),
+        GOTEpisode(airdate: "2019-05-19", id: 1221421, name: "Part Bird, Part Cripple, Part King", number: 6, season: 8, runtime: 80, summary: "wHo HaSS a BEttEr st0ry ThAn bRaN dA Br0kEn???", mediumImageID: "806", originalImageID: "806")
     ]
     
     static let season1 = GOTEpisode.allEpisodes.filter({$0.season == 1})
@@ -115,7 +121,23 @@ class GOTEpisode {
     
     static let season7 = GOTEpisode.allEpisodes.filter({$0.season == 7})
     
-     static let allSeasons = [GOTEpisode.season1, GOTEpisode.season2, GOTEpisode.season3, GOTEpisode.season4, GOTEpisode.season5, GOTEpisode.season6, GOTEpisode.season7]
+    static let season8 = GOTEpisode.allEpisodes.filter({$0.season == 8})
+    
+    static let allSeasons = [GOTEpisode.season1, GOTEpisode.season2, GOTEpisode.season3, GOTEpisode.season4, GOTEpisode.season5, GOTEpisode.season6, GOTEpisode.season7, GOTEpisode.season8]
+    
+    static func getSpecificEpisodes(selectedScopeIndex: Int, searchString: String) -> [[GOTEpisode]] {
+        var seasonsMatchingSearch = [[GOTEpisode]]()
+        for season in GOTEpisode.allSeasons {
+            var episodesMatchingSearch = [GOTEpisode]()
+            switch selectedScopeIndex {
+            case 0: episodesMatchingSearch = season.filter{$0.name.lowercased().contains(searchString.lowercased())}
+            case 1: episodesMatchingSearch = season.filter{$0.summary.lowercased().contains(searchString.lowercased())}
+            default: ()
+            }
+            seasonsMatchingSearch.append(episodesMatchingSearch)
+        }
+        return seasonsMatchingSearch
+    }
 }
 
 extension GOTEpisode: Imageable {

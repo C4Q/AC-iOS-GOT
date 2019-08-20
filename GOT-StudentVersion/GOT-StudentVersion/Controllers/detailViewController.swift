@@ -61,6 +61,7 @@ class detailViewController: UIViewController {
         case 5: backgroundImage.image = UIImage (named: "season5")
         case 6: backgroundImage.image = UIImage (named: "season6")
         case 7: backgroundImage.image = UIImage (named: "season7")
+        case 8: backgroundImage.image = UIImage (named: "season8")
         default: ()
         }
     }

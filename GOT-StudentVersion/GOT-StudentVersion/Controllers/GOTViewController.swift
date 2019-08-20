@@ -22,8 +22,8 @@ class GOTViewController: UIViewController {
             guard let searchString = searchString else { return allSeasons }
             guard searchString != ""  else { return allSeasons }
             switch searchBarOutlet.selectedScopeButtonIndex {
-            case 0: return [allSeasons.joined().filter{$0.name.lowercased().contains(searchString.lowercased())}]
-            case 1: return [allSeasons.joined().filter{$0.summary.lowercased().contains(searchString.lowercased())}]
+            case 0: return GOTEpisode.getSpecificEpisodes(selectedScopeIndex: 0, searchString: searchString)
+            case 1: return GOTEpisode.getSpecificEpisodes(selectedScopeIndex: 1, searchString: searchString)
             default: return allSeasons
             }
         }
@@ -99,6 +99,7 @@ extension GOTViewController: UITableViewDataSource {
         case 4: return "Season 5"
         case 5: return "Season 6"
         case 6: return "Season 7"
+        case 7: return "Season 8"
         default: return ""
         }
     }
@@ -107,7 +108,7 @@ extension GOTViewController: UITableViewDataSource {
         if (searchBarOutlet.isFirstResponder) {
             return nil
         } else {
-            return ["1", "2", "3", "4", "5", "6", "7"]
+            return ["1", "2", "3", "4", "5", "6", "7", "8"]
         }
     }
     
@@ -126,6 +127,10 @@ extension GOTViewController: UITableViewDataSource {
                 
                 let attrString = NSAttributedString(string: currentEpisode.name, attributes: [NSAttributedString.Key.strokeColor: UIColor.white, NSAttributedString.Key.foregroundColor: UIColor.yellow, NSAttributedString.Key.strokeWidth: -4.0, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17.5)])
                 cell.episodeNameLabel.attributedText = attrString
+                
+                let selectedView = UIView()
+                selectedView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
+                cell.selectedBackgroundView = selectedView
                 return cell
             }
             
@@ -136,6 +141,10 @@ extension GOTViewController: UITableViewDataSource {
                 
                 let attrString = NSAttributedString(string: currentEpisode.name, attributes: [NSAttributedString.Key.strokeColor: UIColor.white, NSAttributedString.Key.foregroundColor: UIColor.yellow, NSAttributedString.Key.strokeWidth: -4.0, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17.5)])
                 cell.episodeNameLabel.attributedText = attrString
+                
+                let selectedView = UIView()
+                selectedView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
+                cell.selectedBackgroundView = selectedView
                 return cell
             }
             
@@ -183,7 +192,6 @@ extension GOTViewController: UISearchBarDelegate {
         searchBar.showsScopeBar = true
         searchBar.setShowsCancelButton(true, animated: true)
         searchBar.sizeToFit()
-        tableView.headerView(forSection: 0)?.isHidden = true
         tableView.reloadSectionIndexTitles()
         return true
     }
@@ -192,7 +200,6 @@ extension GOTViewController: UISearchBarDelegate {
         searchBar.showsScopeBar = false
         searchBar.setShowsCancelButton(false, animated: true)       
         searchBar.sizeToFit()
-        tableView.headerView(forSection: 0)?.isHidden = false
         tableView.reloadSectionIndexTitles()
         return true
     }
