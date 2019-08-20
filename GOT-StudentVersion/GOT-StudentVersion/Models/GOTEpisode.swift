@@ -116,9 +116,6 @@ class GOTEpisode {
     static let season7 = GOTEpisode.allEpisodes.filter({$0.season == 7})
     
      static let allSeasons = [GOTEpisode.season1, GOTEpisode.season2, GOTEpisode.season3, GOTEpisode.season4, GOTEpisode.season5, GOTEpisode.season6, GOTEpisode.season7]
-
-    
-   
 }
 
 extension GOTEpisode: Imageable {
