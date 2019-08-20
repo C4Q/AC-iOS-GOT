@@ -102,7 +102,16 @@ class GOTEpisode {
     
     static func createGOTDataMatrix() -> [[GOTEpisode]]{
         var gotDataMatrix = [[GOTEpisode]]()
-        let seasonNumbers = [1,2,3,4,5,6,7]
+//        let seasonNumbers = [1,2,3,4,5,6,7]
+        var seasonNumbers:[Int] {
+            get {
+                var arrayCount = [Int]()
+                for seasons in GOTEpisode.allEpisodes {
+                    arrayCount.append(seasons.season)
+                }
+                return ((Set(arrayCount)).sorted())
+            }
+        }
         
         for season in seasonNumbers {
             var episodesInASeason = [GOTEpisode]() // captures episodes of each season
