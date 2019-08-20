@@ -144,7 +144,7 @@ class GOTEpisode {
     
     static func filterBySummary(summarySearchWord: String) -> [[GOTEpisode]] {
         // takes the search word and filters the entire database for all the episodes that contain that search word across the seasons.
-        let filteredEpisodes = allEpisodes.filter{$0.summary.lowercased().contains(summarySearchWord.lowercased())} // list of all the episodes with such searchword.
+        let filteredEpisodes = allEpisodes.filter{$0.summary.lowercased().contains(summarySearchWord.lowercased())} // list of all the episodes with  searchword.
         var filterMatrix = [[GOTEpisode]]()
         var searchResults = [[GOTEpisode]]()
         let seasonNumbers = [1,2,3,4,5,6,7]
@@ -158,7 +158,7 @@ class GOTEpisode {
             filterMatrix.append(episodesInAseason)
         }
         
-        for gotSeason in filterMatrix { //  checking for only seasons that episode in it
+        for gotSeason in filterMatrix { //  checking for only seasons that have the episode in it
             if gotSeason.count > 0 {
                 searchResults.append(gotSeason)
             }
