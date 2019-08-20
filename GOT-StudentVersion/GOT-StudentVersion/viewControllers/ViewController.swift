@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
+    
     var gotData = GOTEpisode.allEpisodes
     
     @IBOutlet weak var gotMainTableView: UITableView!
@@ -22,19 +24,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        return gotData.count
         switch section {
         case 0:
-            return gotSeason1.count
+            return Series.gotSeason1.count
         case 1:
-            return gotSeason2.count
+            return Series.gotSeason2.count
         case 2:
-            return gotSeason3.count
+            return Series.gotSeason3.count
         case 3:
-            return gotSeason4.count
+            return Series.gotSeason4.count
         case 4:
-            return gotSeason5.count
+            return Series.gotSeason5.count
         case 5:
-            return gotSeason6.count
+            return Series.gotSeason6.count
         case 6:
-            return gotSeason7.count
+            return Series.gotSeason7.count
         default: return 0
 
         }
@@ -53,6 +55,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             guard let oddCell = gotMainTableView.dequeueReusableCell(withIdentifier: "oddSeasons", for: indexPath) as? TableViewCellOddSeasons else{ return UITableViewCell()}
             
             let seasonArr0 = filterSeasonsBy(episode: gotData, andSeasonNum: indexPath.section + 1)
+            //let dataToSend = matrix[inde]
+          // let intoToSend =
             let infoForOddCell = seasonArr0[indexPath.row]
             
             oddCell.episodeTitleLabelOdd.text = infoForOddCell.name
@@ -85,6 +89,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Do any additional setup after loading the view, typically from a nib.
         gotMainTableView.dataSource = self
         gotMainTableView.delegate = self
+//        print(gotSeason1)
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,10 +108,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             guard let episodeDetailsVCOdd = segue.destination as? DetailsViewController else{
                 fatalError("Unexpected Error: No VC")
             }
-            guard let selectedIndexPath = self.gotMainTableView.indexPathForSelectedRow else{
+            guard let selectedIndexPath = gotMainTableView.indexPathForSelectedRow else{
                 fatalError("No Selected Row")
             }
-            episodeDetailsVCOdd.episodeDetails = gotData[selectedIndexPath.row]
+            
+            episodeDetailsVCOdd.episodeDetails = Series.gotArr[selectedIndexPath.section][selectedIndexPath.row]
             
         case "evenCellsToDetailSegue":
             guard let episodeDetailsVCEven = segue.destination as? DetailsViewController else{
@@ -115,7 +121,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             guard let selectedIndex = self.gotMainTableView.indexPathForSelectedRow else {
                 fatalError("No Selected Row")
             }
-            episodeDetailsVCEven.episodeDetails = gotData[selectedIndex.row]
+            episodeDetailsVCEven.episodeDetails = Series.gotArr[selectedIndex.section][selectedIndex.row]
      
         default:
             fatalError("Unexpected Identifier")
