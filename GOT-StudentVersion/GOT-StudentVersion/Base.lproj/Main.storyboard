@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2dt-8N-PmN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jfb-0F-OzY">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" showsSearchResultsButton="YES" id="cgj-ul-Ng1">
+                                <searchBar key="tableHeaderView" contentMode="redraw" text="" showsSearchResultsButton="YES" id="cgj-ul-Ng1">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -35,17 +35,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="145.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSv-9J-rHG">
-                                                    <rect key="frame" x="36" y="11" width="38" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSv-9J-rHG">
+                                                    <rect key="frame" x="0.0" y="11" width="158" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NF-1W-v8y">
-                                                    <rect key="frame" x="36" y="74" width="42" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NF-1W-v8y">
+                                                    <rect key="frame" x="0.0" y="74" width="158" height="72"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -59,6 +59,7 @@
                                             <outlet property="EpisodeName" destination="LSv-9J-rHG" id="Sae-Ue-bod"/>
                                             <outlet property="seasonEpisodeImage" destination="1MC-jf-3sb" id="XfG-cf-jhp"/>
                                             <outlet property="seasonEpisodeLabel" destination="8NF-1W-v8y" id="FrK-br-Pnw"/>
+                                            <segue destination="2dt-8N-PmN" kind="show" identifier="segToDescription" id="lRk-qz-Ooe"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="otherSideCell" rowHeight="184" id="drq-NR-aRz" customClass="otherEpisodeTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
@@ -92,6 +93,7 @@
                                             <outlet property="episodeLabel" destination="xN2-i4-Qt1" id="3p9-MG-pER"/>
                                             <outlet property="othersideImage" destination="GiC-kL-Oqx" id="0w1-zn-78b"/>
                                             <outlet property="seasonLabel" destination="ahF-GI-CJU" id="ICu-HO-nqQ"/>
+                                            <segue destination="2dt-8N-PmN" kind="show" identifier="segToDescription" id="BQy-NA-6uW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -102,13 +104,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="jMw-8V-nvJ"/>
                     <connections>
+                        <outlet property="searchBarOutlet" destination="cgj-ul-Ng1" id="1B8-0S-xOV"/>
                         <outlet property="tableView" destination="0Wd-qT-urC" id="u4K-yw-hRZ"/>
-                        <segue destination="2dt-8N-PmN" kind="show" id="Vbm-4d-8w6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ad5-Nq-hd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="105.79710144927537" y="-1016.5178571428571"/>
+            <point key="canvasLocation" x="-536" y="-1354"/>
         </scene>
         <!--Detailed View Controller-->
         <scene sceneID="tcr-Fd-Ltz">
@@ -141,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5jh-Ed-py9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="-978"/>
+            <point key="canvasLocation" x="328" y="-1354"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OR9-mY-8ja">
@@ -160,7 +162,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8f-Nj-hJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-565" y="-867"/>
+            <point key="canvasLocation" x="-1583" y="-1354"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BQy-NA-6uW"/>
+    </inferredMetricsTieBreakers>
 </document>

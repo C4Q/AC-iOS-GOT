@@ -65,12 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
-				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
+				6B29042B230C7B8600C99A1C /* Controllers */,
 				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
 				6B0C3E58230B0521003CABCB /*  imageble.swift */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
-				6B0C3E62230B7324003CABCB /* DetailedViewController.swift */,
-				6B0C3E5623074D10003CABCB /* otherEpisodeTableViewCell.swift */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
 			);
@@ -82,9 +80,19 @@
 			children = (
 				54B11AB91FABCE47004E1EAF /* AppDelegate.swift */,
 				54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */,
-				6B0C3E54230742B0003CABCB /* EpisodesTableViewCell.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6B29042B230C7B8600C99A1C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
+				6B0C3E62230B7324003CABCB /* DetailedViewController.swift */,
+				6B0C3E54230742B0003CABCB /* EpisodesTableViewCell.swift */,
+				6B0C3E5623074D10003CABCB /* otherEpisodeTableViewCell.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
