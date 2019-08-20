@@ -16,6 +16,7 @@
 		6B0C3E55230742B0003CABCB /* EpisodesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C3E54230742B0003CABCB /* EpisodesTableViewCell.swift */; };
 		6B0C3E5723074D10003CABCB /* otherEpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C3E5623074D10003CABCB /* otherEpisodeTableViewCell.swift */; };
 		6B0C3E59230B0521003CABCB /*  imageble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C3E58230B0521003CABCB /*  imageble.swift */; };
+		6B0C3E63230B7324003CABCB /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C3E62230B7324003CABCB /* DetailedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6B0C3E54230742B0003CABCB /* EpisodesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewCell.swift; sourceTree = "<group>"; };
 		6B0C3E5623074D10003CABCB /* otherEpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = otherEpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		6B0C3E58230B0521003CABCB /*  imageble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " imageble.swift"; sourceTree = "<group>"; };
+		6B0C3E62230B7324003CABCB /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				54B11ACB1FABCED7004E1EAF /* GOTEpisdoe.swift */,
 				6B0C3E58230B0521003CABCB /*  imageble.swift */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
+				6B0C3E62230B7324003CABCB /* DetailedViewController.swift */,
 				6B0C3E5623074D10003CABCB /* otherEpisodeTableViewCell.swift */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
@@ -116,7 +119,7 @@
 				TargetAttributes = {
 					54B11AB51FABCE47004E1EAF = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B0C3E63230B7324003CABCB /* DetailedViewController.swift in Sources */,
 				6B0C3E5723074D10003CABCB /* otherEpisodeTableViewCell.swift in Sources */,
 				54B11ACC1FABCED7004E1EAF /* GOTEpisdoe.swift in Sources */,
 				6B0C3E55230742B0003CABCB /* EpisodesTableViewCell.swift in Sources */,
@@ -298,11 +302,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "GOT-StudentVersion/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.GOT-StudentVersion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -312,11 +318,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "GOT-StudentVersion/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "c4q.GOT-StudentVersion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

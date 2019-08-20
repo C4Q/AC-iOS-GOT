@@ -10,6 +10,9 @@ import UIKit
 
 class otherEpisodeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var episodeLabel: UILabel!
+    @IBOutlet weak var seasonLabel: UILabel!
+    @IBOutlet weak var othersideImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

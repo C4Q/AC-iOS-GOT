@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     let Episodes = GOTEpisode.allEpisodes
     
     @IBOutlet weak var tableView: UITableView!
@@ -17,6 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
  
     }
     
@@ -53,15 +55,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case 6: return GOTEpisode.season7.count
             
         default: return 0
-            //Since we have different sections for each classification of animal, we want each section to have a different number of rows
+           
         }
     }
     
-    
-    
+
+   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { // here here we have a func that fixes the section size yayyy
+        return 130
+    }
+
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let EpisodesDisplay = indexPath.section % 2 == 0 ? "GOTCellEven" : "GOTCellOdd"
         let currentEpisode = GOTEpisode.seasons[indexPath.section][indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "GOTCell", for: indexPath) as? EpisodesTableViewCell {
             cell.EpisodeName.text = currentEpisode.name
@@ -72,13 +78,46 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         return UITableViewCell()
+  
+         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+             let EpisodesDisplay = indexPath.section % 2 == 0 ? "GOTCellEven" : "GOTCellOdd"
+            let currentEpisode =
+            GOTEpisode.seasons[indexPath.section][indexPath.row]
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "otherSideCell", for: indexPath) as? otherEpisodeTableViewCell {
+                cell.seasonLabel.text = currentEpisode.name
+                cell.episodeLabel.text = "\(currentEpisode.season)"
+                cell .othersideImage.image = currentEpisode.getImage()
+
+                return cell
+            }
     }
+    return UITableViewCell()
+
+        
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        // Get the new view controller using segue.destination.
-    //        // Pass the selected object to the new view controller.
-    //    }
-    
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            
+            guard let segueIdentifer = segue.identifier else {fatalError("No indentifier in segue")}
+            
+            switch segueIdentifer {
+                
+            case "segToDescription":
+                guard let destVC = segue.destination as? DetailedViewController else {
+                    fatalError("Unexpected segue VC")
+                }
+                guard let selectedIndexPath = tableView.indexPathForSelectedRow else {fatalError("No row selected")
+                }
+                let currentEpisodes = GOTEpisode.seasons[selectedIndexPath.section][selectedIndexPath.row]
+                destVC.currentSeason = currentEpisodes
+                
+            default:
+                fatalError("unexpected segue identifies")
+                
+            }
+        }
+    }
+
 }
+
 
 
