@@ -88,7 +88,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if let viewController = storyBoard.instantiateViewController(withIdentifier: "Detailed") as? DetailedViewController {
-           viewController.gameOfThrones = allGOTSeasons[indexPath.section][indexPath.row]
+            let search = isSearching ? filteredEpisodes[indexPath.section][indexPath.row] : allGOTSeasons[indexPath.section][indexPath.row]
+            
+            viewController.gameOfThrones =  search
 
             navigationController?.pushViewController(viewController, animated: true)
         }
@@ -111,5 +113,6 @@ extension ViewController:UISearchBarDelegate {
     tableView.reloadData()
     }
     }
+    
 }
 
