@@ -81,9 +81,8 @@ class GOTETableViewController: UITableViewController {
         guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
             return showNotFoundAlert(titleType: "row")
         }
-        
         let episodes = GOTEpisode.episodesBySeason(season: selectedIndexPath.section + 1)
-        
+       
         episodeDetailedViewController.episode = episodes[selectedIndexPath.row]
         
     }
