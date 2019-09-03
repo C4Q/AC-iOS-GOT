@@ -10,6 +10,15 @@ import UIKit
 
 class GoTRightTableViewCell: UITableViewCell {
 
+    
+    //MARK: - Outlets
+    @IBOutlet weak var episodeImage: UIImageView!
+    @IBOutlet weak var episodeTitleLabel: UILabel!
+    @IBOutlet weak var episodeNumberLabel: UILabel!
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -58,6 +58,11 @@
                                         <constraint firstItem="eyv-lO-ROM" firstAttribute="centerX" secondItem="DIW-R5-hST" secondAttribute="centerX" id="vPf-Uv-7P7"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="episodeImage" destination="5f7-5j-YSe" id="3S1-4a-vca"/>
+                                    <outlet property="episodeNumberLabel" destination="eyv-lO-ROM" id="OEz-B2-es1"/>
+                                    <outlet property="episodeTitleLabel" destination="DIW-R5-hST" id="heK-VO-An1"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="cXA-3F-g9l" customClass="GoTRightTableViewCell" customModule="GOT_StudentVersion" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="128" width="414" height="100"/>
@@ -99,6 +104,11 @@
                                         <constraint firstAttribute="bottom" secondItem="YXC-LW-fyb" secondAttribute="bottom" id="tO5-Si-DTl"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="episodeImage" destination="YXC-LW-fyb" id="dxv-6C-jah"/>
+                                    <outlet property="episodeNumberLabel" destination="Ccz-L7-oz0" id="B0q-df-VSV"/>
+                                    <outlet property="episodeTitleLabel" destination="nru-ba-ZbX" id="DpC-o7-gCP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
