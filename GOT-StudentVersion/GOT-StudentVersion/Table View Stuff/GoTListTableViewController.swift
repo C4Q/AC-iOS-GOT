@@ -92,6 +92,10 @@ class GoTListTableViewController: UITableViewController {
                 switch indexPath.section {
                 case 0:
                     setUpLeftCell(season: season1, cell: cell1, indexPath: indexPath)
+                    
+                    if season1[indexPath.row].name == "Cripples, Bastards, and Broken Things" {
+                        cell1.episodeTitleLabel.font = UIFont.systemFont(ofSize: 13)
+                    }
                     return cell1
                 case 1:
                     setUpLeftCell(season: season2, cell: cell1, indexPath: indexPath)
