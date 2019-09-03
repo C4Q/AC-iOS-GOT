@@ -32,7 +32,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyv-lO-ROM">
-                                            <rect key="frame" x="177" y="68" width="42" height="21"/>
+                                            <rect key="frame" x="257" y="68" width="42" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="aan-zA-3Xy"/>
                                             </constraints>
@@ -41,10 +41,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIW-R5-hST">
-                                            <rect key="frame" x="177" y="25" width="42" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="WwA-UL-hax"/>
-                                            </constraints>
+                                            <rect key="frame" x="257" y="25" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -54,10 +51,9 @@
                                         <constraint firstItem="eyv-lO-ROM" firstAttribute="centerX" secondItem="DIW-R5-hST" secondAttribute="centerX" id="6Ai-x3-7eS"/>
                                         <constraint firstItem="DIW-R5-hST" firstAttribute="top" secondItem="UP2-oQ-fL4" secondAttribute="top" constant="25" id="9aW-KV-u9C"/>
                                         <constraint firstItem="5f7-5j-YSe" firstAttribute="height" secondItem="UP2-oQ-fL4" secondAttribute="height" id="CgS-6u-aGg"/>
-                                        <constraint firstItem="DIW-R5-hST" firstAttribute="leading" secondItem="5f7-5j-YSe" secondAttribute="trailing" constant="20" id="N1H-Xj-ou7"/>
                                         <constraint firstItem="5f7-5j-YSe" firstAttribute="leading" secondItem="UP2-oQ-fL4" secondAttribute="leading" constant="7" id="aXu-nV-8OG"/>
                                         <constraint firstItem="5f7-5j-YSe" firstAttribute="top" secondItem="UP2-oQ-fL4" secondAttribute="top" id="jG0-tz-AZr"/>
-                                        <constraint firstItem="eyv-lO-ROM" firstAttribute="leading" secondItem="5f7-5j-YSe" secondAttribute="trailing" constant="20" id="l9f-2y-far"/>
+                                        <constraint firstItem="eyv-lO-ROM" firstAttribute="leading" secondItem="5f7-5j-YSe" secondAttribute="trailing" constant="100" id="l9f-2y-far"/>
                                         <constraint firstItem="eyv-lO-ROM" firstAttribute="top" secondItem="DIW-R5-hST" secondAttribute="bottom" constant="22" id="ygT-Jb-1PN"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -81,16 +77,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nru-ba-ZbX">
-                                            <rect key="frame" x="195" y="25" width="42" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="0Rr-wo-j7j"/>
-                                            </constraints>
+                                            <rect key="frame" x="115" y="25" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccz-L7-oz0">
-                                            <rect key="frame" x="195" y="68" width="42" height="21"/>
+                                            <rect key="frame" x="115" y="68" width="42" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="hdT-5i-lvS"/>
                                             </constraints>
@@ -101,12 +94,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="nru-ba-ZbX" firstAttribute="top" secondItem="1BE-3N-jKr" secondAttribute="top" constant="25" id="1cL-ZC-LWh"/>
-                                        <constraint firstItem="YXC-LW-fyb" firstAttribute="leading" secondItem="Ccz-L7-oz0" secondAttribute="trailing" constant="20" id="OhW-92-YaI"/>
+                                        <constraint firstItem="YXC-LW-fyb" firstAttribute="leading" secondItem="Ccz-L7-oz0" secondAttribute="trailing" constant="100" id="OhW-92-YaI"/>
                                         <constraint firstItem="YXC-LW-fyb" firstAttribute="top" secondItem="1BE-3N-jKr" secondAttribute="top" id="Sfz-6M-EGw"/>
                                         <constraint firstAttribute="trailing" secondItem="YXC-LW-fyb" secondAttribute="trailing" constant="7" id="TuY-o3-60p"/>
                                         <constraint firstItem="Ccz-L7-oz0" firstAttribute="top" secondItem="nru-ba-ZbX" secondAttribute="bottom" constant="22" id="V2I-yN-x1J"/>
                                         <constraint firstItem="YXC-LW-fyb" firstAttribute="height" secondItem="1BE-3N-jKr" secondAttribute="height" id="lJF-AB-1nZ"/>
-                                        <constraint firstItem="YXC-LW-fyb" firstAttribute="leading" secondItem="nru-ba-ZbX" secondAttribute="trailing" constant="20" id="xed-oI-976"/>
                                         <constraint firstItem="Ccz-L7-oz0" firstAttribute="centerX" secondItem="nru-ba-ZbX" secondAttribute="centerX" id="xwS-RW-I23"/>
                                     </constraints>
                                 </tableViewCellContentView>

@@ -87,7 +87,7 @@ class GoTListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        if indexPath.section % 2 != 0 {
+        if indexPath.section % 2 == 0 {
             if let cell1 = tableView.dequeueReusableCell(withIdentifier: "leftGotCell", for: indexPath) as? GoTLeftTableViewCell {
                 switch indexPath.section {
                 case 0:
@@ -116,7 +116,7 @@ class GoTListTableViewController: UITableViewController {
                 }
                 return UITableViewCell()
             }
-        } else if indexPath.section % 2 == 0 {
+        } else if indexPath.section % 2 != 0 {
             if let cell2 = tableView.dequeueReusableCell(withIdentifier: "rightGotCell" ,for: indexPath) as? GoTRightTableViewCell {
                 switch indexPath.section {
                 case 0:
