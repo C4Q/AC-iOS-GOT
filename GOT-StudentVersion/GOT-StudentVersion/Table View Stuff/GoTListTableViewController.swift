@@ -176,8 +176,10 @@ class GoTListTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let destination = segue.destination as? GoTDetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        destination.episode = episodes[indexPath.row]
     }
     
 
