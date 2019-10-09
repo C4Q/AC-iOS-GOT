@@ -24,16 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return "Season \(section + 1)"
-//    switch {
-//    case
-//      return "Season One"
-//    default:
-//      return "Season"
-//    }
   }
-  
-
-  
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     switch section {
@@ -132,6 +123,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
   
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let tappedEpisode: EpisodeTableViewCell = sender as? EpisodeTableViewCell {
+      if segue.identifier == "EpisodeDetailViewSeque" {
+        let episodeDetailViewController: EpisodeDetailsViewController = segue.destination as! EpisodeDetailsViewController
+        let cellIndexPath = GOTTableView.indexPathForSelectedRow?.row
+      }
+    }
+  }
+  
   
   
 //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -148,22 +148,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //      }
 //    }
 
-//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    if let tappedEpisode: EpisodeTableViewCell = sender as? EpisodeTableViewCell {
-//      if segue.identifier == "EpisodeDetailViewSeque" {
-//        let episodeDetailViewController: EpisodeDetailsViewController = segue.destination as! EpisodeDetailsViewController
-//        let cellIndexPath = tableView.indexPathForSelectedRow?.row
-//      }
-//    }
-//  }
-  
-  
   
 //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    guard let indexPath = tableView.indexPathForSelectedRow,
-//      let epDetailVC = segue.destination as? EpisodeDetailViewController else { return }
-//    let episode = allGOT[indexPath.section][indexPath.row]
-//    epDetailVC.delegate = episode
+//    guard let indexPath = GOTTableView.indexPathForSelectedRow,
+//      let detailVC = segue.destination as? EpisodeDetailsViewController else { return }
+//    let episode = GOTEpisode.allEpisodes[indexPath.section][indexPath.row]
+//    detailVC.delegate = episode
 //  }
 
 
