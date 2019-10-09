@@ -22,6 +22,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   let seasonSix = GOTEpisode.seasonSixEpisodes
   let seasonSeven = GOTEpisode.seasonSevenEpisodes
   
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return "Season \(section + 1)"
+//    switch {
+//    case
+//      return "Season One"
+//    default:
+//      return "Season"
+//    }
+  }
+  
+
+  
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     switch section {
@@ -103,8 +115,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   }
   
   
-
-  
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 120
   }
@@ -114,12 +124,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     return 7
   }
   
-  
     override func viewDidLoad() {
         super.viewDidLoad()
       GOTTableView.delegate = self
       GOTTableView.dataSource = self
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
   
