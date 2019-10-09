@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 class GOTEpisode {
     var airdate: String
     var id: Int
     var name: String
+  //number referse to episode #
     var number: Int
     var season: Int
     var runtime: Int
@@ -98,4 +100,31 @@ class GOTEpisode {
         GOTEpisode(airdate: "2017-08-20", id: 1221414, name: "Beyond the Wall", number: 6, season: 7, runtime: 60, summary: "Jon's mission continues north of the wall, but the odds against his ragged band of misfits may be greater than he imagined.", mediumImageID: "312651", originalImageID: "312651"),
         GOTEpisode(airdate: "2017-08-27", id: 1221415, name: "The Dragon and the Wolf", number: 7, season: 7, runtime: 60, summary: "Cersei sits on the Iron Throne; Daenerys sails across the Narrow Sea; Jon Snow is King in the North, and winter is finally here.", mediumImageID: "314502", originalImageID: "314502")
     ]
+  
+  static let seasonOneEpisodes = GOTEpisode.allEpisodes.filter({$0.season == 1})
+  
+  static let seasonTwoEpisodes = GOTEpisode.allEpisodes.filter({$0.season == 2})
+  
+  static let seasonThreeEpisodes = GOTEpisode.allEpisodes.filter({$0.season == 3})
+  
+  static let seasonFourEpisodes = GOTEpisode.allEpisodes.filter({$0.season == 4})
+  
+  static let seasonFiveEpisodes = GOTEpisode.allEpisodes.filter({$0.season == 5})
+  
+  static let seasonSixEpisodes = GOTEpisode.allEpisodes.filter({$0.season == 6})
+  
+  static let seasonSevenEpisodes = GOTEpisode.allEpisodes.filter({$0.season == 7})
+}
+
+
+extension GOTEpisode: Images {
+  var imageName: String {
+    return mediumImageID
+  }
+  
+  func getImage() -> UIImage {
+    return UIImage(named: imageName)!
+  }
+  
+  
 }
