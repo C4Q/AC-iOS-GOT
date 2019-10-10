@@ -25,14 +25,17 @@ class EpisodeDetailsViewController: UIViewController {
     self.detailTitle.text = selectedEpisode.name
     self.detailSeason.text = "Season: \(selectedEpisode.number)"
     self.detailEpisode.text = "Episode: \(selectedEpisode.season)"
-    self.detailRuntime.text = "RunTime: \(selectedEpisode.runtime)"
+    self.detailRuntime.text = "RunTime: \(selectedEpisode.runtime) minutes"
     self.detailAirdate.text = "Airdate: \(selectedEpisode.airdate)"
-    self.detailSummary.text = selectedEpisode.summary
+    self.detailSummary.text = "Summary: \(selectedEpisode.summary)"
+    
   }
   
     override func viewDidLoad() {
         super.viewDidLoad()
        setUpViews()
+      self.view.backgroundColor = UIColor(patternImage: UIImage(named: "fullThrone.png")!)
+
 //        setUpFromStoryboard()
 //      self.updateViews(for: selectedEpisode)
     }
@@ -42,7 +45,7 @@ class EpisodeDetailsViewController: UIViewController {
     detailSeason.text = "Season: \(selectedEpisode.season)"
     detailEpisode.text = "Episode: \(selectedEpisode.number)"
     detailRuntime.text = "RunTime: \(selectedEpisode.runtime)"
-    detailAirdate.text = "Airdate: \(selectedEpisode.airdate)"
+    detailAirdate.text = "Date: \(selectedEpisode.airdate)"
     detailSummary.text = selectedEpisode.summary
     detailImage.image = UIImage(named: selectedEpisode.originalImageID)
   }
