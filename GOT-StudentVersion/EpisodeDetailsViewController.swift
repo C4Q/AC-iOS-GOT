@@ -20,24 +20,10 @@ class EpisodeDetailsViewController: UIViewController {
   
   var selectedEpisode: GOTEpisode!
   
-  func updateViews(for movie: GOTEpisode) {
-    self.detailImage.image = UIImage(named: selectedEpisode.originalImageID)!
-    self.detailTitle.text = selectedEpisode.name
-    self.detailSeason.text = "Season: \(selectedEpisode.number)"
-    self.detailEpisode.text = "Episode: \(selectedEpisode.season)"
-    self.detailRuntime.text = "RunTime: \(selectedEpisode.runtime) minutes"
-    self.detailAirdate.text = "Airdate: \(selectedEpisode.airdate)"
-    self.detailSummary.text = "Summary: \(selectedEpisode.summary)"
-    
-  }
-  
     override func viewDidLoad() {
         super.viewDidLoad()
        setUpViews()
       self.view.backgroundColor = UIColor(patternImage: UIImage(named: "fullThrone.png")!)
-
-//        setUpFromStoryboard()
-//      self.updateViews(for: selectedEpisode)
     }
   
   private func setUpViews() {
@@ -50,14 +36,26 @@ class EpisodeDetailsViewController: UIViewController {
     detailImage.image = UIImage(named: selectedEpisode.originalImageID)
   }
   
-  private func setUpFromStoryboard() -> EpisodeDetailsViewController? {
-    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-    if let viewController = storyBoard.instantiateViewController(withIdentifier: "EpisodeDetailsViewController") as? EpisodeDetailsViewController {
-      return viewController
-    }
-    return nil
-  }
-  
-
-
 }
+
+
+//  private func setUpFromStoryboard() -> EpisodeDetailsViewController? {
+//    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//    if let viewController = storyBoard.instantiateViewController(withIdentifier: "EpisodeDetailsViewController") as? EpisodeDetailsViewController {
+//      return viewController
+//    }
+//    return nil
+//  }
+
+
+
+
+//func updateViews(for movie: GOTEpisode) {
+//   self.detailImage.image = UIImage(named: selectedEpisode.originalImageID)!
+//   self.detailTitle.text = selectedEpisode.name
+//   self.detailSeason.text = "Season: \(selectedEpisode.number)"
+//   self.detailEpisode.text = "Episode: \(selectedEpisode.season)"
+//   self.detailRuntime.text = "RunTime: \(selectedEpisode.runtime) minutes"
+//   self.detailAirdate.text = "Airdate: \(selectedEpisode.airdate)"
+//   self.detailSummary.text = "Summary: \(selectedEpisode.summary)"
+// }

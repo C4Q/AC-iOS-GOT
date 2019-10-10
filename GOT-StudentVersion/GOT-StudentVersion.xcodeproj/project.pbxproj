@@ -52,7 +52,6 @@
 		3C0945BD234E8A7C0003F7B6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */,
 				3C4B11BC23020CD100848045 /* Images.swift */,
 			);
@@ -110,8 +109,8 @@
 				3C0945BE234E8BAE0003F7B6 /* Controlers */,
 				3C0945BF234E8BE80003F7B6 /* Views */,
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
-				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				3C9A5AA3234F4F5200211CBA /* throneImages */,
+				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
 			);
 			path = "GOT-StudentVersion";
@@ -120,6 +119,7 @@
 		54B11ACD1FABCFEE004E1EAF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				54B11AB91FABCE47004E1EAF /* AppDelegate.swift */,
 				54B11AC21FABCE48004E1EAF /* LaunchScreen.storyboard */,
 			);
