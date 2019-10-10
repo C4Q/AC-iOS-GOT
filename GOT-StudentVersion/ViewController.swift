@@ -44,6 +44,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       cell.episodeTitleLabel.text = episode.name
       cell.seasonEpisodeLabel.text = "S: \(indexPath.section + 1) E: \(episode.number)"
       cell.episodeImageView.image = episode.getImage()
+      cell.episodeTitleLabel?.textColor = UIColor.white
+      cell.seasonEpisodeLabel?.textColor = UIColor.white
+      cell.backgroundView = UIImageView(image: UIImage(named: "blueThrone.png"))
       return cell
     default:
       let cell = GOTTableView.dequeueReusableCell(withIdentifier: "evenSeason", for: indexPath) as! EpisodeTableViewCell
@@ -51,6 +54,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       cell.episodeTitleLabel.text = episode.name
       cell.seasonEpisodeLabel.text = "S: \(indexPath.section + 1) E: \(episode.number)"
       cell.episodeImageView.image = episode.getImage()
+      cell.episodeTitleLabel?.textColor = UIColor.white
+      cell.seasonEpisodeLabel?.textColor = UIColor.white
+      cell.backgroundView = UIImageView(image: UIImage(named: "redThrone.png"))
       return cell
     }
     

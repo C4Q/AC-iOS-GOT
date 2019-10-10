@@ -91,7 +91,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Bz9-uu-5Qk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4IB-lh-OQg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bz9-uu-5Qk" secondAttribute="trailing" id="R31-4c-5MI"/>
