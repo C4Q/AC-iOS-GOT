@@ -18,10 +18,7 @@ class EpisodeDetailsViewController: UIViewController {
   @IBOutlet weak var detailAirdate: UILabel!
   @IBOutlet weak var detailSummary: UILabel!
   
-  
   var selectedEpisode: GOTEpisode!
-  
-  
   
   func updateViews(for movie: GOTEpisode) {
     self.detailImage.image = UIImage(named: selectedEpisode.originalImageID)!
@@ -31,12 +28,12 @@ class EpisodeDetailsViewController: UIViewController {
     self.detailRuntime.text = "RunTime: \(selectedEpisode.runtime)"
     self.detailAirdate.text = "Airdate: \(selectedEpisode.airdate)"
     self.detailSummary.text = selectedEpisode.summary
-
-
   }
   
     override func viewDidLoad() {
         super.viewDidLoad()
+       setUpViews()
+//        setUpFromStoryboard()
 //      self.updateViews(for: selectedEpisode)
     }
   
@@ -50,7 +47,7 @@ class EpisodeDetailsViewController: UIViewController {
     detailImage.image = UIImage(named: selectedEpisode.originalImageID)
   }
   
-  static func setUpFromStoryboard() -> EpisodeDetailsViewController? {
+  private func setUpFromStoryboard() -> EpisodeDetailsViewController? {
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     if let viewController = storyBoard.instantiateViewController(withIdentifier: "EpisodeDetailsViewController") as? EpisodeDetailsViewController {
       return viewController
@@ -58,18 +55,6 @@ class EpisodeDetailsViewController: UIViewController {
     return nil
   }
   
-  
-  
-  
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

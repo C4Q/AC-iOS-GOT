@@ -85,6 +85,7 @@
                                             <outlet property="episodeImageView" destination="Qzf-ak-jgf" id="2Pg-bu-UNE"/>
                                             <outlet property="episodeTitleLabel" destination="6sn-ZF-LZj" id="3pa-lo-bJ2"/>
                                             <outlet property="seasonEpisodeLabel" destination="r1Z-sU-SDg" id="W8g-KX-eBj"/>
+                                            <segue destination="hGO-Dv-xck" kind="show" identifier="EvenEpisodeSegue" id="6TP-8s-M9D"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -166,6 +167,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DHc-Fd-7bM"/>
                     </view>
+                    <navigationItem key="navigationItem" id="H8Y-Ku-3Qf"/>
                     <connections>
                         <outlet property="detailAirdate" destination="WHf-yH-jYd" id="3dz-q1-Lvy"/>
                         <outlet property="detailEpisode" destination="Fdu-gy-zaM" id="f4F-Cp-Yfu"/>
@@ -199,4 +201,7 @@
             <point key="canvasLocation" x="140.57971014492756" y="20.758928571428569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="6TP-8s-M9D"/>
+    </inferredMetricsTieBreakers>
 </document>
