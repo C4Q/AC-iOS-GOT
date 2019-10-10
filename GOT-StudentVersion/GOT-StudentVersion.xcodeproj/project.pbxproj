@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C0A1CAB234F75F700F8C911 /* blueThrone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0A1CAA234F75F700F8C911 /* blueThrone.png */; };
+		3C0A1CAD234F760E00F8C911 /* redThrone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0A1CAC234F760E00F8C911 /* redThrone.png */; };
+		3C0A1CAF234F761B00F8C911 /* fullThrone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0A1CAE234F761A00F8C911 /* fullThrone.png */; };
 		3C4B11BD23020CD100848045 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4B11BC23020CD100848045 /* Images.swift */; };
 		3C4B11BF2302162900848045 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4B11BE2302162900848045 /* EpisodeTableViewCell.swift */; };
-		3C9A5AA5234F4F9000211CBA /* blueThrone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9A5AA4234F4F9000211CBA /* blueThrone.png */; };
-		3C9A5AA7234F4FA600211CBA /* redThrone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9A5AA6234F4FA600211CBA /* redThrone.png */; };
-		3C9A5AA9234F4FB900211CBA /* fullThrone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9A5AA8234F4FB900211CBA /* fullThrone.png */; };
 		3CA97297230B36F400D18B89 /* EpisodeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA97296230B36F400D18B89 /* EpisodeDetailsViewController.swift */; };
 		54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11AB91FABCE47004E1EAF /* AppDelegate.swift */; };
 		54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ABB1FABCE47004E1EAF /* ViewController.swift */; };
@@ -22,11 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C0A1CAA234F75F700F8C911 /* blueThrone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueThrone.png; path = "../../../../../random assets/blueThrone.png"; sourceTree = "<group>"; };
+		3C0A1CAC234F760E00F8C911 /* redThrone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redThrone.png; path = "../../../../../random assets/redThrone.png"; sourceTree = "<group>"; };
+		3C0A1CAE234F761A00F8C911 /* fullThrone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fullThrone.png; path = "../../../../../random assets/fullThrone.png"; sourceTree = "<group>"; };
 		3C4B11BC23020CD100848045 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		3C4B11BE2302162900848045 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
-		3C9A5AA4234F4F9000211CBA /* blueThrone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueThrone.png; path = ../../../../../blueThrone.png; sourceTree = "<group>"; };
-		3C9A5AA6234F4FA600211CBA /* redThrone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redThrone.png; path = ../../../../../redThrone.png; sourceTree = "<group>"; };
-		3C9A5AA8234F4FB900211CBA /* fullThrone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fullThrone.png; path = ../../../../../fullThrone.png; sourceTree = "<group>"; };
 		3CA97296230B36F400D18B89 /* EpisodeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewController.swift; sourceTree = "<group>"; };
 		54B11AB61FABCE47004E1EAF /* GOT-StudentVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GOT-StudentVersion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B11AB91FABCE47004E1EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,9 +79,9 @@
 		3C9A5AA3234F4F5200211CBA /* throneImages */ = {
 			isa = PBXGroup;
 			children = (
-				3C9A5AA6234F4FA600211CBA /* redThrone.png */,
-				3C9A5AA4234F4F9000211CBA /* blueThrone.png */,
-				3C9A5AA8234F4FB900211CBA /* fullThrone.png */,
+				3C0A1CAA234F75F700F8C911 /* blueThrone.png */,
+				3C0A1CAC234F760E00F8C911 /* redThrone.png */,
+				3C0A1CAE234F761A00F8C911 /* fullThrone.png */,
 			);
 			path = throneImages;
 			sourceTree = "<group>";
@@ -186,10 +186,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				54B11AC41FABCE48004E1EAF /* LaunchScreen.storyboard in Resources */,
-				3C9A5AA7234F4FA600211CBA /* redThrone.png in Resources */,
-				3C9A5AA5234F4F9000211CBA /* blueThrone.png in Resources */,
+				3C0A1CAB234F75F700F8C911 /* blueThrone.png in Resources */,
 				54B11AC11FABCE48004E1EAF /* Assets.xcassets in Resources */,
-				3C9A5AA9234F4FB900211CBA /* fullThrone.png in Resources */,
+				3C0A1CAD234F760E00F8C911 /* redThrone.png in Resources */,
+				3C0A1CAF234F761B00F8C911 /* fullThrone.png in Resources */,
 				54B11ABF1FABCE47004E1EAF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
