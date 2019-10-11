@@ -1,10 +1,3 @@
-//
-//  EpisodeDetailsViewController.swift
-//  GOT-StudentVersion
-//
-//  Created by Ian Cervone on 8/19/19.
-//  Copyright © 2019 C4Q . All rights reserved.
-//
 
 import UIKit
 
@@ -38,24 +31,3 @@ class EpisodeDetailsViewController: UIViewController {
   
 }
 
-
-//  private func setUpFromStoryboard() -> EpisodeDetailsViewController? {
-//    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//    if let viewController = storyBoard.instantiateViewController(withIdentifier: "EpisodeDetailsViewController") as? EpisodeDetailsViewController {
-//      return viewController
-//    }
-//    return nil
-//  }
-
-
-
-
-//func updateViews(for movie: GOTEpisode) {
-//   self.detailImage.image = UIImage(named: selectedEpisode.originalImageID)!
-//   self.detailTitle.text = selectedEpisode.name
-//   self.detailSeason.text = "Season: \(selectedEpisode.number)"
-//   self.detailEpisode.text = "Episode: \(selectedEpisode.season)"
-//   self.detailRuntime.text = "RunTime: \(selectedEpisode.runtime) minutes"
-//   self.detailAirdate.text = "Airdate: \(selectedEpisode.airdate)"
-//   self.detailSummary.text = "Summary: \(selectedEpisode.summary)"
-// }
