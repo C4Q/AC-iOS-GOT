@@ -15,7 +15,7 @@ class GotViewCell: UITableViewCell {
     
 }
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class GOTViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let gotEpisodes = GOTEpisode.allEpisodes
     let gotSeasons = GOTEpisode.GetSeasonDict()
@@ -64,6 +64,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
             return "Season \(section + 1)"
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Cell was selected at \(indexPath.row)")
+        
     }
 }
 
