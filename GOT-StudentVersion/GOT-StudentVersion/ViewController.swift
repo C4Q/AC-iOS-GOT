@@ -8,6 +8,13 @@
 
 import UIKit
 
+class GotViewCell: UITableViewCell {
+    @IBOutlet weak var cellImage: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    
+}
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let gotEpisodes = GOTEpisode.allEpisodes
@@ -37,15 +44,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Episode Cell", for: indexPath)
+        let cell =  indexPath.section % 2 == 0 ? tableView.dequeueReusableCell(withIdentifier: "Episode Cell", for: indexPath) as! GotViewCell :
+            tableView.dequeueReusableCell(withIdentifier: "Alternate Episode Cell", for: indexPath) as! GotViewCell
+        
         print("Section: \(indexPath.section), Row: \(indexPath.row)")
         
         for episode in gotEpisodes {
             if indexPath.section == (episode.season - 1) && indexPath.row == (episode.number - 1) {
-                cell.textLabel?.text = episode.name
-                cell.detailTextLabel?.text = "S: \(episode.season) E: \(episode.number)"
-                cell.imageView?.image = UIImage(named: episode.mediumImageID)
-                
+                cell.titleLabel?.text = episode.name
+                cell.summaryLabel?.text = "S: \(episode.season) E: \(episode.number)"
+                cell.cellImage?.image = UIImage(named: episode.mediumImageID)
             }
         }
         
