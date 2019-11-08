@@ -58,9 +58,7 @@ class GOTViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell =  indexPath.section % 2 == 0 ? tableView.dequeueReusableCell(withIdentifier: "Episode Cell", for: indexPath) as! GOTViewCell :
                 tableView.dequeueReusableCell(withIdentifier: "Alternate Episode Cell", for: indexPath) as! GOTViewCell
-            
-            print("Section: \(indexPath.section), Row: \(indexPath.row)")
-            
+                        
             for episode in gotEpisodes {
                 if indexPath.section == (episode.season - 1) && indexPath.row == (episode.number - 1) {
                     cell.titleLabel?.text = episode.name
@@ -68,18 +66,11 @@ class GOTViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                     cell.cellImage?.image = UIImage(named: episode.mediumImageID)
                 }
             }
-            
-            //        cell.detailTextLabel?.text = "S: \(gotEpisodes[indexPath.row].season) E: \(gotEpisodes[indexPath.row].number)"
-            //        cell.imageView?.image = UIImage(named: gotEpisodes[indexPath.row].mediumImageID)
             return cell
         }
         
         func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            return "Season \(section + 1)"
-        }
-        
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            print("Cell was selected at \(indexPath.row)")
+            "Season \(section + 1)"
         }
 }
 
