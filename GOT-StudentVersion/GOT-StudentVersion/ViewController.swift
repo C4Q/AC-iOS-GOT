@@ -21,24 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "Season One"
-        case 1:
-            return "Season Two"
-        case 2:
-            return "Season Three"
-        case 3:
-            return "Season Four"
-        case 4:
-            return "Season Five"
-        case 5:
-            return "Season Six"
-        case 6:
-            return "Season Seven"
-        default:
-            return nil
-        }
+        return "Season \(section + 1)"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
