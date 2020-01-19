@@ -15,6 +15,7 @@
 		54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */; };
 		A51CAE75230A27B5001A4665 /* DetailEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51CAE74230A27B5001A4665 /* DetailEpisodeViewController.swift */; };
 		A5892A222302F045004CBB7D /* GOTSeasonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5892A212302F045004CBB7D /* GOTSeasonsTableViewCell.swift */; };
+		A5F2289823D4EE8A00B22656 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2289723D4EE8A00B22656 /* Season.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTEpisode.swift; sourceTree = "<group>"; };
 		A51CAE74230A27B5001A4665 /* DetailEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpisodeViewController.swift; sourceTree = "<group>"; };
 		A5892A212302F045004CBB7D /* GOTSeasonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTSeasonsTableViewCell.swift; sourceTree = "<group>"; };
+		A5F2289723D4EE8A00B22656 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
 				A51CAE74230A27B5001A4665 /* DetailEpisodeViewController.swift */,
 				54B11ACB1FABCED7004E1EAF /* GOTEpisode.swift */,
+				A5F2289723D4EE8A00B22656 /* Season.swift */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				A5892A212302F045004CBB7D /* GOTSeasonsTableViewCell.swift */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
@@ -157,6 +160,7 @@
 				54B11ACC1FABCED7004E1EAF /* GOTEpisode.swift in Sources */,
 				A5892A222302F045004CBB7D /* GOTSeasonsTableViewCell.swift in Sources */,
 				54B11ABC1FABCE47004E1EAF /* ViewController.swift in Sources */,
+				A5F2289823D4EE8A00B22656 /* Season.swift in Sources */,
 				54B11ABA1FABCE47004E1EAF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
