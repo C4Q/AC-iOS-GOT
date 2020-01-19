@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct Season {
+    var episodes: [GOTEpisode]
+}
