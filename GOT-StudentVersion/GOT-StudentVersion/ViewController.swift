@@ -65,5 +65,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let detailVC = storyboard.instantiateViewController(withIdentifier: "detailVC") as? DetailEpisodeViewController {
+            
+            let selectedRow = series.seasons[indexPath.section].episodes[indexPath.row]
+            detailVC.episode = selectedRow
+            navigationController?.pushViewController(detailVC, animated: true)
+            
+        }
+
+    }
+    
 }
 
