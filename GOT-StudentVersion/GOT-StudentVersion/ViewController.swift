@@ -27,7 +27,6 @@ class ViewController: UIViewController {
 
 // MARK: - Extensions
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return series.seasons.count
     }
@@ -45,7 +44,26 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        switch indexPath.section % 2 {
+        case 0:
+            if let leftCell = episodeTableView.dequeueReusableCell(withIdentifier: "leftCell", for: indexPath) as? LeftTVCell {
+                leftCell.leftTitleLabel.text = series.seasons[indexPath.section].episodes[indexPath.row].name
+                leftCell.leftSeasonEpisodeLabel.text = series.seasons[indexPath.section].episodes[indexPath.row].getFormattedEpAndSeasonString()
+                leftCell.leftImageView.image = UIImage(named: series.seasons[indexPath.section].episodes[indexPath.row].mediumImageID)
+                return leftCell
+            }
+        case 1:
+            if let rightCell = episodeTableView.dequeueReusableCell(withIdentifier: "rightCell", for: indexPath) as? RightTVCell {
+            rightCell.rightTitleLabel.text = series.seasons[indexPath.section].episodes[indexPath.row].name
+            rightCell.rightSeasonEpisodeLabel.text = series.seasons[indexPath.section].episodes[indexPath.row].getFormattedEpAndSeasonString()
+            rightCell.rightImageView.image = UIImage(named: series.seasons[indexPath.section].episodes[indexPath.row].mediumImageID)
+                return rightCell
+            }
+        default:
+                return UITableViewCell()
+        }
         return UITableViewCell()
     }
+    
 }
+
