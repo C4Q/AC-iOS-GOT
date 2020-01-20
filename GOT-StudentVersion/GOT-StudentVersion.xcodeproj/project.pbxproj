@@ -66,11 +66,10 @@
 		54B11AB81FABCE47004E1EAF /* GOT-StudentVersion */ = {
 			isa = PBXGroup;
 			children = (
+				A5FBFFA823D569F800123647 /* Controllers */,
 				A5FBFFA723D5699B00123647 /* Views */,
 				A5FBFFA623D568BB00123647 /* Models */,
 				54B11ACD1FABCFEE004E1EAF /* Supporting Files */,
-				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
-				A51CAE74230A27B5001A4665 /* DetailEpisodeViewController.swift */,
 				54B11ABD1FABCE47004E1EAF /* Main.storyboard */,
 				54B11AC01FABCE48004E1EAF /* Assets.xcassets */,
 				54B11AC51FABCE48004E1EAF /* Info.plist */,
@@ -104,6 +103,15 @@
 				A5F2289D23D5545700B22656 /* RightTVCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A5FBFFA823D569F800123647 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				54B11ABB1FABCE47004E1EAF /* ViewController.swift */,
+				A51CAE74230A27B5001A4665 /* DetailEpisodeViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
