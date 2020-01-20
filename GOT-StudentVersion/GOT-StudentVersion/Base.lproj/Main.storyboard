@@ -124,7 +124,7 @@
         <!--Detail Episode View Controller-->
         <scene sceneID="bvV-ab-t2b">
             <objects>
-                <viewController id="3GX-Ff-bwl" customClass="DetailEpisodeViewController" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailVC" id="3GX-Ff-bwl" customClass="DetailEpisodeViewController" customModule="GOT_StudentVersion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lCf-OK-rqL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
