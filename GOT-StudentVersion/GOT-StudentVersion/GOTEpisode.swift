@@ -46,4 +46,8 @@ class GOTEpisode: CustomStringConvertible {
         self.originalImageID = originalImageID
     }
     
+    func getFormattedEpAndSeasonString() -> String {
+        return "S:\(season) E:\(number)"
+    }
+    
 }
