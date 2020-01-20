@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: - UI Objects
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var episodeTableView: UITableView!
     
     // MARK: - Properties
     var series = Series()
@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
+        episodeTableView.dataSource = self
+        episodeTableView.delegate = self
     }
 
 }
