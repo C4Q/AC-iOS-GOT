@@ -10,15 +10,8 @@ import UIKit
 
 class RightTVCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    // MARK: - UI Objects
+    @IBOutlet weak var rightTitleLabel: UILabel!
+    @IBOutlet weak var rightSeasonEpisodeLabel: UILabel!
+    @IBOutlet weak var rightImageView: UIImageView!
 }
