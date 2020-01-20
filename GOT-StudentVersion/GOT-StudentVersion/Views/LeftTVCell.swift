@@ -10,10 +10,9 @@ import UIKit
 
 class LeftTVCell: UITableViewCell {
     
-   
+    // MARK: - UI Objects
     @IBOutlet weak var leftTitleLabel: UILabel!
-    
     @IBOutlet weak var leftSeasonEpisodeLabel: UILabel!
-    
     @IBOutlet weak var leftImageView: UIImageView!
+    
 }

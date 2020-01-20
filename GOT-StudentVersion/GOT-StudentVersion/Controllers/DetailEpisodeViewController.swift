@@ -10,8 +10,7 @@ import UIKit
 
 class DetailEpisodeViewController: UIViewController {
     
-    var episode: GOTEpisode!
-    
+    // MARK: - UI Objects
     @IBOutlet weak var detailPageImage: UIImageView!
     @IBOutlet weak var detailEpisodeTitle: UILabel!
     @IBOutlet weak var detailSeasonNumber: UILabel!
@@ -20,14 +19,16 @@ class DetailEpisodeViewController: UIViewController {
     @IBOutlet weak var detailAirtime: UILabel!
     @IBOutlet weak var detailEpisodeDescript: UITextView!
     
+    // MARK: - Properties
+    var episode: GOTEpisode!
     
-    
-    
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
     }
     
+    // MARK: - Private Methods
     private func setUpViews() {
         detailPageImage.image = UIImage(named: episode.originalImageID)
         detailEpisodeTitle.text = episode.name
