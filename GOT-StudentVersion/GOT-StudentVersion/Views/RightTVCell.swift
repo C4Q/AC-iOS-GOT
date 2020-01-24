@@ -11,7 +11,7 @@ import UIKit
 class RightTVCell: UITableViewCell {
 
     // MARK: - UI Objects
+    @IBOutlet weak var rightImageView: UIImageView!
     @IBOutlet weak var rightTitleLabel: UILabel!
     @IBOutlet weak var rightSeasonEpisodeLabel: UILabel!
-    @IBOutlet weak var rightImageView: UIImageView!
 }
