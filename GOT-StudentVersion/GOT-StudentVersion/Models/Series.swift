@@ -1,33 +1,26 @@
 //
-//  GOTEpisdoe.swift
+//  Series.swift
 //  GOT-StudentVersion
 //
-//  Created by C4Q  on 11/2/17.
-//  Copyright © 2017 C4Q . All rights reserved.
+//  Created by Liana Norman on 1/19/20.
+//  Copyright © 2020 C4Q . All rights reserved.
 //
 
 import Foundation
 
-class GOTEpisode {
-    var airdate: String
-    var id: Int
-    var name: String
-    var number: Int
-    var season: Int
-    var runtime: Int
-    var summary: String
-    var mediumImageID: String
-    var originalImageID: String
-    init(airdate: String, id: Int, name: String, number: Int, season: Int, runtime: Int, summary: String, mediumImageID: String, originalImageID: String) {
-        self.airdate = airdate
-        self.id = id
-        self.name = name
-        self.number = number
-        self.season = season
-        self.runtime = runtime
-        self.summary = summary
-        self.mediumImageID = mediumImageID
-        self.originalImageID = originalImageID
+struct Series {
+    var seasons: [Season]
+    
+    init() {
+        let seasonOne = Season(episodes: Series.allEpisodes.filter({$0.season == 1}))
+        let seasonTwo = Season(episodes: Series.allEpisodes.filter({$0.season == 2}))
+        let seasonThree = Season(episodes: Series.allEpisodes.filter({$0.season == 3}))
+        let seasonFour = Season(episodes: Series.allEpisodes.filter({$0.season == 4}))
+        let seasonFive = Season(episodes: Series.allEpisodes.filter({$0.season == 5}))
+        let seasonSix = Season(episodes: Series.allEpisodes.filter({$0.season == 6}))
+        let seasonSeven = Season(episodes: Series.allEpisodes.filter({$0.season == 7}))
+        
+        seasons = [seasonOne, seasonTwo, seasonThree, seasonFour, seasonFive, seasonSix, seasonSeven]
     }
     static let allEpisodes = [
         GOTEpisode(airdate: "2011-04-17", id: 4952, name: "Winter is Coming", number: 1, season: 1, runtime: 60, summary: "Lord Eddard Stark, ruler of the North, is summoned to court by his old friend, King Robert Baratheon, to serve as the King's Hand. Eddard reluctantly agrees after learning of a possible threat to the King's life. Eddard's bastard son Jon Snow must make a painful decision about his own future, while in the distant east Viserys Targaryen plots to reclaim his father's throne, usurped by Robert, by selling his sister in marriage.", mediumImageID: "2668", originalImageID: "2668"),
